@@ -23,6 +23,7 @@
 		12F688A91EEE8A570057C49A /* EnvironmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F688A81EEE8A570057C49A /* EnvironmentViewController.swift */; };
 		12F688AB1EEE8ACC0057C49A /* CareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F688AA1EEE8ACC0057C49A /* CareViewController.swift */; };
 		12F688AD1EEE8B100057C49A /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F688AC1EEE8B100057C49A /* InformationViewController.swift */; };
+		12F688B01EEE9F490057C49A /* ExtensionCALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F688AF1EEE9F490057C49A /* ExtensionCALayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		12F688A81EEE8A570057C49A /* EnvironmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentViewController.swift; sourceTree = "<group>"; };
 		12F688AA1EEE8ACC0057C49A /* CareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareViewController.swift; sourceTree = "<group>"; };
 		12F688AC1EEE8B100057C49A /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
+		12F688AF1EEE9F490057C49A /* ExtensionCALayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionCALayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				12F6886A1EEE83CC0057C49A /* AppDelegate.swift */,
+				12F688AF1EEE9F490057C49A /* ExtensionCALayer.swift */,
 				12F6886E1EEE83CC0057C49A /* Main.storyboard */,
 				12F688761EEE83CC0057C49A /* LaunchScreen.storyboard */,
 				12F688741EEE83CC0057C49A /* Assets.xcassets */,
@@ -315,6 +318,7 @@
 				12F688AB1EEE8ACC0057C49A /* CareViewController.swift in Sources */,
 				12F688A71EEE8A0E0057C49A /* TreeDatabaseViewController.swift in Sources */,
 				12F6889D1EEE888B0057C49A /* MenuViewController.swift in Sources */,
+				12F688B01EEE9F490057C49A /* ExtensionCALayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
