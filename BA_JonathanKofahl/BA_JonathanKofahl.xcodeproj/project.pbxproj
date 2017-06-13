@@ -24,6 +24,8 @@
 		12F688AB1EEE8ACC0057C49A /* CareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F688AA1EEE8ACC0057C49A /* CareViewController.swift */; };
 		12F688AD1EEE8B100057C49A /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F688AC1EEE8B100057C49A /* InformationViewController.swift */; };
 		12F688B01EEE9F490057C49A /* ExtensionCALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F688AF1EEE9F490057C49A /* ExtensionCALayer.swift */; };
+		12F688B31EF017EC0057C49A /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F688B21EF017EC0057C49A /* ContainerViewController.swift */; };
+		12F688B51EF02A270057C49A /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F688B41EF02A270057C49A /* EmptySegue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		12F688AA1EEE8ACC0057C49A /* CareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareViewController.swift; sourceTree = "<group>"; };
 		12F688AC1EEE8B100057C49A /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		12F688AF1EEE9F490057C49A /* ExtensionCALayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionCALayer.swift; sourceTree = "<group>"; };
+		12F688B21EF017EC0057C49A /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		12F688B41EF02A270057C49A /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptySegue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,8 +171,18 @@
 				12F688A41EEE89760057C49A /* RootViewController.swift */,
 				12F688A81EEE8A570057C49A /* EnvironmentViewController.swift */,
 				12F688AA1EEE8ACC0057C49A /* CareViewController.swift */,
+				12F688B11EF017CE0057C49A /* SplitContainerViewControllers */,
 			);
 			name = "inspect ViewControllers";
+			sourceTree = "<group>";
+		};
+		12F688B11EF017CE0057C49A /* SplitContainerViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				12F688B21EF017EC0057C49A /* ContainerViewController.swift */,
+				12F688B41EF02A270057C49A /* EmptySegue.swift */,
+			);
+			name = SplitContainerViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +323,8 @@
 			files = (
 				12F688A91EEE8A570057C49A /* EnvironmentViewController.swift in Sources */,
 				12F688AD1EEE8B100057C49A /* InformationViewController.swift in Sources */,
+				12F688B31EF017EC0057C49A /* ContainerViewController.swift in Sources */,
+				12F688B51EF02A270057C49A /* EmptySegue.swift in Sources */,
 				12F688A31EEE89640057C49A /* TribeViewController.swift in Sources */,
 				12F6886B1EEE83CC0057C49A /* AppDelegate.swift in Sources */,
 				12F688731EEE83CC0057C49A /* BA_JonathanKofahl.xcdatamodeld in Sources */,
