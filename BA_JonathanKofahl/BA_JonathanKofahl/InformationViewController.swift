@@ -10,6 +10,8 @@ import UIKit
 
 class InformationViewController: UIViewController {
     
+    @IBOutlet weak var treeImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,5 +22,12 @@ class InformationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func takePhoto(_ sender: Any) {
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationController = segue.destination as! CameraViewController
+        destinationController.motherController = self
+    }
     
 }

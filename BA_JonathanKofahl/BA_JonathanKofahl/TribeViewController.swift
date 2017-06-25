@@ -39,7 +39,6 @@ class TribeViewController: UIViewController {
         self.containerView.swapViewControllers()
     }
     
-    
     @IBAction func swapButtonPressed(_ sender: Any) {
             self.containerView.currentSegueIdentifier = "embedFirst"
             self.containerView.swapViewControllers()

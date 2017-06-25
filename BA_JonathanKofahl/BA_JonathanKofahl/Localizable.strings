@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  BA_JonathanKofahl
+
+  Created by Jonathan Kofahl on 25.06.17.
+
+  in this File we save the main part if all the Strings that are used in the app, except those that are hard-coded into the Storyboard. The Filename is the default name for the Localatzation File in iOS.
+*/
+
+
+// MARK: - InformationViewController
+
+
+// MARK: - CrownViewController
+
+    "crown1" = "Astab/-ausbrüche";
+    "crown2" = "Astungswunden";
+    "crown3" = "Fehlentwicklungen Krone";
+    "crown4" = "Höhlungen, Morschungen";
+
+// MARK: - TribeViewController
+
+    "tribe1" = "";
+
+// MARK: - RootViewController
+
+    "root1" = "";
+
+// MARK: - EnviromentViewController
+
+    "enviroment1" = "";
+
+// MARK: - CareViewController
+
+    "care1" = "";
+
+
