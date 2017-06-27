@@ -26,8 +26,10 @@ class InformationViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationController = segue.destination as! CameraViewController
-        destinationController.motherController = self
+        if segue.identifier == "cameraSeg" {
+            let destinationController = segue.destination as! CameraViewController
+            destinationController.motherController = self
+        }
     }
     
 }
