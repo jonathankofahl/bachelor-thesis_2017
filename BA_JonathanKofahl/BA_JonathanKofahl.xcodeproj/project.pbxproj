@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		124D1A941EFFEEED005CCD1E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 124D1A931EFFEEED005CCD1E /* Localizable.strings */; };
+		124D1A971EFFFAB1005CCD1E /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124D1A961EFFFAB1005CCD1E /* QuestionCell.xib */; };
 		12F6886B1EEE83CC0057C49A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F6886A1EEE83CC0057C49A /* AppDelegate.swift */; };
 		12F688701EEE83CC0057C49A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12F6886E1EEE83CC0057C49A /* Main.storyboard */; };
 		12F688731EEE83CC0057C49A /* BA_JonathanKofahl.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12F688711EEE83CC0057C49A /* BA_JonathanKofahl.xcdatamodeld */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		124D1A931EFFEEED005CCD1E /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		124D1A961EFFFAB1005CCD1E /* QuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
 		12F688671EEE83CC0057C49A /* BA_JonathanKofahl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BA_JonathanKofahl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12F6886A1EEE83CC0057C49A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12F6886F1EEE83CC0057C49A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				12F688A41EEE89760057C49A /* RootViewController.swift */,
 				12F688A81EEE8A570057C49A /* EnvironmentViewController.swift */,
 				12F688AA1EEE8ACC0057C49A /* CareViewController.swift */,
+				124D1A961EFFFAB1005CCD1E /* QuestionCell.xib */,
 				12F688B11EF017CE0057C49A /* SplitContainerViewControllers */,
 			);
 			name = "inspect ViewControllers";
@@ -310,6 +313,7 @@
 			files = (
 				12F688781EEE83CC0057C49A /* LaunchScreen.storyboard in Resources */,
 				12F688751EEE83CC0057C49A /* Assets.xcassets in Resources */,
+				124D1A971EFFFAB1005CCD1E /* QuestionCell.xib in Resources */,
 				124D1A941EFFEEED005CCD1E /* Localizable.strings in Resources */,
 				12F688701EEE83CC0057C49A /* Main.storyboard in Resources */,
 			);
