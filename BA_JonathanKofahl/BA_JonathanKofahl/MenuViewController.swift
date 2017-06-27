@@ -10,9 +10,22 @@ import UIKit
 
 class MenuViewController: UIViewController {
     
+    //MARK: - Variables & Outlets
+    
+    let defaults = UserDefaults.standard
+
+    @IBOutlet weak var view1: UIView!
+    
+    //MARK: - Methods
+    
+    override func viewWillAppear(_ animated: Bool) {
+        view1.backgroundColor = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+       
     }
     
     override func didReceiveMemoryWarning() {

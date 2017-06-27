@@ -147,12 +147,15 @@
                                     <color key="titleColor" red="0.30408036710000003" green="0.49091345069999998" blue="0.70246273280000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="EPs-qj-JhI" kind="show" id="AXP-tg-nJ3"/>
+                                    <segue destination="EPs-qj-JhI" kind="showDetail" action="showViewController:sender:" id="AXP-tg-nJ3"/>
                                 </connections>
                             </button>
                             <color key="tintColor" red="0.30408036710000003" green="0.49091345069999998" blue="0.70246273280000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="view1" destination="YUT-a0-gOo" id="uu4-5Q-VLy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -205,7 +208,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T6f-oP-dRs">
-                                <rect key="frame" x="0.0" y="64" width="834" height="100"/>
+                                <rect key="frame" x="0.0" y="20" width="834" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Farbschema der App anpassen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnW-mf-fCT">
                                         <rect key="frame" x="192" y="48" width="450" height="30"/>
@@ -233,11 +236,11 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wd-Pt-wWH">
-                                <rect key="frame" x="20" y="457" width="794" height="635"/>
+                                <rect key="frame" x="20" y="403" width="794" height="689"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9n-JK-gRx">
-                                <rect key="frame" x="0.0" y="357" width="834" height="100"/>
+                                <rect key="frame" x="0.0" y="303" width="834" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Export Einstellungen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Lu-wi-3GS">
                                         <rect key="frame" x="192" y="48" width="450" height="30"/>
@@ -265,14 +268,14 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iLf-Bw-U7v">
-                                <rect key="frame" x="20" y="164" width="794" height="163"/>
+                                <rect key="frame" x="20" y="120" width="794" height="163"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Sok-uQ-JDP">
                                         <rect key="frame" x="47" y="29" width="700" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EvN-hc-qZ2">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EvN-hc-qZ2">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
-                                                <color key="backgroundColor" red="0.39866553929999998" green="0.65402074020000001" blue="0.94195353230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.30588235294117649" green="0.49019607843137253" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="IPN-1R-Ozj"/>
                                                     <constraint firstAttribute="height" constant="50" id="SRa-55-WGv"/>
@@ -281,11 +284,20 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="4"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="changeAppColor:" destination="EPs-qj-JhI" eventType="touchUpInside" id="ZCT-gh-CrC"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ssb-ug-vxR">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ssb-ug-vxR">
                                                 <rect key="frame" x="150" y="0.0" width="100" height="50"/>
-                                                <color key="backgroundColor" red="0.5600465536" green="0.81940084700000004" blue="0.91487544779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.5607843137254902" green="0.81960784313725488" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="2Ej-vs-Yqk"/>
                                                     <constraint firstAttribute="width" constant="100" id="UAi-yJ-4NB"/>
@@ -296,10 +308,13 @@
                                                         <real key="value" value="4"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="changeAppColor:" destination="EPs-qj-JhI" eventType="touchUpInside" id="NMm-AY-ibD"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGy-CC-yiE">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGy-CC-yiE">
                                                 <rect key="frame" x="300" y="0.0" width="100" height="50"/>
-                                                <color key="backgroundColor" red="0.15238070400000001" green="0.80974382619999996" blue="0.64912447100000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.15294117647058825" green="0.80784313725490198" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Nhr-cx-dcc"/>
                                                     <constraint firstAttribute="width" constant="100" id="gwT-Nb-Z69"/>
@@ -310,10 +325,13 @@
                                                         <real key="value" value="4"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="changeAppColor:" destination="EPs-qj-JhI" eventType="touchUpInside" id="UyE-2W-yxO"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eiq-zW-fFy">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eiq-zW-fFy">
                                                 <rect key="frame" x="450" y="0.0" width="100" height="50"/>
-                                                <color key="backgroundColor" red="1" green="0.70024472859999998" blue="0.39108847759999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="1" green="0.70196078431372544" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="flD-Jx-j6f"/>
                                                     <constraint firstAttribute="height" constant="50" id="sxP-YH-upO"/>
@@ -323,10 +341,13 @@
                                                         <real key="value" value="4"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="changeAppColor:" destination="EPs-qj-JhI" eventType="touchUpInside" id="7Fp-Wf-Qo6"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rf-6Y-21G">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rf-6Y-21G">
                                                 <rect key="frame" x="600" y="0.0" width="100" height="50"/>
-                                                <color key="backgroundColor" red="0.80974382619999996" green="0.40500958302797846" blue="0.36521097994341145" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.80784313725490198" green="0.40392156862745099" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="3i3-lG-HUL"/>
                                                     <constraint firstAttribute="height" constant="50" id="hkV-pX-ROJ"/>
@@ -336,6 +357,9 @@
                                                         <real key="value" value="4"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="changeAppColor:" destination="EPs-qj-JhI" eventType="touchUpInside" id="QrI-lX-U47"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -368,7 +392,7 @@
                             <constraint firstItem="Ir7-IV-YXu" firstAttribute="top" secondItem="6wd-Pt-wWH" secondAttribute="bottom" constant="20" id="TZO-ou-sq2"/>
                             <constraint firstItem="6wd-Pt-wWH" firstAttribute="leading" secondItem="I8G-vt-OiK" secondAttribute="leadingMargin" id="W6k-6C-Ecn"/>
                             <constraint firstItem="T6f-oP-dRs" firstAttribute="leading" secondItem="I8G-vt-OiK" secondAttribute="leading" id="WjY-CI-AYM"/>
-                            <constraint firstItem="X9n-JK-gRx" firstAttribute="top" secondItem="iLf-Bw-U7v" secondAttribute="bottom" constant="30" id="Ytb-6H-O3n"/>
+                            <constraint firstItem="X9n-JK-gRx" firstAttribute="top" secondItem="iLf-Bw-U7v" secondAttribute="bottom" constant="20" id="Ytb-6H-O3n"/>
                             <constraint firstItem="iLf-Bw-U7v" firstAttribute="top" secondItem="T6f-oP-dRs" secondAttribute="bottom" id="aMp-31-ffP"/>
                             <constraint firstItem="X9n-JK-gRx" firstAttribute="leading" secondItem="I8G-vt-OiK" secondAttribute="leading" id="d7u-00-8us"/>
                             <constraint firstItem="dzg-8m-xzY" firstAttribute="leading" secondItem="I8G-vt-OiK" secondAttribute="leading" constant="20" id="hSN-xD-ZCe"/>
@@ -378,6 +402,15 @@
                             <constraint firstItem="iLf-Bw-U7v" firstAttribute="trailing" secondItem="I8G-vt-OiK" secondAttribute="trailingMargin" id="xqt-kK-acg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="colorOption1" destination="EvN-hc-qZ2" id="498-TP-Ea7"/>
+                        <outlet property="colorOption2" destination="Ssb-ug-vxR" id="P7E-fO-SJl"/>
+                        <outlet property="colorOption3" destination="SGy-CC-yiE" id="Ujx-nj-ayy"/>
+                        <outlet property="colorOption4" destination="Eiq-zW-fFy" id="6er-q2-cRs"/>
+                        <outlet property="colorOption5" destination="1rf-6Y-21G" id="zLk-Ua-pCm"/>
+                        <outlet property="view1" destination="T6f-oP-dRs" id="Jsr-gX-teY"/>
+                        <outlet property="view2" destination="X9n-JK-gRx" id="we5-29-nw9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="au9-uO-naL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -428,7 +461,7 @@
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h6q-VC-Dck">
                                         <rect key="frame" x="20" y="94" width="794" height="6"/>
-                                        <color key="backgroundColor" red="0.39866553932934279" green="0.65402074018042466" blue="0.94195353229238576" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="6" id="hxS-E1-1Zh"/>
                                         </constraints>
@@ -944,7 +977,7 @@
                                                         <color key="value" red="0.30408036710000003" green="0.49091345069999998" blue="0.70246273280000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="0.40000000000000002"/>
+                                                        <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="0.0"/>
@@ -1014,7 +1047,7 @@
                                                         <color key="value" red="0.30408036710000003" green="0.49091345069999998" blue="0.70246273280000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="0.40000000000000002"/>
+                                                        <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="0.0"/>
@@ -1062,7 +1095,11 @@
                     <tabBarItem key="tabBarItem" title="Info" id="fA9-qb-scU"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="cameraButton" destination="V3i-Tc-Q6w" id="m07-xn-fxk"/>
+                        <outlet property="stackView" destination="o0e-aL-uxx" id="lfn-wC-uAU"/>
                         <outlet property="treeImageView" destination="V35-uG-aq4" id="2p1-gC-mOE"/>
+                        <outlet property="view1" destination="fNI-f9-prl" id="MKL-ho-Br5"/>
+                        <outlet property="view2" destination="hsX-uV-gCb" id="Iac-qA-bEh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="np1-mb-6r8" userLabel="First Responder" sceneMemberID="firstResponder"/>
