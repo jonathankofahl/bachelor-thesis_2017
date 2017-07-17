@@ -135,11 +135,11 @@
 		12F688691EEE83CC0057C49A /* BA_JonathanKofahl */ = {
 			isa = PBXGroup;
 			children = (
+				12F688741EEE83CC0057C49A /* Assets.xcassets */,
 				12F6886A1EEE83CC0057C49A /* AppDelegate.swift */,
 				12F688AF1EEE9F490057C49A /* ExtensionCALayer.swift */,
 				12F6886E1EEE83CC0057C49A /* Main.storyboard */,
 				12F688761EEE83CC0057C49A /* LaunchScreen.storyboard */,
-				12F688741EEE83CC0057C49A /* Assets.xcassets */,
 				12F688791EEE83CC0057C49A /* Info.plist */,
 				12F688711EEE83CC0057C49A /* BA_JonathanKofahl.xcdatamodeld */,
 				124D1A951EFFEEF4005CCD1E /* Strings Content */,

@@ -17,14 +17,81 @@
     "crown2" = "Astungswunden";
     "crown3" = "Fehlentwicklungen Krone";
     "crown4" = "Höhlungen, Morschungen";
+    "crown5" = "Baumfressender Bewuchs";
+    "crown6" = "Kappungstellen";
+    "crown7" = "Rindenschäden";
+    "crown8" = "Totholzbildung";
+    "crown9" = "Zwiesel";
+    "crown10" = "Astrisse";
+    "crown11" = "Unglücksbalken";
+    "crown12" = "Ausladende,überlange Äste";
+    "crown13" = "Äste im Lichtraumprofil";
+    "crown14" = "Äste in Oberleitungen";
+    "crown15" = "Äste im Lochtraumprofil";
+    "crown16" = "Baumsicherungen";
+    "crown17" = "Haltesicherung";
+    "crown18" = "Verstrebung/Verbolzung";
+    "crown19" = "Bodenanker, Stütze";
+    "crown20" = "dynamische KS";
+    "crown21" = "statische KS";
+    "crown22" = "statische KS Gewindestange";
+    "crown23" = "";
+    "crown24" = "";
+    "crown25" = "";
+    "crown26" = "";
+    "crown27" = "";
+    "crown28" = "";
+    "crown29" = "";
+
 
 // MARK: - TribeViewController
 
-    "tribe1" = "";
+    "tribe1" = "Anfahrschäden";
+    "tribe2" = "Astungen/Verletzungen";
+    "tribe3" = "Höhlungen / Morschungen";
+    "tribe4" = "Baumfremder Bewuchs";
+    "tribe5" = "Fäulen";
+    "tribe6" = "Schrägstand";
+    "tribe7" = "Stammaustriebe";
+    "tribe8" = "Zwiesel";
+    "tribe9" = "Risse";
+    "tribe10" = "Zwiselriss /-morschung";
+    "tribe11" = "Rindenschäden";
+    "tribe12" = "abplatzende Rinde";
+    "tribe13" = "abgestorbene Rinde";
+    "tribe14" = "Nekrosen";
+    "tribe15" = "Schadinsketen";
+    "tribe16" = "(z. B. Borhmehl)";
+    "tribe17" = "Wuchsanomalien";
+    "tribe18" = "Drehwuchs";
+    "tribe19" = "Rippen/Einbuchtugen";
+    "tribe20" = "Reaktionsholz";
+    "tribe21" = "Zuwachsstreifen";
+    "tribe22" = "Reperaturanbauten";
+    "tribe23" = "Überwakkungswulst";
+    "tribe24" = "Unrundigkeit";
+    "tribe25" = "Säbelwuchs";
+    "tribe26" = "Flaschenbauch";
+    "tribe27" = "Beulen";
 
 // MARK: - RootViewController
 
-    "root1" = "";
+    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
+    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
+    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
+    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
+    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
+    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
+    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
+    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
+    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
+    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
+    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
+    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
+    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
+    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
+    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
+
 
 // MARK: - EnviromentViewController
 

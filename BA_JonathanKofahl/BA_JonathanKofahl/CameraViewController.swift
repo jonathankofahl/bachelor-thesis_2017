@@ -17,7 +17,8 @@ class CameraViewController: UIViewController {
     
     @IBOutlet weak var cameraScreen: UIImageView!
     @IBOutlet weak var takePhotoButton: UIButton!
-   
+    @IBOutlet weak var buttonView: UIView!
+    
     let captureSession = AVCaptureSession()
     let finalImage = AVCaptureStillImageOutput()
     
@@ -29,6 +30,8 @@ class CameraViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Configure the takePhotoButton
         
         // Set Quality of Session to High
         captureSession.sessionPreset = AVCaptureSessionPresetHigh
@@ -84,12 +87,28 @@ class CameraViewController: UIViewController {
         previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
     
         self.view.layer.addSublayer(previewLayer)
-        previewLayer.frame = self.view.layer.frame
+        previewLayer.frame = self.cameraScreen.frame
         captureSession.startRunning()
         
         self.view.addSubview(cameraScreen)
-        self.view.addSubview(takePhotoButton)
-        
+        self.view.addSubview(buttonView)
+        self.buttonView.addSubview(takePhotoButton)
+
     }
 
+    @IBAction func changeButtonImage(_ sender: UIButton) {
+        if sender.tag == 0 {
+            takePhotoButton.setImage(UIImage(named: "cameraButton_clicked"), for: UIControlState.normal)
+            sender.tag = 1
+            print("black")
+        } else {
+          sender.setImage(UIImage(named: "CameraButton_normal"), for: UIControlState.normal)
+            sender.tag = 0
+            print("grey")
+
+        }
+        
+    }
+    
+    
 }

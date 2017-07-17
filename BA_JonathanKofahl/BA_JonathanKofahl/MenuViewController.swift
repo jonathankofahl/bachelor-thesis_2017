@@ -19,7 +19,10 @@ class MenuViewController: UIViewController {
     //MARK: - Methods
     
     override func viewWillAppear(_ animated: Bool) {
-        view1.backgroundColor = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
+        if defaults.value(forKey: "appColor") != nil {
+            view1.backgroundColor = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
+
+        }
     }
 
     override func viewDidLoad() {

@@ -29,8 +29,11 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        view1.backgroundColor = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
-        view2.backgroundColor = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
+        if (defaults.value(forKey: "appColor") != nil) {
+            view1.backgroundColor = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
+            view2.backgroundColor = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,22 +49,22 @@ class SettingsViewController: UIViewController {
         colorOption4.borderWidth = 0
         colorOption5.borderWidth = 0
 
-        sender.borderWidth = 1
-        sender.borderColor = UIColor.black
+       //  sender.borderWidth = 1
+       //  sender.borderColor = UIColor.black
         
         switch sender.tag {
         case 1:
-            defaults.set("#4E7DB3", forKey: "appColor")
+            defaults.set("#4C4C4C", forKey: "appColor")
         case 2:
-            defaults.set("#8FD1E9", forKey: "appColor")
+            defaults.set("#00B079", forKey: "appColor")
         case 3:
-            defaults.set("#27CEA6", forKey: "appColor")
+            defaults.set("#4E7DB3", forKey: "appColor")
         case 4:
-            defaults.set("#FFB364", forKey: "appColor")
+            defaults.set("#EEB109", forKey: "appColor")
         case 5:
-            defaults.set("#CE675D", forKey: "appColor")
+            defaults.set("#B85D55", forKey: "appColor")
         default:
-            defaults.set("#000000", forKey: "appColor")
+            defaults.set("#4E7DB3", forKey: "appColor")
         }
         
         view1.backgroundColor = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
