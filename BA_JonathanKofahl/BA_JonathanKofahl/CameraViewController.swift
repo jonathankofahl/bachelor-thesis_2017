@@ -98,7 +98,7 @@ class CameraViewController: UIViewController {
 
     @IBAction func changeButtonImage(_ sender: UIButton) {
         if sender.tag == 0 {
-            takePhotoButton.setImage(UIImage(named: "cameraButton_clicked"), for: UIControlState.normal)
+            sender.setImage(UIImage(named: "cameraButton_clicked"), for: UIControlState.normal)
             sender.tag = 1
             print("black")
         } else {

@@ -4,7 +4,7 @@
 
   Created by Jonathan Kofahl on 25.06.17.
 
-  in this File we save the main part if all the Strings that are used in the app, except those that are hard-coded into the Storyboard. The Filename is the default name for the Localatzation File in iOS.
+  in this File we save the main part of all the Strings that are used in the app, except those that are hard-coded into the Storyboard. The Filename is the default name for the Localatzation File in iOS.
 */
 
 
@@ -35,13 +35,6 @@
     "crown20" = "dynamische KS";
     "crown21" = "statische KS";
     "crown22" = "statische KS Gewindestange";
-    "crown23" = "";
-    "crown24" = "";
-    "crown25" = "";
-    "crown26" = "";
-    "crown27" = "";
-    "crown28" = "";
-    "crown29" = "";
 
 
 // MARK: - TribeViewController
@@ -77,28 +70,42 @@
 // MARK: - RootViewController
 
     "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
-    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
-    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
-    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
-    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
-    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
-    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
-    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
-    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
-    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
-    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
-    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
-    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
-    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
-    "root1" = "Bodenaufwölbungen/ -risse /-auffüllungen";
-
+    "root2" = "Höhlungen";
+    "root3" = "Risse";
+    "root4" = "Stammfußverbreiterung";
+    "root5" = "statisch wichtige Wurzeln gekappt, Bauschäden";
 
 // MARK: - EnviromentViewController
 
-    "enviroment1" = "";
+    "enviroment1" = "Baugruben, -graben";
+    "enviroment2" = "Bodenauf- oder -abtrag";
+    "enviroment3" = "Bodenverdichtung";
+    "enviroment4" = "Bodenversiegelung";
+    "enviroment5" = "Freistellung";
+    "enviroment6" = "Grundwasserabsenkung";
 
 // MARK: - CareViewController
 
-    "care1" = "";
-
-
+    "care1" = "Totholzbeseitigung";
+    "care2" = "Lichtraumprofilschnitt";
+    "care3" = "Leitung freischneiden";
+    "care4" = "Stamm-/Stockaustriebe";
+    "care5" = "Fällung";
+    "care6" = "Kroneneinkürzung 10%";
+    "care7" = "Kroneneinkürzung 20%";
+    "care8" = "Kronensicherungsschnitt";
+    "care9" = "Kronenteileinkürzung";
+    "care10" = "Dynamische Kronensicherung";
+    "care11" = "Statische Kronensicherung";
+    "care12" = "Bodenanker/Stütze";
+    "care13" = "Verbolzung Risse";
+    "care14" = "Erziehungs-/Aufbauschnitt";
+    "care15" = "Kronenpflege";
+    "care16" = "Kronenauslichtung";
+    "care17" = "Kronenregeneration";
+    "care18" = "BNachbehandlung Kappung";
+    "care19" = "Kopfbaumschnitt/Formschnitt";
+    "care20" = "Wundbehandlung";
+    "care21" = "Nachschnitt/Behandl. Wurzeln";
+    "care22" = "Wurzelvorhang";
+    "care23" = "Standortverbesserung";
