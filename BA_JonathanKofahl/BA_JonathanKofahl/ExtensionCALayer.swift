@@ -4,6 +4,7 @@
 //
 //  Created by Jonathan Kofahl on 12.06.17.
 //
+// https://stackoverflow.com/questions/14792238/uiviews-border-color-in-interface-builder-doesnt-work
 //
 
 import UIKit

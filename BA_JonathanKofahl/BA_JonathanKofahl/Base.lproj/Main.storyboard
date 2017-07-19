@@ -146,7 +146,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="eL1-vd-pWG" secondAttribute="trailing" constant="71" id="4Ek-xV-0Xj"/>
                             <constraint firstItem="YUT-a0-gOo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="71" id="8Nv-CJ-SWI"/>
@@ -481,7 +481,7 @@
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h6q-VC-Dck">
                                         <rect key="frame" x="20" y="94" width="794" height="6"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="6" id="hxS-E1-1Zh"/>
                                         </constraints>
@@ -498,7 +498,7 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
+                                                <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -545,6 +545,11 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                                <connections>
+                                                    <action selector="returnClicked:" destination="Fnq-dR-8G0" eventType="primaryActionTriggered" id="Hgq-Qy-Hny"/>
+                                                    <outlet property="delegate" destination="Fnq-dR-8G0" id="IEX-4j-f2G"/>
+                                                    <outlet property="nextField" destination="KZT-iW-L6l" id="ijG-2M-8F1"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -594,6 +599,11 @@
                                                         <color key="value" red="0.39866553929999998" green="0.65402074020000001" blue="0.94195353230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="returnClicked:" destination="Fnq-dR-8G0" eventType="primaryActionTriggered" id="i57-ti-Pwb"/>
+                                                    <outlet property="delegate" destination="Fnq-dR-8G0" id="ek0-6M-BVD"/>
+                                                    <outlet property="nextField" destination="fPf-6X-pDi" id="V1H-o9-6q0"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -643,6 +653,11 @@
                                                         <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="returnClicked:" destination="Fnq-dR-8G0" eventType="primaryActionTriggered" id="YRq-vq-NGX"/>
+                                                    <outlet property="delegate" destination="Fnq-dR-8G0" id="QGQ-Hn-crA"/>
+                                                    <outlet property="nextField" destination="njx-jU-0fF" id="Cho-nv-iRw"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -679,6 +694,11 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                <connections>
+                                                    <action selector="returnClicked:" destination="Fnq-dR-8G0" eventType="primaryActionTriggered" id="Wxz-K9-Fhu"/>
+                                                    <outlet property="delegate" destination="Fnq-dR-8G0" id="yPW-2V-AkK"/>
+                                                    <outlet property="nextField" destination="zUV-pZ-chg" id="Gwj-3v-DQa"/>
+                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kontrollintervall:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afa-EH-PwI">
                                                 <rect key="frame" x="18" y="10" width="127.5" height="30"/>
@@ -722,6 +742,11 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                                <connections>
+                                                    <action selector="returnClicked:" destination="Fnq-dR-8G0" eventType="primaryActionTriggered" id="uIg-cg-TqS"/>
+                                                    <outlet property="delegate" destination="Fnq-dR-8G0" id="LEb-3F-Hv6"/>
+                                                    <outlet property="nextField" destination="Ffb-qN-hcf" id="uV2-HN-KcK"/>
+                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stammumfang:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35M-30-5eY">
                                                 <rect key="frame" x="18" y="12" width="120" height="30"/>
@@ -765,6 +790,11 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                                <connections>
+                                                    <action selector="returnClicked:" destination="Fnq-dR-8G0" eventType="primaryActionTriggered" id="h3h-d7-UfC"/>
+                                                    <outlet property="delegate" destination="Fnq-dR-8G0" id="Sdh-SY-7jE"/>
+                                                    <outlet property="nextField" destination="g6D-ld-gfY" id="iwx-7J-WdZ"/>
+                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Baumhöhe:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oT0-60-RNx">
                                                 <rect key="frame" x="18" y="10" width="222" height="30"/>
@@ -809,6 +839,11 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                                <connections>
+                                                    <action selector="returnClicked:" destination="Fnq-dR-8G0" eventType="primaryActionTriggered" id="khZ-f1-i3R"/>
+                                                    <outlet property="delegate" destination="Fnq-dR-8G0" id="Q7O-w2-1oS"/>
+                                                    <outlet property="nextField" destination="0Gd-bY-NoN" id="M16-Ly-Tht"/>
+                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Höhe Kronenansatz:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgf-Dr-Rop">
                                                 <rect key="frame" x="18" y="10" width="159.5" height="30"/>
@@ -852,6 +887,10 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                                <connections>
+                                                    <action selector="dismissKeyboard:" destination="Fnq-dR-8G0" eventType="primaryActionTriggered" id="RHR-85-6Wk"/>
+                                                    <outlet property="delegate" destination="Fnq-dR-8G0" id="E4c-fy-qeC"/>
+                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kronenbreite:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bds-CD-Ixu">
                                                 <rect key="frame" x="18" y="10" width="107" height="30"/>
@@ -954,6 +993,11 @@
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                                        <connections>
+                                                            <action selector="returnClicked:" destination="Fnq-dR-8G0" eventType="primaryActionTriggered" id="Zj3-kj-R7r"/>
+                                                            <outlet property="delegate" destination="Fnq-dR-8G0" id="Vyu-H9-soV"/>
+                                                            <outlet property="nextField" destination="NbZ-xN-1eT" id="RDu-ql-nYY"/>
+                                                        </connections>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pflichtfeld" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Spq-ml-uhJ">
                                                         <rect key="frame" x="150" y="10" width="303" height="30"/>
@@ -964,6 +1008,11 @@
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                                        <connections>
+                                                            <action selector="returnClicked:" destination="Fnq-dR-8G0" eventType="primaryActionTriggered" id="H1t-Yt-lNi"/>
+                                                            <outlet property="delegate" destination="Fnq-dR-8G0" id="X7Z-cw-MU3"/>
+                                                            <outlet property="nextField" destination="NbZ-xN-1eT" id="2tV-S6-n4F"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datum:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ao6-Ik-nHH">
                                                         <rect key="frame" x="492" y="10" width="69" height="30"/>
@@ -1027,6 +1076,11 @@
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                                        <connections>
+                                                            <action selector="returnClicked:" destination="Fnq-dR-8G0" eventType="primaryActionTriggered" id="qoQ-hi-E5q"/>
+                                                            <outlet property="delegate" destination="Fnq-dR-8G0" id="STh-dH-2Hj"/>
+                                                            <outlet property="nextField" destination="g9T-Cb-fi4" id="31k-e6-KtB"/>
+                                                        </connections>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NbZ-xN-1eT">
                                                         <rect key="frame" x="150" y="10" width="305" height="30"/>
@@ -1037,6 +1091,11 @@
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                                        <connections>
+                                                            <action selector="returnClicked:" destination="Fnq-dR-8G0" eventType="primaryActionTriggered" id="onj-H1-UTx"/>
+                                                            <outlet property="delegate" destination="Fnq-dR-8G0" id="7xu-GM-hVP"/>
+                                                            <outlet property="nextField" destination="r1U-a1-nWh" id="QYa-2b-i0d"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Projekt:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtj-Pi-BkJ">
                                                         <rect key="frame" x="492" y="10" width="69" height="30"/>
@@ -1116,6 +1175,18 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="cameraButton" destination="V3i-Tc-Q6w" id="m07-xn-fxk"/>
+                        <outlet property="dateTextField" destination="H2J-wo-qrW" id="Pkg-ed-eil"/>
+                        <outlet property="field1" destination="Spq-ml-uhJ" id="ssr-uF-9zD"/>
+                        <outlet property="field10" destination="g6D-ld-gfY" id="iBv-iR-KFk"/>
+                        <outlet property="field11" destination="0Gd-bY-NoN" id="VTi-kM-PLK"/>
+                        <outlet property="field2" destination="NbZ-xN-1eT" id="fKT-jK-hQs"/>
+                        <outlet property="field3" destination="r1U-a1-nWh" id="YQ8-nN-CvD"/>
+                        <outlet property="field4" destination="g9T-Cb-fi4" id="JSB-k6-GdH"/>
+                        <outlet property="field5" destination="KZT-iW-L6l" id="qvs-tD-8Ub"/>
+                        <outlet property="field6" destination="fPf-6X-pDi" id="nJU-2J-bYU"/>
+                        <outlet property="field7" destination="njx-jU-0fF" id="iI4-VN-CrP"/>
+                        <outlet property="field8" destination="zUV-pZ-chg" id="vlO-0e-Qs0"/>
+                        <outlet property="field9" destination="Ffb-qN-hcf" id="zuf-Cc-aQ5"/>
                         <outlet property="stackView" destination="o0e-aL-uxx" id="lfn-wC-uAU"/>
                         <outlet property="treeImageView" destination="V35-uG-aq4" id="2p1-gC-mOE"/>
                         <outlet property="view1" destination="fNI-f9-prl" id="MKL-ho-Br5"/>
