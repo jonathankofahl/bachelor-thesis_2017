@@ -32,6 +32,7 @@ class CameraViewController: UIViewController {
         super.viewDidLoad()
         
         // Configure the takePhotoButton
+        takePhotoButton.imageView?.layer.minificationFilter = kCAFilterTrilinear
         
         // Set Quality of Session to High
         captureSession.sessionPreset = AVCaptureSessionPresetHigh

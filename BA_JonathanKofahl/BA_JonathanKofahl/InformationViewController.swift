@@ -12,6 +12,8 @@ class InformationViewController: UIViewController {
     
     //MARK: - Variables & Outlets
 
+    @IBOutlet weak var stackViewTopConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var treeImageView: UIImageView!
     @IBOutlet weak var view1: UIView!
     @IBOutlet weak var view2: UIView!
@@ -34,11 +36,15 @@ class InformationViewController: UIViewController {
     
     let defaults = UserDefaults.standard
     
+    var topConstant : CGFloat!
+    
     //MARK: - Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        topConstant = stackViewTopConstraint.constant
         
         // get the current date and time
         let currentDateTime = Date()
@@ -95,15 +101,39 @@ class InformationViewController: UIViewController {
         return true
     }
     
-    @IBAction func returnClicked(_ sender: Any) {
+    @IBAction func returnClicked(_ sender: UITextField) {
         //  print("Returnclicked")
-        _ = textFieldShouldReturn(textField: sender as! UITextField)
-        
+        _ = textFieldShouldReturn(textField: sender)
         // save Data to database
+        
+        
+        
     }
+    
+    // extra method for the last textfield. need to change the position of the textfield, otherwise it would be overlayed by the keyboard
+    @IBAction func textEditingBegin(_ sender: UITextField) {
+        if sender == field11 {
+            UIView.animate(withDuration: 1) {
+                self.stackViewTopConstraint.constant -= 50
+            }
+        } else {
+            resetConstraint(field1)
+        }
+    }
+    
+    @IBAction func resetConstraint(_ sender: Any) {
+        self.stackViewTopConstraint.constant = self.topConstant
+    }
+    
     
     @IBAction func dismissKeyboard(_ sender: UITextField) {
         sender.endEditing(true)
+        if sender == field11 {
+            UIView.animate(withDuration: 1) {
+                self.stackViewTopConstraint.constant += 50
+            }
+        }
+ 
     }
 
 }
