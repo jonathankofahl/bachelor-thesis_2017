@@ -96,7 +96,15 @@ class InformationViewController: UIViewController {
     }
     
     // Help Methods to tab to the next TextView
+    
+    var constrainChanged = false
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        if textField.nextField == field11 {
+             self.stackViewTopConstraint.constant -= 50
+            constrainChanged = true
+        }
         textField.nextField?.becomeFirstResponder()
         return true
     }
@@ -114,7 +122,11 @@ class InformationViewController: UIViewController {
     @IBAction func textEditingBegin(_ sender: UITextField) {
         if sender == field11 {
             UIView.animate(withDuration: 1) {
-                self.stackViewTopConstraint.constant -= 50
+                if self.constrainChanged {
+                   // do nothing, already changed 
+                } else {
+                    self.stackView.frame.origin.y -= 50
+                }
             }
         } else {
             resetConstraint(field1)
@@ -130,7 +142,12 @@ class InformationViewController: UIViewController {
         sender.endEditing(true)
         if sender == field11 {
             UIView.animate(withDuration: 1) {
-                self.stackViewTopConstraint.constant += 50
+                if self.constrainChanged {
+                    self.stackViewTopConstraint.constant += 50
+                    self.constrainChanged = false
+                } else {
+                     self.stackView.frame.origin.y += 50
+                }
             }
         }
  
