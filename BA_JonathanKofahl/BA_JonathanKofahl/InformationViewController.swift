@@ -135,6 +135,28 @@ class InformationViewController: UIViewController {
         }
  
     }
+    
+    
+    @IBAction func cancelNewTree(_ sender: UIButton) {
+        alertFunc(sender: sender, parentController: self)
+    }
+    // Source: http://nshipster.com/uialertcontroller/
+    func alertFunc(sender: Any, parentController: UIViewController) -> Void {
+        let alertController = UIAlertController(title: "Kontrolle Abbrechen", message: "Wollen Sie die Kontrolle wirklich abbrechen? Alle Eintragungen zu diesem Baum gehen verloren.", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Weiter kontrollieren", style: .cancel) { action in
+        }
+        alertController.addAction(cancelAction)
+        
+        let exitAction = UIAlertAction(title: "Baum verwerfen", style: .destructive) { action in
+            parentController.performSegue(withIdentifier: "showMenu", sender: self)
+        }
+        alertController.addAction(exitAction)
+        
+        self.present(alertController, animated: true) {
+        }
+    }
+    
 
 }
 

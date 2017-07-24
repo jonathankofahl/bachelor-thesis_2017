@@ -44,4 +44,9 @@ class TribeViewController: UIViewController {
             self.containerView.swapViewControllers()
     }
     
+    @IBAction func cancelNewTree(_ sender: Any) {
+        let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
+        infoController.alertFunc(sender: sender, parentController: self)
+    }
+    
 }
