@@ -34,6 +34,9 @@ class InformationViewController: UIViewController {
     
     @IBOutlet weak var dateTextField: UITextField!
     
+    
+    
+    
     let defaults = UserDefaults.standard
     
     var topConstant : CGFloat!
@@ -78,6 +81,7 @@ class InformationViewController: UIViewController {
         self.field7.nextField = self.field8
         self.field8.nextField = self.field9
         self.field9.nextField = self.field10
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -98,12 +102,14 @@ class InformationViewController: UIViewController {
     // Help Methods to tab to the next TextView
     
     var constrainChanged = false
+    var resetFrame = false
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
         if textField.nextField == field11 {
              self.stackViewTopConstraint.constant -= 50
             constrainChanged = true
+            print("true")
         }
         textField.nextField?.becomeFirstResponder()
         return true
@@ -113,13 +119,12 @@ class InformationViewController: UIViewController {
         //  print("Returnclicked")
         _ = textFieldShouldReturn(textField: sender)
         // save Data to database
-        
-        
-        
     }
     
     // extra method for the last textfield. need to change the position of the textfield, otherwise it would be overlayed by the keyboard
     @IBAction func textEditingBegin(_ sender: UITextField) {
+        self.resetFrame = false
+
         if sender == field11 {
             UIView.animate(withDuration: 1) {
                 if self.constrainChanged {
@@ -142,12 +147,21 @@ class InformationViewController: UIViewController {
         sender.endEditing(true)
         if sender == field11 {
             UIView.animate(withDuration: 1) {
-                if self.constrainChanged {
+                
+                
+                if(self.constrainChanged == true){
                     self.stackViewTopConstraint.constant += 50
                     self.constrainChanged = false
+                    print("false")
                 } else {
+                    if(self.resetFrame == false){
                      self.stackView.frame.origin.y += 50
+                        self.resetFrame = true
+                        print("second")
+
+                    }
                 }
+                
             }
         }
  

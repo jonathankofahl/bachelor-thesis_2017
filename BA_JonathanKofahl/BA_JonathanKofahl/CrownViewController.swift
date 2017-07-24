@@ -21,6 +21,7 @@ class CrownViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         self.containerView.initialize()
+    
     }
     
     override func didReceiveMemoryWarning() {
@@ -48,8 +49,5 @@ class CrownViewController: UIViewController {
         let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
         infoController.alertFunc(sender: sender, parentController: self)
     }
-    
-
-    
     
 }

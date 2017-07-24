@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		124D1A941EFFEEED005CCD1E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 124D1A931EFFEEED005CCD1E /* Localizable.strings */; };
 		124D1A971EFFFAB1005CCD1E /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124D1A961EFFFAB1005CCD1E /* QuestionCell.xib */; };
+		12A911F41F2627A40021F07B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A911F31F2627A40021F07B /* TableViewController.swift */; };
+		12A911F61F2645750021F07B /* firstCrownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A911F51F2645750021F07B /* firstCrownViewController.swift */; };
+		12B501BB1F26262C007381BC /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B501BA1F26262C007381BC /* QuestionCell.swift */; };
 		12F6886B1EEE83CC0057C49A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F6886A1EEE83CC0057C49A /* AppDelegate.swift */; };
 		12F688701EEE83CC0057C49A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12F6886E1EEE83CC0057C49A /* Main.storyboard */; };
 		12F688731EEE83CC0057C49A /* BA_JonathanKofahl.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12F688711EEE83CC0057C49A /* BA_JonathanKofahl.xcdatamodeld */; };
@@ -51,6 +54,9 @@
 /* Begin PBXFileReference section */
 		124D1A931EFFEEED005CCD1E /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		124D1A961EFFFAB1005CCD1E /* QuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
+		12A911F31F2627A40021F07B /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		12A911F51F2645750021F07B /* firstCrownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = firstCrownViewController.swift; sourceTree = "<group>"; };
+		12B501BA1F26262C007381BC /* QuestionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
 		12F688671EEE83CC0057C49A /* BA_JonathanKofahl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BA_JonathanKofahl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12F6886A1EEE83CC0057C49A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12F6886F1EEE83CC0057C49A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -174,6 +180,9 @@
 				12F688A61EEE8A0E0057C49A /* TreeDatabaseViewController.swift */,
 				12F688AE1EEE8B250057C49A /* inspect ViewControllers */,
 				12F688F71EF568D30057C49A /* CameraViewController.swift */,
+				124D1A961EFFFAB1005CCD1E /* QuestionCell.xib */,
+				12B501BA1F26262C007381BC /* QuestionCell.swift */,
+				12A911F31F2627A40021F07B /* TableViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -184,10 +193,10 @@
 				12F688AC1EEE8B100057C49A /* InformationViewController.swift */,
 				12F688A01EEE89370057C49A /* CrownViewController.swift */,
 				12F688A21EEE89640057C49A /* TribeViewController.swift */,
+				12A911F51F2645750021F07B /* firstCrownViewController.swift */,
 				12F688A41EEE89760057C49A /* RootViewController.swift */,
 				12F688A81EEE8A570057C49A /* EnvironmentViewController.swift */,
 				12F688AA1EEE8ACC0057C49A /* CareViewController.swift */,
-				124D1A961EFFFAB1005CCD1E /* QuestionCell.xib */,
 				12F688B11EF017CE0057C49A /* SplitContainerViewControllers */,
 			);
 			name = "inspect ViewControllers";
@@ -342,9 +351,12 @@
 			files = (
 				12F688A91EEE8A570057C49A /* EnvironmentViewController.swift in Sources */,
 				12F688AD1EEE8B100057C49A /* InformationViewController.swift in Sources */,
+				12A911F41F2627A40021F07B /* TableViewController.swift in Sources */,
 				12F688B31EF017EC0057C49A /* ContainerViewController.swift in Sources */,
 				12F688B51EF02A270057C49A /* EmptySegue.swift in Sources */,
 				12F688A31EEE89640057C49A /* TribeViewController.swift in Sources */,
+				12B501BB1F26262C007381BC /* QuestionCell.swift in Sources */,
+				12A911F61F2645750021F07B /* firstCrownViewController.swift in Sources */,
 				12F6886B1EEE83CC0057C49A /* AppDelegate.swift in Sources */,
 				12F688731EEE83CC0057C49A /* BA_JonathanKofahl.xcdatamodeld in Sources */,
 				12F6889F1EEE88BD0057C49A /* SettingsViewController.swift in Sources */,

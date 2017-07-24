@@ -20,12 +20,30 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="river_photo" translatesAutoresizingMaskIntoConstraints="NO" id="eSH-V6-P9x">
+                                <rect key="frame" x="286" y="427" width="262" height="259"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="262" id="X0Z-gx-Wkd"/>
+                                    <constraint firstAttribute="height" constant="259" id="gmU-Eh-nJN"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eSH-V6-P9x" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4an-c9-zof"/>
+                            <constraint firstItem="eSH-V6-P9x" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6ZV-6W-fS8"/>
+                            <constraint firstItem="eSH-V6-P9x" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="XY4-Ik-0hT"/>
+                            <constraint firstItem="eSH-V6-P9x" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="iMy-nz-rP3"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.517985611510795" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="river_photo" width="1591" height="1575"/>
+    </resources>
 </document>

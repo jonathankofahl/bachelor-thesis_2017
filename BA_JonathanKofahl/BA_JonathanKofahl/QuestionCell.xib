@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" restorationIdentifier="cell" id="iN0-l3-epB" customClass="QuestionCell" customModule="BA_JonathanKofahl" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="834" height="43"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -53,6 +53,9 @@
                 <constraint firstAttribute="bottom" secondItem="0hM-vj-wxz" secondAttribute="bottom" constant="11" id="zwg-yo-hUc"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="question" destination="0hM-vj-wxz" id="XAA-SV-4TV"/>
+            </connections>
             <point key="canvasLocation" x="34" y="-303.5"/>
         </view>
     </objects>
