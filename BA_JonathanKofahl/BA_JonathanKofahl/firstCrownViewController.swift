@@ -4,6 +4,8 @@
 //
 //  Created by Jonathan Kofahl on 24.07.17.
 //
+// http://studyswift.blogspot.de/2015/08/registernib-create-uitableview.html  // not longer used, now withput Nib, direct prototype cell
+// https://www.ralfebert.de/tutorials/ios-swift-uitableviewcontroller/custom-cells/
 //
 
 import UIKit
@@ -12,16 +14,29 @@ class firstCrownViewController: UIViewController, UITableViewDelegate, UITableVi
 
     //MARK: - Variables & Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView1: UITableView!
+    
+    // Seperated Arrays for the two Tables
+    var tableCriteria : [String]?
+    var tableCriteria1 : [String]?
 
     //MARK: - Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //MARK: - TableView init
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        self.tableView.reloadData()
-        tableView.register(UINib(nibName: "QuestionCell", bundle: nil), forCellReuseIdentifier: "cell")
+        tableCriteria = []
+        tableCriteria1 = []
+        
+        //MARK: - TableView init -> load strings from Localization.strings file
+        for index in 1...15 {
+            let ressourceName = "crown" + index.description
+            tableCriteria?.append( NSLocalizedString(ressourceName, comment: "") )
+        }
+        for index in 16...21 {
+            let ressourceName = "crown" + index.description
+            tableCriteria1?.append( NSLocalizedString(ressourceName, comment: "") )
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,9 +45,6 @@ class firstCrownViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     // MARK: - TableView Configuration
-    // http://studyswift.blogspot.de/2015/08/registernib-create-uitableview.html
-    var items = ["info1", "info2"]
-    
     // MARK: - Table view data source
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -42,16 +54,24 @@ class firstCrownViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return items.count
+        
+        if tableView == self.tableView {
+            return tableCriteria!.count
+        } else {
+            return tableCriteria1!.count
+        }
+        
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! QuestionCell
-        
-        cell.question.text = NSLocalizedString(items[indexPath.row], comment: "")
+        if tableView == self.tableView {
+            cell.criteria.text = tableCriteria?[indexPath.row]
+        } else {
+            cell.criteria.text = tableCriteria1?[indexPath.row]
+        }
         
         return cell
     }

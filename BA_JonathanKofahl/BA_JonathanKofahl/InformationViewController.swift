@@ -168,6 +168,18 @@ class InformationViewController: UIViewController {
     }
     
     
+    @IBAction func clickedButton(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.3){
+        for item in (sender.superview?.subviews)! {
+            item.backgroundColor = UIColor.clear
+        }
+        sender.backgroundColor = UIColor.init(hexString: "00B079")
+        }
+    }
+    
+    
+    
+    //MARK: - Cancel NewTreeFunction - Used in all VC
     @IBAction func cancelNewTree(_ sender: UIButton) {
         alertFunc(sender: sender, parentController: self)
     }

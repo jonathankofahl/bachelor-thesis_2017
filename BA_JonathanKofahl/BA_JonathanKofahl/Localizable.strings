@@ -8,12 +8,6 @@
 */
 
 
-// MARK: - InformationViewController
-
-    "info1" = "test 1";
-    "info2" = "test 2";
-
-
 // MARK: - CrownViewController
 
     "crown1" = "Astab/-ausbrüche";
@@ -31,13 +25,13 @@
     "crown13" = "Äste im Lichtraumprofil";
     "crown14" = "Äste in Oberleitungen";
     "crown15" = "Äste im Lochtraumprofil";
-    "crown16" = "Baumsicherungen";
-    "crown17" = "Haltesicherung";
-    "crown18" = "Verstrebung/Verbolzung";
-    "crown19" = "Bodenanker, Stütze";
-    "crown20" = "dynamische KS";
-    "crown21" = "statische KS";
-    "crown22" = "statische KS Gewindestange";
+
+    "crown16" = "Haltesicherung";
+    "crown17" = "Verstrebung/Verbolzung";
+    "crown18" = "Bodenanker, Stütze";
+    "crown19" = "dynamische KS";
+    "crown20" = "statische KS";
+    "crown21" = "statische KS Gewindestange";
 
 
 // MARK: - TribeViewController
