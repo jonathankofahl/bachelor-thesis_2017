@@ -1,5 +1,5 @@
 //
-//  QuestionCell.swift
+//  CustomTableViewCell.swift
 //  BA_JonathanKofahl
 //
 //  Created by Jonathan Kofahl on 24.07.17.
@@ -34,8 +34,10 @@ class CustomTableViewCell: UITableViewCell {
             if(sender == sender.superview?.subviews[1]) {
                 sender.backgroundColor = UIColor.init(hexString: "F4605D")
             }
+            if((sender.superview?.subviews.count)! > 2) {
             if(sender == sender.superview?.subviews[2]) {
                 sender.backgroundColor = UIColor.init(hexString: "FFB364")
+            }
             }
         }
     }

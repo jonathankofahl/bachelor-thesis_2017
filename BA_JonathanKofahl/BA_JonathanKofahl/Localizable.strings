@@ -44,25 +44,28 @@
     "tribe6" = "Schrägstand";
     "tribe7" = "Stammaustriebe";
     "tribe8" = "Zwiesel";
-    "tribe9" = "Risse";
-    "tribe10" = "Zwiselriss /-morschung";
-    "tribe11" = "Rindenschäden";
-    "tribe12" = "abplatzende Rinde";
-    "tribe13" = "abgestorbene Rinde";
-    "tribe14" = "Nekrosen";
-    "tribe15" = "Schadinsketen";
-    "tribe16" = "(z. B. Borhmehl)";
+    "tribe9" = "Reaktionsholz";
+
+    "tribe10" = "Risse";
+    "tribe11" = "Zwiselriss /-morschung";
+
+    "tribe12" = "Rindenschäden";
+    "tribe13" = "abplatzende Rinde";
+    "tribe14" = "abgestorbene Rinde";
+    "tribe15" = "Nekrosen";
+    "tribe16" = "Schadinsketen (z. B. Borhmehl)";
     "tribe17" = "Wuchsanomalien";
     "tribe18" = "Drehwuchs";
     "tribe19" = "Rippen/Einbuchtugen";
-    "tribe20" = "Reaktionsholz";
-    "tribe21" = "Zuwachsstreifen";
-    "tribe22" = "Reperaturanbauten";
-    "tribe23" = "Überwakkungswulst";
-    "tribe24" = "Unrundigkeit";
-    "tribe25" = "Säbelwuchs";
-    "tribe26" = "Flaschenbauch";
-    "tribe27" = "Beulen";
+    "tribe20" = "Pilzbefall";
+
+    "tribe22" = "Zuwachsstreifen";
+    "tribe23" = "Reperaturanbauten";
+    "tribe24" = "Überwakkungswulst";
+    "tribe25" = "Unrundigkeit";
+    "tribe26" = "Säbelwuchs";
+    "tribe27" = "Flaschenbauch";
+    "tribe28" = "Beulen";
 
 // MARK: - RootViewController
 
@@ -71,6 +74,13 @@
     "root3" = "Risse";
     "root4" = "Stammfußverbreiterung";
     "root5" = "statisch wichtige Wurzeln gekappt, Bauschäden";
+
+    "root6" = "Adventivwurzeln";
+    "root7" = "Würgewurzeln";
+    "root8" = "Rindenschäden";
+    "root9" = "Stockaustriebe";
+    "root10" = "Wuchsanomalien";
+
 
 // MARK: - EnviromentViewController
 

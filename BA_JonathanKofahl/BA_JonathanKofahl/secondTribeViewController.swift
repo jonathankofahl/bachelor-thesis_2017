@@ -1,14 +1,14 @@
 //
-//  RootViewController.swift
+//  secondTribeViewController.swift
 //  BA_JonathanKofahl
 //
-//  Created by Jonathan Kofahl on 12.06.17.
+//  Created by Jonathan Kofahl on 25.07.17.
 //
 //
 
 import UIKit
 
-class RootViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class secondTribeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - Variables & Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -22,31 +22,25 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         tableCriteria = []
         tableCriteria1 = []
         
         //MARK: - TableView init -> load strings from Localization.strings file
-        for index in 1...5 {
-            let ressourceName = "root" + index.description
+        for index in 12...20 {
+            let ressourceName = "tribe" + index.description
             tableCriteria?.append( NSLocalizedString(ressourceName, comment: "") )
         }
-        for index in 6...10 {
-            let ressourceName = "root" + index.description
+        for index in 22...28 {
+            let ressourceName = "tribe" + index.description
             tableCriteria1?.append( NSLocalizedString(ressourceName, comment: "") )
         }
-
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func cancelNewTree(_ sender: Any) {
-        let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
-        infoController.alertFunc(sender: sender, parentController: self)
     }
     
     // MARK: - TableView Configuration
@@ -81,6 +75,5 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return cell
     }
-
     
 }
