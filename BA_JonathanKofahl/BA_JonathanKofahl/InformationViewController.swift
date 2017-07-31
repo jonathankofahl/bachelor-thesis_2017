@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class InformationViewController: UIViewController {
     
@@ -34,8 +35,7 @@ class InformationViewController: UIViewController {
     
     @IBOutlet weak var dateTextField: UITextField!
     
-    
-    
+    private var managedObjectContext : NSManagedObjectContext!
     
     let defaults = UserDefaults.standard
     
@@ -82,6 +82,12 @@ class InformationViewController: UIViewController {
         self.field8.nextField = self.field9
         self.field9.nextField = self.field10
 
+        
+      /*  let tree = NSEntityDescription.insertNewObject(forEntityName: Tree.entityName,
+                                                         into:managedObjectContext)
+        tree.setValue(2, forKeyPath: "treeNumber")
+        */
+        
     }
     
     override func didReceiveMemoryWarning() {

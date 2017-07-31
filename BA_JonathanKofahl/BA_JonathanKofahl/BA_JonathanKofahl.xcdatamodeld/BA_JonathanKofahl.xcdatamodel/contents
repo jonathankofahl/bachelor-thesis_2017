@@ -1,14 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Baeume" representedClassName="Baeume" syncable="YES" codeGenerationType="class">
-        <attribute name="attribute" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="attribute1" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="attribute2" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="attribute3" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="attribute4" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="attribute5" optional="YES" attributeType="String" syncable="YES"/>
+    <entity name="Place" representedClassName="Place" syncable="YES" codeGenerationType="class"/>
+    <entity name="Tree" representedClassName="Tree" syncable="YES">
+        <attribute name="crown0" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crown1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crown2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crown3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crown4" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crown5" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crown6" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crown7" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crown8" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crown9" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crown10" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crown11" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crown12" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crown13" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crown14" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crown15" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crown16" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crown18" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crown19" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crown20" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crown21" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crown22" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crown23" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crown24" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crown25" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crown26" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="info0" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="info1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="info2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="info3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="info4" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="info5" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="info6" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="info7" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="info8" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="info9" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="info10" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="info11" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="info12" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="info13" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="info14" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="info15" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="treeNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Baeume" positionX="-63" positionY="-27" width="128" height="135"/>
+        <element name="Tree" positionX="-63" positionY="-27" width="128" height="688"/>
+        <element name="Place" positionX="-308" positionY="225" width="128" height="45"/>
     </elements>
 </model>

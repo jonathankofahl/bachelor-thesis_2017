@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1232D4C61F2F854B005F2B63 /* Tree+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1232D4C41F2F854B005F2B63 /* Tree+CoreDataClass.swift */; };
+		1232D4C71F2F854B005F2B63 /* Tree+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1232D4C51F2F854B005F2B63 /* Tree+CoreDataProperties.swift */; };
+		1232D4C91F2F885A005F2B63 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1232D4C81F2F885A005F2B63 /* CoreData.swift */; };
 		124D1A941EFFEEED005CCD1E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 124D1A931EFFEEED005CCD1E /* Localizable.strings */; };
 		12A911F41F2627A40021F07B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A911F31F2627A40021F07B /* TableViewController.swift */; };
 		12A911F61F2645750021F07B /* firstCrownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A911F51F2645750021F07B /* firstCrownViewController.swift */; };
@@ -54,6 +57,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1232D4C41F2F854B005F2B63 /* Tree+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Tree+CoreDataClass.swift"; path = "../Tree+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1232D4C51F2F854B005F2B63 /* Tree+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Tree+CoreDataProperties.swift"; path = "../Tree+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1232D4C81F2F885A005F2B63 /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreData.swift; path = ../CoreData.swift; sourceTree = "<group>"; };
 		124D1A931EFFEEED005CCD1E /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		12A911F31F2627A40021F07B /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		12A911F51F2645750021F07B /* firstCrownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = firstCrownViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +158,9 @@
 				12F688761EEE83CC0057C49A /* LaunchScreen.storyboard */,
 				12F688791EEE83CC0057C49A /* Info.plist */,
 				12F688711EEE83CC0057C49A /* BA_JonathanKofahl.xcdatamodeld */,
+				1232D4C41F2F854B005F2B63 /* Tree+CoreDataClass.swift */,
+				1232D4C51F2F854B005F2B63 /* Tree+CoreDataProperties.swift */,
+				1232D4C81F2F885A005F2B63 /* CoreData.swift */,
 				124D1A951EFFEEF4005CCD1E /* Strings Content */,
 				12F6889B1EEE86C70057C49A /* ViewController */,
 			);
@@ -358,11 +367,14 @@
 				12F688A91EEE8A570057C49A /* EnvironmentViewController.swift in Sources */,
 				12F688AD1EEE8B100057C49A /* InformationViewController.swift in Sources */,
 				12A911F41F2627A40021F07B /* TableViewController.swift in Sources */,
+				1232D4C91F2F885A005F2B63 /* CoreData.swift in Sources */,
 				12F688B31EF017EC0057C49A /* ContainerViewController.swift in Sources */,
 				12B4E86A1F2789610087249F /* secondCrownViewController.swift in Sources */,
 				12F688B51EF02A270057C49A /* EmptySegue.swift in Sources */,
+				1232D4C71F2F854B005F2B63 /* Tree+CoreDataProperties.swift in Sources */,
 				12F688A31EEE89640057C49A /* TribeViewController.swift in Sources */,
 				12B501BB1F26262C007381BC /* CustomTableViewCell.swift in Sources */,
+				1232D4C61F2F854B005F2B63 /* Tree+CoreDataClass.swift in Sources */,
 				12A911F61F2645750021F07B /* firstCrownViewController.swift in Sources */,
 				12F6886B1EEE83CC0057C49A /* AppDelegate.swift in Sources */,
 				12E5C0751F27B2F300844CEC /* firstTribeViewController.swift in Sources */,
