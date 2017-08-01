@@ -93,6 +93,10 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
         let testImage = UIImage(named: "river_photo")
         var imageData = UIImagePNGRepresentation(testImage!)
         
+        if databaseModel.places {
+            <#code#>
+        }
+        
         databaseModel.createTree(number: 0, info0: "Mario", info1: "Birke", info2: "Raduhn", info3: "test", info4: "bob", image: imageData as! NSData)
  
         

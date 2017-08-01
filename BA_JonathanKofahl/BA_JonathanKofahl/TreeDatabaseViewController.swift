@@ -21,8 +21,9 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
-    
     @IBOutlet weak var treeImageView: UIImageView!
+    @IBOutlet weak var detailView: UIView!
+    
     
     // Seperated Arrays for the two Tables
     var tableCriteria : [String]?
@@ -130,6 +131,10 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             cell.criteria.text = tableCriteria1?[indexPath.row]
         }
         */
+        NSLog(databaseModel.trees[0].treeNumber.description)
+        
+        cell.criteria.text = databaseModel.trees[0].treeNumber.description
+        
         return cell
     }
     
@@ -144,6 +149,8 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
         timeLabel.text = databaseModel.trees[0].info1?.description
         categoryLabel.text = databaseModel.trees[0].info2?.description
         treeImageView.image = UIImage.init(data: databaseModel.trees[0].image as! Data)
+        
+        detailView.isHidden = false
         
     }
     
