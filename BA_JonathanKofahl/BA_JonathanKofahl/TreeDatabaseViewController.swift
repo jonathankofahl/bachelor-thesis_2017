@@ -17,6 +17,12 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var tableView1: UITableView!
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var treeNumberLabel: UILabel!
+    @IBOutlet weak var placeLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
+    
+    @IBOutlet weak var treeImageView: UIImageView!
     
     // Seperated Arrays for the two Tables
     var tableCriteria : [String]?
@@ -39,17 +45,18 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        
+        
         tableCriteria = []
         tableCriteria1 = []
         
         //MARK: - TableView init -> load strings from Localization.strings file
-        for index in 1...13 {
-            let ressourceName = "care" + index.description
-            tableCriteria?.append( NSLocalizedString(ressourceName, comment: "") )
+        for tree in databaseModel.trees {
+            tableCriteria1?.append(tree.treeNumber.description)
         }
         for index in 14...23 {
             let ressourceName = "care" + index.description
-            tableCriteria1?.append( NSLocalizedString(ressourceName, comment: "") )
+            tableCriteria?.append( NSLocalizedString(ressourceName, comment: "") )
         }
         
         // MapView
@@ -124,6 +131,20 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
         }
         */
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+        treeNumberLabel.text = databaseModel.trees[0].treeNumber.description
+        placeLabel.text = databaseModel.trees[0].info0?.description
+        timeLabel.text = databaseModel.trees[0].info1?.description
+        categoryLabel.text = databaseModel.trees[0].info2?.description
+        treeImageView.image = UIImage.init(data: databaseModel.trees[0].image as! Data)
+        
     }
     
         //MARK: - MapView

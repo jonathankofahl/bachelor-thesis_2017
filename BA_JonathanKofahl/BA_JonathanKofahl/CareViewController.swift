@@ -82,6 +82,32 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
 
+    //MARK - Save the Tree to the Database and close the Inspections Controllers (Tabbar)
+    
+    @IBAction func saveTree(_ sender: Any) {
+        
+        
+        databaseModel.clear()
+        
+        //https://stackoverflow.com/questions/16685812/how-to-store-an-image-in-core-data
+        let testImage = UIImage(named: "river_photo")
+        var imageData = UIImagePNGRepresentation(testImage!)
+        
+        databaseModel.createTree(number: 0, info0: "Mario", info1: "Birke", info2: "Raduhn", info3: "test", info4: "bob", image: imageData as! NSData)
+ 
+        
+        
+        databaseModel.save()
+        
+        databaseModel.logModel()
+        
+        
+        
+        
+        self.performSegue(withIdentifier: "exit", sender: self)
+        
+    }
+    
     
     
 }

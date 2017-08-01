@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1232D4C61F2F854B005F2B63 /* Tree+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1232D4C41F2F854B005F2B63 /* Tree+CoreDataClass.swift */; };
-		1232D4C71F2F854B005F2B63 /* Tree+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1232D4C51F2F854B005F2B63 /* Tree+CoreDataProperties.swift */; };
 		1232D4C91F2F885A005F2B63 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1232D4C81F2F885A005F2B63 /* CoreData.swift */; };
 		124D1A941EFFEEED005CCD1E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 124D1A931EFFEEED005CCD1E /* Localizable.strings */; };
 		12A911F41F2627A40021F07B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A911F31F2627A40021F07B /* TableViewController.swift */; };
@@ -17,6 +16,8 @@
 		12B501BB1F26262C007381BC /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B501BA1F26262C007381BC /* CustomTableViewCell.swift */; };
 		12E5C0751F27B2F300844CEC /* firstTribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E5C0741F27B2F300844CEC /* firstTribeViewController.swift */; };
 		12E5C0771F27BBA900844CEC /* secondTribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E5C0761F27BBA900844CEC /* secondTribeViewController.swift */; };
+		12F27C1E1F30966C00268505 /* DatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F27C1D1F30966C00268505 /* DatabaseModel.swift */; };
+		12F27C241F30A27400268505 /* Tree+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F27C231F30A27400268505 /* Tree+CoreDataProperties.swift */; };
 		12F6886B1EEE83CC0057C49A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F6886A1EEE83CC0057C49A /* AppDelegate.swift */; };
 		12F688701EEE83CC0057C49A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12F6886E1EEE83CC0057C49A /* Main.storyboard */; };
 		12F688731EEE83CC0057C49A /* BA_JonathanKofahl.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12F688711EEE83CC0057C49A /* BA_JonathanKofahl.xcdatamodeld */; };
@@ -58,7 +59,6 @@
 
 /* Begin PBXFileReference section */
 		1232D4C41F2F854B005F2B63 /* Tree+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Tree+CoreDataClass.swift"; path = "../Tree+CoreDataClass.swift"; sourceTree = "<group>"; };
-		1232D4C51F2F854B005F2B63 /* Tree+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Tree+CoreDataProperties.swift"; path = "../Tree+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1232D4C81F2F885A005F2B63 /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreData.swift; path = ../CoreData.swift; sourceTree = "<group>"; };
 		124D1A931EFFEEED005CCD1E /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		12A911F31F2627A40021F07B /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +67,8 @@
 		12B501BA1F26262C007381BC /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		12E5C0741F27B2F300844CEC /* firstTribeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = firstTribeViewController.swift; sourceTree = "<group>"; };
 		12E5C0761F27BBA900844CEC /* secondTribeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = secondTribeViewController.swift; sourceTree = "<group>"; };
+		12F27C1D1F30966C00268505 /* DatabaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseModel.swift; sourceTree = "<group>"; };
+		12F27C231F30A27400268505 /* Tree+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tree+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		12F688671EEE83CC0057C49A /* BA_JonathanKofahl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BA_JonathanKofahl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12F6886A1EEE83CC0057C49A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12F6886F1EEE83CC0057C49A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		12F6885E1EEE83CC0057C49A = {
 			isa = PBXGroup;
 			children = (
+				12F27C231F30A27400268505 /* Tree+CoreDataProperties.swift */,
 				12F688691EEE83CC0057C49A /* BA_JonathanKofahl */,
 				12F688811EEE83CC0057C49A /* BA_JonathanKofahlTests */,
 				12F6888C1EEE83CC0057C49A /* BA_JonathanKofahlUITests */,
@@ -159,8 +162,8 @@
 				12F688791EEE83CC0057C49A /* Info.plist */,
 				12F688711EEE83CC0057C49A /* BA_JonathanKofahl.xcdatamodeld */,
 				1232D4C41F2F854B005F2B63 /* Tree+CoreDataClass.swift */,
-				1232D4C51F2F854B005F2B63 /* Tree+CoreDataProperties.swift */,
 				1232D4C81F2F885A005F2B63 /* CoreData.swift */,
+				12F27C1D1F30966C00268505 /* DatabaseModel.swift */,
 				124D1A951EFFEEF4005CCD1E /* Strings Content */,
 				12F6889B1EEE86C70057C49A /* ViewController */,
 			);
@@ -371,7 +374,6 @@
 				12F688B31EF017EC0057C49A /* ContainerViewController.swift in Sources */,
 				12B4E86A1F2789610087249F /* secondCrownViewController.swift in Sources */,
 				12F688B51EF02A270057C49A /* EmptySegue.swift in Sources */,
-				1232D4C71F2F854B005F2B63 /* Tree+CoreDataProperties.swift in Sources */,
 				12F688A31EEE89640057C49A /* TribeViewController.swift in Sources */,
 				12B501BB1F26262C007381BC /* CustomTableViewCell.swift in Sources */,
 				1232D4C61F2F854B005F2B63 /* Tree+CoreDataClass.swift in Sources */,
@@ -381,12 +383,14 @@
 				12F688731EEE83CC0057C49A /* BA_JonathanKofahl.xcdatamodeld in Sources */,
 				12F6889F1EEE88BD0057C49A /* SettingsViewController.swift in Sources */,
 				12F688A11EEE89370057C49A /* CrownViewController.swift in Sources */,
+				12F27C1E1F30966C00268505 /* DatabaseModel.swift in Sources */,
 				12F688A51EEE89760057C49A /* RootViewController.swift in Sources */,
 				12F688AB1EEE8ACC0057C49A /* CareViewController.swift in Sources */,
 				12F688A71EEE8A0E0057C49A /* TreeDatabaseViewController.swift in Sources */,
 				12F688F81EF568D30057C49A /* CameraViewController.swift in Sources */,
 				12F6889D1EEE888B0057C49A /* MenuViewController.swift in Sources */,
 				12F688B01EEE9F490057C49A /* ExtensionCALayer.swift in Sources */,
+				12F27C241F30A27400268505 /* Tree+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

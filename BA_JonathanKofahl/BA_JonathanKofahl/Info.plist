@@ -6,6 +6,8 @@
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
 	<string>BaumApp</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Mit deiner Position siehst du automatisch die Bäume in deiner Umgebung.</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

@@ -83,11 +83,6 @@ class InformationViewController: UIViewController {
         self.field9.nextField = self.field10
 
         
-      /*  let tree = NSEntityDescription.insertNewObject(forEntityName: Tree.entityName,
-                                                         into:managedObjectContext)
-        tree.setValue(2, forKeyPath: "treeNumber")
-        */
-        
     }
     
     override func didReceiveMemoryWarning() {
