@@ -39,6 +39,9 @@ class InformationViewController: UIViewController {
     
     let defaults = UserDefaults.standard
     
+    var actualTree : Tree!
+    var actualPlace : String!
+    
     var topConstant : CGFloat!
     
     //MARK: - Methods
@@ -81,8 +84,8 @@ class InformationViewController: UIViewController {
         self.field7.nextField = self.field8
         self.field8.nextField = self.field9
         self.field9.nextField = self.field10
-
         
+        actualTree = databaseModel.createTree()
     }
     
     override func didReceiveMemoryWarning() {
@@ -120,6 +123,11 @@ class InformationViewController: UIViewController {
         //  print("Returnclicked")
         _ = textFieldShouldReturn(textField: sender)
         // save Data to database
+        
+        if sender == field6 {
+            actualPlace = sender.text
+        }
+        
     }
     
     // extra method for the last textfield. need to change the position of the textfield, otherwise it would be overlayed by the keyboard

@@ -13,8 +13,8 @@ import CoreLocation
 class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     
     //MARK: - Variables & Outlets
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var tableView1: UITableView!
+    @IBOutlet weak var tableViewPlaces: UITableView!
+    @IBOutlet weak var tableViewTrees: UITableView!
     @IBOutlet weak var mapView: MKMapView!
     
     @IBOutlet weak var treeNumberLabel: UILabel!
@@ -24,10 +24,13 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var treeImageView: UIImageView!
     @IBOutlet weak var detailView: UIView!
     
+    var placeSelected = false
+    var placeIndex = 0
+    
     
     // Seperated Arrays for the two Tables
-    var tableCriteria : [String]?
-    var tableCriteria1 : [String]?
+    var tablePlaces : [Place]?
+    var tableTrees : [Tree]?
     
     /** Bool of Map
      */
@@ -46,19 +49,16 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        self.tableViewTrees.allowsMultipleSelectionDuringEditing = false
         
-        
-        tableCriteria = []
-        tableCriteria1 = []
+        tablePlaces = []
+        tableTrees = []
         
         //MARK: - TableView init -> load strings from Localization.strings file
-        for tree in databaseModel.trees {
+        /*for tree in databaseModel.trees {
             tableCriteria1?.append(tree.treeNumber.description)
         }
-        for index in 14...23 {
-            let ressourceName = "care" + index.description
-            tableCriteria?.append( NSLocalizedString(ressourceName, comment: "") )
-        }
+        */
         
         // MapView
         if CLLocationManager.locationServicesEnabled()
@@ -112,10 +112,27 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         
-        if tableView == self.tableView {
-            return tableCriteria!.count
+        if tableView == self.tableViewPlaces {
+            return databaseModel.places.count
         } else {
-            return tableCriteria1!.count
+            if !placeSelected {
+                return 0
+            }
+            
+            var x = 0
+            for (index,tree) in databaseModel.trees.enumerated() {
+               // print(tree.place?.name)
+               // print(databaseModel.places[placeIndex].name)
+                
+                if tree.place == databaseModel.places[placeIndex] {
+                    x += 1
+                    tableTrees?.append(tree)
+                   // print("found tree")
+                    
+                    //print(tableTrees)
+                }
+            }
+            return x
         }
         
     }
@@ -123,20 +140,23 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
-        /*
-        if tableView == self.tableView {
-            cell.criteria.text = tableCriteria?[indexPath.row]
-        } else {
-            cell.criteria.text = tableCriteria1?[indexPath.row]
-        }
-        */
-        NSLog(databaseModel.trees[0].treeNumber.description)
         
-        cell.criteria.text = databaseModel.trees[0].treeNumber.description
+        var cell  = TreeDatabaseTableViewCellPlace()
+        var cell1  = TreeDatabaseTableViewCellTree()
+        
+        if tableView == self.tableViewPlaces {
+            cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TreeDatabaseTableViewCellPlace
+            cell.placeLabel.text = databaseModel.places[indexPath.row].name?.description
+        } else {
+            cell1 = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TreeDatabaseTableViewCellTree
+            cell1.treeNumberLabel.text = tableTrees?[indexPath.row].treeNumber.description
+            print(tableTrees?[indexPath.row].treeNumber.description)
+            return cell1
+        }
         
         return cell
     }
+    
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return nil
@@ -144,15 +164,64 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
-        treeNumberLabel.text = databaseModel.trees[0].treeNumber.description
-        placeLabel.text = databaseModel.trees[0].info0?.description
-        timeLabel.text = databaseModel.trees[0].info1?.description
-        categoryLabel.text = databaseModel.trees[0].info2?.description
-        treeImageView.image = UIImage.init(data: databaseModel.trees[0].image as! Data)
+        if tableView == self.tableViewPlaces {
+            detailView.isHidden = true
+            tableTrees = []
+            placeSelected = true
+            placeIndex = indexPath.row
+            self.tableViewTrees.reloadData()
+        } else {
+        
+        treeNumberLabel.text = tableTrees?[indexPath.row].treeNumber.description
+        placeLabel.text = tableTrees?[indexPath.row].info0?.description
+        timeLabel.text = tableTrees?[indexPath.row].info1?.description
+        categoryLabel.text = tableTrees?[indexPath.row].info2?.description
+        if tableTrees?[indexPath.row].image != nil {
+            treeImageView.image = UIImage(cgImage: (UIImage.init(data: tableTrees?[indexPath.row].image! as! Data)?.cgImage)!,
+                                          scale: 1.0 ,
+                                          orientation: UIImageOrientation.right)
+        } else {
+            treeImageView.image = UIImage(named: "river_photo")
+        }
+        
         
         detailView.isHidden = false
         
+        }
     }
+    
+    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+            return "Löschen"
+        }
+        
+        func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+            
+            // action one
+            let editAction = UITableViewRowAction(style: .default, title: "Editieren", handler: { (action, indexPath) in
+                print("Tree edit")
+            })
+            editAction.backgroundColor = UIColor.init(hexString: "00B079")
+            
+            // action two
+            let deleteAction = UITableViewRowAction(style: .default, title: "Löschen", handler: { (action, indexPath) in
+                self.tableTrees?.remove(at: indexPath.row)
+                self.tableViewTrees.reloadData()
+                print("Tree delete")
+            })
+            deleteAction.backgroundColor = UIColor.red
+            
+            return [editAction, deleteAction]
+        }
+        
+    
+    
+
+    
+    @IBAction func closeDetailView(_ sender: Any) {
+        self.detailView.isHidden = true
+    }
+    
     
         //MARK: - MapView
         

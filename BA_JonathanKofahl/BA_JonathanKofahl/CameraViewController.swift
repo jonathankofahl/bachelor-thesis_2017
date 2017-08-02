@@ -60,6 +60,8 @@ class CameraViewController: UIViewController {
                 if let cameraImage = UIImage(data: imageData) {
                     
                     self.motherController.treeImageView.image = cameraImage
+                    //https://stackoverflow.com/questions/16685812/how-to-store-an-image-in-core-data
+                    self.motherController.actualTree.image = UIImagePNGRepresentation(cameraImage)! as NSData
                     
                     self.dismiss(animated: true, completion: nil)
                 }

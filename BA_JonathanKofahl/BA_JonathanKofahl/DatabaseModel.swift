@@ -27,7 +27,7 @@ class DatabaseModel: NSObject {
     }
     
     var places : [Place] {
-        let request : NSFetchRequest<Place = Place.fetchRequest()
+        let request : NSFetchRequest<Place> = Place.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         return try! managedObjectContext.fetch(request)
     }
@@ -40,7 +40,8 @@ class DatabaseModel: NSObject {
         info2: String,
         info3: String,
         info4: String,
-        image: NSData
+        image: NSData,
+        place: Place
         
         
         ) -> Tree {
@@ -52,10 +53,18 @@ class DatabaseModel: NSObject {
         tree.info3 = info3
         tree.info4 = info4
         tree.image = image
+        tree.place = place
         return tree
     }
     
-    @discardableResult func createPlace(name: String) {
+    @discardableResult func createTree(
+        ) -> Tree {
+        let tree = NSEntityDescription.insertNewObject(forEntityName: Tree.entityName, into: self.managedObjectContext) as! Tree
+        //tree.treeNumber = Int16(databaseModel.trees.count)
+        return tree
+    }
+    
+    @discardableResult func createPlace(name: String) -> Place {
        let place = NSEntityDescription.insertNewObject(forEntityName: Place.entityName, into: self.managedObjectContext) as! Place
         place.name = name
         return place

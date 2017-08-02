@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Place" representedClassName="Place" syncable="YES" codeGenerationType="class">
+    <entity name="Place" representedClassName="Place" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Tree" representedClassName="Tree" syncable="YES">
@@ -10,10 +10,13 @@
         <attribute name="info2" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="info3" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="info4" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="info5" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="info6" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="treeNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="place" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Place" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Tree" positionX="-63" positionY="-27" width="128" height="150"/>
         <element name="Place" positionX="-63" positionY="27" width="128" height="60"/>
+        <element name="Tree" positionX="-63" positionY="-27" width="128" height="195"/>
     </elements>
 </model>

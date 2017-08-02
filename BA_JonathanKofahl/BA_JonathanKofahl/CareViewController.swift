@@ -87,19 +87,32 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func saveTree(_ sender: Any) {
         
         
-        databaseModel.clear()
+        //databaseModel.clear()
         
-        //https://stackoverflow.com/questions/16685812/how-to-store-an-image-in-core-data
-        let testImage = UIImage(named: "river_photo")
-        var imageData = UIImagePNGRepresentation(testImage!)
         
-        if databaseModel.places {
-            <#code#>
+        
+        
+       // databaseModel.createTree(number: 0, info0: "Mario", info1: "Birke", info2: "Neu", info3: "test", info4: "bob", image: imageData! as NSData, place: //databaseModel.places[placeIndex])
+        
+        var placeUsedBefore = false
+        var placeIndex = 0
+        
+        let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
+        
+        for (index,place) in databaseModel.places.enumerated() {
+            if place.name ==  infoController.actualPlace! {
+                placeUsedBefore = true
+                placeIndex = index
+            }
         }
         
-        databaseModel.createTree(number: 0, info0: "Mario", info1: "Birke", info2: "Raduhn", info3: "test", info4: "bob", image: imageData as! NSData)
- 
+        if !placeUsedBefore {
+            databaseModel.createPlace(name: infoController.actualPlace!)
+            placeIndex = databaseModel.places.count-1
+            databaseModel.save()
+        }
         
+        infoController.actualTree.place = databaseModel.places[placeIndex]
         
         databaseModel.save()
         
