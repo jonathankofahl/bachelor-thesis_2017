@@ -94,10 +94,10 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
         
        // databaseModel.createTree(number: 0, info0: "Mario", info1: "Birke", info2: "Neu", info3: "test", info4: "bob", image: imageData! as NSData, place: //databaseModel.places[placeIndex])
         
+        let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
+
         var placeUsedBefore = false
         var placeIndex = 0
-        
-        let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
         
         for (index,place) in databaseModel.places.enumerated() {
             if place.name ==  infoController.actualPlace! {
@@ -105,7 +105,6 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
                 placeIndex = index
             }
         }
-        
         if !placeUsedBefore {
             databaseModel.createPlace(name: infoController.actualPlace!)
             placeIndex = databaseModel.places.count-1
@@ -113,8 +112,8 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         infoController.actualTree.place = databaseModel.places[placeIndex]
-        
         databaseModel.save()
+        
         
         databaseModel.logModel()
         

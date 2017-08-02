@@ -5,9 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>BaumApp</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Mit deiner Position siehst du automatisch die Bäume in deiner Umgebung.</string>
+	<string>Baum Buddy</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -26,6 +24,8 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Für die Zeit der Aufnahme des Baumes benötigt die App Zugriff auf die Kamera. </string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Mit deiner Position siehst du automatisch die Bäume in deiner Umgebung.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

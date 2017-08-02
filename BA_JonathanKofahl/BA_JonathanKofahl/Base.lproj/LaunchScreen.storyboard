@@ -21,20 +21,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="river_photo" translatesAutoresizingMaskIntoConstraints="NO" id="eSH-V6-P9x">
-                                <rect key="frame" x="286" y="427" width="262" height="259"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="p5Q-jc-oea">
+                                <rect key="frame" x="104" y="167" width="626" height="778"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="262" id="X0Z-gx-Wkd"/>
-                                    <constraint firstAttribute="height" constant="259" id="gmU-Eh-nJN"/>
+                                    <constraint firstAttribute="width" constant="626" id="jbP-XK-d6m"/>
+                                    <constraint firstAttribute="height" constant="778" id="pfw-bG-NBY"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eSH-V6-P9x" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4an-c9-zof"/>
-                            <constraint firstItem="eSH-V6-P9x" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6ZV-6W-fS8"/>
-                            <constraint firstItem="eSH-V6-P9x" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="XY4-Ik-0hT"/>
-                            <constraint firstItem="eSH-V6-P9x" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="iMy-nz-rP3"/>
+                            <constraint firstItem="p5Q-jc-oea" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="GTz-3w-JPL"/>
+                            <constraint firstItem="p5Q-jc-oea" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="SY4-SX-KU4"/>
+                            <constraint firstItem="p5Q-jc-oea" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="oBE-tv-HgI"/>
+                            <constraint firstItem="p5Q-jc-oea" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="w47-0P-ads"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -44,6 +44,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="river_photo" width="1591" height="1575"/>
+        <image name="logo" width="2513" height="1113"/>
     </resources>
 </document>
