@@ -78,7 +78,7 @@ class ContainerViewController: UIViewController {
     
     fromViewController.willMove(toParentViewController: nil)
     self.addChildViewController(toViewController)
-    self.transition(from: fromViewController, to: toViewController, duration: 0.2, options: UIViewAnimationOptions.transitionCrossDissolve, animations: nil, completion: { _ in
+    self.transition(from: fromViewController, to: toViewController, duration: 0.4, options: UIViewAnimationOptions.transitionCrossDissolve, animations: nil, completion: { _ in
             fromViewController.removeFromParentViewController()
             toViewController.didMove(toParentViewController: self)
         })

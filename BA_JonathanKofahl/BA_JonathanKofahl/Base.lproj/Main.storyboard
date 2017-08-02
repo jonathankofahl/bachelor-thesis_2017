@@ -2001,60 +2001,42 @@ abbrechen</string>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kwv-19-Rb2">
-                                <rect key="frame" x="0.0" y="101" width="834" height="912"/>
+                                <rect key="frame" x="0.0" y="101" width="834" height="911"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="912" id="Sq0-Ky-Nlq"/>
+                                    <constraint firstAttribute="height" constant="911" id="Sq0-Ky-Nlq"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="eK1-Rw-qt8" kind="embed" identifier="embedContainer" id="EpB-aw-jDc"/>
                                 </connections>
                             </containerView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="1XL-mG-z1B">
-                                <rect key="frame" x="0.0" y="1013" width="833" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="1XL-mG-z1B">
+                                <rect key="frame" x="0.0" y="1013" width="834" height="50"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="OJ1-bo-LyX">
-                                        <rect key="frame" x="0.0" y="0.0" width="833" height="50"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nj-5I-5Ab">
-                                                <rect key="frame" x="0.0" y="0.0" width="416" height="50"/>
-                                                <color key="backgroundColor" red="0.30408036710000003" green="0.49091345069999998" blue="0.70246273280000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="416" id="1cf-ft-gt2"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                                <state key="normal" title="Krone Teil 1">
-                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="swapButtonPressed:" destination="yJb-er-IzT" eventType="touchUpInside" id="zTI-t6-kVz"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOI-b2-Ahc">
-                                                <rect key="frame" x="417" y="0.0" width="416" height="50"/>
-                                                <color key="backgroundColor" red="0.30408036710000003" green="0.49091345069999998" blue="0.70246273280000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="416" id="Ahi-To-d7e"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                                <state key="normal" title="Krone Teil 2">
-                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="swapButton2Pressed:" destination="yJb-er-IzT" eventType="touchUpInside" id="Ubv-GV-hJu"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="833" id="d1K-Qw-Ajn"/>
-                                        </constraints>
-                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nj-5I-5Ab">
+                                        <rect key="frame" x="0.0" y="0.0" width="416.5" height="50"/>
+                                        <color key="backgroundColor" red="0.30408036710000003" green="0.49091345069999998" blue="0.70246273280000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <state key="normal" title="Krone Teil 1">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="swapButtonPressed:" destination="yJb-er-IzT" eventType="touchUpInside" id="zTI-t6-kVz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOI-b2-Ahc">
+                                        <rect key="frame" x="417.5" y="0.0" width="416.5" height="50"/>
+                                        <color key="backgroundColor" red="0.30408036710000003" green="0.49091345069999998" blue="0.70246273280000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <state key="normal" title="Krone Teil 2">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="swapButton2Pressed:" destination="yJb-er-IzT" eventType="touchUpInside" id="Ubv-GV-hJu"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="OJ1-bo-LyX" secondAttribute="bottom" id="2AC-K0-lGO"/>
-                                    <constraint firstItem="OJ1-bo-LyX" firstAttribute="top" secondItem="1XL-mG-z1B" secondAttribute="top" id="CdH-zy-0OU"/>
-                                    <constraint firstAttribute="trailing" secondItem="OJ1-bo-LyX" secondAttribute="trailing" id="WSm-GD-sU9"/>
                                     <constraint firstAttribute="height" constant="50" id="Yux-qk-xY4"/>
-                                    <constraint firstItem="OJ1-bo-LyX" firstAttribute="leading" secondItem="1XL-mG-z1B" secondAttribute="leading" id="Zfl-IJ-ie1"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -2064,9 +2046,10 @@ abbrechen</string>
                             <constraint firstAttribute="trailing" secondItem="kwv-19-Rb2" secondAttribute="trailing" id="EyY-Mc-Luf"/>
                             <constraint firstAttribute="trailing" secondItem="zaf-c3-xTa" secondAttribute="trailing" id="Gkk-0u-IBU"/>
                             <constraint firstItem="zaf-c3-xTa" firstAttribute="leading" secondItem="ruw-Y2-QiH" secondAttribute="leading" id="IwE-rC-OYr"/>
+                            <constraint firstAttribute="trailing" secondItem="1XL-mG-z1B" secondAttribute="trailing" id="KZp-2y-xzK"/>
                             <constraint firstItem="1XL-mG-z1B" firstAttribute="bottom" secondItem="1Qu-kI-Xd2" secondAttribute="top" id="Ocp-4Q-0NA"/>
                             <constraint firstItem="kwv-19-Rb2" firstAttribute="top" secondItem="zaf-c3-xTa" secondAttribute="bottom" constant="1" id="gfS-Is-Wxm"/>
-                            <constraint firstItem="1XL-mG-z1B" firstAttribute="top" secondItem="kwv-19-Rb2" secondAttribute="bottom" id="snG-fl-8RI"/>
+                            <constraint firstItem="1XL-mG-z1B" firstAttribute="top" secondItem="kwv-19-Rb2" secondAttribute="bottom" constant="1" id="snG-fl-8RI"/>
                             <constraint firstItem="zaf-c3-xTa" firstAttribute="top" secondItem="ruw-Y2-QiH" secondAttribute="top" id="vOj-Sr-yUB"/>
                             <constraint firstItem="kwv-19-Rb2" firstAttribute="leading" secondItem="ruw-Y2-QiH" secondAttribute="leading" id="z1t-T1-Czy"/>
                         </constraints>
@@ -2454,18 +2437,26 @@ abbrechen</string>
                                             <outlet property="delegate" destination="xtz-Ju-0C6" id="xmi-ak-O4d"/>
                                         </connections>
                                     </tableView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wenn sie nichts auswählen wird &quot;Unbedenklich&quot; in das Dokument eingetragen." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Grh-Zb-B5J">
+                                        <rect key="frame" x="20" y="87" width="507" height="17"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.4103715235" green="0.41443460789999997" blue="0.41443460789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="ytR-G5-ae6" firstAttribute="top" secondItem="Grh-Zb-B5J" secondAttribute="bottom" constant="8" id="8qF-ZD-m5L"/>
                                     <constraint firstItem="KMb-bS-yFF" firstAttribute="leading" secondItem="Xu1-8x-SPS" secondAttribute="trailing" constant="183.5" id="DjD-H0-Ywn"/>
-                                    <constraint firstItem="ytR-G5-ae6" firstAttribute="top" secondItem="tHx-Ze-SrT" secondAttribute="top" constant="112" id="KCF-2A-Te3"/>
                                     <constraint firstAttribute="trailing" secondItem="ytR-G5-ae6" secondAttribute="trailing" id="KXE-qk-hx3"/>
                                     <constraint firstItem="AVA-GA-Hu9" firstAttribute="top" secondItem="Xu1-8x-SPS" secondAttribute="bottom" constant="70.5" id="Kt0-Hw-KK7"/>
+                                    <constraint firstItem="Grh-Zb-B5J" firstAttribute="leading" secondItem="tHx-Ze-SrT" secondAttribute="leading" constant="20" id="Tca-I2-NAL"/>
                                     <constraint firstItem="Xu1-8x-SPS" firstAttribute="leading" secondItem="tHx-Ze-SrT" secondAttribute="leading" constant="101" id="UwZ-qt-l8P"/>
                                     <constraint firstItem="ytR-G5-ae6" firstAttribute="leading" secondItem="tHx-Ze-SrT" secondAttribute="leading" id="VdM-cx-mpm"/>
                                     <constraint firstAttribute="bottom" secondItem="AVA-GA-Hu9" secondAttribute="bottom" constant="75" id="YRD-Pq-EAl"/>
                                     <constraint firstAttribute="trailing" secondItem="AVA-GA-Hu9" secondAttribute="trailing" id="hFi-w3-e0z"/>
                                     <constraint firstItem="KMb-bS-yFF" firstAttribute="top" secondItem="ytR-G5-ae6" secondAttribute="bottom" constant="82" id="lBm-Mb-RNG"/>
+                                    <constraint firstItem="Grh-Zb-B5J" firstAttribute="top" secondItem="tHx-Ze-SrT" secondAttribute="top" constant="87" id="wwt-oa-UsI"/>
                                     <constraint firstItem="AVA-GA-Hu9" firstAttribute="leading" secondItem="tHx-Ze-SrT" secondAttribute="leading" id="x6U-ar-qse"/>
                                     <constraint firstItem="KMb-bS-yFF" firstAttribute="centerY" secondItem="Xu1-8x-SPS" secondAttribute="centerY" id="xKd-9V-JG7"/>
                                 </constraints>
@@ -2610,6 +2601,12 @@ abbrechen</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wenn sie nichts auswählen wird &quot;Unbedenklich&quot; in das Dokument eingetragen." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKW-gX-KVL">
+                                        <rect key="frame" x="20" y="25" width="507" height="17"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.4103715235" green="0.41443460789999997" blue="0.41443460789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -2619,8 +2616,11 @@ abbrechen</string>
                                     <constraint firstAttribute="trailing" secondItem="5Ei-hO-T9z" secondAttribute="trailing" constant="113" id="DEY-uE-isD"/>
                                     <constraint firstAttribute="trailing" secondItem="k3g-72-MYF" secondAttribute="trailing" id="JWl-cc-4Gh"/>
                                     <constraint firstAttribute="bottom" secondItem="5Ei-hO-T9z" secondAttribute="bottom" constant="68" id="Nxc-VF-vTz"/>
+                                    <constraint firstItem="fKW-gX-KVL" firstAttribute="top" secondItem="Iro-ME-SKf" secondAttribute="top" constant="25" id="OG8-L1-Yiz"/>
                                     <constraint firstItem="r9e-m6-Y69" firstAttribute="leading" secondItem="Iro-ME-SKf" secondAttribute="leading" constant="92" id="REv-cA-xGO"/>
                                     <constraint firstItem="kUI-qC-cDv" firstAttribute="centerX" secondItem="Iro-ME-SKf" secondAttribute="centerX" constant="2.5" id="Rof-lH-t9z"/>
+                                    <constraint firstItem="k3g-72-MYF" firstAttribute="top" secondItem="fKW-gX-KVL" secondAttribute="bottom" constant="8" id="Vhd-4r-ZzC"/>
+                                    <constraint firstItem="fKW-gX-KVL" firstAttribute="leading" secondItem="Iro-ME-SKf" secondAttribute="leading" constant="20" id="n2Q-qS-K2B"/>
                                     <constraint firstItem="5Ei-hO-T9z" firstAttribute="leading" secondItem="Iro-ME-SKf" secondAttribute="leading" constant="114" id="pR3-8n-tRB"/>
                                     <constraint firstItem="k3g-72-MYF" firstAttribute="leading" secondItem="Iro-ME-SKf" secondAttribute="leading" id="tlA-S3-5je"/>
                                     <constraint firstItem="5Ei-hO-T9z" firstAttribute="top" secondItem="kUI-qC-cDv" secondAttribute="bottom" constant="44" id="v2j-ek-9Qz"/>
@@ -2827,7 +2827,7 @@ abschließen</string>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="190" id="HS8-Sg-RFo"/>
                                                                     </constraints>
-                                                                    <state key="normal" title="Nicht vorhanden">
+                                                                    <state key="normal" title="Nein">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </state>
                                                                     <connections>
@@ -2839,7 +2839,7 @@ abschließen</string>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="190" id="K7M-XI-EP9"/>
                                                                     </constraints>
-                                                                    <state key="normal" title="vorhanden">
+                                                                    <state key="normal" title="Ja">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </state>
                                                                     <connections>
@@ -2903,7 +2903,7 @@ abschließen</string>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="190" id="bKa-aO-2rz"/>
                                                                     </constraints>
-                                                                    <state key="normal" title="Nicht vorhanden">
+                                                                    <state key="normal" title="Nein">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </state>
                                                                     <connections>
@@ -2915,7 +2915,7 @@ abschließen</string>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="190" id="fhu-ui-y1t"/>
                                                                     </constraints>
-                                                                    <state key="normal" title="vorhanden">
+                                                                    <state key="normal" title="Ja">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </state>
                                                                     <connections>
@@ -4184,7 +4184,7 @@ Plombe,gefräste Wunden,Entwässerung/Drainage o.ä.)														</string>
                         <viewControllerLayoutGuide type="bottom" id="4nn-2u-2Fa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MX8-CS-WpB">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="912"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="911"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -4204,6 +4204,6 @@ Plombe,gefräste Wunden,Entwässerung/Drainage o.ä.)														</string>
         <image name="logo" width="2513" height="1113"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Gff-dn-zMi"/>
+        <segue reference="oIP-IY-mLN"/>
     </inferredMetricsTieBreakers>
 </document>
