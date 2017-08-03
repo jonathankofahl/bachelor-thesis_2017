@@ -13,6 +13,9 @@ import CoreLocation
 class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     
     //MARK: - Variables & Outlets
+    
+    let defaults = UserDefaults.standard
+    
     @IBOutlet weak var tableViewPlaces: UITableView!
     @IBOutlet weak var tableViewTrees: UITableView!
     @IBOutlet weak var mapView: MKMapView!
@@ -23,6 +26,9 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var treeImageView: UIImageView!
     @IBOutlet weak var detailView: UIView!
+    @IBOutlet weak var groupTableView: UIView!
+    @IBOutlet weak var closeDetailViewButton: UIButton!
+    @IBOutlet weak var detailStackView: UIStackView!
     
     var placeSelected = false
     var placeIndex = 0
@@ -48,6 +54,47 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        var color = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
+        var alphaColor = color.withAlphaComponent(0.8)
+        
+        // Set Colors
+        closeDetailViewButton.backgroundColor = color
+        for view in detailStackView.subviews {
+            if view.tag == 0 {
+                view.backgroundColor = color
+            } else {
+                for label in view.subviews {
+                    label.tintColor = color
+                }
+            }
+        }
+        
+        // https://stackoverflow.com/questions/17041669/creating-a-blurring-overlay-view
+        if !UIAccessibilityIsReduceTransparencyEnabled() {
+            self.groupTableView.backgroundColor = UIColor.clear
+            self.detailView.backgroundColor = UIColor.clear
+            
+            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            blurEffectView.frame = self.groupTableView.bounds
+            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            
+            self.groupTableView.insertSubview(blurEffectView, at: 0)
+            
+            let blurEffectView1 = UIVisualEffectView(effect: blurEffect)
+            blurEffectView1.frame = self.detailView.bounds
+            blurEffectView1.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            
+            self.detailView.insertSubview(blurEffectView1, at: 0)
+        } else {
+            self.groupTableView.backgroundColor = alphaColor
+            self.detailView.backgroundColor = alphaColor
+        }
+        
+        //self.detailView.frame.origin.x = self.detailView.frame.origin.x + 400
+        //detailView.isHidden = false
+        
         
         self.tableViewTrees.allowsMultipleSelectionDuringEditing = false
         
@@ -93,7 +140,8 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
     
     
     }
-
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -165,7 +213,11 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
         if tableView == self.tableViewPlaces {
-            detailView.isHidden = true
+            //detailView.isHidden = true
+            UIView.animate(withDuration: 0.7) {
+                self.detailView.frame.origin.x = self.detailView.frame.origin.x + 400
+                self.detailView.tag = 0
+            }
             tableTrees = []
             placeSelected = true
             placeIndex = indexPath.row
@@ -183,9 +235,15 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
         } else {
             treeImageView.image = UIImage(named: "river_photo")
         }
-        
-        
-        detailView.isHidden = false
+            if detailView.tag == 0 {
+                UIView.animate(withDuration: 0.7) {
+                    self.detailView.isHidden = false
+                    self.detailView.frame.origin.x = self.detailView.frame.origin.x - 400
+                    self.detailView.tag = 1
+                }
+            }
+            
+        //detailView.isHidden = false
         
         }
     }
@@ -219,7 +277,11 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
 
     
     @IBAction func closeDetailView(_ sender: Any) {
-        self.detailView.isHidden = true
+       // self.detailView.isHidden = true
+        UIView.animate(withDuration: 0.7) {
+            self.detailView.frame.origin.x = self.detailView.frame.origin.x + 400
+            self.detailView.tag = 0
+        }
     }
     
     
