@@ -22,8 +22,13 @@ class MenuViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         if defaults.value(forKey: "appColor") != nil {
             view1.backgroundColor = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
-
+        } else {
+            defaults.set("#4E7DB3", forKey: "appColor")
         }
+        if defaults.value(forKey: "treeCount") == nil {
+            defaults.set(0, forKey: "treeCount")
+        }
+        
         databaseButton.backgroundColor = view1.backgroundColor
         databaseButton.setTitleColor(UIColor.white, for: UIControlState.normal)
     }

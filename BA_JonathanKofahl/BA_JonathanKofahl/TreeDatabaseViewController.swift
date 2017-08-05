@@ -35,9 +35,9 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
     
     
     // Seperated Arrays for the two Tables
-    var tablePlaces : [Place]?
+    //var tablePlaces : [Place]?
     var tableTrees : [Tree]?
-    
+        
     /** Bool of Map
      */
     var mapInitialized = true;
@@ -98,7 +98,7 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
         
         self.tableViewTrees.allowsMultipleSelectionDuringEditing = false
         
-        tablePlaces = []
+        //tablePlaces = []
         tableTrees = []
         
         //MARK: - TableView init -> load strings from Localization.strings file
@@ -229,11 +229,12 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
         timeLabel.text = tableTrees?[indexPath.row].info1?.description
         categoryLabel.text = tableTrees?[indexPath.row].info2?.description
         if tableTrees?[indexPath.row].image != nil {
+            treeImageView.isHidden = false
             treeImageView.image = UIImage(cgImage: (UIImage.init(data: tableTrees?[indexPath.row].image! as! Data)?.cgImage)!,
                                           scale: 1.0 ,
                                           orientation: UIImageOrientation.right)
         } else {
-            treeImageView.image = UIImage(named: "river_photo")
+            treeImageView.isHidden = true
         }
             if detailView.tag == 0 {
                 UIView.animate(withDuration: 0.7) {
@@ -253,24 +254,49 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             return "Löschen"
         }
         
-        func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-            
-            // action one
-            let editAction = UITableViewRowAction(style: .default, title: "Editieren", handler: { (action, indexPath) in
-                print("Tree edit")
-            })
-            editAction.backgroundColor = UIColor.init(hexString: "00B079")
-            
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        if tableView == tableViewTrees {
+        // action one
+        let editAction = UITableViewRowAction(style: .default, title: "Editieren", handler: { (action, indexPath) in
+            print("Tree edit")
+        })
+        editAction.backgroundColor = UIColor.init(hexString: "00B079")
+        
+        // action two
+        let deleteAction = UITableViewRowAction(style: .default, title: "Löschen", handler: { (action, indexPath) in
+            //self.tableTrees?.remove(at: indexPath.row)
+            print(self.tableTrees![indexPath.row].treeNumber)
+            databaseModel.deleteTree(index:Int(self.tableTrees![indexPath.row].treeNumber))
+            self.tableViewTrees.reloadData()
+            databaseModel.save()
+            print("Tree delete")
+        })
+        deleteAction.backgroundColor = UIColor.red
+        
+        return [editAction, deleteAction]
+        } else
+        {
             // action two
             let deleteAction = UITableViewRowAction(style: .default, title: "Löschen", handler: { (action, indexPath) in
-                self.tableTrees?.remove(at: indexPath.row)
+                //self.tableTrees?.remove(at: indexPath.row)
+                //print(self.tableTrees![indexPath.row].treeNumber)
+                databaseModel.deletePlace(index: indexPath.row)
+                self.tableTrees = []
+                self.placeSelected = false
                 self.tableViewTrees.reloadData()
+                self.tableViewPlaces.reloadData()
+                databaseModel.save()
+                self.closeDetailView(self)
                 print("Tree delete")
             })
+            
             deleteAction.backgroundColor = UIColor.red
             
-            return [editAction, deleteAction]
+        return [deleteAction]
+        
         }
+        
+    }
         
     
     

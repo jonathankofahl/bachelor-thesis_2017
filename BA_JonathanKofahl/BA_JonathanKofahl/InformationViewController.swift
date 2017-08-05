@@ -20,6 +20,8 @@ class InformationViewController: UIViewController {
     @IBOutlet weak var view2: UIView!
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var bottomStackView: UIStackView!
+    
     
     @IBOutlet weak var field1: UITextField!
     @IBOutlet weak var field2: UITextField!
@@ -65,12 +67,16 @@ class InformationViewController: UIViewController {
         
         //MARK: - Color load from UserDefaults to complex!
         if defaults.value(forKey: "appColor") != nil {
-            view1.backgroundColor = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
-            view2.backgroundColor = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
-            cameraButton.backgroundColor = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
-            treeImageView.borderColor = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
+            var color = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
+            view1.backgroundColor = color
+            view2.backgroundColor = color
+            cameraButton.backgroundColor = color
+            treeImageView.borderColor = color
             for view in stackView.arrangedSubviews {
-                view.borderColor = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
+                view.borderColor = color
+            }
+            for view in bottomStackView.arrangedSubviews {
+                view.backgroundColor = color
             }
         }
         

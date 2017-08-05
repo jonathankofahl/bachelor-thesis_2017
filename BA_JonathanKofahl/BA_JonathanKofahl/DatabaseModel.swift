@@ -13,6 +13,8 @@ import CoreData
 
 class DatabaseModel: NSObject {
 
+    let defaults = UserDefaults.standard
+    
     private let managedObjectContext : NSManagedObjectContext
     
     init(managedObjectContext : NSManagedObjectContext) {
@@ -60,7 +62,8 @@ class DatabaseModel: NSObject {
     @discardableResult func createTree(
         ) -> Tree {
         let tree = NSEntityDescription.insertNewObject(forEntityName: Tree.entityName, into: self.managedObjectContext) as! Tree
-        //tree.treeNumber = Int16(databaseModel.trees.count)
+        tree.treeNumber = Int16(defaults.integer(forKey: "treeCount"))
+        defaults.set(Int16(defaults.integer(forKey: "treeCount")), forKey: "treeCount")
         return tree
     }
     
@@ -68,6 +71,26 @@ class DatabaseModel: NSObject {
        let place = NSEntityDescription.insertNewObject(forEntityName: Place.entityName, into: self.managedObjectContext) as! Place
         place.name = name
         return place
+    }
+    
+    func deleteTree(index: Int) -> Void {
+        for (count,tree) in trees.enumerated() {
+            if Int(tree.treeNumber) == index {
+                managedObjectContext.delete(trees[count])
+                 print("deleted a tree")
+            }
+        }
+    }
+    
+    func deletePlace(index: Int) -> Void {
+        //TODO: Delete all trees with this place
+        for (index1,tree) in trees.enumerated() {
+            if tree.place == places[index] {
+                print(index1.description)
+                managedObjectContext.delete(tree)
+            }
+        }
+        managedObjectContext.delete(places[index])
     }
     
     func logModel() {
