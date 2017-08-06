@@ -13,6 +13,8 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     //MARK: - Variables & Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableView1: UITableView!
+    @IBOutlet weak var topView: UIView!
+    var defaults = UserDefaults.standard
     
     // Seperated Arrays for the two Tables
     var tableCriteria : [String]?
@@ -23,6 +25,12 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //MARK: - Color load from UserDefaults
+        if defaults.value(forKey: "appColor") != nil {
+            let color = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
+            topView.backgroundColor = color
+        }
         
         tableCriteria = []
         tableCriteria1 = []

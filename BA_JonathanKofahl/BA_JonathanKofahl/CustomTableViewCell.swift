@@ -24,6 +24,8 @@ class CustomTableViewCell: UITableViewCell {
     }
     
     @IBAction func clickedButton(_ sender: UIButton) {
+        
+        // Animate the Buttons
         UIView.animate(withDuration: 0.3){
             for item in (sender.superview?.subviews)! {
                 item.backgroundColor = UIColor.clear
@@ -40,6 +42,13 @@ class CustomTableViewCell: UITableViewCell {
             }
             }
         }
+        
+        // Save the Content in relation to the MotherViewController
+        
+        //actualTree1?.setValue(true, forKey: criteria.text)
+        
+        
+        
     }
 
 }

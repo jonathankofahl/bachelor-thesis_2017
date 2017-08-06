@@ -12,6 +12,8 @@ class EnvironmentViewController: UIViewController, UITableViewDelegate, UITableV
     
     //MARK: - Variables & Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var topView: UIView!
+    var defaults = UserDefaults.standard
     
     // Seperated Arrays for the two Tables
     var tableCriteria : [String]?
@@ -22,9 +24,15 @@ class EnvironmentViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        //MARK: Color load from UserDefaults
+        if defaults.value(forKey: "appColor") != nil {
+            let color = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
+            topView.backgroundColor = color
+        }
+        
         tableCriteria = []
         
-        //MARK: - TableView init -> load strings from Localization.strings file
+        //MARK: TableView init -> load strings from Localization.strings file
         for index in 1...6 {
             let ressourceName = "enviroment" + index.description
             tableCriteria?.append( NSLocalizedString(ressourceName, comment: "") )
@@ -36,7 +44,6 @@ class EnvironmentViewController: UIViewController, UITableViewDelegate, UITableV
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - TableView Configuration
     // MARK: - Table view data source
     
     func numberOfSections(in tableView: UITableView) -> Int {

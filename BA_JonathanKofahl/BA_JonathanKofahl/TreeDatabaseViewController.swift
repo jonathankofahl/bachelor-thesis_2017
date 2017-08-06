@@ -197,8 +197,7 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             cell.placeLabel.text = databaseModel.places[indexPath.row].name?.description
         } else {
             cell1 = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TreeDatabaseTableViewCellTree
-            cell1.treeNumberLabel.text = tableTrees?[indexPath.row].treeNumber.description
-            print(tableTrees?[indexPath.row].treeNumber.description)
+            cell1.treeNumberLabel.text = tableTrees?[indexPath.row].info6
             return cell1
         }
         
@@ -224,10 +223,10 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             self.tableViewTrees.reloadData()
         } else {
         
-        treeNumberLabel.text = tableTrees?[indexPath.row].treeNumber.description
-        placeLabel.text = tableTrees?[indexPath.row].info0?.description
-        timeLabel.text = tableTrees?[indexPath.row].info1?.description
-        categoryLabel.text = tableTrees?[indexPath.row].info2?.description
+        treeNumberLabel.text = tableTrees?[indexPath.row].info6
+        placeLabel.text = tableTrees?[indexPath.row].info4
+        timeLabel.text = tableTrees?[indexPath.row].info1
+        categoryLabel.text = tableTrees?[indexPath.row].info5
         if tableTrees?[indexPath.row].image != nil {
             treeImageView.isHidden = false
             treeImageView.image = UIImage(cgImage: (UIImage.init(data: tableTrees?[indexPath.row].image! as! Data)?.cgImage)!,
@@ -297,10 +296,6 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
         }
         
     }
-        
-    
-    
-
     
     @IBAction func closeDetailView(_ sender: Any) {
        // self.detailView.isHidden = true

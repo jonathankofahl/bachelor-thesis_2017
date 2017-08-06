@@ -65,18 +65,18 @@ class InformationViewController: UIViewController {
         // get the date time String from the date object
         dateTextField.text =  formatter.string(from: currentDateTime)
         
-        //MARK: - Color load from UserDefaults to complex!
+        //MARK: - Color load from UserDefaults
         if defaults.value(forKey: "appColor") != nil {
-            var color = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
+            let color = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
             view1.backgroundColor = color
-            view2.backgroundColor = color
+            //view2.backgroundColor = color
             cameraButton.backgroundColor = color
             treeImageView.borderColor = color
             for view in stackView.arrangedSubviews {
-                view.borderColor = color
+               // view.borderColor = color
             }
             for view in bottomStackView.arrangedSubviews {
-                view.backgroundColor = color
+                //view.borderColor = color
             }
         }
         
@@ -92,6 +92,7 @@ class InformationViewController: UIViewController {
         self.field9.nextField = self.field10
         
         actualTree = databaseModel.createTree()
+        actualTree1 = actualTree
     }
     
     override func didReceiveMemoryWarning() {
@@ -129,10 +130,6 @@ class InformationViewController: UIViewController {
         //  print("Returnclicked")
         _ = textFieldShouldReturn(textField: sender)
         // save Data to database
-        
-        if sender == field6 {
-            actualPlace = sender.text
-        }
         
     }
     
@@ -183,6 +180,14 @@ class InformationViewController: UIViewController {
     }
     
     
+    //MARK: - Save Entries do database tree Object
+    @IBAction func endEditing(_ sender: UITextField) {
+        actualTree.setValue(sender.text, forKey: "info"+sender.tag.description)
+        print("saved!!!")
+        
+    }
+    
+
     @IBAction func clickedButton(_ sender: UIButton) {
         UIView.animate(withDuration: 0.3){
         for item in (sender.superview?.subviews)! {
@@ -190,14 +195,15 @@ class InformationViewController: UIViewController {
         }
         sender.backgroundColor = UIColor.init(hexString: "00B079")
         }
+        actualTree.setValue(sender.titleLabel?.text, forKey: "info"+sender.tag.description)
     }
-    
     
     
     //MARK: - Cancel NewTreeFunction - Used in all VC
     @IBAction func cancelNewTree(_ sender: UIButton) {
         alertFunc(sender: sender, parentController: self)
     }
+    
     // Source: http://nshipster.com/uialertcontroller/
     func alertFunc(sender: Any, parentController: UIViewController) -> Void {
         let alertController = UIAlertController(title: "Kontrolle Abbrechen", message: "Wollen Sie die Kontrolle wirklich abbrechen? Alle Eintragungen zu diesem Baum gehen verloren.", preferredStyle: .alert)
@@ -217,6 +223,8 @@ class InformationViewController: UIViewController {
     
 
 }
+
+public var actualTree1 : Tree?
 
 // MARK: - Source:
 

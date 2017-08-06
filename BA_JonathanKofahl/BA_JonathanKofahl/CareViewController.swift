@@ -13,6 +13,8 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
     //MARK: - Variables & Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableView1: UITableView!
+    @IBOutlet weak var topView: UIView!
+    var defaults = UserDefaults.standard
     
     // Seperated Arrays for the two Tables
     var tableCriteria : [String]?
@@ -23,6 +25,12 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //MARK: - Color load from UserDefaults
+        if defaults.value(forKey: "appColor") != nil {
+            let color = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
+            topView.backgroundColor = color
+        }
         
         tableCriteria = []
         tableCriteria1 = []
@@ -86,13 +94,13 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func saveTree(_ sender: Any) {
         
+        let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
         
-        //databaseModel.clear()
-        
-        
-        
-        
-       // databaseModel.createTree(number: 0, info0: "Mario", info1: "Birke", info2: "Neu", info3: "test", info4: "bob", image: imageData! as NSData, place: //databaseModel.places[placeIndex])
+        // Check if the Tree has a Place -> if not -> Alert
+        if infoController.actualTree.info4 == nil {
+            // AlertController with hint
+            print("Please insert Placename!")
+        } else {
         
         let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
 
@@ -100,13 +108,13 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
         var placeIndex = 0
         
         for (index,place) in databaseModel.places.enumerated() {
-            if place.name ==  infoController.actualPlace! {
+            if place.name ==  infoController.actualTree.info4 {
                 placeUsedBefore = true
                 placeIndex = index
             }
         }
         if !placeUsedBefore {
-            databaseModel.createPlace(name: infoController.actualPlace!)
+            databaseModel.createPlace(name: infoController.actualTree.info4!)
             placeIndex = databaseModel.places.count-1
             databaseModel.save()
         }
@@ -114,13 +122,9 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
         infoController.actualTree.place = databaseModel.places[placeIndex]
         databaseModel.save()
         
-        
         databaseModel.logModel()
-        
-        
-        
-        
         self.performSegue(withIdentifier: "exit", sender: self)
+        }
         
     }
     

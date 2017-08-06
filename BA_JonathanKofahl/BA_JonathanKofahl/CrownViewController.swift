@@ -11,8 +11,11 @@ import UIKit
 class CrownViewController: UIViewController {
     
     //MARK: - Variables & Outlets
-    
     var containerView: ContainerViewController!
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var stackView: UIStackView!
+    var defaults = UserDefaults.standard
+    
     
     //MARK: - Methods
     
@@ -21,6 +24,16 @@ class CrownViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         self.containerView.initialize()
+        
+        //MARK: - Color load from UserDefaults
+        if defaults.value(forKey: "appColor") != nil {
+            let color = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
+            topView.backgroundColor = color
+            for view in stackView.arrangedSubviews {
+                view.backgroundColor = color
+            }
+        }
+
     
     }
     
