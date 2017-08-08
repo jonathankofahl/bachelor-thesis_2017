@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		121B79EC1F3A1D17001E540D /* inspect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 121B79EB1F3A1D17001E540D /* inspect.storyboard */; };
 		1232D4C61F2F854B005F2B63 /* Tree+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1232D4C41F2F854B005F2B63 /* Tree+CoreDataClass.swift */; };
 		1232D4C91F2F885A005F2B63 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1232D4C81F2F885A005F2B63 /* CoreData.swift */; };
 		124264BC1F31048400CDE7EA /* TreeDatabaseTableviewCellTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124264BB1F31048400CDE7EA /* TreeDatabaseTableviewCellTree.swift */; };
@@ -62,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		121B79EB1F3A1D17001E540D /* inspect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = inspect.storyboard; sourceTree = "<group>"; };
 		1232D4C41F2F854B005F2B63 /* Tree+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tree+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1232D4C81F2F885A005F2B63 /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreData.swift; path = ../CoreData.swift; sourceTree = "<group>"; };
 		124264BB1F31048400CDE7EA /* TreeDatabaseTableviewCellTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeDatabaseTableviewCellTree.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				12F6886A1EEE83CC0057C49A /* AppDelegate.swift */,
 				12F688AF1EEE9F490057C49A /* ExtensionCALayer.swift */,
 				12F6886E1EEE83CC0057C49A /* Main.storyboard */,
+				121B79EB1F3A1D17001E540D /* inspect.storyboard */,
 				12F688761EEE83CC0057C49A /* LaunchScreen.storyboard */,
 				12F688791EEE83CC0057C49A /* Info.plist */,
 				12F688711EEE83CC0057C49A /* BA_JonathanKofahl.xcdatamodeld */,
@@ -362,6 +365,7 @@
 				12F688751EEE83CC0057C49A /* Assets.xcassets in Resources */,
 				124D1A941EFFEEED005CCD1E /* Localizable.strings in Resources */,
 				12F688701EEE83CC0057C49A /* Main.storyboard in Resources */,
+				121B79EC1F3A1D17001E540D /* inspect.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
