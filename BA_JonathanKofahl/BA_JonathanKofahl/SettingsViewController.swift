@@ -42,12 +42,6 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func changeAppColor(_ sender: UIButton) {
-        
-        colorOption1.borderWidth = 0
-        colorOption2.borderWidth = 0
-        colorOption3.borderWidth = 0
-        colorOption4.borderWidth = 0
-        colorOption5.borderWidth = 0
 
        //  sender.borderWidth = 1
        //  sender.borderColor = UIColor.black
