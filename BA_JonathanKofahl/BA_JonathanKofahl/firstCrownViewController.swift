@@ -69,6 +69,8 @@ class firstCrownViewController: UIViewController, UITableViewDelegate, UITableVi
         
         if tableView == self.tableView {
             cell.criteria.text = tableCriteria?[indexPath.row]
+            cell.tableViewIdentifier = "crown"
+            cell.index = indexPath.row
         } else {
             cell.criteria.text = tableCriteria1?[indexPath.row]
         }

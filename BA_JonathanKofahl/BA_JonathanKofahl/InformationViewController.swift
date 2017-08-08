@@ -71,12 +71,10 @@ class InformationViewController: UIViewController {
             view1.backgroundColor = color
             //view2.backgroundColor = color
             cameraButton.backgroundColor = color
-            treeImageView.borderColor = color
-            for view in stackView.arrangedSubviews {
-               // view.borderColor = color
-            }
-            for view in bottomStackView.arrangedSubviews {
-                //view.borderColor = color
+            //treeImageView.borderColor = color
+            self.tabBarController?.tabBar.tintColor = color
+            if defaults.value(forKey: "appColor") as! String == "#4C4C4C" {
+                self.tabBarController?.tabBar.tintColor = UIColor.white
             }
         }
         

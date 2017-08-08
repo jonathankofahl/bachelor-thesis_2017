@@ -83,8 +83,12 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         if tableView == self.tableView {
             cell.criteria.text = tableCriteria?[indexPath.row]
+            cell.tableViewIdentifier = "care"
+            cell.index = indexPath.row
         } else {
             cell.criteria.text = tableCriteria1?[indexPath.row]
+            cell.tableViewIdentifier = "care"
+            cell.index = indexPath.row + 13
         }
         
         return cell
