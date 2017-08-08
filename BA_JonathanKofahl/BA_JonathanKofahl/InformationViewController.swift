@@ -71,7 +71,7 @@ class InformationViewController: UIViewController {
             view1.backgroundColor = color
             //view2.backgroundColor = color
             cameraButton.backgroundColor = color
-            treeImageView.borderColor = color
+            //treeImageView.borderColor = color
             for view in stackView.arrangedSubviews {
                // view.borderColor = color
             }
@@ -213,7 +213,9 @@ class InformationViewController: UIViewController {
         alertController.addAction(cancelAction)
         
         let exitAction = UIAlertAction(title: "Baum verwerfen", style: .destructive) { action in
-            parentController.performSegue(withIdentifier: "showMenu", sender: self)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let home = storyboard.instantiateViewController(withIdentifier: "menuNavigationController") as UIViewController
+            self.present(home, animated: true, completion: nil)
         }
         alertController.addAction(exitAction)
         

@@ -51,6 +51,11 @@ class MenuViewController: UIViewController {
         }
         
     }
+    @IBAction func newTreeAction(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Inspect", bundle: nil)
+        let tabbar = storyboard.instantiateViewController(withIdentifier: "tabbar") as UIViewController
+        present(tabbar, animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
