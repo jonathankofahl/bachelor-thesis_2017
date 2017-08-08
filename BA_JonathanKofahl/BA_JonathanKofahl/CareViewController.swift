@@ -128,6 +128,17 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
+    @IBAction func buttonClicked(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.3){
+            for item in (sender.superview?.subviews)! {
+                item.backgroundColor = UIColor.clear
+            }
+            sender.backgroundColor = UIColor.init(hexString: "00B079")
+        }
+        actualTree1?.setValue(sender.titleLabel?.text, forKey: "care"+sender.tag.description)
+    }
+    
+    
     
     
 }

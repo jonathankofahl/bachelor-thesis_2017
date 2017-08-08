@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Place" representedClassName="Place" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Tree" representedClassName="Tree" syncable="YES">
         <attribute name="care0" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="care1" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="care1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="care2" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="care3" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="care4" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
@@ -19,13 +19,21 @@
         <attribute name="care12" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="care13" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="care14" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="care15" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="care16" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="care17" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="care15" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="care16" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="care17" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="care18" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="care19" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="care20" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="care21" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="care22" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="care23" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="care24" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="care25" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="care26" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="care27" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="care28" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="care29" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="crown0" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="crown1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="crown2" optional="YES" attributeType="String" syncable="YES"/>
@@ -121,6 +129,6 @@
     </entity>
     <elements>
         <element name="Place" positionX="-63" positionY="27" width="128" height="60"/>
-        <element name="Tree" positionX="-63" positionY="-27" width="128" height="1755"/>
+        <element name="Tree" positionX="-63" positionY="-27" width="128" height="1875"/>
     </elements>
 </model>

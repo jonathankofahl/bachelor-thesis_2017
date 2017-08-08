@@ -2126,17 +2126,23 @@ abschließen</string>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8bm-pZ-Dgv">
                                         <rect key="frame" x="424" y="900" width="400" height="43.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnr-8y-4kU">
+                                            <button opaque="NO" tag="28" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnr-8y-4kU">
                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="43.5"/>
                                                 <state key="normal" title="Seilklettertechnik">
                                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="buttonClicked:" destination="hnl-Bv-jIX" eventType="touchUpInside" id="7Hg-aP-1YJ"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6D-1S-J56">
+                                            <button opaque="NO" tag="29" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6D-1S-J56">
                                                 <rect key="frame" x="200" y="0.0" width="200" height="43.5"/>
                                                 <state key="normal" title="Hubarbeitstechnik">
                                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="buttonClicked:" destination="hnl-Bv-jIX" eventType="touchUpInside" id="t7N-Pm-h77"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -2158,9 +2164,9 @@ abschließen</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Hkh-t6-QyA">
-                                        <rect key="frame" x="112" y="520.5" width="610" height="43.5"/>
+                                        <rect key="frame" x="214" y="520.5" width="610" height="43.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmK-Xs-5i2">
+                                            <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmK-Xs-5i2">
                                                 <rect key="frame" x="0.0" y="0.0" width="190" height="43.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="190" id="4hO-Xr-FLk"/>
@@ -2168,8 +2174,11 @@ abschließen</string>
                                                 <state key="normal" title="dieses Jahr">
                                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="buttonClicked:" destination="hnl-Bv-jIX" eventType="touchUpInside" id="OXf-Db-GNB"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMx-Ym-RKp">
+                                            <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMx-Ym-RKp">
                                                 <rect key="frame" x="210" y="0.0" width="190" height="43.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="190" id="Uk0-6y-Fop"/>
@@ -2177,8 +2186,11 @@ abschließen</string>
                                                 <state key="normal" title="bis zur nächst. Kontrolle">
                                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="buttonClicked:" destination="hnl-Bv-jIX" eventType="touchUpInside" id="mqq-69-J01"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmH-ya-dii">
+                                            <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmH-ya-dii">
                                                 <rect key="frame" x="420" y="0.0" width="190" height="43.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="190" id="HxL-qf-f50"/>
@@ -2186,6 +2198,9 @@ abschließen</string>
                                                 <state key="normal" title="langfristig">
                                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="buttonClicked:" destination="hnl-Bv-jIX" eventType="touchUpInside" id="4c0-yh-hFj"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -2193,7 +2208,7 @@ abschließen</string>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Hc5-nC-fFJ">
-                                        <rect key="frame" x="217" y="74" width="400" height="43.5"/>
+                                        <rect key="frame" x="424" y="74" width="400" height="43.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZx-FZ-E4j">
                                                 <rect key="frame" x="0.0" y="0.0" width="190" height="43.5"/>
@@ -2203,8 +2218,11 @@ abschließen</string>
                                                 <state key="normal" title="dieses Jahr">
                                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="buttonClicked:" destination="hnl-Bv-jIX" eventType="touchUpInside" id="k2G-My-puy"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kM-rc-DtS">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kM-rc-DtS">
                                                 <rect key="frame" x="210" y="0.0" width="190" height="43.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="190" id="gns-ZX-jbM"/>
@@ -2212,6 +2230,9 @@ abschließen</string>
                                                 <state key="normal" title="bis zur nächst. Kontrolle">
                                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="buttonClicked:" destination="hnl-Bv-jIX" eventType="touchUpInside" id="rOy-g4-UcB"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -2221,7 +2242,7 @@ abschließen</string>
                                 </subviews>
                                 <color key="backgroundColor" red="0.4103715235" green="0.41443460789999997" blue="0.41443460789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Hkh-t6-QyA" firstAttribute="centerX" secondItem="pMV-5c-bG1" secondAttribute="centerX" id="2tl-RJ-nnz"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hc5-nC-fFJ" secondAttribute="trailing" constant="10" id="4Id-VW-YTJ"/>
                                     <constraint firstAttribute="trailing" secondItem="a2x-z8-v93" secondAttribute="trailing" id="6sy-A0-nhE"/>
                                     <constraint firstItem="9jt-zh-jGL" firstAttribute="leading" secondItem="pMV-5c-bG1" secondAttribute="leading" constant="50" id="Bcj-aQ-rBX"/>
                                     <constraint firstItem="a2x-z8-v93" firstAttribute="top" secondItem="Hkh-t6-QyA" secondAttribute="bottom" constant="20" id="EYl-jx-S4j"/>
@@ -2236,7 +2257,7 @@ abschließen</string>
                                     <constraint firstAttribute="trailing" secondItem="8bm-pZ-Dgv" secondAttribute="trailing" constant="10" id="gMe-1y-053"/>
                                     <constraint firstItem="7SS-VL-uQO" firstAttribute="leading" secondItem="pMV-5c-bG1" secondAttribute="leading" id="pkM-vI-6NS"/>
                                     <constraint firstItem="8bm-pZ-Dgv" firstAttribute="top" secondItem="a2x-z8-v93" secondAttribute="bottom" constant="33" id="pon-g8-AL9"/>
-                                    <constraint firstItem="Hc5-nC-fFJ" firstAttribute="centerX" secondItem="pMV-5c-bG1" secondAttribute="centerX" id="vo4-Tn-kDb"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hkh-t6-QyA" secondAttribute="trailing" constant="10" id="rMV-Pe-MPc"/>
                                     <constraint firstAttribute="bottom" secondItem="ItP-gp-gWB" secondAttribute="bottom" constant="30" id="vsQ-LQ-WJ6"/>
                                     <constraint firstItem="8bm-pZ-Dgv" firstAttribute="centerY" secondItem="ItP-gp-gWB" secondAttribute="centerY" id="x0s-o5-NtD"/>
                                     <constraint firstItem="Br2-tP-TU5" firstAttribute="leading" secondItem="9jt-zh-jGL" secondAttribute="leading" id="zAa-x3-hDM"/>

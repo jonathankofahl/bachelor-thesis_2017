@@ -11,6 +11,8 @@ import UIKit
 class CustomTableViewCell: UITableViewCell {
 
     @IBOutlet weak var criteria: UILabel!
+    var tableViewIdentifier : String!
+    var index : Int!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,9 +48,7 @@ class CustomTableViewCell: UITableViewCell {
         // Save the Content in relation to the MotherViewController
         
         //actualTree1?.setValue(true, forKey: criteria.text)
-        
-        
-        
+        actualTree1?.setValue(sender.titleLabel?.text, forKey: tableViewIdentifier + index.description)
     }
 
 }
