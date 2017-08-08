@@ -78,6 +78,10 @@ class InformationViewController: UIViewController {
             for view in bottomStackView.arrangedSubviews {
                 //view.borderColor = color
             }
+            self.tabBarController?.tabBar.tintColor = color
+            if defaults.value(forKey: "appColor") as! String == "#4C4C4C" {
+            self.tabBarController?.tabBar.tintColor = UIColor.white
+            }
         }
         
         //MARK: - Connect the textFields, so the user can tab to the next

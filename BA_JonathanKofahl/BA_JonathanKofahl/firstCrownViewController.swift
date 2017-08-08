@@ -14,11 +14,11 @@ class firstCrownViewController: UIViewController, UITableViewDelegate, UITableVi
 
     //MARK: - Variables & Outlets
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var tableView1: UITableView!
+   // @IBOutlet weak var tableView1: UITableView!
     
     // Seperated Arrays for the two Tables
     var tableCriteria : [String]?
-    var tableCriteria1 : [String]?
+    //var tableCriteria1 : [String]?
 
     //MARK: - Methods
 
@@ -26,16 +26,12 @@ class firstCrownViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         
         tableCriteria = []
-        tableCriteria1 = []
+        //tableCriteria1 = []
         
         //MARK: - TableView init -> load strings from Localization.strings file
         for index in 1...15 {
             let ressourceName = "crown" + index.description
             tableCriteria?.append( NSLocalizedString(ressourceName, comment: "") )
-        }
-        for index in 16...21 {
-            let ressourceName = "crown" + index.description
-            tableCriteria1?.append( NSLocalizedString(ressourceName, comment: "") )
         }
     }
 
@@ -55,11 +51,7 @@ class firstCrownViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         
-        if tableView == self.tableView {
             return tableCriteria!.count
-        } else {
-            return tableCriteria1!.count
-        }
         
     }
     
@@ -69,8 +61,8 @@ class firstCrownViewController: UIViewController, UITableViewDelegate, UITableVi
         
         if tableView == self.tableView {
             cell.criteria.text = tableCriteria?[indexPath.row]
-        } else {
-            cell.criteria.text = tableCriteria1?[indexPath.row]
+            cell.tableViewIdentifier = "crown"
+            cell.index = indexPath.row
         }
         
         return cell

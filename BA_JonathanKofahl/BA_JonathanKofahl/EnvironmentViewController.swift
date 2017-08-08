@@ -13,6 +13,8 @@ class EnvironmentViewController: UIViewController, UITableViewDelegate, UITableV
     //MARK: - Variables & Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var textView: UITextView!
+    
     var defaults = UserDefaults.standard
     
     // Seperated Arrays for the two Tables
@@ -63,6 +65,8 @@ class EnvironmentViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
         
         cell.criteria.text = tableCriteria?[indexPath.row]
+        cell.tableViewIdentifier = "enviroment"
+        cell.index = indexPath.row
         
         return cell
     }
@@ -70,6 +74,11 @@ class EnvironmentViewController: UIViewController, UITableViewDelegate, UITableV
     @IBAction func cancelNewTree(_ sender: Any) {
         let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
         infoController.alertFunc(sender: sender, parentController: self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+            actualTree1?.setValue(textView.text, forKey: "environment"+textView.tag.description)
+            super.viewWillDisappear(true)
     }
     
 }

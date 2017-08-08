@@ -69,8 +69,12 @@ class secondTribeViewController: UIViewController, UITableViewDelegate, UITableV
         
         if tableView == self.tableView {
             cell.criteria.text = tableCriteria?[indexPath.row]
+            cell.tableViewIdentifier = "tribe"
+            cell.index = indexPath.row + 12
         } else {
             cell.criteria.text = tableCriteria1?[indexPath.row]
+            cell.tableViewIdentifier = "tribe"
+            cell.index = indexPath.row + 22
         }
         
         return cell

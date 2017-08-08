@@ -83,8 +83,12 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         if tableView == self.tableView {
             cell.criteria.text = tableCriteria?[indexPath.row]
+            cell.tableViewIdentifier = "root"
+            cell.index = indexPath.row
         } else {
             cell.criteria.text = tableCriteria1?[indexPath.row]
+            cell.tableViewIdentifier = "root"
+            cell.index = indexPath.row + 6
         }
         
         return cell
