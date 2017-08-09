@@ -61,13 +61,14 @@
         <attribute name="crown24" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="crown25" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="crown26" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="enviroment0" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="enviroment1" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="enviroment2" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="enviroment3" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="enviroment4" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="enviroment5" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="enviroment6" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="environment0" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="environment7" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="info0" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="info1" optional="YES" attributeType="String" syncable="YES"/>
@@ -129,6 +130,6 @@
     </entity>
     <elements>
         <element name="Place" positionX="-63" positionY="27" width="128" height="60"/>
-        <element name="Tree" positionX="-63" positionY="-27" width="128" height="1875"/>
+        <element name="Tree" positionX="-63" positionY="-27" width="128" height="1890"/>
     </elements>
 </model>

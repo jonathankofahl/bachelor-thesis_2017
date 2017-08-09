@@ -528,9 +528,6 @@ abbrechen</string>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="463" id="PNW-rx-ewh"/>
-                                </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Noch kein Foto hinterlegt." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJZ-4g-FxS">
                                 <rect key="frame" x="565.5" y="470" width="197.5" height="20.5"/>
@@ -767,8 +764,8 @@ abbrechen</string>
                                     <constraint firstItem="MhW-xz-xs4" firstAttribute="leading" secondItem="0ya-i7-GEk" secondAttribute="leading" id="cda-c6-M1O"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Rl3-Ud-BwL">
-                                <rect key="frame" x="20" y="837" width="794" height="210"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Rl3-Ud-BwL">
+                                <rect key="frame" x="20" y="879" width="794" height="168"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0xw-Sj-Czy">
                                         <rect key="frame" x="0.0" y="0.0" width="794" height="50"/>
@@ -848,7 +845,7 @@ abbrechen</string>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MP5-r9-Drr">
-                                        <rect key="frame" x="0.0" y="80" width="794" height="50"/>
+                                        <rect key="frame" x="0.0" y="59" width="794" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sicherheitserwartung:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44c-eB-bkf">
                                                 <rect key="frame" x="18" y="0.0" width="184.5" height="50"/>
@@ -913,7 +910,7 @@ abbrechen</string>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WeD-7E-Qq3">
-                                        <rect key="frame" x="0.0" y="160" width="794" height="50"/>
+                                        <rect key="frame" x="0.0" y="118" width="794" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zustand:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bU9-D8-cMh">
                                                 <rect key="frame" x="18" y="0.0" width="73.5" height="50"/>
@@ -1163,10 +1160,7 @@ abbrechen</string>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A9T-6a-7qY">
-                                <rect key="frame" x="0.0" y="101" width="834" height="911"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="911" id="n8I-Qk-eKS"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="101" width="834" height="912"/>
                                 <connections>
                                     <segue destination="FcL-bb-2fV" kind="embed" identifier="embedContainer" id="2RQ-9w-6OJ"/>
                                 </connections>
@@ -1212,7 +1206,7 @@ abbrechen</string>
                             <constraint firstItem="f2N-gO-UrD" firstAttribute="leading" secondItem="qNp-U5-qhd" secondAttribute="leading" id="fHN-L0-JOU"/>
                             <constraint firstAttribute="trailing" secondItem="A9T-6a-7qY" secondAttribute="trailing" id="g0u-By-hM0"/>
                             <constraint firstItem="2hn-qZ-Qdo" firstAttribute="leading" secondItem="A9T-6a-7qY" secondAttribute="leading" id="jZ2-Gv-Woh"/>
-                            <constraint firstItem="2hn-qZ-Qdo" firstAttribute="top" secondItem="A9T-6a-7qY" secondAttribute="bottom" constant="1" id="qxo-07-WaE"/>
+                            <constraint firstItem="2hn-qZ-Qdo" firstAttribute="top" secondItem="A9T-6a-7qY" secondAttribute="bottom" id="qxo-07-WaE"/>
                             <constraint firstItem="A9T-6a-7qY" firstAttribute="leading" secondItem="qNp-U5-qhd" secondAttribute="leading" id="soa-mY-mvV"/>
                         </constraints>
                     </view>
@@ -1324,7 +1318,7 @@ abbrechen</string>
                                 </subviews>
                             </stackView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Js7-yI-r3L">
-                                <rect key="frame" x="0.0" y="101" width="834" height="911"/>
+                                <rect key="frame" x="0.0" y="101" width="834" height="912"/>
                                 <connections>
                                     <segue destination="iXk-U1-Xnf" kind="embed" identifier="embedContainer" id="wXI-ze-nlx"/>
                                 </connections>
@@ -1340,7 +1334,7 @@ abbrechen</string>
                             <constraint firstItem="Qzr-6B-g7M" firstAttribute="leading" secondItem="tyx-J2-PLm" secondAttribute="leading" id="aGz-Rk-hVb"/>
                             <constraint firstItem="Js7-yI-r3L" firstAttribute="top" secondItem="Qzr-6B-g7M" secondAttribute="bottom" constant="1" id="bI5-W1-EuB"/>
                             <constraint firstAttribute="trailing" secondItem="Js7-yI-r3L" secondAttribute="trailing" id="fcO-Dx-Vmy"/>
-                            <constraint firstItem="rwI-4d-GEW" firstAttribute="top" secondItem="Js7-yI-r3L" secondAttribute="bottom" constant="1" id="nU3-5w-cNX"/>
+                            <constraint firstItem="rwI-4d-GEW" firstAttribute="top" secondItem="Js7-yI-r3L" secondAttribute="bottom" id="nU3-5w-cNX"/>
                             <constraint firstAttribute="trailing" secondItem="Qzr-6B-g7M" secondAttribute="trailing" id="udC-8m-skB"/>
                         </constraints>
                     </view>
@@ -1744,7 +1738,7 @@ abbrechen</string>
                                             <outlet property="delegate" destination="Ola-CD-Vuk" id="nfc-jr-Bfg"/>
                                         </connections>
                                     </tableView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fXv-ob-Vxt">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="7" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fXv-ob-Vxt">
                                         <rect key="frame" x="114" y="548.5" width="607" height="345.5"/>
                                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.35774293660000001" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2332,7 +2326,7 @@ abschließen</string>
                         <viewControllerLayoutGuide type="bottom" id="Vu1-ZB-cuJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="HSV-Vh-FHF">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="911"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="912"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -2354,11 +2348,11 @@ abschließen</string>
                         <viewControllerLayoutGuide type="bottom" id="Og6-yg-Loe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="a7H-bX-jYM">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="911"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="noi-eS-bv8">
-                                <rect key="frame" x="0.0" y="45" width="834" height="967"/>
+                                <rect key="frame" x="0.0" y="45" width="834" height="766"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" red="0.4103715235" green="0.41443460789999997" blue="0.41443460789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2445,12 +2439,15 @@ abschließen</string>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wenn sie nichts auswählen wird &quot;Unbedenklich&quot; in das Dokument eingetragen." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3FX-JB-Tsy">
                                 <rect key="frame" x="20" y="20" width="794" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="dWg-NH-DKv"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iz8-PE-Ahq">
-                                <rect key="frame" x="0.0" y="1020" width="834" height="84"/>
+                                <rect key="frame" x="0.0" y="819" width="834" height="84"/>
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="qFs-l2-oBr">
                                         <rect key="frame" x="422" y="10" width="400" height="31"/>
@@ -2511,7 +2508,6 @@ abschließen</string>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vitalität der Krone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USS-qr-Wyx">
                                         <rect key="frame" x="25" y="32" width="173" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="20.5" id="77q-WX-kbk"/>
                                             <constraint firstAttribute="width" constant="173" id="NHf-hR-zj5"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -2547,13 +2543,16 @@ abschließen</string>
                             <constraint firstAttribute="trailing" secondItem="noi-eS-bv8" secondAttribute="trailing" id="y7Q-qR-P37"/>
                         </constraints>
                     </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="834" height="911"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="834" height="911"/>
                     <connections>
                         <outlet property="tableView" destination="noi-eS-bv8" id="mwN-3T-2wz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l3k-qF-FXQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2187" y="1386"/>
+            <point key="canvasLocation" x="2186.3309352517986" y="1385.341726618705"/>
         </scene>
         <!--Second Crown View Controller-->
         <scene sceneID="gVd-ul-9YJ">
@@ -3121,8 +3120,8 @@ Plombe,gefräste Wunden,Entwässerung/Drainage o.ä.)														</string>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qcq-Dz-Ng7">
                                 <rect key="frame" x="400" y="570" width="364" height="30"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="364" id="l1F-79-X26"/>
                                     <constraint firstAttribute="height" constant="30" id="pvT-n9-qLu"/>
                                 </constraints>
                                 <nil key="textColor"/>
@@ -3407,7 +3406,7 @@ Plombe,gefräste Wunden,Entwässerung/Drainage o.ä.)														</string>
                             </tableView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wy3-5u-Ket">
                                 <rect key="frame" x="217" y="436" width="514" height="30"/>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.35774293660000001" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="514" id="u6d-UY-jWd"/>
                                 </constraints>
@@ -3465,6 +3464,9 @@ Plombe,gefräste Wunden,Entwässerung/Drainage o.ä.)														</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="834" height="911"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="834" height="911"/>
                     <connections>
                         <segue destination="Gk5-N9-5HO" kind="custom" identifier="embedFirst" customClass="EmptySegue" customModule="BA_JonathanKofahl" id="uxh-Wr-jFb"/>
                         <segue destination="L01-2L-vxV" kind="custom" identifier="embedSecond" customClass="EmptySegue" customModule="BA_JonathanKofahl" id="mFI-28-1AK"/>
