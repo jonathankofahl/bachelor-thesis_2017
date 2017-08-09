@@ -16,6 +16,8 @@ class MenuViewController: UIViewController {
 
     @IBOutlet weak var view1: UIView!
     @IBOutlet weak var databaseButton: UIButton!
+    @IBOutlet weak var userTextfield: UITextField!
+    @IBOutlet weak var dateTextfield: UITextField!
     
     //MARK: - Methods
     
@@ -28,6 +30,7 @@ class MenuViewController: UIViewController {
         
         databaseButton.backgroundColor = view1.backgroundColor
         databaseButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+        
     }
     
     // Make the Button highlighted on Select
@@ -57,13 +60,41 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-       
+        // initialize the date formatter and set the style
+        let currentDateTime = Date()
+        let formatter = DateFormatter()
+        formatter.timeStyle = .none
+        formatter.dateStyle = .long
+        
+        // get the date time String from the date object
+        dateTextfield.text =  formatter.string(from: currentDateTime)
+        
+        if defaults.value(forKey: "userName") != nil {
+            userTextfield.text = defaults.string(forKey: "userName")
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func returnClicked(_ sender: UITextField) {
+        //  print("Returnclicked")
+        _ = textFieldShouldReturn(textField: sender)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField.tag == 0 {
+            defaults.set(textField.text, forKey: "userName")
+        } else {
+            defaults.set(dateTextfield.text, forKey: "customDate")
+        }
+        
+        textField.resignFirstResponder()
+        return true
+    }
+
     
     
 }

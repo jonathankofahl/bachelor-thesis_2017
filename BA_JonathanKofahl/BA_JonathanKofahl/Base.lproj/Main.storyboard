@@ -83,8 +83,12 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i0I-XO-um1">
                                         <rect key="frame" x="70" y="184" width="694" height="30"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="returnClicked:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="Cs3-qx-1XA"/>
+                                            <action selector="returnClicked:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="b6j-Wo-oPT"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEd-eb-GTC">
                                         <rect key="frame" x="70" y="274" width="694" height="23"/>
@@ -92,11 +96,15 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" text="12.07.2017" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OTw-lN-XUr">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OTw-lN-XUr">
                                         <rect key="frame" x="70" y="307" width="694" height="30"/>
                                         <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="returnClicked:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="2Kk-ra-q2h"/>
+                                            <action selector="returnClicked:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="QoZ-6x-r9X"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitte wählen Sie einen Baum aus der Datenbank aus oder kontrollieren Sie einen neuen Baum." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gv2-8l-y65">
                                         <rect key="frame" x="70" y="474" width="694" height="45.5"/>
@@ -171,6 +179,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="databaseButton" destination="G29-b7-j8u" id="ky5-Mh-NHs"/>
+                        <outlet property="dateTextfield" destination="OTw-lN-XUr" id="CeZ-Kr-j4L"/>
+                        <outlet property="userTextfield" destination="i0I-XO-um1" id="odx-ta-0Oq"/>
                         <outlet property="view1" destination="YUT-a0-gOo" id="uu4-5Q-VLy"/>
                     </connections>
                 </viewController>
@@ -211,7 +221,7 @@
                                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="caS-CC-pJk" customClass="TreeDatabaseTableViewCellPlace" customModule="BA_JonathanKofahl" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="387" height="45"/>
+                                                        <rect key="frame" x="0.0" y="28" width="387" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="caS-CC-pJk" id="dcy-5s-g7B">
                                                             <rect key="frame" x="0.0" y="0.0" width="387" height="43.5"/>
@@ -258,7 +268,7 @@
                                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="ZqL-vz-hhi" customClass="TreeDatabaseTableViewCellTree" customModule="BA_JonathanKofahl" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="387" height="45"/>
+                                                        <rect key="frame" x="0.0" y="28" width="387" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZqL-vz-hhi" id="QB2-Dt-6na">
                                                             <rect key="frame" x="0.0" y="0.0" width="387" height="43.5"/>

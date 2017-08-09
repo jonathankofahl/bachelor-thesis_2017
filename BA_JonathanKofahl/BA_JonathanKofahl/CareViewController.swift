@@ -103,7 +103,7 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Check if the Tree has a Place -> if not -> Alert
         if infoController.actualTree.info4 == nil {
             // AlertController with hint
-            print("Please insert Placename!")
+            alertFunc(parentController: self)
         } else {
         
         let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
@@ -144,7 +144,17 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
         actualTree1?.setValue(sender.titleLabel?.text, forKey: "care"+sender.tag.description)
     }
     
-    
+    // Source: http://nshipster.com/uialertcontroller/
+    func alertFunc(parentController: UIViewController) -> Void {
+        let alertController = UIAlertController(title: "Hinweis", message: "Sie haben vergessen im Abschnitt Info (1) einen Ort einzutragen. Ohne einen Ort kann der Baum nicht gespeichert werden.", preferredStyle: .alert)
+        self.present(alertController, animated: true) {
+        }
+        
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel) { action in
+        }
+        alertController.addAction(cancelAction)
+    }
+
     
     
 }

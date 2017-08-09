@@ -53,16 +53,32 @@ class InformationViewController: UIViewController {
         
         topConstant = stackViewTopConstraint.constant
         
+        actualTree = databaseModel.createTree()
+        actualTree1 = actualTree
+        
         // get the current date and time
         let currentDateTime = Date()
+    
         
-        // initialize the date formatter and set the style
-        let formatter = DateFormatter()
-        formatter.timeStyle = .none
-        formatter.dateStyle = .long
+        if defaults.value(forKey: "userName") != nil {
+            print("Hallo")
+            field1.text = defaults.string(forKey: "userName")
+            actualTree.info0 = field1.text
+        }
         
-        // get the date time String from the date object
-        dateTextField.text =  formatter.string(from: currentDateTime)
+        if defaults.value(forKey: "customDate") != nil  {
+            print("Datum Hallo")
+            dateTextField.text = defaults.string(forKey: "customDate")
+            actualTree.info1 = dateTextField.text
+        } else {
+            // initialize the date formatter and set the style
+            let formatter = DateFormatter()
+            formatter.timeStyle = .none
+            formatter.dateStyle = .long
+            
+            // get the date time String from the date object
+            dateTextField.text =  formatter.string(from: currentDateTime)
+        }
         
         //MARK: - Color load from UserDefaults
         if defaults.value(forKey: "appColor") != nil {
@@ -96,8 +112,6 @@ class InformationViewController: UIViewController {
         self.field8.nextField = self.field9
         self.field9.nextField = self.field10
         
-        actualTree = databaseModel.createTree()
-        actualTree1 = actualTree
     }
     
     override func didReceiveMemoryWarning() {
