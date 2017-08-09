@@ -81,4 +81,15 @@ class EnvironmentViewController: UIViewController, UITableViewDelegate, UITableV
             super.viewWillDisappear(true)
     }
     
+    @IBAction func clickedButton(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.3){
+            for item in (sender.superview?.subviews)! {
+                item.backgroundColor = UIColor.clear
+            }
+            sender.backgroundColor = UIColor.init(hexString: "00B079")
+        }
+        actualTree1?.setValue(sender.titleLabel?.text, forKey: "info"+sender.tag.description)
+    }
+
+    
 }

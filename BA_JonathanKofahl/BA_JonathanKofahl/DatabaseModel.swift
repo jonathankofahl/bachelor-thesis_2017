@@ -24,7 +24,7 @@ class DatabaseModel: NSObject {
 
     var trees : [Tree] {
         let request : NSFetchRequest<Tree> = Tree.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(key: "treeNumber", ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(key: "info6", ascending: true)]
         return try! managedObjectContext.fetch(request)
     }
     
@@ -48,7 +48,6 @@ class DatabaseModel: NSObject {
         
         ) -> Tree {
         let tree = NSEntityDescription.insertNewObject(forEntityName: Tree.entityName, into: self.managedObjectContext) as! Tree
-        tree.treeNumber = number
         tree.info0 = info0
         tree.info1 = info1
         tree.info2 = info2
@@ -62,8 +61,6 @@ class DatabaseModel: NSObject {
     @discardableResult func createTree(
         ) -> Tree {
         let tree = NSEntityDescription.insertNewObject(forEntityName: Tree.entityName, into: self.managedObjectContext) as! Tree
-        tree.treeNumber = Int16(defaults.integer(forKey: "treeCount"))
-        defaults.set(Int16(defaults.integer(forKey: "treeCount")), forKey: "treeCount")
         return tree
     }
     
@@ -73,9 +70,10 @@ class DatabaseModel: NSObject {
         return place
     }
     
-    func deleteTree(index: Int) -> Void {
+    func deleteTree(objID: NSManagedObjectID) -> Void {
         for (count,tree) in trees.enumerated() {
-            if Int(tree.treeNumber) == index {
+            print("count:" + count.description)
+            if tree.objectID == objID {
                 managedObjectContext.delete(trees[count])
                  print("deleted a tree")
             }
@@ -95,7 +93,7 @@ class DatabaseModel: NSObject {
     
     func logModel() {
         for tree in trees {
-            NSLog("%@", "Tree \(tree.treeNumber)")
+            NSLog("%@", "Tree \(tree.info6)")
         }
     }
     

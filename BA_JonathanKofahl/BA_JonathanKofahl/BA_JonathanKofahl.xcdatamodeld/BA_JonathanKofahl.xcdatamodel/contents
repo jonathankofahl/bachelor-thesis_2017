@@ -5,7 +5,7 @@
     </entity>
     <entity name="Tree" representedClassName="Tree" syncable="YES">
         <attribute name="care0" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="care1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="care1" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="care2" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="care3" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="care4" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
@@ -14,14 +14,14 @@
         <attribute name="care7" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="care8" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="care9" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="care10" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="care10" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="care11" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="care12" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="care13" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="care14" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="care15" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="care16" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="care17" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="care14" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="care15" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="care16" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="care17" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="care18" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="care19" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="care20" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
@@ -33,7 +33,6 @@
         <attribute name="care26" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="care27" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="care28" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="care29" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="crown0" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="crown1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="crown2" optional="YES" attributeType="String" syncable="YES"/>
@@ -49,7 +48,7 @@
         <attribute name="crown12" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="crown13" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="crown14" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="crown15" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crown15" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="crown16" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="crown17" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="crown18" optional="YES" attributeType="String" syncable="YES"/>
@@ -96,7 +95,6 @@
         <attribute name="root8" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="root9" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="root10" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="treeNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="tribe0" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tribe1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tribe2" optional="YES" attributeType="String" syncable="YES"/>
@@ -130,6 +128,6 @@
     </entity>
     <elements>
         <element name="Place" positionX="-63" positionY="27" width="128" height="60"/>
-        <element name="Tree" positionX="-63" positionY="-27" width="128" height="1890"/>
+        <element name="Tree" positionX="-63" positionY="-27" width="128" height="1860"/>
     </elements>
 </model>

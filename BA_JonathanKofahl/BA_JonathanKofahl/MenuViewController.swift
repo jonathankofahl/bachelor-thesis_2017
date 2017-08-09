@@ -25,9 +25,6 @@ class MenuViewController: UIViewController {
         } else {
             defaults.set("#4E7DB3", forKey: "appColor")
         }
-        if defaults.value(forKey: "treeCount") == nil {
-            defaults.set(0, forKey: "treeCount")
-        }
         
         databaseButton.backgroundColor = view1.backgroundColor
         databaseButton.setTitleColor(UIColor.white, for: UIControlState.normal)

@@ -2,7 +2,7 @@
 //  Tree+CoreDataProperties.swift
 //  BA_JonathanKofahl
 //
-//  Created by Jonathan Kofahl on 02.08.17.
+//  Created by Jonathan Kofahl on 09.08.17.
 //
 //
 
@@ -16,15 +16,126 @@ extension Tree {
         return NSFetchRequest<Tree>(entityName: "Tree")
     }
 
+    @NSManaged public var care0: String?
+    @NSManaged public var care1: Bool
+    @NSManaged public var care2: Bool
+    @NSManaged public var care3: Bool
+    @NSManaged public var care4: Bool
+    @NSManaged public var care5: Bool
+    @NSManaged public var care6: Bool
+    @NSManaged public var care7: Bool
+    @NSManaged public var care8: Bool
+    @NSManaged public var care9: Bool
+    @NSManaged public var care10: Bool
+    @NSManaged public var care11: Bool
+    @NSManaged public var care12: Bool
+    @NSManaged public var care13: Bool
+    @NSManaged public var care14: String?
+    @NSManaged public var care15: Bool
+    @NSManaged public var care16: Bool
+    @NSManaged public var care17: Bool
+    @NSManaged public var care18: Bool
+    @NSManaged public var care19: Bool
+    @NSManaged public var care20: Bool
+    @NSManaged public var care21: Bool
+    @NSManaged public var care22: Bool
+    @NSManaged public var care23: Bool
+    @NSManaged public var care24: Bool
+    @NSManaged public var care25: Bool
+    @NSManaged public var care26: Bool
+    @NSManaged public var care27: Bool
+    @NSManaged public var care28: String?
+    @NSManaged public var crown0: String?
+    @NSManaged public var crown1: String?
+    @NSManaged public var crown2: String?
+    @NSManaged public var crown3: String?
+    @NSManaged public var crown4: String?
+    @NSManaged public var crown5: String?
+    @NSManaged public var crown6: String?
+    @NSManaged public var crown7: String?
+    @NSManaged public var crown8: String?
+    @NSManaged public var crown9: String?
+    @NSManaged public var crown10: String?
+    @NSManaged public var crown11: String?
+    @NSManaged public var crown12: String?
+    @NSManaged public var crown13: String?
+    @NSManaged public var crown14: String?
+    @NSManaged public var crown15: Double
+    @NSManaged public var crown16: String?
+    @NSManaged public var crown17: String?
+    @NSManaged public var crown18: String?
+    @NSManaged public var crown19: String?
+    @NSManaged public var crown20: String?
+    @NSManaged public var crown21: String?
+    @NSManaged public var crown22: String?
+    @NSManaged public var crown23: String?
+    @NSManaged public var crown24: String?
+    @NSManaged public var crown25: String?
+    @NSManaged public var crown26: String?
+    @NSManaged public var environment0: Bool
+    @NSManaged public var enviroment1: Bool
+    @NSManaged public var enviroment2: Bool
+    @NSManaged public var enviroment3: Bool
+    @NSManaged public var enviroment4: Bool
+    @NSManaged public var enviroment5: Bool
+    @NSManaged public var enviroment6: String?
     @NSManaged public var image: NSData?
     @NSManaged public var info0: String?
     @NSManaged public var info1: String?
     @NSManaged public var info2: String?
     @NSManaged public var info3: String?
     @NSManaged public var info4: String?
-    @NSManaged public var treeNumber: Int16
-    @NSManaged public var info6: String?
     @NSManaged public var info5: String?
+    @NSManaged public var info6: String?
+    @NSManaged public var info7: String?
+    @NSManaged public var info8: String?
+    @NSManaged public var info9: String?
+    @NSManaged public var info10: String?
+    @NSManaged public var info11: String?
+    @NSManaged public var info12: String?
+    @NSManaged public var info13: String?
+    @NSManaged public var info14: String?
+    @NSManaged public var root0: String?
+    @NSManaged public var root1: String?
+    @NSManaged public var root2: String?
+    @NSManaged public var root3: String?
+    @NSManaged public var root4: String?
+    @NSManaged public var root5: String?
+    @NSManaged public var root6: Bool
+    @NSManaged public var root7: Bool
+    @NSManaged public var root8: Bool
+    @NSManaged public var root9: Bool
+    @NSManaged public var root10: Bool
+    @NSManaged public var tribe0: String?
+    @NSManaged public var tribe1: String?
+    @NSManaged public var tribe2: String?
+    @NSManaged public var tribe3: String?
+    @NSManaged public var tribe4: String?
+    @NSManaged public var tribe5: String?
+    @NSManaged public var tribe6: String?
+    @NSManaged public var tribe7: String?
+    @NSManaged public var tribe8: String?
+    @NSManaged public var tribe9: String?
+    @NSManaged public var tribe10: String?
+    @NSManaged public var tribe11: String?
+    @NSManaged public var tribe12: Bool
+    @NSManaged public var tribe13: Bool
+    @NSManaged public var tribe14: Bool
+    @NSManaged public var tribe15: Bool
+    @NSManaged public var tribe16: Bool
+    @NSManaged public var tribe17: Bool
+    @NSManaged public var tribe18: Bool
+    @NSManaged public var tribe19: Bool
+    @NSManaged public var tribe20: Bool
+    @NSManaged public var tribe21: String?
+    @NSManaged public var tribe22: Bool
+    @NSManaged public var tribe23: Bool
+    @NSManaged public var tribe24: Bool
+    @NSManaged public var tribe25: Bool
+    @NSManaged public var tribe26: Bool
+    @NSManaged public var tribe27: Bool
+    @NSManaged public var tribe28: Bool
+    @NSManaged public var environment7: String?
     @NSManaged public var place: Place?
 
 }

@@ -83,8 +83,12 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         if tableView == self.tableView {
             cell.criteria.text = tableCriteria?[indexPath.row]
+            cell.tableViewIdentifier = "care"
+            cell.index = indexPath.row + 1
         } else {
             cell.criteria.text = tableCriteria1?[indexPath.row]
+            cell.tableViewIdentifier = "care"
+            cell.index = indexPath.row + 15
         }
         
         return cell
@@ -108,13 +112,13 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
         var placeIndex = 0
         
         for (index,place) in databaseModel.places.enumerated() {
-            if place.name ==  infoController.actualTree.info4 {
+            if place.name?.capitalized ==  infoController.actualTree.info4?.components(separatedBy: " ")[0].capitalized {
                 placeUsedBefore = true
                 placeIndex = index
             }
         }
         if !placeUsedBefore {
-            databaseModel.createPlace(name: infoController.actualTree.info4!)
+            databaseModel.createPlace(name: (infoController.actualTree.info4?.components(separatedBy: " ")[0].capitalized)!)
             placeIndex = databaseModel.places.count-1
             databaseModel.save()
         }
@@ -123,7 +127,9 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
         databaseModel.save()
         
         databaseModel.logModel()
-        self.performSegue(withIdentifier: "exit", sender: self)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let home = storyboard.instantiateViewController(withIdentifier: "menuNavigationController") as UIViewController
+            present(home, animated: true, completion: nil)
         }
         
     }

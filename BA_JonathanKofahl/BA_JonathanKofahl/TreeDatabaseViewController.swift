@@ -264,8 +264,7 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
         // action two
         let deleteAction = UITableViewRowAction(style: .default, title: "Löschen", handler: { (action, indexPath) in
             //self.tableTrees?.remove(at: indexPath.row)
-            print(self.tableTrees![indexPath.row].treeNumber)
-            databaseModel.deleteTree(index:Int(self.tableTrees![indexPath.row].treeNumber))
+            databaseModel.deleteTree(objID:self.tableTrees![indexPath.row].objectID)
             self.tableViewTrees.reloadData()
             databaseModel.save()
             print("Tree delete")

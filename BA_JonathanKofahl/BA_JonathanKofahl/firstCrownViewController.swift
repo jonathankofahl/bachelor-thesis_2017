@@ -67,5 +67,10 @@ class firstCrownViewController: UIViewController, UITableViewDelegate, UITableVi
         
         return cell
     }
+    
+    //MARK: save to Database
+    @IBAction func sliderChanged(_ sender: UISlider) {
+    actualTree1?.setValue(Double(sender.value), forKey: "crown15")
+    }
    
 }

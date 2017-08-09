@@ -69,11 +69,28 @@ class firstTribeViewController: UIViewController, UITableViewDelegate, UITableVi
         
         if tableView == self.tableView {
             cell.criteria.text = tableCriteria?[indexPath.row]
+            cell.tableViewIdentifier = "tribe"
+            cell.index = indexPath.row
         } else {
             cell.criteria.text = tableCriteria1?[indexPath.row]
+            cell.tableViewIdentifier = "tribe"
+            cell.index = indexPath.row + 10
         }
         
         return cell
     }
+    
+    @IBAction func returnClicked(_ sender: UITextField) {
+        //  print("Returnclicked")
+        _ = textFieldShouldReturn(sender)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        actualTree1?.setValue(textField.text, forKey: "crown"+textField.tag.description)
+        textField.resignFirstResponder()
+        
+        return true
+    }
+
     
 }

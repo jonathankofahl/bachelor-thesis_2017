@@ -14,7 +14,6 @@ class InformationViewController: UIViewController {
     //MARK: - Variables & Outlets
 
     @IBOutlet weak var stackViewTopConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var treeImageView: UIImageView!
     @IBOutlet weak var view1: UIView!
     @IBOutlet weak var view2: UIView!
@@ -72,13 +71,15 @@ class InformationViewController: UIViewController {
             //view2.backgroundColor = color
             cameraButton.backgroundColor = color
             //treeImageView.borderColor = color
-            for view in stackView.arrangedSubviews {
+            //for view in stackView.arrangedSubviews {
                // view.borderColor = color
-            }
-            for view in bottomStackView.arrangedSubviews {
+            //}
+            //for view in bottomStackView.arrangedSubviews {
                 //view.borderColor = color
-            }
-            self.tabBarController?.tabBar.tintColor = color
+            //}
+            self.tabBarController?.tabBar.barTintColor = color
+            self.tabBarController?.tabBar.tintColor = UIColor.white
+            self.tabBarController?.tabBar.unselectedItemTintColor = UIColor.white
             if defaults.value(forKey: "appColor") as! String == "#4C4C4C" {
             self.tabBarController?.tabBar.tintColor = UIColor.white
             }

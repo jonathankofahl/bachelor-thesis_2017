@@ -62,10 +62,10 @@ class secondCrownViewController: UIViewController, UITableViewDelegate, UITableV
 }
     @IBAction func returnClicked(_ sender: UITextField) {
           //  print("Returnclicked")
-                 _ = textFieldShouldReturn(textField: sender)
+                 _ = textFieldShouldReturn(sender)
           }
    
-       func textFieldShouldReturn(textField: UITextField) -> Bool {
+       func textFieldShouldReturn(_ textField: UITextField) -> Bool {
             actualTree1?.setValue(textField.text, forKey: "crown"+textField.tag.description)
                  textField.resignFirstResponder()
         

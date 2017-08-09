@@ -129,7 +129,7 @@ abbrechen</string>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                 <connections>
                                                     <action selector="endEditing:" destination="CfQ-bn-AtS" eventType="editingDidEnd" id="bGn-sE-I90"/>
                                                     <action selector="returnClicked:" destination="CfQ-bn-AtS" eventType="primaryActionTriggered" id="hT1-a2-kAA"/>
@@ -236,7 +236,7 @@ abbrechen</string>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                         <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -622,7 +622,7 @@ abbrechen</string>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                         <connections>
                                                             <action selector="endEditing:" destination="CfQ-bn-AtS" eventType="editingDidEnd" id="Rui-U0-M9M"/>
                                                             <action selector="returnClicked:" destination="CfQ-bn-AtS" eventType="primaryActionTriggered" id="O1y-Ef-lKy"/>
@@ -691,7 +691,7 @@ abbrechen</string>
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                         <connections>
                                                             <action selector="endEditing:" destination="CfQ-bn-AtS" eventType="editingDidEnd" id="v08-n8-eoV"/>
                                                             <action selector="returnClicked:" destination="CfQ-bn-AtS" eventType="primaryActionTriggered" id="kL9-Be-hss"/>
@@ -707,7 +707,7 @@ abbrechen</string>
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                         <connections>
                                                             <action selector="endEditing:" destination="CfQ-bn-AtS" eventType="editingDidEnd" id="aQv-5Z-vld"/>
                                                             <action selector="returnClicked:" destination="CfQ-bn-AtS" eventType="primaryActionTriggered" id="ZcM-SF-eu8"/>
@@ -1508,6 +1508,10 @@ abbrechen</string>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="returnClicked:" destination="sxE-3Y-3TG" eventType="editingDidEnd" id="5ny-Sf-jg2"/>
+                                            <action selector="returnClicked:" destination="sxE-3Y-3TG" eventType="primaryActionTriggered" id="cMG-3e-tlO"/>
+                                        </connections>
                                     </textField>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rL3-tL-kDx">
                                         <rect key="frame" x="0.0" y="113" width="834" height="254"/>
@@ -1779,12 +1783,18 @@ abbrechen</string>
                                                 <state key="normal" title="Ja">
                                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="clickedButton:" destination="Ola-CD-Vuk" eventType="touchUpInside" id="CjR-HJ-dVy"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qga-JS-yg1">
                                                 <rect key="frame" x="200" y="0.0" width="200" height="43.5"/>
                                                 <state key="normal" title="Nein">
                                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="clickedButton:" destination="Ola-CD-Vuk" eventType="touchUpInside" id="uUZ-he-LB2"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -2165,7 +2175,7 @@ abschließen</string>
                                                     <action selector="buttonClicked:" destination="hnl-Bv-jIX" eventType="touchUpInside" id="7Hg-aP-1YJ"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="29" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6D-1S-J56">
+                                            <button opaque="NO" tag="28" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6D-1S-J56">
                                                 <rect key="frame" x="200" y="0.0" width="200" height="43.5"/>
                                                 <state key="normal" title="Hubarbeitstechnik">
                                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2196,7 +2206,7 @@ abschließen</string>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Hkh-t6-QyA">
                                         <rect key="frame" x="214" y="520.5" width="610" height="43.5"/>
                                         <subviews>
-                                            <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmK-Xs-5i2">
+                                            <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmK-Xs-5i2">
                                                 <rect key="frame" x="0.0" y="0.0" width="190" height="43.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="190" id="4hO-Xr-FLk"/>
@@ -2208,7 +2218,7 @@ abschließen</string>
                                                     <action selector="buttonClicked:" destination="hnl-Bv-jIX" eventType="touchUpInside" id="OXf-Db-GNB"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMx-Ym-RKp">
+                                            <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMx-Ym-RKp">
                                                 <rect key="frame" x="210" y="0.0" width="190" height="43.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="190" id="Uk0-6y-Fop"/>
@@ -2220,7 +2230,7 @@ abschließen</string>
                                                     <action selector="buttonClicked:" destination="hnl-Bv-jIX" eventType="touchUpInside" id="mqq-69-J01"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmH-ya-dii">
+                                            <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmH-ya-dii">
                                                 <rect key="frame" x="420" y="0.0" width="190" height="43.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="190" id="HxL-qf-f50"/>
@@ -2252,7 +2262,7 @@ abschließen</string>
                                                     <action selector="buttonClicked:" destination="hnl-Bv-jIX" eventType="touchUpInside" id="k2G-My-puy"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kM-rc-DtS">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kM-rc-DtS">
                                                 <rect key="frame" x="210" y="0.0" width="190" height="43.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="190" id="gns-ZX-jbM"/>
@@ -2454,6 +2464,9 @@ abschließen</string>
                                         <color key="tintColor" red="0.15238070400000001" green="0.80974382619999996" blue="0.64912447100000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <rect key="contentStretch" x="0.0" y="0.0" width="0.10000000000000001" height="1"/>
                                         <color key="thumbTintColor" red="0.15238070400000001" green="0.80974382619999996" blue="0.64912447100000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="sliderChanged:" destination="Gk5-N9-5HO" eventType="valueChanged" id="qMi-Rz-kfw"/>
+                                        </connections>
                                     </slider>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="yd4-PA-U8V">
                                         <rect key="frame" x="424" y="48" width="400" height="20.5"/>
@@ -2694,7 +2707,7 @@ abschließen</string>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ido-c6-krA">
                                                         <rect key="frame" x="424" y="0.0" width="400" height="43"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWN-Os-qkV">
+                                                            <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWN-Os-qkV">
                                                                 <rect key="frame" x="0.0" y="0.0" width="190" height="43"/>
                                                                 <color key="backgroundColor" red="0.13010498879999999" green="0.68784970050000005" blue="0.4525060058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
@@ -2703,8 +2716,11 @@ abschließen</string>
                                                                 <state key="normal" title="Unbedenklich">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="clickedButton:" destination="L01-2L-vxV" eventType="touchUpInside" id="RzK-2i-bJp"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8AE-gd-OzH">
+                                                            <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8AE-gd-OzH">
                                                                 <rect key="frame" x="210" y="0.0" width="190" height="43"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="190" id="Cg7-yR-KFS"/>
@@ -2712,6 +2728,9 @@ abschließen</string>
                                                                 <state key="normal" title="Gefährlich">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="clickedButton:" destination="L01-2L-vxV" eventType="touchUpInside" id="B3p-nt-hEF"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -2760,15 +2779,19 @@ abschließen</string>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9n7-H5-eQH">
+                                                    <textField opaque="NO" clipsSubviews="YES" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9n7-H5-eQH">
                                                         <rect key="frame" x="10" y="51.5" width="814" height="30"/>
-                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="VDq-jb-NHc"/>
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="returnClicked:" destination="L01-2L-vxV" eventType="primaryActionTriggered" id="Ci0-BO-eCX"/>
+                                                            <action selector="returnClicked:" destination="L01-2L-vxV" eventType="editingDidEnd" id="UCt-QF-xqa"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -2795,7 +2818,7 @@ abschließen</string>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dOb-9v-6wU">
                                                         <rect key="frame" x="424" y="0.0" width="400" height="43"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gy9-66-Dty">
+                                                            <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gy9-66-Dty">
                                                                 <rect key="frame" x="0.0" y="0.0" width="190" height="43"/>
                                                                 <color key="backgroundColor" red="0.13010498879999999" green="0.68784970050000005" blue="0.4525060058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
@@ -2804,8 +2827,11 @@ abschließen</string>
                                                                 <state key="normal" title="Unbedenklich">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="clickedButton:" destination="L01-2L-vxV" eventType="touchUpInside" id="Fyp-xf-dFr"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3w-eB-JcV">
+                                                            <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3w-eB-JcV">
                                                                 <rect key="frame" x="210" y="0.0" width="190" height="43"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="190" id="Gc3-Ex-Ary"/>
@@ -2813,6 +2839,9 @@ abschließen</string>
                                                                 <state key="normal" title="Gefährlich">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="clickedButton:" destination="L01-2L-vxV" eventType="touchUpInside" id="fsC-OZ-vzD"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -2860,15 +2889,19 @@ abschließen</string>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="byn-g5-vRV">
+                                                    <textField opaque="NO" clipsSubviews="YES" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="byn-g5-vRV">
                                                         <rect key="frame" x="426" y="25" width="400" height="30"/>
-                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="400" id="rFo-Qz-3hz"/>
                                                         </constraints>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="textColor" red="0.28220177660000001" green="0.28220177660000001" blue="0.28220177660000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="returnClicked:" destination="L01-2L-vxV" eventType="primaryActionTriggered" id="ByI-mg-v1b"/>
+                                                            <action selector="returnClicked:" destination="L01-2L-vxV" eventType="editingDidEnd" id="mRy-Lr-vti"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -2895,7 +2928,7 @@ abschließen</string>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="JHT-TT-UpE">
                                                         <rect key="frame" x="424" y="0.0" width="400" height="43"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJS-9m-TW5">
+                                                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJS-9m-TW5">
                                                                 <rect key="frame" x="0.0" y="0.0" width="120" height="43"/>
                                                                 <color key="backgroundColor" red="0.13010498879999999" green="0.68784970050000005" blue="0.4525060058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
@@ -2904,8 +2937,11 @@ abschließen</string>
                                                                 <state key="normal" title="leicht">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="clickedButton:" destination="L01-2L-vxV" eventType="touchUpInside" id="DhN-6K-dox"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAv-EJ-ByG">
+                                                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAv-EJ-ByG">
                                                                 <rect key="frame" x="140" y="0.0" width="120" height="43"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="120" id="XkO-f4-6VW"/>
@@ -2913,8 +2949,11 @@ abschließen</string>
                                                                 <state key="normal" title="mittel">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="clickedButton:" destination="L01-2L-vxV" eventType="touchUpInside" id="cwC-gA-242"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q42-qo-nvM">
+                                                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q42-qo-nvM">
                                                                 <rect key="frame" x="280" y="0.0" width="120" height="43"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="120" id="8HB-XO-FJg"/>
@@ -2922,6 +2961,9 @@ abschließen</string>
                                                                 <state key="normal" title="schwach">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="clickedButton:" destination="L01-2L-vxV" eventType="touchUpInside" id="qdF-in-zla"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -3118,7 +3160,7 @@ Plombe,gefräste Wunden,Entwässerung/Drainage o.ä.)														</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qcq-Dz-Ng7">
+                            <textField opaque="NO" clipsSubviews="YES" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qcq-Dz-Ng7">
                                 <rect key="frame" x="400" y="570" width="364" height="30"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -3127,6 +3169,10 @@ Plombe,gefräste Wunden,Entwässerung/Drainage o.ä.)														</string>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="returnClicked:" destination="O90-yo-x0s" eventType="editingDidEnd" id="XqN-QP-EhO"/>
+                                    <action selector="returnClicked:" destination="O90-yo-x0s" eventType="primaryActionTriggered" id="cLq-CA-Psx"/>
+                                </connections>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AgN-EB-LxV">
                                 <rect key="frame" x="0.0" y="36" width="834" height="482"/>
@@ -3413,6 +3459,10 @@ Plombe,gefräste Wunden,Entwässerung/Drainage o.ä.)														</string>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="returnClicked:" destination="XkP-ju-Wdv" eventType="primaryActionTriggered" id="KWJ-Qa-mcl"/>
+                                    <action selector="returnClicked:" destination="XkP-ju-Wdv" eventType="editingDidEnd" id="bQP-A6-tXt"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pilzart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aa2-8e-FbS">
                                 <rect key="frame" x="104" y="441" width="53" height="21"/>

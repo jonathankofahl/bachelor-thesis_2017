@@ -80,4 +80,16 @@ class secondTribeViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
+    @IBAction func returnClicked(_ sender: UITextField) {
+        //  print("Returnclicked")
+        _ = textFieldShouldReturn(textField: sender)
+        }
+
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        actualTree1?.setValue(textField.text, forKey: "crown"+textField.tag.description)
+            textField.resignFirstResponder()
+                
+            return true
+    }
+    
 }
