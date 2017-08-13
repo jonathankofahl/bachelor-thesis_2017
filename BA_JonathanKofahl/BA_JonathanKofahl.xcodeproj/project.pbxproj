@@ -19,6 +19,8 @@
 		12B501BB1F26262C007381BC /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B501BA1F26262C007381BC /* CustomTableViewCell.swift */; };
 		12E5C0751F27B2F300844CEC /* firstTribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E5C0741F27B2F300844CEC /* firstTribeViewController.swift */; };
 		12E5C0771F27BBA900844CEC /* secondTribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E5C0761F27BBA900844CEC /* secondTribeViewController.swift */; };
+		12F218111F3DEF0900B2D9E5 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F218101F3DEF0900B2D9E5 /* PDFViewController.swift */; };
+		12F218131F409BF100B2D9E5 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F218121F409BF100B2D9E5 /* TabbarController.swift */; };
 		12F27C1E1F30966C00268505 /* DatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F27C1D1F30966C00268505 /* DatabaseModel.swift */; };
 		12F27C241F30A27400268505 /* Tree+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F27C231F30A27400268505 /* Tree+CoreDataProperties.swift */; };
 		12F27C271F30B83A00268505 /* Place+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F27C251F30B83A00268505 /* Place+CoreDataClass.swift */; };
@@ -75,6 +77,8 @@
 		12B501BA1F26262C007381BC /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		12E5C0741F27B2F300844CEC /* firstTribeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = firstTribeViewController.swift; sourceTree = "<group>"; };
 		12E5C0761F27BBA900844CEC /* secondTribeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = secondTribeViewController.swift; sourceTree = "<group>"; };
+		12F218101F3DEF0900B2D9E5 /* PDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
+		12F218121F409BF100B2D9E5 /* TabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		12F27C1D1F30966C00268505 /* DatabaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseModel.swift; sourceTree = "<group>"; };
 		12F27C231F30A27400268505 /* Tree+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tree+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		12F27C251F30B83A00268505 /* Place+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Place+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -220,6 +224,7 @@
 				12F688A61EEE8A0E0057C49A /* TreeDatabaseViewController.swift */,
 				12F688F71EF568D30057C49A /* CameraViewController.swift */,
 				12A911F31F2627A40021F07B /* TableViewController.swift */,
+				12F218101F3DEF0900B2D9E5 /* PDFViewController.swift */,
 				12F688AE1EEE8B250057C49A /* inspect ViewControllers */,
 			);
 			name = ViewController;
@@ -228,6 +233,7 @@
 		12F688AE1EEE8B250057C49A /* inspect ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				12F218121F409BF100B2D9E5 /* TabbarController.swift */,
 				12F688AC1EEE8B100057C49A /* InformationViewController.swift */,
 				12F688A01EEE89370057C49A /* CrownViewController.swift */,
 				12A911F51F2645750021F07B /* firstCrownViewController.swift */,
@@ -400,11 +406,13 @@
 				124264BC1F31048400CDE7EA /* TreeDatabaseTableviewCellTree.swift in Sources */,
 				12B4E86A1F2789610087249F /* secondCrownViewController.swift in Sources */,
 				12F688B51EF02A270057C49A /* EmptySegue.swift in Sources */,
+				12F218131F409BF100B2D9E5 /* TabbarController.swift in Sources */,
 				12F688A31EEE89640057C49A /* TribeViewController.swift in Sources */,
 				12B501BB1F26262C007381BC /* CustomTableViewCell.swift in Sources */,
 				1232D4C61F2F854B005F2B63 /* Tree+CoreDataClass.swift in Sources */,
 				12A911F61F2645750021F07B /* firstCrownViewController.swift in Sources */,
 				12F6886B1EEE83CC0057C49A /* AppDelegate.swift in Sources */,
+				12F218111F3DEF0900B2D9E5 /* PDFViewController.swift in Sources */,
 				12F27C271F30B83A00268505 /* Place+CoreDataClass.swift in Sources */,
 				12E5C0751F27B2F300844CEC /* firstTribeViewController.swift in Sources */,
 				12F688731EEE83CC0057C49A /* BA_JonathanKofahl.xcdatamodeld in Sources */,

@@ -33,6 +33,8 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
     var placeSelected = false
     var placeIndex = 0
     
+    var selectedTree : Tree?
+    
     
     // Seperated Arrays for the two Tables
     //var tablePlaces : [Place]?
@@ -222,7 +224,7 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             placeIndex = indexPath.row
             self.tableViewTrees.reloadData()
         } else {
-        
+        selectedTree = tableTrees?[indexPath.row]
         treeNumberLabel.text = tableTrees?[indexPath.row].info6
         placeLabel.text = tableTrees?[indexPath.row].info4
         timeLabel.text = tableTrees?[indexPath.row].info1
@@ -271,7 +273,7 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
         })
         deleteAction.backgroundColor = UIColor.red
         
-        return [editAction, deleteAction]
+        return [deleteAction]
         } else
         {
             // action two
@@ -303,6 +305,19 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             self.detailView.tag = 0
         }
     }
+    
+    @IBAction func swipeDetailView(_ sender: Any) {
+        self.closeDetailView(sender)
+    }
+    
+    @IBAction func editTree(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Inspect", bundle: nil)
+        let tabBar = storyboard.instantiateViewController(withIdentifier: "tabbar") as! TabbarController
+        tabBar.actualTree = selectedTree
+        present(tabBar as UIViewController, animated: true, completion: nil)
+    }
+    
+    
     
     
         //MARK: - MapView
@@ -341,5 +356,9 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             
         }
 
+    
+    
+    
+    
     
 }

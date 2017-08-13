@@ -15,6 +15,7 @@ class MenuViewController: UIViewController {
     let defaults = UserDefaults.standard
 
     @IBOutlet weak var view1: UIView!
+    @IBOutlet weak var view2: UIView!
     @IBOutlet weak var databaseButton: UIButton!
     @IBOutlet weak var userTextfield: UITextField!
     @IBOutlet weak var dateTextfield: UITextField!
@@ -24,6 +25,7 @@ class MenuViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         if defaults.value(forKey: "appColor") != nil {
             view1.backgroundColor = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
+            view2.backgroundColor = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
         } else {
             defaults.set("#4E7DB3", forKey: "appColor")
         }

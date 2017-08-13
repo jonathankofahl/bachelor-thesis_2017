@@ -35,14 +35,9 @@ class InformationViewController: UIViewController {
     @IBOutlet weak var field11: UITextField!
     
     @IBOutlet weak var dateTextField: UITextField!
-    
     private var managedObjectContext : NSManagedObjectContext!
-    
     let defaults = UserDefaults.standard
-    
-    var actualTree : Tree!
     var actualPlace : String!
-    
     var topConstant : CGFloat!
     
     //MARK: - Methods
@@ -53,8 +48,78 @@ class InformationViewController: UIViewController {
         
         topConstant = stackViewTopConstraint.constant
         
-        actualTree = databaseModel.createTree()
-        actualTree1 = actualTree
+        var tabBar = self.tabBarController as! TabbarController
+        if tabBar.actualTree == nil {
+            tabBar.actualTree = databaseModel.createTree()
+            actualTree1 = tabBar.actualTree
+        } else {
+            actualTree1 = tabBar.actualTree
+            //MARK: Load the Values from the last Inspection
+            self.field1.text = actualTree1?.info0
+            self.field2.text = actualTree1?.info2
+            self.field3.text = actualTree1?.info3
+            self.field4.text = actualTree1?.info4
+            self.field5.text = actualTree1?.info5
+            self.field6.text = actualTree1?.info6
+            self.field7.text = actualTree1?.info7
+            self.field8.text = actualTree1?.info8
+            self.field9.text = actualTree1?.info9
+            self.field10.text = actualTree1?.info10
+            self.field11.text = actualTree1?.info11
+            
+            if actualTree1?.info12 == "Jugend" {
+                for button in (self.bottomStackView.subviews[0].subviews[1].subviews) {
+                        button.backgroundColor = UIColor.clear
+                }
+                self.bottomStackView.subviews[0].subviews[1].subviews[0].backgroundColor = UIColor.init(hexString: "21AF73")
+            }
+            if actualTree1?.info12 == "Reife" {
+                for button in (self.bottomStackView.subviews[0].subviews[1].subviews) {
+                    button.backgroundColor = UIColor.clear
+                }
+                self.bottomStackView.subviews[0].subviews[1].subviews[1].backgroundColor = UIColor.init(hexString: "21AF73")
+            }
+            if actualTree1?.info12 == "Alterung" {
+                for button in (self.bottomStackView.subviews[0].subviews[1].subviews) {
+                    button.backgroundColor = UIColor.clear
+                }
+                self.bottomStackView.subviews[0].subviews[1].subviews[2].backgroundColor = UIColor.init(hexString: "21AF73")
+            }
+            if actualTree1?.info13 == "Gering" {
+                for button in (self.bottomStackView.subviews[1].subviews[1].subviews) {
+                    button.backgroundColor = UIColor.clear
+                }
+                self.bottomStackView.subviews[1].subviews[2].subviews[0].backgroundColor = UIColor.init(hexString: "21AF73")
+            }
+            if actualTree1?.info13 == "Hoch" {
+                for button in (self.bottomStackView.subviews[1].subviews[1].subviews) {
+                    button.backgroundColor = UIColor.clear
+                }
+                self.bottomStackView.subviews[1].subviews[1].subviews[1].backgroundColor = UIColor.init(hexString: "21AF73")
+            }
+            if actualTree1?.info14 == "Gesund/leicht geschädigt" {
+                for button in (self.bottomStackView.subviews[2].subviews[1].subviews) {
+                    button.backgroundColor = UIColor.clear
+                }
+                self.bottomStackView.subviews[2].subviews[1].subviews[0].backgroundColor = UIColor.init(hexString: "21AF73")
+            }
+            if actualTree1?.info14 == "Stärker geschädigt" {
+                for button in (self.bottomStackView.subviews[2].subviews[1].subviews) {
+                    button.backgroundColor = UIColor.clear
+                }
+                self.bottomStackView.subviews[2].subviews[1].subviews[1].backgroundColor = UIColor.init(hexString: "21AF73")
+            }
+            
+            if actualTree1?.image != nil {
+                treeImageView.image = UIImage(cgImage: (UIImage.init(data: actualTree1?.image as! Data)?.cgImage)!,
+                                              scale: 1.0 ,
+                                              orientation: UIImageOrientation.right)
+            }
+            
+            // Load tree end
+        }
+        
+        
         
         // get the current date and time
         let currentDateTime = Date()
@@ -63,13 +128,13 @@ class InformationViewController: UIViewController {
         if defaults.value(forKey: "userName") != nil {
             print("Hallo")
             field1.text = defaults.string(forKey: "userName")
-            actualTree.info0 = field1.text
+            actualTree1?.info0 = field1.text
         }
         
         if defaults.value(forKey: "customDate") != nil  {
             print("Datum Hallo")
             dateTextField.text = defaults.string(forKey: "customDate")
-            actualTree.info1 = dateTextField.text
+            actualTree1?.info1 = dateTextField.text
         } else {
             // initialize the date formatter and set the style
             let formatter = DateFormatter()
@@ -201,7 +266,7 @@ class InformationViewController: UIViewController {
     
     //MARK: - Save Entries do database tree Object
     @IBAction func endEditing(_ sender: UITextField) {
-        actualTree.setValue(sender.text, forKey: "info"+sender.tag.description)
+        actualTree1?.setValue(sender.text, forKey: "info"+sender.tag.description)
         print("saved!!!")
         
     }
@@ -214,7 +279,7 @@ class InformationViewController: UIViewController {
         }
         sender.backgroundColor = UIColor.init(hexString: "00B079")
         }
-        actualTree.setValue(sender.titleLabel?.text, forKey: "info"+sender.tag.description)
+        actualTree1?.setValue(sender.titleLabel?.text, forKey: "info"+sender.tag.description)
     }
     
     

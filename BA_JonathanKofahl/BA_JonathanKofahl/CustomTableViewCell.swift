@@ -13,10 +13,50 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var criteria: UILabel!
     var tableViewIdentifier : String!
     var index : Int!
+    @IBOutlet weak var buttonStackView: UIStackView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        var test = actualTree1?.value(forKey: tableViewIdentifier + index.description)
+        
+        if actualTree1?.value(forKey: tableViewIdentifier + index.description) != nil {
+            
+            let attributeString = actualTree1?.value(forKey: tableViewIdentifier + index.description) as! String
+            
+            if attributeString == ("Gefährlich") {
+                for item in (self.buttonStackView.subviews) {
+                    item.backgroundColor = UIColor.clear
+                }
+                self.buttonStackView.subviews[1].backgroundColor = UIColor.init(hexString: "F4605D")
+            }
+            if attributeString == "Unklar" {
+                for item in (buttonStackView.subviews) {
+                    item.backgroundColor = UIColor.clear
+                }
+                buttonStackView.subviews[2].backgroundColor = UIColor.init(hexString: "F4605D")
+            }
+            if attributeString == "vorhanden" {
+                for item in (buttonStackView.subviews) {
+                    item.backgroundColor = UIColor.clear
+                }
+                buttonStackView.subviews[1].backgroundColor = UIColor.init(hexString: "FFB364")
+            }
+            if attributeString == "Ja" {
+                for item in (buttonStackView.subviews) {
+                    item.backgroundColor = UIColor.clear
+                }
+                buttonStackView.subviews[1].backgroundColor = UIColor.init(hexString: "FFB364")
+            }
+            
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -49,10 +89,12 @@ class CustomTableViewCell: UITableViewCell {
         
         //actualTree1?.setValue(true, forKey: criteria.text)
         if sender.titleLabel?.text == "vorhanden" || sender.titleLabel?.text == "Ja" {
-            actualTree1?.setValue(true, forKey: tableViewIdentifier + index.description)
+            actualTree1?.setValue("vorhanden", forKey: tableViewIdentifier + index.description)
+        } else if sender.titleLabel?.text == "Ja" {
+            actualTree1?.setValue("Ja", forKey: tableViewIdentifier + index.description)
         }
         else if sender.titleLabel?.text == "Nicht vorhanden" || sender.titleLabel?.text == "Nein" {
-            actualTree1?.setValue(false, forKey: tableViewIdentifier + index.description)
+            actualTree1?.setValue("Nicht Vorhanden", forKey: tableViewIdentifier + index.description)
         } else {
             actualTree1?.setValue(sender.titleLabel?.text, forKey: tableViewIdentifier + index.description)
         }

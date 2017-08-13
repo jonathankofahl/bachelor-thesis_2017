@@ -98,32 +98,32 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func saveTree(_ sender: Any) {
         
-        let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
+        //let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
         
         // Check if the Tree has a Place -> if not -> Alert
-        if infoController.actualTree.info4 == nil {
+        if actualTree1?.info4 == nil {
             // AlertController with hint
             alertFunc(parentController: self)
         } else {
         
-        let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
+       // let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
 
         var placeUsedBefore = false
         var placeIndex = 0
         
         for (index,place) in databaseModel.places.enumerated() {
-            if place.name?.capitalized ==  infoController.actualTree.info4?.components(separatedBy: " ")[0].capitalized {
+            if place.name?.capitalized ==  actualTree1?.info4?.components(separatedBy: " ")[0].capitalized {
                 placeUsedBefore = true
                 placeIndex = index
             }
         }
         if !placeUsedBefore {
-            databaseModel.createPlace(name: (infoController.actualTree.info4?.components(separatedBy: " ")[0].capitalized)!)
+            databaseModel.createPlace(name: (actualTree1?.info4?.components(separatedBy: " ")[0].capitalized)!)
             placeIndex = databaseModel.places.count-1
             databaseModel.save()
         }
         
-        infoController.actualTree.place = databaseModel.places[placeIndex]
+        actualTree1?.place = databaseModel.places[placeIndex]
         databaseModel.save()
         
         databaseModel.logModel()

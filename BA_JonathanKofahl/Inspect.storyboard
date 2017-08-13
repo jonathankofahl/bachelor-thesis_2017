@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Tabbar Controller-->
         <scene sceneID="9YZ-Z3-PDi">
             <objects>
-                <tabBarController storyboardIdentifier="tabbar" modalTransitionStyle="crossDissolve" id="dPH-Fz-bsS" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabbar" modalTransitionStyle="crossDissolve" id="dPH-Fz-bsS" customClass="TabbarController" customModule="BA_JonathanKofahl" customModuleProvider="target" sceneMemberID="viewController">
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="8TO-XN-xXI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -39,7 +39,7 @@
         <!--InformationaViewController-->
         <scene sceneID="OxO-gE-hWu">
             <objects>
-                <viewController id="CfQ-bn-AtS" userLabel="InformationaViewController" customClass="InformationViewController" customModule="BA_JonathanKofahl" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="infoController" id="CfQ-bn-AtS" userLabel="InformationaViewController" customClass="InformationViewController" customModule="BA_JonathanKofahl" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sMr-Cp-jEv"/>
                         <viewControllerLayoutGuide type="bottom" id="EWH-do-vCr"/>
@@ -794,7 +794,7 @@ abbrechen</string>
                                                     </button>
                                                     <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXj-dV-EPF">
                                                         <rect key="frame" x="150" y="0.0" width="130" height="50"/>
-                                                        <color key="backgroundColor" red="0.13010498879999999" green="0.68784970050000005" blue="0.4525060058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.12941176470588234" green="0.68627450980392157" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="130" id="RAc-3z-jqz"/>
                                                         </constraints>
@@ -1480,6 +1480,7 @@ abbrechen</string>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" red="0.4103715235" green="0.41443460789999997" blue="0.41443460789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
+                                                    <outlet property="buttonStackView" destination="zRT-k1-dbC" id="lPn-bk-GAb"/>
                                                     <outlet property="criteria" destination="ur0-C9-0td" id="yaZ-kn-4KC"/>
                                                 </connections>
                                             </tableViewCell>
@@ -1593,6 +1594,7 @@ abbrechen</string>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" red="0.4103715235" green="0.41443460789999997" blue="0.41443460789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
+                                                    <outlet property="buttonStackView" destination="9cZ-uT-FO2" id="X3V-cK-WjM"/>
                                                     <outlet property="criteria" destination="9Om-jy-lWf" id="Xdg-Lk-J7C"/>
                                                 </connections>
                                             </tableViewCell>
@@ -1733,6 +1735,7 @@ abbrechen</string>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" red="0.4103715235" green="0.41443460789999997" blue="0.41443460789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
+                                                    <outlet property="buttonStackView" destination="m4F-tw-deL" id="Jyx-IZ-x9z"/>
                                                     <outlet property="criteria" destination="dlF-f9-5TD" id="WWr-Co-Cdn"/>
                                                 </connections>
                                             </tableViewCell>
@@ -2069,6 +2072,7 @@ abschließen</string>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" red="0.4103715235" green="0.41443460789999997" blue="0.41443460789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
+                                                    <outlet property="buttonStackView" destination="r1d-0N-dvG" id="MMe-KM-AaW"/>
                                                     <outlet property="criteria" destination="cLS-mz-70O" id="5bM-Bb-mzk"/>
                                                 </connections>
                                             </tableViewCell>
@@ -2145,6 +2149,7 @@ abschließen</string>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" red="0.4103715235" green="0.41443460789999997" blue="0.41443460789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
+                                                    <outlet property="buttonStackView" destination="I55-9c-LM2" id="Z8F-j3-Kxn"/>
                                                     <outlet property="criteria" destination="nbv-Hd-9Wa" id="s22-B4-pAq"/>
                                                 </connections>
                                             </tableViewCell>
@@ -2438,6 +2443,7 @@ abschließen</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="buttonStackView" destination="cmH-i6-JtB" id="LBo-vb-bxA"/>
                                             <outlet property="criteria" destination="g1u-dG-XOE" id="vef-RX-eqo"/>
                                         </connections>
                                     </tableViewCell>
@@ -2560,6 +2566,7 @@ abschließen</string>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="834" height="911"/>
                     <connections>
+                        <outlet property="slider" destination="qFs-l2-oBr" id="3dW-xS-I7z"/>
                         <outlet property="tableView" destination="noi-eS-bv8" id="mwN-3T-2wz"/>
                     </connections>
                 </viewController>
@@ -2657,6 +2664,7 @@ abschließen</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="buttonStackView" destination="r16-3N-4tO" id="ImI-5G-Hq0"/>
                                             <outlet property="criteria" destination="Uj0-XB-OVg" id="F5t-nD-uCh"/>
                                         </connections>
                                     </tableViewCell>
@@ -3129,6 +3137,7 @@ abschließen</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="buttonStackView" destination="hIX-Jm-Rsd" id="GKy-Uz-8cU"/>
                                             <outlet property="criteria" destination="sJA-9u-WMX" id="Jht-Uf-AWN"/>
                                         </connections>
                                     </tableViewCell>
@@ -3250,6 +3259,7 @@ Plombe,gefräste Wunden,Entwässerung/Drainage o.ä.)														</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="buttonStackView" destination="ZfB-mF-hFK" id="naD-1Z-3dx"/>
                                             <outlet property="criteria" destination="wRJ-cx-OK1" id="5xi-LY-9zh"/>
                                         </connections>
                                     </tableViewCell>
@@ -3365,6 +3375,7 @@ Plombe,gefräste Wunden,Entwässerung/Drainage o.ä.)														</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="buttonStackView" destination="pOn-bD-hKk" id="PPw-PO-Q3F"/>
                                             <outlet property="criteria" destination="Zxb-gF-AWL" id="vZ4-Wd-mTr"/>
                                         </connections>
                                     </tableViewCell>
@@ -3441,6 +3452,7 @@ Plombe,gefräste Wunden,Entwässerung/Drainage o.ä.)														</string>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
+                                            <outlet property="buttonStackView" destination="yBm-RG-3oq" id="AZU-8C-RfP"/>
                                             <outlet property="criteria" destination="oda-2h-Y7S" id="z8p-lT-X1n"/>
                                         </connections>
                                     </tableViewCell>

@@ -15,6 +15,7 @@ class firstCrownViewController: UIViewController, UITableViewDelegate, UITableVi
     //MARK: - Variables & Outlets
     @IBOutlet weak var tableView: UITableView!
    // @IBOutlet weak var tableView1: UITableView!
+    @IBOutlet weak var slider: UISlider!
     
     // Seperated Arrays for the two Tables
     var tableCriteria : [String]?
@@ -33,6 +34,12 @@ class firstCrownViewController: UIViewController, UITableViewDelegate, UITableVi
             let ressourceName = "crown" + index.description
             tableCriteria?.append( NSLocalizedString(ressourceName, comment: "") )
         }
+        
+        //MARK: Load from inspected Tree
+        if actualTree1?.crown15 != nil {
+            slider.value = actualTree1?.crown15
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -84,12 +84,12 @@
 
 // MARK: - EnviromentViewController
 
-    "enviroment1" = "Baugruben, -graben";
-    "enviroment2" = "Bodenauf- oder -abtrag";
-    "enviroment3" = "Bodenverdichtung";
-    "enviroment4" = "Bodenversiegelung";
-    "enviroment5" = "Freistellung";
-    "enviroment6" = "Grundwasserabsenkung";
+    "environment1" = "Baugruben, -graben";
+    "environment2" = "Bodenauf- oder -abtrag";
+    "environment3" = "Bodenverdichtung";
+    "environment4" = "Bodenversiegelung";
+    "environment5" = "Freistellung";
+    "environment6" = "Grundwasserabsenkung";
 
 // MARK: - CareViewController
 

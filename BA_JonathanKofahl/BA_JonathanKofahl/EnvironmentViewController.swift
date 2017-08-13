@@ -36,7 +36,7 @@ class EnvironmentViewController: UIViewController, UITableViewDelegate, UITableV
         
         //MARK: TableView init -> load strings from Localization.strings file
         for index in 1...6 {
-            let ressourceName = "enviroment" + index.description
+            let ressourceName = "environment" + index.description
             tableCriteria?.append( NSLocalizedString(ressourceName, comment: "") )
         }
     }
@@ -65,7 +65,7 @@ class EnvironmentViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
         
         cell.criteria.text = tableCriteria?[indexPath.row]
-        cell.tableViewIdentifier = "enviroment"
+        cell.tableViewIdentifier = "environment"
         cell.index = indexPath.row
         
         return cell

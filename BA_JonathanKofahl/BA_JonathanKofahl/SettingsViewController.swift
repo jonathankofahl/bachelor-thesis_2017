@@ -48,7 +48,7 @@ class SettingsViewController: UIViewController {
         
         switch sender.tag {
         case 1:
-            defaults.set("#4C4C4C", forKey: "appColor")
+            defaults.set("#355B72", forKey: "appColor")
         case 2:
             defaults.set("#00B079", forKey: "appColor")
         case 3:
