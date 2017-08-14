@@ -137,6 +137,8 @@ extension Tree {
     @NSManaged public var tribe28: String?
     @NSManaged public var environment7: String?
     @NSManaged public var isNew: Bool
+    @NSManaged public var xLocation: Double
+    @NSManaged public var yLocation: Double
     @NSManaged public var place: Place?
 
 }

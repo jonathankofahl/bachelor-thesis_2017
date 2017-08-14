@@ -37,6 +37,8 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
     
     var selectedTree : Tree?
     
+    var showDetailView = false
+    
     
     // Seperated Arrays for the two Tables
     //var tablePlaces : [Place]?
@@ -126,17 +128,7 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             
             mapView.showsUserLocation = true
         
-                /*
-                for element in trees {
-                    let eventLocation = CLLocationCoordinate2DMake(Double(element.latitude), Double(element.longitude))
-                    // Drop a pin
-                    let dropPin = MKPointAnnotation()
-                    dropPin.coordinate = eventLocation
-                    dropPin.title = element.number
-                    mapView.addAnnotation(dropPin)
-                }
-            }
-            */
+            
         }
         else
         {
@@ -202,11 +194,18 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TreeDatabaseTableViewCellPlace
             cell.placeLabel.text = databaseModel.places[indexPath.row].name?.description
         } else {
+            let eventLocation = CLLocationCoordinate2DMake((tableTrees?[indexPath.row].xLocation)!, (tableTrees?[indexPath.row].yLocation)!)
+            // Drop a pin
+            let dropPin = MKPointAnnotation()
+            dropPin.coordinate = eventLocation
+            dropPin.title = tableTrees?[indexPath.row].info6?.description
+            mapView.addAnnotation(dropPin)
+            
             cell1 = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TreeDatabaseTableViewCellTree
             cell1.treeNumberLabel.text = tableTrees?[indexPath.row].info6
             return cell1
         }
-        
+    
         return cell
     }
     
@@ -219,14 +218,12 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
        
         if tableView == self.tableViewPlaces {
             //detailView.isHidden = true
-            UIView.animate(withDuration: 0.7) {
-                self.detailView.frame.origin.x = self.detailView.frame.origin.x + 400
-                self.detailView.tag = 0
-            }
+            self.closeDetailView(self)
             tableTrees = []
             placeSelected = true
             placeIndex = indexPath.row
             self.tableViewTrees.reloadData()
+            self.mapView.removeAnnotations(mapView.annotations)
         } else {
         selectedTree = tableTrees?[indexPath.row]
         treeNumberLabel.text = tableTrees?[indexPath.row].info6
@@ -241,12 +238,8 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
         } else {
             treeImageView.isHidden = true
         }
-            if detailView.tag == 0 {
-                UIView.animate(withDuration: 0.7) {
-                    self.detailView.isHidden = false
-                    self.detailView.frame.origin.x = self.detailView.frame.origin.x - 400
-                    self.detailView.tag = 1
-                }
+            if !showDetailView {
+               self.openDetailView()
             }
             
         //detailView.isHidden = false
@@ -303,10 +296,25 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     @IBAction func closeDetailView(_ sender: Any) {
+        
        // self.detailView.isHidden = true
+        if self.showDetailView == true {
         UIView.animate(withDuration: 0.7) {
             self.detailView.frame.origin.x = self.detailView.frame.origin.x + 400
-            self.detailView.tag = 0
+            self.showDetailView = false
+            print("false")
+        }
+        }
+    }
+    
+    func openDetailView() -> Void {
+        if self.showDetailView == false {
+        UIView.animate(withDuration: 0.7) {
+            self.detailView.isHidden = false
+            self.detailView.frame.origin.x = self.detailView.frame.origin.x - 400
+            self.showDetailView = true
+            print("true")
+        }
         }
     }
     

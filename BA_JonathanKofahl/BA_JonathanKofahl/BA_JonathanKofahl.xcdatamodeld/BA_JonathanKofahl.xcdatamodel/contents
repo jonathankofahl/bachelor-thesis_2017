@@ -125,10 +125,12 @@
         <attribute name="tribe26" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tribe27" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tribe28" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="xLocation" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="yLocation" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="place" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Place" syncable="YES"/>
     </entity>
     <elements>
         <element name="Place" positionX="-63" positionY="27" width="128" height="60"/>
-        <element name="Tree" positionX="-63" positionY="-27" width="128" height="1875"/>
+        <element name="Tree" positionX="-63" positionY="-27" width="128" height="1905"/>
     </elements>
 </model>

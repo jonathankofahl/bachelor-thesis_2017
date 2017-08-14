@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreData
+import CoreLocation
 
-class InformationViewController: UIViewController {
+class InformationViewController: UIViewController, CLLocationManagerDelegate {
     
     //MARK: - Variables & Outlets
 
@@ -40,6 +41,13 @@ class InformationViewController: UIViewController {
     var actualPlace : String!
     var topConstant : CGFloat!
     
+    /** The Location Manager
+     */
+    var locationManager: CLLocationManager = CLLocationManager()
+    /** The Location Managers start Location
+     */
+    var startLocation: CLLocation!
+    
     //MARK: - Methods
 
     override func viewDidLoad() {
@@ -57,9 +65,19 @@ class InformationViewController: UIViewController {
             actualTree1?.crown18 = "Unbedenklich"
             actualTree1?.crown10 = "leicht"
             actualTree1?.environment6 = "Ja"
-
             
-            
+            // MapView
+            if CLLocationManager.locationServicesEnabled()
+            {
+                //locationManager = CLLocationManager()
+                // Ask for the user Authority for GPS
+                locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                locationManager.delegate = self
+                locationManager.requestWhenInUseAuthorization()
+                locationManager.startUpdatingLocation()
+                startLocation = nil
+                
+            }
             
         } else {
             actualTree1 = tabBar.actualTree
@@ -126,6 +144,9 @@ class InformationViewController: UIViewController {
             }
             
             // Load tree end
+            
+            
+            
         }
         
         

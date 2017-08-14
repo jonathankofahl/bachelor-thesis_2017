@@ -131,7 +131,7 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
             alertFunc(parentController: self)
         } else {
         
-       // let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
+        let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
 
         var placeUsedBefore = false
         var placeIndex = 0
@@ -151,6 +151,11 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
         actualTree1?.place = databaseModel.places[placeIndex]
             
         actualTree1?.isNew = false
+            
+        actualTree1?.xLocation = (infoController.locationManager.location?.coordinate.latitude)!
+        actualTree1?.yLocation = (infoController.locationManager.location?.coordinate.longitude)!
+            
+            
         databaseModel.save()
         
         databaseModel.logModel()
