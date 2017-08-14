@@ -1646,6 +1646,7 @@ abbrechen</string>
                     <connections>
                         <outlet property="tableView" destination="rL3-tL-kDx" id="okT-WY-dVh"/>
                         <outlet property="tableView1" destination="wIC-Ak-2nr" id="RRb-F6-IaT"/>
+                        <outlet property="textField" destination="P2Q-Jn-vdm" id="DDr-id-M1v"/>
                         <outlet property="topView" destination="zlJ-CU-egU" id="ub8-ya-mOD"/>
                     </connections>
                 </viewController>
@@ -1780,7 +1781,7 @@ abbrechen</string>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="pzR-AN-3CA">
                                         <rect key="frame" x="426" y="381.5" width="400" height="43.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9r-WF-Crv">
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9r-WF-Crv">
                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="43.5"/>
                                                 <color key="backgroundColor" red="0.12941176470588234" green="0.68627450980392157" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Ja">
@@ -1790,7 +1791,7 @@ abbrechen</string>
                                                     <action selector="clickedButton:" destination="Ola-CD-Vuk" eventType="touchUpInside" id="CjR-HJ-dVy"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qga-JS-yg1">
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qga-JS-yg1">
                                                 <rect key="frame" x="200" y="0.0" width="200" height="43.5"/>
                                                 <state key="normal" title="Nein">
                                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1890,6 +1891,8 @@ abbrechen</string>
                     <tabBarItem key="tabBarItem" title="Umgebung" id="6dU-wV-Kgq"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="firstButton" destination="K9r-WF-Crv" id="dfT-JP-h1l"/>
+                        <outlet property="secondButton" destination="Qga-JS-yg1" id="goH-9Z-6A4"/>
                         <outlet property="tableView" destination="xRg-Dj-Hwx" id="6Xm-fT-gk3"/>
                         <outlet property="textView" destination="fXv-ob-Vxt" id="jLc-dx-BAN"/>
                         <outlet property="topView" destination="Vcb-dL-Gwl" id="Sr9-uh-e8l"/>
@@ -2323,8 +2326,11 @@ abschließen</string>
                     <tabBarItem key="tabBarItem" title="Pflege" id="BuU-kL-UKb"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="firstStackView" destination="Hc5-nC-fFJ" id="W0u-Zh-2iN"/>
+                        <outlet property="secondStackView" destination="Hkh-t6-QyA" id="5Ey-Qi-JUj"/>
                         <outlet property="tableView" destination="7SS-VL-uQO" id="EoH-hw-vsk"/>
                         <outlet property="tableView1" destination="a2x-z8-v93" id="4gE-5w-OhH"/>
+                        <outlet property="thirdStackView" destination="8bm-pZ-Dgv" id="ALC-5C-UcX"/>
                         <outlet property="topView" destination="igG-ox-jlE" id="Wca-51-Kiu"/>
                     </connections>
                 </viewController>
@@ -3039,7 +3045,12 @@ abschließen</string>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="834" height="911"/>
                     <connections>
+                        <outlet property="firstStackView" destination="ido-c6-krA" id="Cx3-eZ-Bxi"/>
+                        <outlet property="firstTextfield" destination="9n7-H5-eQH" id="Nkb-aK-gAy"/>
+                        <outlet property="secondStackView" destination="dOb-9v-6wU" id="lHO-s2-ggQ"/>
+                        <outlet property="secondTextfield" destination="byn-g5-vRV" id="hI1-Sr-A37"/>
                         <outlet property="tableView" destination="aZA-Yw-wHN" id="xr5-P6-cMs"/>
+                        <outlet property="thirdStackView" destination="JHT-TT-UpE" id="sgl-xP-vhZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s5g-Fq-2w2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3293,6 +3304,7 @@ Plombe,gefräste Wunden,Entwässerung/Drainage o.ä.)														</string>
                     <connections>
                         <outlet property="tableView" destination="AgN-EB-LxV" id="SWz-s8-37e"/>
                         <outlet property="tableView1" destination="3Um-wn-6q9" id="WLR-ox-dF2"/>
+                        <outlet property="textField" destination="qcq-Dz-Ng7" id="vkp-cl-VD7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z6j-IH-G20" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3462,7 +3474,7 @@ Plombe,gefräste Wunden,Entwässerung/Drainage o.ä.)														</string>
                                     <outlet property="delegate" destination="XkP-ju-Wdv" id="zEm-Iq-wrT"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wy3-5u-Ket">
+                            <textField opaque="NO" clipsSubviews="YES" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wy3-5u-Ket">
                                 <rect key="frame" x="217" y="436" width="514" height="30"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -3507,6 +3519,7 @@ Plombe,gefräste Wunden,Entwässerung/Drainage o.ä.)														</string>
                     <connections>
                         <outlet property="tableView" destination="Ia8-ex-Nqb" id="GxS-I0-3B3"/>
                         <outlet property="tableView1" destination="Hvl-qo-jnm" id="pyi-b0-Uhc"/>
+                        <outlet property="textField" destination="wy3-5u-Ket" id="t2j-SZ-kQh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F9G-D4-9vN" userLabel="First Responder" sceneMemberID="firstResponder"/>

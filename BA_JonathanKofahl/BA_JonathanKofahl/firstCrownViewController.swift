@@ -37,7 +37,7 @@ class firstCrownViewController: UIViewController, UITableViewDelegate, UITableVi
         
         //MARK: Load from inspected Tree
         if actualTree1?.crown15 != nil {
-            slider.value = actualTree1?.crown15
+            slider.value = Float((actualTree1?.crown15)!)
         }
         
     }

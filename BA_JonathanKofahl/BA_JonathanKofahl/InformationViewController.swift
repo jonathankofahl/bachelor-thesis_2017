@@ -52,6 +52,15 @@ class InformationViewController: UIViewController {
         if tabBar.actualTree == nil {
             tabBar.actualTree = databaseModel.createTree()
             actualTree1 = tabBar.actualTree
+            actualTree1?.isNew = true
+            actualTree1?.crown16 = "Unbedenklich"
+            actualTree1?.crown18 = "Unbedenklich"
+            actualTree1?.crown10 = "leicht"
+            actualTree1?.environment6 = "Ja"
+
+            
+            
+            
         } else {
             actualTree1 = tabBar.actualTree
             //MARK: Load the Values from the last Inspection

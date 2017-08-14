@@ -13,6 +13,7 @@ class firstTribeViewController: UIViewController, UITableViewDelegate, UITableVi
     //MARK: - Variables & Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableView1: UITableView!
+    @IBOutlet weak var textField: UITextField!
     
     // Seperated Arrays for the two Tables
     var tableCriteria : [String]?
@@ -35,6 +36,15 @@ class firstTribeViewController: UIViewController, UITableViewDelegate, UITableVi
             let ressourceName = "tribe" + index.description
             tableCriteria1?.append( NSLocalizedString(ressourceName, comment: "") )
         }
+        
+        //MARK: Load values if tree is not new
+        if actualTree1?.isNew == false {
+            if actualTree1?.tribe9 != nil {
+                textField.text = actualTree1?.tribe9
+            }
+            
+        }
+
         
     }
     
@@ -86,7 +96,7 @@ class firstTribeViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        actualTree1?.setValue(textField.text, forKey: "crown"+textField.tag.description)
+        actualTree1?.setValue(textField.text, forKey: "tribe"+textField.tag.description)
         textField.resignFirstResponder()
         
         return true

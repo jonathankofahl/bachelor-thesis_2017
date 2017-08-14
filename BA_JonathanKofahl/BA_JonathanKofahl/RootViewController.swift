@@ -14,6 +14,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableView1: UITableView!
     @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var textField: UITextField!
     var defaults = UserDefaults.standard
     
     // Seperated Arrays for the two Tables
@@ -43,6 +44,14 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         for index in 6...10 {
             let ressourceName = "root" + index.description
             tableCriteria1?.append( NSLocalizedString(ressourceName, comment: "") )
+        }
+        
+        //MARK: Load values if tree is not new
+        if actualTree1?.isNew == false {
+            if actualTree1?.root6 != nil {
+                textField.text = actualTree1?.root6
+            }
+            
         }
 
     }

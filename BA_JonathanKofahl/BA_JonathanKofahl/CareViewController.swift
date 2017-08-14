@@ -14,6 +14,9 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableView1: UITableView!
     @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var firstStackView: UIStackView!
+    @IBOutlet weak var secondStackView: UIStackView!
+    @IBOutlet weak var thirdStackView: UIStackView!
     var defaults = UserDefaults.standard
     
     // Seperated Arrays for the two Tables
@@ -44,9 +47,31 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
             let ressourceName = "care" + index.description
             tableCriteria1?.append( NSLocalizedString(ressourceName, comment: "") )
         }
+        //MARK: Load values if tree is not new
+        if actualTree1?.isNew == false {
+            for button in firstStackView.subviews as! [UIButton] {
+                button.backgroundColor = UIColor.clear
+                if actualTree1?.care0 == button.titleLabel?.text {
+                    button.backgroundColor = UIColor.init(hexString: "21AF73")
+                }
+            }
+            for button in secondStackView.subviews as! [UIButton] {
+                button.backgroundColor = UIColor.clear
+                if actualTree1?.care14 == button.titleLabel?.text {
+                    button.backgroundColor = UIColor.init(hexString: "21AF73")
+                }            }
+            for button in thirdStackView.subviews as! [UIButton] {
+                button.backgroundColor = UIColor.clear
+                if actualTree1?.care28 == button.titleLabel?.text {
+                    button.backgroundColor = UIColor.init(hexString: "21AF73")
+                }
+            }
+            
+        }
+
 
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -124,6 +149,8 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         actualTree1?.place = databaseModel.places[placeIndex]
+            
+        actualTree1?.isNew = false
         databaseModel.save()
         
         databaseModel.logModel()

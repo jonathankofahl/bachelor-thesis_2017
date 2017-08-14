@@ -13,6 +13,11 @@ class secondCrownViewController: UIViewController, UITableViewDelegate, UITableV
     
     //MARK: - Variables & Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var firstStackView: UIStackView!
+    @IBOutlet weak var secondStackView: UIStackView!
+    @IBOutlet weak var thirdStackView: UIStackView!
+    @IBOutlet weak var firstTextfield: UITextField!
+    @IBOutlet weak var secondTextfield: UITextField!
     
     // Seperated Arrays for the two Tables
     var tableCriteria : [String]?
@@ -29,6 +34,47 @@ class secondCrownViewController: UIViewController, UITableViewDelegate, UITableV
             let ressourceName = "crown" + index.description
             tableCriteria?.append( NSLocalizedString(ressourceName, comment: "") )
         }
+        
+        //MARK: Load values if tree is not new
+        if actualTree1?.isNew == false {
+            for button in firstStackView.subviews as! [UIButton] {
+              button.backgroundColor = UIColor.clear
+              checkValue(attributeString: (button.titleLabel?.text!)!, sender: button)
+            }
+            for button in secondStackView.subviews as! [UIButton] {
+                button.backgroundColor = UIColor.clear
+                checkValue(attributeString: (button.titleLabel?.text)!, sender: button)
+            }
+            for button in thirdStackView.subviews as! [UIButton] {
+                button.backgroundColor = UIColor.clear
+                checkValue(attributeString: (button.titleLabel?.text)!, sender: button)
+            }
+            if actualTree1?.crown17 != nil {
+                firstTextfield.text = actualTree1?.crown17
+            }
+            if actualTree1?.crown19 != nil {
+                secondTextfield.text = actualTree1?.crown19
+            }
+            
+        }
+    }
+    
+    // Maybe write a global func to do this. see same code in CustomTableViewCell
+    func checkValue(attributeString: String, sender: UIButton) -> Void
+    {
+        if attributeString == ("Gefährlich") {
+            sender.backgroundColor = UIColor.init(hexString: "F4605D")
+        }
+        if attributeString == "Unklar" {
+            sender.backgroundColor = UIColor.init(hexString: "F4605D")
+        }
+        if attributeString == "vorhanden" {
+            sender.backgroundColor = UIColor.init(hexString: "FFB364")
+        }
+        if attributeString == "Ja" {
+            sender.backgroundColor = UIColor.init(hexString: "FFB364")
+        }
+
     }
     
     override func didReceiveMemoryWarning() {

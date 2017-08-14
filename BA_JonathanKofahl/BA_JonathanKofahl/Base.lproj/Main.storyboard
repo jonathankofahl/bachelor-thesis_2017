@@ -255,7 +255,6 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="webPreview" destination="0Z2-qk-rgj" id="45p-gC-Zvl"/>
                         <outlet property="webView" destination="0Z2-qk-rgj" id="XQ2-5w-VmN"/>
                     </connections>
                 </viewController>
@@ -677,7 +676,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="closeDetailView:" destination="3JX-LO-RSg" eventType="touchUpInside" id="t1F-2R-qiD"/>
+                                                    <action selector="deleteAction:" destination="3JX-LO-RSg" eventType="touchUpInside" id="a8m-E0-hfr"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -737,11 +736,13 @@
                     <navigationItem key="navigationItem" title="Baum Datenbank" id="oXg-a6-4ce"/>
                     <connections>
                         <outlet property="categoryLabel" destination="aJx-d0-sAz" id="ccH-8d-lED"/>
-                        <outlet property="closeDetailViewButton" destination="JM5-Z9-OAm" id="hsA-zJ-Ar4"/>
+                        <outlet property="deleteDetailViewButton" destination="JM5-Z9-OAm" id="Xdn-pe-gbg"/>
                         <outlet property="detailStackView" destination="gV3-E5-vvr" id="lMQ-f6-Hhh"/>
                         <outlet property="detailView" destination="b6U-bN-zsC" id="7KQ-WR-goY"/>
+                        <outlet property="editDetailViewButton" destination="Mhs-78-SPE" id="rHI-tl-er4"/>
                         <outlet property="groupTableView" destination="ytT-Kf-dkA" id="te8-l8-K3w"/>
                         <outlet property="mapView" destination="4hZ-5t-GvE" id="jre-t3-i4y"/>
+                        <outlet property="pdfDetailViewButton" destination="D5y-Tt-Lae" id="eyN-AR-864"/>
                         <outlet property="placeLabel" destination="Hvb-FY-Nvy" id="LKg-2Q-M0Y"/>
                         <outlet property="tableViewPlaces" destination="Pfo-ui-BYA" id="mRu-0D-pOz"/>
                         <outlet property="tableViewTrees" destination="x93-zf-iDA" id="teP-as-MUi"/>

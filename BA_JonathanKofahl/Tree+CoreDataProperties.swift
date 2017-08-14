@@ -2,7 +2,7 @@
 //  Tree+CoreDataProperties.swift
 //  BA_JonathanKofahl
 //
-//  Created by Jonathan Kofahl on 13.08.17.
+//  Created by Jonathan Kofahl on 14.08.17.
 //
 //
 
@@ -38,7 +38,7 @@ extension Tree {
     @NSManaged public var care19: String?
     @NSManaged public var care20: String?
     @NSManaged public var care21: String?
-    @NSManaged public var care22: Bool
+    @NSManaged public var care22: String?
     @NSManaged public var care23: String?
     @NSManaged public var care24: String?
     @NSManaged public var care25: String?
@@ -106,7 +106,7 @@ extension Tree {
     @NSManaged public var root8: String?
     @NSManaged public var root9: String?
     @NSManaged public var root10: String?
-    @NSManaged public var tribe0: Float
+    @NSManaged public var tribe0: String?
     @NSManaged public var tribe1: String?
     @NSManaged public var tribe2: String?
     @NSManaged public var tribe3: String?
@@ -136,6 +136,7 @@ extension Tree {
     @NSManaged public var tribe27: String?
     @NSManaged public var tribe28: String?
     @NSManaged public var environment7: String?
+    @NSManaged public var isNew: Bool
     @NSManaged public var place: Place?
 
 }

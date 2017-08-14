@@ -14,6 +14,8 @@ class EnvironmentViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var firstButton: UIButton!
+    @IBOutlet weak var secondButton: UIButton!
     
     var defaults = UserDefaults.standard
     
@@ -38,6 +40,21 @@ class EnvironmentViewController: UIViewController, UITableViewDelegate, UITableV
         for index in 1...6 {
             let ressourceName = "environment" + index.description
             tableCriteria?.append( NSLocalizedString(ressourceName, comment: "") )
+        }
+        
+        //MARK: Load values if tree is not new
+        if actualTree1?.isNew == false {
+            if actualTree1?.tribe21 != "Nein" {
+                firstButton.backgroundColor = UIColor.clear
+                secondButton.backgroundColor = UIColor.init(hexString: "F4605D")
+            } else {
+                firstButton.backgroundColor = UIColor.init(hexString: "FFB364")
+                secondButton.backgroundColor = UIColor.clear
+            }
+            if actualTree1?.environment7 != nil {
+                textView.text = actualTree1?.environment7
+            }
+            
         }
     }
     

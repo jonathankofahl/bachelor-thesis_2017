@@ -56,6 +56,30 @@ class CustomTableViewCell: UITableViewCell {
                 buttonStackView.subviews[1].backgroundColor = UIColor.init(hexString: "FFB364")
             }
             
+        } else {
+            var buttons = buttonStackView.subviews as! [UIButton]
+            //MARK: Save the default values for the tree if the user dont choose.
+            if tableViewIdentifier == "crown" {
+                actualTree1?.setValue("Unbedenklich", forKey: tableViewIdentifier + index.description)
+            }
+            if tableViewIdentifier == "tribe" && buttons[0].titleLabel?.text == "Unbedenklich" {
+                actualTree1?.setValue("Unbedenklich", forKey: tableViewIdentifier + index.description)
+            }
+            if tableViewIdentifier == "tribe" && buttons[0].titleLabel?.text == "Nicht vorhanden" {
+                actualTree1?.setValue("Nicht vorhanden", forKey: tableViewIdentifier + index.description)
+            }
+            if tableViewIdentifier == "root" && buttons[0].titleLabel?.text == "Unbedenklich" {
+                actualTree1?.setValue("Unbedenklich", forKey: tableViewIdentifier + index.description)
+            }
+            if tableViewIdentifier == "root" && buttons[0].titleLabel?.text == "Nicht vorhanden" {
+                actualTree1?.setValue("Nicht vorhanden", forKey: tableViewIdentifier + index.description)
+            }
+            if tableViewIdentifier == "environment" {
+                actualTree1?.setValue("Nicht vorhanden", forKey: tableViewIdentifier + index.description)
+            }
+            if tableViewIdentifier == "care" {
+                actualTree1?.setValue("Nein", forKey: tableViewIdentifier + index.description)
+            }
         }
     }
 

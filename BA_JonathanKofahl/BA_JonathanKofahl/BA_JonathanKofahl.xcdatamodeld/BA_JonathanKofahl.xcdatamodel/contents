@@ -84,6 +84,7 @@
         <attribute name="info12" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="info13" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="info14" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isNew" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="root0" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="root1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="root2" optional="YES" attributeType="String" syncable="YES"/>
@@ -128,6 +129,6 @@
     </entity>
     <elements>
         <element name="Place" positionX="-63" positionY="27" width="128" height="60"/>
-        <element name="Tree" positionX="-63" positionY="-27" width="128" height="1860"/>
+        <element name="Tree" positionX="-63" positionY="-27" width="128" height="1875"/>
     </elements>
 </model>

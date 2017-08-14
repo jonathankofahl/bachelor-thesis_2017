@@ -27,7 +27,9 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var treeImageView: UIImageView!
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var groupTableView: UIView!
-    @IBOutlet weak var closeDetailViewButton: UIButton!
+    @IBOutlet weak var deleteDetailViewButton: UIButton!
+    @IBOutlet weak var editDetailViewButton: UIButton!
+    @IBOutlet weak var pdfDetailViewButton: UIButton!
     @IBOutlet weak var detailStackView: UIStackView!
     
     var placeSelected = false
@@ -61,7 +63,9 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
         var alphaColor = color.withAlphaComponent(0.8)
         
         // Set Colors
-        closeDetailViewButton.backgroundColor = color
+        deleteDetailViewButton.backgroundColor = color
+        editDetailViewButton.backgroundColor = color
+        pdfDetailViewButton.backgroundColor = color
         for view in detailStackView.subviews {
             if view.tag == 0 {
                 view.backgroundColor = color
@@ -287,7 +291,7 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
                 self.tableViewPlaces.reloadData()
                 databaseModel.save()
                 self.closeDetailView(self)
-                print("Tree delete")
+                print("Place delete")
             })
             
             deleteAction.backgroundColor = UIColor.red
@@ -305,6 +309,19 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             self.detailView.tag = 0
         }
     }
+    
+    func deleteTree() -> Void {
+        databaseModel.deleteTree(objID: (selectedTree?.objectID)!)
+        self.tableViewTrees.reloadData()
+        databaseModel.save()
+        self.closeDetailView(self)
+        print("Tree delete")
+    }
+
+    @IBAction func deleteAction(_ sender: Any) {
+        deleteTree()
+    }
+    
     
     @IBAction func swipeDetailView(_ sender: Any) {
         self.closeDetailView(sender)
