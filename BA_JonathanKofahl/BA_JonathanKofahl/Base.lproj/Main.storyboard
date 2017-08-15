@@ -733,7 +733,21 @@
                             <constraint firstItem="ytT-Kf-dkA" firstAttribute="leading" secondItem="Sbz-rP-9rK" secondAttribute="leading" id="weC-73-bGb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Baum Datenbank" id="oXg-a6-4ce"/>
+                    <navigationItem key="navigationItem" title="Baum Datenbank" id="oXg-a6-4ce">
+                        <barButtonItem key="rightBarButtonItem" style="done" id="o8V-re-Gw0">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="bl3-oX-1O0">
+                                <rect key="frame" x="703" y="8" width="111" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Hybrid"/>
+                                    <segment title="Karte"/>
+                                </segments>
+                                <connections>
+                                    <action selector="setMapStyle:" destination="3JX-LO-RSg" eventType="valueChanged" id="CVT-v3-Mbb"/>
+                                </connections>
+                            </segmentedControl>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="categoryLabel" destination="aJx-d0-sAz" id="ccH-8d-lED"/>
                         <outlet property="deleteDetailViewButton" destination="JM5-Z9-OAm" id="Xdn-pe-gbg"/>
@@ -741,6 +755,7 @@
                         <outlet property="detailView" destination="b6U-bN-zsC" id="7KQ-WR-goY"/>
                         <outlet property="editDetailViewButton" destination="Mhs-78-SPE" id="rHI-tl-er4"/>
                         <outlet property="groupTableView" destination="ytT-Kf-dkA" id="te8-l8-K3w"/>
+                        <outlet property="mapStyleSwitchControl" destination="bl3-oX-1O0" id="YLM-gf-Gme"/>
                         <outlet property="mapView" destination="4hZ-5t-GvE" id="jre-t3-i4y"/>
                         <outlet property="pdfDetailViewButton" destination="D5y-Tt-Lae" id="eyN-AR-864"/>
                         <outlet property="placeLabel" destination="Hvb-FY-Nvy" id="LKg-2Q-M0Y"/>

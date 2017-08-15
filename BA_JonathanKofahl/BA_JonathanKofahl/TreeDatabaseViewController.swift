@@ -31,6 +31,7 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var editDetailViewButton: UIButton!
     @IBOutlet weak var pdfDetailViewButton: UIButton!
     @IBOutlet weak var detailStackView: UIStackView!
+    @IBOutlet weak var mapStyleSwitchControl: UISegmentedControl!
     
     var placeSelected = false
     var placeIndex = 0
@@ -74,6 +75,7 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             } else {
                 for label in view.subviews {
                     label.tintColor = color
+                    mapStyleSwitchControl.tintColor = color
                 }
             }
         }
@@ -199,7 +201,10 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             // Drop a pin
             let dropPin = MKPointAnnotation()
             dropPin.coordinate = eventLocation
-            dropPin.title = tableTrees?[indexPath.row].info6?.description
+                if tableTrees?[indexPath.row].info6 != nil {
+                    let title = "Nummer: " + (tableTrees?[indexPath.row].info6)!
+                    dropPin.title = title
+                }
             mapView.addAnnotation(dropPin)
             
             if indexPath.row == 0 {
@@ -378,6 +383,20 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
                 startLocation = latestLocation as! CLLocation
             }
         }
+    
+    @IBAction func setMapStyle(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            self.mapView.mapType = MKMapType.hybrid
+            self.groupTableView.backgroundColor = UIColor.clear
+            self.detailView.backgroundColor = UIColor.clear
+        }
+        if sender.selectedSegmentIndex == 1 {
+            self.mapView.mapType = MKMapType.standard
+            detailView.backgroundColor = UIColor.black
+            self.groupTableView.backgroundColor = UIColor.black
+        }
+    }
+    
         
         
         /**( When NSError in Locationmanager do nothing
