@@ -194,12 +194,18 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TreeDatabaseTableViewCellPlace
             cell.placeLabel.text = databaseModel.places[indexPath.row].name?.description
         } else {
+            if (tableTrees?[indexPath.row].xLocation != nil) {
             let eventLocation = CLLocationCoordinate2DMake((tableTrees?[indexPath.row].xLocation)!, (tableTrees?[indexPath.row].yLocation)!)
             // Drop a pin
             let dropPin = MKPointAnnotation()
             dropPin.coordinate = eventLocation
             dropPin.title = tableTrees?[indexPath.row].info6?.description
             mapView.addAnnotation(dropPin)
+            
+            if indexPath.row == 0 {
+                mapView.setCenter(CLLocationCoordinate2D.init(latitude: (tableTrees?[indexPath.row].xLocation)!, longitude: (tableTrees?[indexPath.row].yLocation)!), animated: true)
+            }
+            }
             
             cell1 = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TreeDatabaseTableViewCellTree
             cell1.treeNumberLabel.text = tableTrees?[indexPath.row].info6

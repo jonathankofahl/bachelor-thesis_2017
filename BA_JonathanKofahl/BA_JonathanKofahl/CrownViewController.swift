@@ -29,9 +29,8 @@ class CrownViewController: UIViewController {
         if defaults.value(forKey: "appColor") != nil {
             let color = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
             topView.backgroundColor = color
-            for view in stackView.arrangedSubviews {
-                view.backgroundColor = color
-            }
+            stackView.subviews[0].backgroundColor = UIColor.init(hexString: "696A6A")
+            stackView.subviews[1].backgroundColor = color
         }
 
     
@@ -58,6 +57,9 @@ class CrownViewController: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
                 self.option = 2
             })
+            stackView.subviews[0].backgroundColor = self.stackView.subviews[1].backgroundColor
+            self.stackView.subviews[1].backgroundColor = UIColor.init(hexString: "696A6A")
+            
         }
     }
     
@@ -69,6 +71,8 @@ class CrownViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
             self.option = 0
         })
+        stackView.subviews[1].backgroundColor = self.stackView.subviews[0].backgroundColor
+        self.stackView.subviews[0].backgroundColor = UIColor.init(hexString: "696A6A")
         }
     }
     

@@ -66,6 +66,15 @@ class SettingsViewController: UIViewController {
         
     }
     
+    @IBAction func deleteDatabase(_ sender: Any) {
+        for tree in databaseModel.trees {
+            databaseModel.deleteTree(objID: tree.objectID)
+        }
+        for (index,place) in databaseModel.places.enumerated() {
+            databaseModel.deletePlace(index: index)
+        }
+    }
+    
     }
 
 // https://stackoverflow.com/questions/24263007/how-to-use-hex-colour-values-in-swift-ios

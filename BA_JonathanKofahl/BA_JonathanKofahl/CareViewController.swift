@@ -152,9 +152,10 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         actualTree1?.isNew = false
             
-        actualTree1?.xLocation = (infoController.locationManager.location?.coordinate.latitude)!
-        actualTree1?.yLocation = (infoController.locationManager.location?.coordinate.longitude)!
-            
+        if actualTree1?.xLocation != nil {
+            actualTree1?.xLocation = (infoController.locationManager.location?.coordinate.latitude)!
+            actualTree1?.yLocation = (infoController.locationManager.location?.coordinate.longitude)!
+        }
             
         databaseModel.save()
         

@@ -190,7 +190,7 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
             //}
             self.tabBarController?.tabBar.barTintColor = color
             self.tabBarController?.tabBar.tintColor = UIColor.white
-            self.tabBarController?.tabBar.unselectedItemTintColor = UIColor.white
+            self.tabBarController?.tabBar.unselectedItemTintColor = UIColor.black
             if defaults.value(forKey: "appColor") as! String == "#4C4C4C" {
             self.tabBarController?.tabBar.tintColor = UIColor.white
             }

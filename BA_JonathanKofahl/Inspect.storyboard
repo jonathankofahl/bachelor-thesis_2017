@@ -227,7 +227,7 @@ abbrechen</string>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TY7-C2-JDU">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Empfohlen" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TY7-C2-JDU">
                                                 <rect key="frame" x="255" y="10" width="210" height="30"/>
                                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -599,8 +599,8 @@ abbrechen</string>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pflichtfeld" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="abz-4A-CUA">
-                                                        <rect key="frame" x="609" y="10" width="210" height="30"/>
+                                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="abz-4A-CUA">
+                                                        <rect key="frame" x="604" y="10" width="210" height="30"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="210" id="JdG-cZ-iRw"/>
@@ -617,8 +617,8 @@ abbrechen</string>
                                                             <outlet property="nextField" destination="uNc-gp-7hC" id="kDl-1C-Z1t"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pflichtfeld" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kI0-d4-kzL">
-                                                        <rect key="frame" x="170" y="10" width="323" height="30"/>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kI0-d4-kzL">
+                                                        <rect key="frame" x="170" y="10" width="318" height="30"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -632,7 +632,7 @@ abbrechen</string>
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datum:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PiY-Vc-enW">
-                                                        <rect key="frame" x="532" y="10" width="69" height="30"/>
+                                                        <rect key="frame" x="527" y="10" width="69" height="30"/>
                                                         <color key="tintColor" red="0.63929325339999998" green="0.92684656379999997" blue="0.87985223530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="69" id="NOO-or-Xqe"/>
@@ -654,7 +654,7 @@ abbrechen</string>
                                                     <constraint firstAttribute="height" constant="50" id="aUD-7i-NDD"/>
                                                     <constraint firstItem="PiY-Vc-enW" firstAttribute="bottom" secondItem="abz-4A-CUA" secondAttribute="bottom" id="co7-XX-zpn"/>
                                                     <constraint firstItem="oum-mz-EnQ" firstAttribute="leading" secondItem="nKm-eI-PiX" secondAttribute="leadingMargin" constant="30" id="pUe-yK-n2e"/>
-                                                    <constraint firstAttribute="trailing" secondItem="abz-4A-CUA" secondAttribute="trailing" constant="15" id="tCg-mD-Fky"/>
+                                                    <constraint firstAttribute="trailing" secondItem="abz-4A-CUA" secondAttribute="trailing" constant="20" id="tCg-mD-Fky"/>
                                                     <constraint firstAttribute="bottom" secondItem="oum-mz-EnQ" secondAttribute="bottom" constant="12" id="wYY-xy-FHK"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
@@ -683,7 +683,7 @@ abbrechen</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="236-mU-ydy">
-                                                        <rect key="frame" x="609" y="10" width="210" height="30"/>
+                                                        <rect key="frame" x="604" y="10" width="210" height="30"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="1SB-yG-Iny"/>
@@ -700,7 +700,7 @@ abbrechen</string>
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uNc-gp-7hC">
-                                                        <rect key="frame" x="170" y="10" width="325" height="30"/>
+                                                        <rect key="frame" x="170" y="10" width="320" height="30"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="Yw9-lo-v5O"/>
@@ -717,7 +717,7 @@ abbrechen</string>
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Projekt:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpB-y5-cMU">
-                                                        <rect key="frame" x="532" y="10" width="69" height="30"/>
+                                                        <rect key="frame" x="527" y="10" width="69" height="30"/>
                                                         <color key="tintColor" red="0.63929325339999998" green="0.92684656379999997" blue="0.87985223530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -731,7 +731,7 @@ abbrechen</string>
                                                     <constraint firstAttribute="bottom" secondItem="Svm-K5-uHC" secondAttribute="bottom" constant="10" id="DIl-oP-sHK"/>
                                                     <constraint firstAttribute="bottom" secondItem="fpB-y5-cMU" secondAttribute="bottom" constant="10" id="H3G-u4-dCU"/>
                                                     <constraint firstAttribute="bottom" secondItem="uNc-gp-7hC" secondAttribute="bottom" constant="10" id="HDA-ou-9kD"/>
-                                                    <constraint firstAttribute="trailing" secondItem="236-mU-ydy" secondAttribute="trailing" constant="15" id="IcA-dX-0GB"/>
+                                                    <constraint firstAttribute="trailing" secondItem="236-mU-ydy" secondAttribute="trailing" constant="20" id="IcA-dX-0GB"/>
                                                     <constraint firstItem="fpB-y5-cMU" firstAttribute="leading" secondItem="uNc-gp-7hC" secondAttribute="trailing" constant="37" id="JRT-xB-YYM"/>
                                                     <constraint firstItem="236-mU-ydy" firstAttribute="top" secondItem="oi1-8C-5pD" secondAttribute="top" constant="10" id="Uoa-iH-bBw"/>
                                                     <constraint firstAttribute="height" constant="50" id="bg6-5c-TBZ"/>
@@ -995,7 +995,7 @@ abbrechen</string>
                             <constraint firstItem="rJZ-4g-FxS" firstAttribute="centerY" secondItem="QPG-iC-dqu" secondAttribute="centerY" id="y7X-T4-DuA"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Info" id="uFW-0r-9bc"/>
+                    <tabBarItem key="tabBarItem" title="Info" image="tabIcon1" id="uFW-0r-9bc"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="bottomStackView" destination="Rl3-Ud-BwL" id="s5W-9d-7uA"/>
@@ -1165,52 +1165,65 @@ abbrechen</string>
                                     <segue destination="FcL-bb-2fV" kind="embed" identifier="embedContainer" id="2RQ-9w-6OJ"/>
                                 </connections>
                             </containerView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="2hn-qZ-Qdo">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4od-Kk-iiw">
                                 <rect key="frame" x="0.0" y="1013" width="834" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8g-CF-4FE">
-                                        <rect key="frame" x="0.0" y="0.0" width="416.5" height="50"/>
-                                        <color key="backgroundColor" red="0.30408036710000003" green="0.49091345069999998" blue="0.70246273280000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                        <state key="normal" title="Krone Teil 1">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="swapButtonPressed:" destination="KbC-sY-JaH" eventType="touchUpInside" id="TYZ-Ex-dFu"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghL-PV-ZnE">
-                                        <rect key="frame" x="417.5" y="0.0" width="416.5" height="50"/>
-                                        <color key="backgroundColor" red="0.30408036710000003" green="0.49091345069999998" blue="0.70246273280000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                        <state key="normal" title="Krone Teil 2">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="swapButton2Pressed:" destination="KbC-sY-JaH" eventType="touchUpInside" id="MAM-uj-jfO"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="2hn-qZ-Qdo">
+                                        <rect key="frame" x="0.0" y="0.0" width="834" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8g-CF-4FE">
+                                                <rect key="frame" x="0.0" y="0.0" width="416.5" height="50"/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                                <state key="normal" title="Krone Teil 1">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="swapButtonPressed:" destination="KbC-sY-JaH" eventType="touchUpInside" id="TYZ-Ex-dFu"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghL-PV-ZnE">
+                                                <rect key="frame" x="417.5" y="0.0" width="416.5" height="50"/>
+                                                <color key="backgroundColor" red="0.30408036710000003" green="0.49091345069999998" blue="0.70246273280000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                                <state key="normal" title="Krone Teil 2">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="swapButton2Pressed:" destination="KbC-sY-JaH" eventType="touchUpInside" id="MAM-uj-jfO"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="fQK-xy-2jG"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="fQK-xy-2jG"/>
+                                    <constraint firstItem="2hn-qZ-Qdo" firstAttribute="leading" secondItem="4od-Kk-iiw" secondAttribute="leading" id="5Zv-yI-Mid"/>
+                                    <constraint firstAttribute="height" constant="50" id="aWr-va-RrR"/>
+                                    <constraint firstAttribute="trailing" secondItem="2hn-qZ-Qdo" secondAttribute="trailing" id="cU6-30-nqu"/>
+                                    <constraint firstItem="2hn-qZ-Qdo" firstAttribute="top" secondItem="4od-Kk-iiw" secondAttribute="top" id="iFh-Ay-DBi"/>
+                                    <constraint firstAttribute="bottom" secondItem="2hn-qZ-Qdo" secondAttribute="bottom" id="mgK-q7-A4h"/>
                                 </constraints>
-                            </stackView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="2hn-qZ-Qdo" secondAttribute="trailing" id="4Ey-j5-88w"/>
                             <constraint firstItem="f2N-gO-UrD" firstAttribute="top" secondItem="qNp-U5-qhd" secondAttribute="top" id="AHQ-VX-Pt3"/>
                             <constraint firstAttribute="trailing" secondItem="f2N-gO-UrD" secondAttribute="trailing" id="I1R-cI-PYv"/>
-                            <constraint firstItem="2hn-qZ-Qdo" firstAttribute="bottom" secondItem="GgG-EM-PAh" secondAttribute="top" id="Va9-Pg-781"/>
+                            <constraint firstAttribute="trailing" secondItem="4od-Kk-iiw" secondAttribute="trailing" id="O6M-Hb-ESZ"/>
+                            <constraint firstItem="4od-Kk-iiw" firstAttribute="top" secondItem="A9T-6a-7qY" secondAttribute="bottom" id="OAP-5O-suC"/>
                             <constraint firstItem="A9T-6a-7qY" firstAttribute="top" secondItem="f2N-gO-UrD" secondAttribute="bottom" constant="1" id="aOQ-n4-ztj"/>
                             <constraint firstItem="f2N-gO-UrD" firstAttribute="leading" secondItem="qNp-U5-qhd" secondAttribute="leading" id="fHN-L0-JOU"/>
                             <constraint firstAttribute="trailing" secondItem="A9T-6a-7qY" secondAttribute="trailing" id="g0u-By-hM0"/>
-                            <constraint firstItem="2hn-qZ-Qdo" firstAttribute="leading" secondItem="A9T-6a-7qY" secondAttribute="leading" id="jZ2-Gv-Woh"/>
-                            <constraint firstItem="2hn-qZ-Qdo" firstAttribute="top" secondItem="A9T-6a-7qY" secondAttribute="bottom" id="qxo-07-WaE"/>
+                            <constraint firstItem="4od-Kk-iiw" firstAttribute="leading" secondItem="qNp-U5-qhd" secondAttribute="leading" id="nQU-9W-zg4"/>
+                            <constraint firstItem="GgG-EM-PAh" firstAttribute="top" secondItem="4od-Kk-iiw" secondAttribute="bottom" id="s6z-hL-l4C"/>
                             <constraint firstItem="A9T-6a-7qY" firstAttribute="leading" secondItem="qNp-U5-qhd" secondAttribute="leading" id="soa-mY-mvV"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Krone" id="8I5-ff-yyh"/>
+                    <tabBarItem key="tabBarItem" title="Krone" image="tabIcon1" id="8I5-ff-yyh"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="stackView" destination="2hn-qZ-Qdo" id="2cH-LG-Itu"/>
@@ -1338,7 +1351,7 @@ abbrechen</string>
                             <constraint firstAttribute="trailing" secondItem="Qzr-6B-g7M" secondAttribute="trailing" id="udC-8m-skB"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Stamm" id="V03-80-lx8"/>
+                    <tabBarItem key="tabBarItem" title="Stamm" image="tabIcon1" id="V03-80-lx8"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="stackView" destination="rwI-4d-GEW" id="wzG-ek-cJa"/>
@@ -1641,7 +1654,7 @@ abbrechen</string>
                             <constraint firstAttribute="trailing" secondItem="pGi-Qo-OCr" secondAttribute="trailing" id="li9-W0-3GF"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Wurzel" id="zik-Sl-fdG"/>
+                    <tabBarItem key="tabBarItem" title="Wurzel" image="tabIcon1" id="zik-Sl-fdG"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="tableView" destination="rL3-tL-kDx" id="okT-WY-dVh"/>
@@ -1888,7 +1901,7 @@ abbrechen</string>
                             <constraint firstItem="Tjm-RH-vzF" firstAttribute="top" secondItem="bJT-Xk-TuV" secondAttribute="bottom" id="uGa-6q-jhE"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Umgebung" id="6dU-wV-Kgq"/>
+                    <tabBarItem key="tabBarItem" title="Umgebung" image="tabIcon1" id="6dU-wV-Kgq"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="firstButton" destination="K9r-WF-Crv" id="dfT-JP-h1l"/>
@@ -2323,7 +2336,7 @@ abschließen</string>
                             <constraint firstAttribute="trailing" secondItem="pMV-5c-bG1" secondAttribute="trailing" id="rqi-JA-48x"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Pflege" id="BuU-kL-UKb"/>
+                    <tabBarItem key="tabBarItem" title="Pflege" image="tabIcon1" id="BuU-kL-UKb"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="firstStackView" destination="Hc5-nC-fFJ" id="W0u-Zh-2iN"/>
@@ -2376,7 +2389,7 @@ abschließen</string>
                                 <rect key="frame" x="0.0" y="45" width="834" height="766"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <color key="sectionIndexBackgroundColor" red="0.4103715235" green="0.41443460789999997" blue="0.41443460789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.41176470588235292" green="0.41568627450980389" blue="0.41568627450980389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="IBG-Dg-kNa" customClass="CustomTableViewCell" customModule="BA_JonathanKofahl" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="834" height="44"/>
@@ -3555,5 +3568,6 @@ Plombe,gefräste Wunden,Entwässerung/Drainage o.ä.)														</string>
     <resources>
         <image name="CameraButton_clicked" width="1348" height="1347"/>
         <image name="CameraButton_normal" width="1348" height="1347"/>
+        <image name="tabIcon1" width="25" height="25"/>
     </resources>
 </document>

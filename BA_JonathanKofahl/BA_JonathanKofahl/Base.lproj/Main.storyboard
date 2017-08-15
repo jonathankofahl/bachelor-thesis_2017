@@ -847,6 +847,9 @@ Hinweis: Bäume können auch einzeln aus der Datenbank gelöscht werden.</string
                                                 <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="deleteDatabase:" destination="EPs-qj-JhI" eventType="touchUpInside" id="u5U-MP-rdp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
