@@ -98,43 +98,43 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
                 for button in (self.bottomStackView.subviews[0].subviews[1].subviews) {
                         button.backgroundColor = UIColor.clear
                 }
-                self.bottomStackView.subviews[0].subviews[1].subviews[0].backgroundColor = UIColor.init(hexString: "21AF73")
+                self.bottomStackView.subviews[0].subviews[1].subviews[0].backgroundColor = UIColor.customColors.customGreen
             }
             if actualTree1?.info12 == "Reife" {
                 for button in (self.bottomStackView.subviews[0].subviews[1].subviews) {
                     button.backgroundColor = UIColor.clear
                 }
-                self.bottomStackView.subviews[0].subviews[1].subviews[1].backgroundColor = UIColor.init(hexString: "21AF73")
+                self.bottomStackView.subviews[0].subviews[1].subviews[1].backgroundColor = UIColor.customColors.customGreen
             }
             if actualTree1?.info12 == "Alterung" {
                 for button in (self.bottomStackView.subviews[0].subviews[1].subviews) {
                     button.backgroundColor = UIColor.clear
                 }
-                self.bottomStackView.subviews[0].subviews[1].subviews[2].backgroundColor = UIColor.init(hexString: "21AF73")
+                self.bottomStackView.subviews[0].subviews[1].subviews[2].backgroundColor = UIColor.customColors.customGreen
             }
             if actualTree1?.info13 == "Gering" {
                 for button in (self.bottomStackView.subviews[1].subviews[1].subviews) {
                     button.backgroundColor = UIColor.clear
                 }
-                self.bottomStackView.subviews[1].subviews[2].subviews[0].backgroundColor = UIColor.init(hexString: "21AF73")
+                self.bottomStackView.subviews[1].subviews[2].subviews[0].backgroundColor = UIColor.customColors.customGreen
             }
             if actualTree1?.info13 == "Hoch" {
                 for button in (self.bottomStackView.subviews[1].subviews[1].subviews) {
                     button.backgroundColor = UIColor.clear
                 }
-                self.bottomStackView.subviews[1].subviews[1].subviews[1].backgroundColor = UIColor.init(hexString: "21AF73")
+                self.bottomStackView.subviews[1].subviews[1].subviews[1].backgroundColor = UIColor.customColors.customGreen
             }
             if actualTree1?.info14 == "Gesund/leicht geschädigt" {
                 for button in (self.bottomStackView.subviews[2].subviews[1].subviews) {
                     button.backgroundColor = UIColor.clear
                 }
-                self.bottomStackView.subviews[2].subviews[1].subviews[0].backgroundColor = UIColor.init(hexString: "21AF73")
+                self.bottomStackView.subviews[2].subviews[1].subviews[0].backgroundColor = UIColor.customColors.customGreen
             }
             if actualTree1?.info14 == "Stärker geschädigt" {
                 for button in (self.bottomStackView.subviews[2].subviews[1].subviews) {
                     button.backgroundColor = UIColor.clear
                 }
-                self.bottomStackView.subviews[2].subviews[1].subviews[1].backgroundColor = UIColor.init(hexString: "21AF73")
+                self.bottomStackView.subviews[2].subviews[1].subviews[1].backgroundColor = UIColor.customColors.customGreen
             }
             
             if actualTree1?.image != nil {
@@ -177,7 +177,7 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
         
         //MARK: - Color load from UserDefaults
         if defaults.value(forKey: "appColor") != nil {
-            let color = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
+            let color = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
             view1.backgroundColor = color
             //view2.backgroundColor = color
             cameraButton.backgroundColor = color
@@ -191,9 +191,9 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
             self.tabBarController?.tabBar.barTintColor = color
             self.tabBarController?.tabBar.tintColor = UIColor.white
             self.tabBarController?.tabBar.unselectedItemTintColor = UIColor.black
-            if defaults.value(forKey: "appColor") as! String == "#4C4C4C" {
-            self.tabBarController?.tabBar.tintColor = UIColor.white
-            }
+           // if defaults.value(forKey: "appColor") as! String == "#4C4C4C" {
+            //self.tabBarController?.tabBar.tintColor = UIColor.white
+           // }
         }
         
         //MARK: - Connect the textFields, so the user can tab to the next
@@ -307,7 +307,7 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
         for item in (sender.superview?.subviews)! {
             item.backgroundColor = UIColor.clear
         }
-        sender.backgroundColor = UIColor.init(hexString: "00B079")
+        sender.backgroundColor = UIColor.customColors.customGreen
         }
         actualTree1?.setValue(sender.titleLabel?.text, forKey: "info"+sender.tag.description)
     }

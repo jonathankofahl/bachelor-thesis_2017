@@ -63,16 +63,16 @@ class secondCrownViewController: UIViewController, UITableViewDelegate, UITableV
     func checkValue(attributeString: String, sender: UIButton) -> Void
     {
         if attributeString == ("Gefährlich") {
-            sender.backgroundColor = UIColor.init(hexString: "F4605D")
+            sender.backgroundColor = UIColor.customColors.customRed
         }
         if attributeString == "Unklar" {
-            sender.backgroundColor = UIColor.init(hexString: "F4605D")
+            sender.backgroundColor = UIColor.customColors.customRed
         }
         if attributeString == "vorhanden" {
-            sender.backgroundColor = UIColor.init(hexString: "FFB364")
+            sender.backgroundColor = UIColor.customColors.customOrange
         }
         if attributeString == "Ja" {
-            sender.backgroundColor = UIColor.init(hexString: "FFB364")
+            sender.backgroundColor = UIColor.customColors.customOrange
         }
 
     }
@@ -123,7 +123,7 @@ class secondCrownViewController: UIViewController, UITableViewDelegate, UITableV
            for item in (sender.superview?.subviews)! {
            item.backgroundColor = UIColor.clear
         }
-          sender.backgroundColor = UIColor.init(hexString: "00B079")
+          sender.backgroundColor = UIColor.customColors.customGreen
            }
           actualTree1?.setValue(sender.titleLabel?.text, forKey: "crown"+sender.tag.description)
            }

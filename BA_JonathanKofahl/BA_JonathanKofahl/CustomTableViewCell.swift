@@ -35,25 +35,25 @@ class CustomTableViewCell: UITableViewCell {
                 for item in (self.buttonStackView.subviews) {
                     item.backgroundColor = UIColor.clear
                 }
-                self.buttonStackView.subviews[1].backgroundColor = UIColor.init(hexString: "F4605D")
+                self.buttonStackView.subviews[1].backgroundColor = UIColor.customColors.customRed
             }
             if attributeString == "Unklar" {
                 for item in (buttonStackView.subviews) {
                     item.backgroundColor = UIColor.clear
                 }
-                buttonStackView.subviews[2].backgroundColor = UIColor.init(hexString: "F4605D")
+                buttonStackView.subviews[2].backgroundColor = UIColor.customColors.customRed
             }
             if attributeString == "vorhanden" {
                 for item in (buttonStackView.subviews) {
                     item.backgroundColor = UIColor.clear
                 }
-                buttonStackView.subviews[1].backgroundColor = UIColor.init(hexString: "FFB364")
+                buttonStackView.subviews[1].backgroundColor = UIColor.customColors.customOrange
             }
             if attributeString == "Ja" {
                 for item in (buttonStackView.subviews) {
                     item.backgroundColor = UIColor.clear
                 }
-                buttonStackView.subviews[1].backgroundColor = UIColor.init(hexString: "FFB364")
+                buttonStackView.subviews[1].backgroundColor = UIColor.customColors.customOrange
             }
             
         } else {
@@ -97,14 +97,14 @@ class CustomTableViewCell: UITableViewCell {
                 item.backgroundColor = UIColor.clear
             }
             if(sender == sender.superview?.subviews[0]) {
-                sender.backgroundColor = UIColor.init(hexString: "00B079")
+                sender.backgroundColor = UIColor.customColors.customGreen
             }
             if(sender == sender.superview?.subviews[1]) {
-                sender.backgroundColor = UIColor.init(hexString: "F4605D")
+                sender.backgroundColor = UIColor.customColors.customRed
             }
             if((sender.superview?.subviews.count)! > 2) {
             if(sender == sender.superview?.subviews[2]) {
-                sender.backgroundColor = UIColor.init(hexString: "FFB364")
+                sender.backgroundColor = UIColor.customColors.customOrange
             }
             }
         }

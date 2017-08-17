@@ -30,8 +30,8 @@ class SettingsViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         if (defaults.value(forKey: "appColor") != nil) {
-            view1.backgroundColor = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
-            view2.backgroundColor = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
+            view1.backgroundColor = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
+            view2.backgroundColor = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
         }
         
     }
@@ -42,27 +42,11 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func changeAppColor(_ sender: UIButton) {
-
-       //  sender.borderWidth = 1
-       //  sender.borderColor = UIColor.black
+       
+        defaults.set(sender.backgroundColor?.encode(), forKey: "appColor")
         
-        switch sender.tag {
-        case 1:
-            defaults.set("#355B72", forKey: "appColor")
-        case 2:
-            defaults.set("#00B079", forKey: "appColor")
-        case 3:
-            defaults.set("#4E7DB3", forKey: "appColor")
-        case 4:
-            defaults.set("#EEB109", forKey: "appColor")
-        case 5:
-            defaults.set("#B85D55", forKey: "appColor")
-        default:
-            defaults.set("#4E7DB3", forKey: "appColor")
-        }
-        
-        view1.backgroundColor = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
-        view2.backgroundColor = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
+        view1.backgroundColor = sender.backgroundColor
+        view2.backgroundColor = sender.backgroundColor
         
     }
     
@@ -77,23 +61,23 @@ class SettingsViewController: UIViewController {
     
     }
 
-// https://stackoverflow.com/questions/24263007/how-to-use-hex-colour-values-in-swift-ios
 extension UIColor {
-    convenience init(hexString: String) {
-        let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
-        var int = UInt32()
-        Scanner(string: hex).scanHexInt32(&int)
-        let a, r, g, b: UInt32
-        switch hex.characters.count {
-        case 3: // RGB (12-bit)
-            (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
-        case 6: // RGB (24-bit)
-            (a, r, g, b) = (255, int >> 16, int >> 8 & 0xFF, int & 0xFF)
-        case 8: // ARGB (32-bit)
-            (a, r, g, b) = (int >> 24, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
-        default:
-            (a, r, g, b) = (255, 0, 0, 0)
-        }
-        self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
+    class func color(withData data:Data) -> UIColor {
+        return NSKeyedUnarchiver.unarchiveObject(with: data) as! UIColor
     }
-}
+    
+    func encode() -> Data {
+        return NSKeyedArchiver.archivedData(withRootObject: self)
+    }
+    
+    struct customColors {
+        static let cancelColor     = UIColor.init(red: 255/255, green: 87/255, blue: 34/255, alpha: 1.0)
+        static let customRed        = UIColor.init(red: 244/255, green: 67/255, blue: 54/255, alpha: 1.0)
+        static let customOrange     = UIColor.init(red: 239/255, green: 108/255, blue: 0/255, alpha: 1.0)
+        static let customGreen      = UIColor.init(red: 67/255, green: 160/255, blue: 71/255, alpha: 1.0)
+        static let backgroundColor = UIColor.init(red: 66/255, green: 66/255, blue: 66/255, alpha: 1.0)
+
+    }
+    }
+
+

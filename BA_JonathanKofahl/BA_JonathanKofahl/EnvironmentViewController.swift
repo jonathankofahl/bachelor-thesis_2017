@@ -30,7 +30,7 @@ class EnvironmentViewController: UIViewController, UITableViewDelegate, UITableV
         
         //MARK: Color load from UserDefaults
         if defaults.value(forKey: "appColor") != nil {
-            let color = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
+            let color = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
             topView.backgroundColor = color
         }
         
@@ -46,9 +46,9 @@ class EnvironmentViewController: UIViewController, UITableViewDelegate, UITableV
         if actualTree1?.isNew == false {
             if actualTree1?.tribe21 != "Nein" {
                 firstButton.backgroundColor = UIColor.clear
-                secondButton.backgroundColor = UIColor.init(hexString: "F4605D")
+                secondButton.backgroundColor = UIColor.customColors.customOrange
             } else {
-                firstButton.backgroundColor = UIColor.init(hexString: "FFB364")
+                firstButton.backgroundColor = UIColor.customColors.customGreen
                 secondButton.backgroundColor = UIColor.clear
             }
             if actualTree1?.environment7 != nil {
@@ -103,7 +103,7 @@ class EnvironmentViewController: UIViewController, UITableViewDelegate, UITableV
             for item in (sender.superview?.subviews)! {
                 item.backgroundColor = UIColor.clear
             }
-            sender.backgroundColor = UIColor.init(hexString: "00B079")
+            sender.backgroundColor = UIColor.customColors.customGreen
         }
         actualTree1?.setValue(sender.titleLabel?.text, forKey: "info"+sender.tag.description)
     }

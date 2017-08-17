@@ -62,7 +62,7 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        var color = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
+        var color = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
         var alphaColor = color.withAlphaComponent(0.8)
         
         // Set Colors
@@ -98,8 +98,8 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             
             self.detailView.insertSubview(blurEffectView1, at: 0)
         } else {
-            self.groupTableView.backgroundColor = alphaColor
-            self.detailView.backgroundColor = alphaColor
+            self.groupTableView.backgroundColor = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
+            self.detailView.backgroundColor = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
         }
         
         //self.detailView.frame.origin.x = self.detailView.frame.origin.x + 400
@@ -196,7 +196,10 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TreeDatabaseTableViewCellPlace
             cell.placeLabel.text = databaseModel.places[indexPath.row].name?.description
         } else {
-            if (tableTrees?[indexPath.row].xLocation != nil) {
+            if (Double((tableTrees?[indexPath.row].xLocation)!) != 0.0) {
+                print(tableTrees?[indexPath.row].xLocation)
+                print(tableTrees?[indexPath.row].yLocation)
+
             let eventLocation = CLLocationCoordinate2DMake((tableTrees?[indexPath.row].xLocation)!, (tableTrees?[indexPath.row].yLocation)!)
             // Drop a pin
             let dropPin = MKPointAnnotation()
@@ -269,7 +272,7 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
         let editAction = UITableViewRowAction(style: .default, title: "Editieren", handler: { (action, indexPath) in
             print("Tree edit")
         })
-        editAction.backgroundColor = UIColor.init(hexString: "00B079")
+        editAction.backgroundColor = UIColor.customColors.customGreen
         
         // action two
         let deleteAction = UITableViewRowAction(style: .default, title: "Löschen", handler: { (action, indexPath) in
@@ -279,7 +282,7 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             databaseModel.save()
             print("Tree delete")
         })
-        deleteAction.backgroundColor = UIColor.red
+        deleteAction.backgroundColor = UIColor.customColors.customRed
         
         return [deleteAction]
         } else
@@ -298,7 +301,7 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
                 print("Place delete")
             })
             
-            deleteAction.backgroundColor = UIColor.red
+            deleteAction.backgroundColor = UIColor.customColors.customRed
             
         return [deleteAction]
         
@@ -392,8 +395,8 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
         }
         if sender.selectedSegmentIndex == 1 {
             self.mapView.mapType = MKMapType.standard
-            detailView.backgroundColor = UIColor.black
-            self.groupTableView.backgroundColor = UIColor.black
+            detailView.backgroundColor = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
+            self.groupTableView.backgroundColor = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
         }
     }
     

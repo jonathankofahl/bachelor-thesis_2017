@@ -18,21 +18,22 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var view2: UIView!
     @IBOutlet weak var databaseButton: UIButton!
     @IBOutlet weak var userTextfield: UITextField!
-    @IBOutlet weak var dateTextfield: UITextField!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     //MARK: - Methods
     
     override func viewWillAppear(_ animated: Bool) {
         if defaults.value(forKey: "appColor") != nil {
-            view1.backgroundColor = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
-            view2.backgroundColor = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
+            view1.backgroundColor = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
+            view2.backgroundColor = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
         } else {
-            defaults.set("#4E7DB3", forKey: "appColor")
+            defaults.set(view1.backgroundColor?.encode(), forKey: "appColor")
         }
         
         databaseButton.backgroundColor = view1.backgroundColor
         databaseButton.setTitleColor(UIColor.white, for: UIControlState.normal)
         
+        self.saveDate(datePicker)
     }
     
     // Make the Button highlighted on Select
@@ -45,7 +46,7 @@ class MenuViewController: UIViewController {
         } else {
             sender.setTitleColor(UIColor.white, for: UIControlState.normal)
             sender.setTitleColor(UIColor.white, for: UIControlState.normal)
-            sender.backgroundColor = UIColor.init(hexString:"27CEA6")
+            sender.backgroundColor = UIColor.customColors.customGreen
             if sender == databaseButton {
                 sender.backgroundColor = view1.backgroundColor
             }
@@ -63,13 +64,6 @@ class MenuViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         // initialize the date formatter and set the style
-        let currentDateTime = Date()
-        let formatter = DateFormatter()
-        formatter.timeStyle = .none
-        formatter.dateStyle = .long
-        
-        // get the date time String from the date object
-        dateTextfield.text =  formatter.string(from: currentDateTime)
         
         if defaults.value(forKey: "userName") != nil {
             userTextfield.text = defaults.string(forKey: "userName")
@@ -89,14 +83,21 @@ class MenuViewController: UIViewController {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField.tag == 0 {
             defaults.set(textField.text, forKey: "userName")
-        } else {
-            defaults.set(dateTextfield.text, forKey: "customDate")
         }
         
         textField.resignFirstResponder()
         return true
     }
 
+    @IBAction func saveDate(_ sender: UIDatePicker) {
+        let formatter = DateFormatter()
+        formatter.dateStyle = DateFormatter.Style.long
+        formatter.timeStyle = .none
+        
+        let dateString = formatter.string(from: sender.date)
+        defaults.set(dateString, forKey: "customDate")
+    }
     
-    
+
+
 }

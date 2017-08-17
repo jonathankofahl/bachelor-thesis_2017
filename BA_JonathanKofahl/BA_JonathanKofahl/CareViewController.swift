@@ -31,7 +31,7 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         //MARK: - Color load from UserDefaults
         if defaults.value(forKey: "appColor") != nil {
-            let color = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
+            let color = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
             topView.backgroundColor = color
         }
         
@@ -52,18 +52,18 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
             for button in firstStackView.subviews as! [UIButton] {
                 button.backgroundColor = UIColor.clear
                 if actualTree1?.care0 == button.titleLabel?.text {
-                    button.backgroundColor = UIColor.init(hexString: "21AF73")
+                    button.backgroundColor = UIColor.customColors.customGreen
                 }
             }
             for button in secondStackView.subviews as! [UIButton] {
                 button.backgroundColor = UIColor.clear
                 if actualTree1?.care14 == button.titleLabel?.text {
-                    button.backgroundColor = UIColor.init(hexString: "21AF73")
+                    button.backgroundColor = UIColor.customColors.customGreen
                 }            }
             for button in thirdStackView.subviews as! [UIButton] {
                 button.backgroundColor = UIColor.clear
                 if actualTree1?.care28 == button.titleLabel?.text {
-                    button.backgroundColor = UIColor.init(hexString: "21AF73")
+                    button.backgroundColor = UIColor.customColors.customGreen
                 }
             }
             
@@ -152,7 +152,7 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         actualTree1?.isNew = false
             
-        if actualTree1?.xLocation != nil {
+        if infoController.locationManager.location?.coordinate.latitude != nil {
             actualTree1?.xLocation = (infoController.locationManager.location?.coordinate.latitude)!
             actualTree1?.yLocation = (infoController.locationManager.location?.coordinate.longitude)!
         }
@@ -172,7 +172,7 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
             for item in (sender.superview?.subviews)! {
                 item.backgroundColor = UIColor.clear
             }
-            sender.backgroundColor = UIColor.init(hexString: "00B079")
+            sender.backgroundColor = UIColor.customColors.customGreen
         }
         actualTree1?.setValue(sender.titleLabel?.text, forKey: "care"+sender.tag.description)
     }

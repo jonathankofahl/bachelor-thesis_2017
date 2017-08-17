@@ -29,7 +29,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         //MARK: - Color load from UserDefaults
         if defaults.value(forKey: "appColor") != nil {
-            let color = UIColor.init(hexString: defaults.value(forKey: "appColor") as! String)
+            let color = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
             topView.backgroundColor = color
         }
         
