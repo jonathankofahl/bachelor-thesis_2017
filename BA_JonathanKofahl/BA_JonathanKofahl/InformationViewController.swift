@@ -22,6 +22,7 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var bottomStackView: UIStackView!
     
+    @IBOutlet weak var tabbarItem: UITabBarItem!
     
     @IBOutlet weak var field1: UITextField!
     @IBOutlet weak var field2: UITextField!
@@ -49,10 +50,35 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
     var startLocation: CLLocation!
     
     //MARK: - Methods
+    
+    func highlightTabIcon(item: UITabBarItem) -> Void {
+        tabbarItem.imageInsets.bottom = -7
+        tabbarItem.imageInsets.bottom = -7
+        tabbarItem.imageInsets.bottom = -7
+        tabbarItem.imageInsets.bottom = -7
+    }
+    func removeHighlightTabIcon(item: UITabBarItem) -> Void {
+        tabbarItem.imageInsets.bottom = 0
+        tabbarItem.imageInsets.bottom = 0
+        tabbarItem.imageInsets.bottom = 0
+        tabbarItem.imageInsets.bottom = 0
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        self.removeHighlightTabIcon(item: tabbarItem)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.highlightTabIcon(item: tabbarItem)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
         
         topConstant = stackViewTopConstraint.constant
         
@@ -180,7 +206,6 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
             let color = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
             view1.backgroundColor = color
             //view2.backgroundColor = color
-            cameraButton.backgroundColor = color
             //treeImageView.borderColor = color
             //for view in stackView.arrangedSubviews {
                // view.borderColor = color
@@ -190,7 +215,7 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
             //}
             self.tabBarController?.tabBar.barTintColor = color
             self.tabBarController?.tabBar.tintColor = UIColor.white
-            self.tabBarController?.tabBar.unselectedItemTintColor = UIColor.black
+            self.tabBarController?.tabBar.unselectedItemTintColor = UIColor.white
            // if defaults.value(forKey: "appColor") as! String == "#4C4C4C" {
             //self.tabBarController?.tabBar.tintColor = UIColor.white
            // }
