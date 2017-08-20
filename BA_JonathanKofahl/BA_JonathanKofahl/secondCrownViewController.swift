@@ -38,8 +38,8 @@ class secondCrownViewController: UIViewController, UITableViewDelegate, UITableV
         //MARK: Load values if tree is not new
         if actualTree1?.isNew == false {
             for button in firstStackView.subviews as! [UIButton] {
-              button.backgroundColor = UIColor.clear
-              checkValue(attributeString: (button.titleLabel?.text!)!, sender: button)
+                button.backgroundColor = UIColor.clear
+                checkValue(attributeString: (button.titleLabel?.text!)!, sender: button)
             }
             for button in secondStackView.subviews as! [UIButton] {
                 button.backgroundColor = UIColor.clear
@@ -74,7 +74,7 @@ class secondCrownViewController: UIViewController, UITableViewDelegate, UITableV
         if attributeString == "Ja" {
             sender.backgroundColor = UIColor.customColors.customOrange
         }
-
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -93,8 +93,8 @@ class secondCrownViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         
-            return tableCriteria!.count
-            
+        return tableCriteria!.count
+        
     }
     
     
@@ -105,26 +105,26 @@ class secondCrownViewController: UIViewController, UITableViewDelegate, UITableV
         cell.tableViewIdentifier = "crown"
         cell.index = indexPath.row + 20
         return cell
-}
+    }
     @IBAction func returnClicked(_ sender: UITextField) {
-          //  print("Returnclicked")
-                 _ = textFieldShouldReturn(sender)
-          }
-   
-       func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            actualTree1?.setValue(textField.text, forKey: "crown"+textField.tag.description)
-                 textField.resignFirstResponder()
+        //  print("Returnclicked")
+        _ = textFieldShouldReturn(sender)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        actualTree1?.setValue(textField.text, forKey: "crown"+textField.tag.description)
+        textField.resignFirstResponder()
         
-              return true
-           }
-   
-       @IBAction func clickedButton(_ sender: UIButton) {
+        return true
+    }
+    
+    @IBAction func clickedButton(_ sender: UIButton) {
         UIView.animate(withDuration: 0.3){
-           for item in (sender.superview?.subviews)! {
-           item.backgroundColor = UIColor.clear
+            for item in (sender.superview?.subviews)! {
+                item.backgroundColor = UIColor.clear
+            }
+            sender.backgroundColor = UIColor.customColors.customGreen
         }
-          sender.backgroundColor = UIColor.customColors.customGreen
-           }
-          actualTree1?.setValue(sender.titleLabel?.text, forKey: "crown"+sender.tag.description)
-           }
+        actualTree1?.setValue(sender.titleLabel?.text, forKey: "crown"+sender.tag.description)
+    }
 }

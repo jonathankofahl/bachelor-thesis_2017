@@ -12,7 +12,7 @@ import Foundation
 import CoreData
 
 class DatabaseModel: NSObject {
-
+    
     let defaults = UserDefaults.standard
     
     private let managedObjectContext : NSManagedObjectContext
@@ -21,7 +21,7 @@ class DatabaseModel: NSObject {
         self.managedObjectContext = managedObjectContext
         super.init()
     }
-
+    
     var trees : [Tree] {
         let request : NSFetchRequest<Tree> = Tree.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "info6", ascending: true)]
@@ -65,7 +65,7 @@ class DatabaseModel: NSObject {
     }
     
     @discardableResult func createPlace(name: String) -> Place {
-       let place = NSEntityDescription.insertNewObject(forEntityName: Place.entityName, into: self.managedObjectContext) as! Place
+        let place = NSEntityDescription.insertNewObject(forEntityName: Place.entityName, into: self.managedObjectContext) as! Place
         place.name = name
         return place
     }
@@ -75,7 +75,7 @@ class DatabaseModel: NSObject {
             print("count:" + count.description)
             if tree.objectID == objID {
                 managedObjectContext.delete(trees[count])
-                 print("deleted a tree")
+                print("deleted a tree")
             }
         }
     }

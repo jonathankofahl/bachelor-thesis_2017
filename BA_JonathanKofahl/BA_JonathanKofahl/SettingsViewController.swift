@@ -10,7 +10,7 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
-     //MARK: - Variables & Outlets
+    //MARK: - Variables & Outlets
     
     let defaults = UserDefaults.standard
     
@@ -23,7 +23,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var colorOption4: UIButton!
     @IBOutlet weak var colorOption5: UIButton!
     
-     //MARK: - Methods
+    //MARK: - Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func changeAppColor(_ sender: UIButton) {
-       
+        
         defaults.set(sender.backgroundColor?.encode(), forKey: "appColor")
         
         view1.backgroundColor = sender.backgroundColor
@@ -59,7 +59,7 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    }
+}
 
 extension UIColor {
     class func color(withData data:Data) -> UIColor {
@@ -76,8 +76,8 @@ extension UIColor {
         static let customOrange     = UIColor.init(red: 239/255, green: 108/255, blue: 0/255, alpha: 1.0)
         static let customGreen      = UIColor.init(red: 67/255, green: 160/255, blue: 71/255, alpha: 1.0)
         static let backgroundColor = UIColor.init(red: 66/255, green: 66/255, blue: 66/255, alpha: 1.0)
-
+        
     }
-    }
+}
 
 

@@ -11,18 +11,18 @@
 import UIKit
 
 class firstCrownViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     //MARK: - Variables & Outlets
     @IBOutlet weak var tableView: UITableView!
-   // @IBOutlet weak var tableView1: UITableView!
+    // @IBOutlet weak var tableView1: UITableView!
     @IBOutlet weak var slider: UISlider!
     
     // Seperated Arrays for the two Tables
     var tableCriteria : [String]?
     //var tableCriteria1 : [String]?
-
+    
     //MARK: - Methods
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,12 +41,12 @@ class firstCrownViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - TableView Configuration
     // MARK: - Table view data source
     
@@ -58,7 +58,7 @@ class firstCrownViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         
-            return tableCriteria!.count
+        return tableCriteria!.count
         
     }
     
@@ -77,7 +77,7 @@ class firstCrownViewController: UIViewController, UITableViewDelegate, UITableVi
     
     //MARK: save to Database
     @IBAction func sliderChanged(_ sender: UISlider) {
-    actualTree1?.setValue(Double(sender.value), forKey: "crown15")
+        actualTree1?.setValue(Double(sender.value), forKey: "crown15")
     }
-   
+    
 }

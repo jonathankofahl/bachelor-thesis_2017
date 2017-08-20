@@ -16,7 +16,22 @@ class TribeViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     var defaults = UserDefaults.standard
     
+    @IBOutlet weak var tabbarItem: UITabBarItem!
+
+    
     //MARK: - Methods
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
+        infoController.removeHighlightTabIcon(item: tabbarItem)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
+        infoController.highlightTabIcon(item: tabbarItem)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,17 +60,17 @@ class TribeViewController: UIViewController {
     }
     
     var option = 0
-
+    
     @IBAction func swapButton2Pressed(_ sender: Any) {
         if option == 0 {
             option = 1
-        self.containerView.currentSegueIdentifier = "embedSecond"
-        self.containerView.swapViewControllers()
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
-            self.option = 2
+            self.containerView.currentSegueIdentifier = "embedSecond"
+            self.containerView.swapViewControllers()
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                self.option = 2
             })
-        stackView.subviews[0].backgroundColor = self.stackView.subviews[1].backgroundColor
-        self.stackView.subviews[1].backgroundColor = UIColor.customColors.backgroundColor
+            stackView.subviews[0].backgroundColor = self.stackView.subviews[1].backgroundColor
+            self.stackView.subviews[1].backgroundColor = UIColor.customColors.backgroundColor
         }
     }
     

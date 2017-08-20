@@ -16,6 +16,8 @@ class EnvironmentViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var firstButton: UIButton!
     @IBOutlet weak var secondButton: UIButton!
+    @IBOutlet weak var tabbarItem: UITabBarItem!
+
     
     var defaults = UserDefaults.standard
     
@@ -23,7 +25,22 @@ class EnvironmentViewController: UIViewController, UITableViewDelegate, UITableV
     var tableCriteria : [String]?
     
     //MARK: - Methods
-
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
+        infoController.removeHighlightTabIcon(item: tabbarItem)
+        
+        actualTree1?.setValue(textView.text, forKey: "environment"+textView.tag.description)
+        super.viewWillDisappear(true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
+        infoController.highlightTabIcon(item: tabbarItem)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -87,16 +104,12 @@ class EnvironmentViewController: UIViewController, UITableViewDelegate, UITableV
         
         return cell
     }
-
+    
     @IBAction func cancelNewTree(_ sender: Any) {
         let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
         infoController.alertFunc(sender: sender, parentController: self)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-            actualTree1?.setValue(textView.text, forKey: "environment"+textView.tag.description)
-            super.viewWillDisappear(true)
-    }
     
     @IBAction func clickedButton(_ sender: UIButton) {
         UIView.animate(withDuration: 0.3){
@@ -107,6 +120,6 @@ class EnvironmentViewController: UIViewController, UITableViewDelegate, UITableV
         }
         actualTree1?.setValue(sender.titleLabel?.text, forKey: "info"+sender.tag.description)
     }
-
+    
     
 }

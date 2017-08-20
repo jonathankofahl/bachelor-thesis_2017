@@ -40,7 +40,7 @@ class secondTribeViewController: UIViewController, UITableViewDelegate, UITableV
         //MARK: Load values if tree is not new
         if actualTree1?.isNew == false {
             if actualTree1?.tribe21 != nil {
-               textField.text = actualTree1?.tribe21
+                textField.text = actualTree1?.tribe21
             }
             
         }
@@ -92,13 +92,13 @@ class secondTribeViewController: UIViewController, UITableViewDelegate, UITableV
     @IBAction func returnClicked(_ sender: UITextField) {
         //  print("Returnclicked")
         _ = textFieldShouldReturn(textField: sender)
-        }
-
+    }
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         actualTree1?.setValue(textField.text, forKey: "tribe"+textField.tag.description)
-            textField.resignFirstResponder()
-                
-            return true
+        textField.resignFirstResponder()
+        
+        return true
     }
     
 }

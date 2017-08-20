@@ -20,9 +20,9 @@ class ContainerViewController: UIViewController {
     
     var firstViewController: UIViewController!
     var secondViewController: UIViewController!
-
+    
     //MARK: - Methods
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -39,7 +39,7 @@ class ContainerViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         print(self.childViewControllers.count)
-
+        
         if (segue.identifier == segueIdentifierFirst) {
             if self.firstViewController == nil {
                 self.firstViewController = segue.destination
@@ -70,15 +70,15 @@ class ContainerViewController: UIViewController {
             self.swapFromViewController(fromViewController: self.childViewControllers[0], toViewController:self.secondViewController)
         }
     }
-
+    
     
     func swapFromViewController(fromViewController:UIViewController, toViewController:UIViewController)
     {
-    toViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    
-    fromViewController.willMove(toParentViewController: nil)
-    self.addChildViewController(toViewController)
-    self.transition(from: fromViewController, to: toViewController, duration: 0.4, options: UIViewAnimationOptions.transitionCrossDissolve, animations: nil, completion: { _ in
+        toViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        
+        fromViewController.willMove(toParentViewController: nil)
+        self.addChildViewController(toViewController)
+        self.transition(from: fromViewController, to: toViewController, duration: 0.4, options: UIViewAnimationOptions.transitionCrossDissolve, animations: nil, completion: { _ in
             fromViewController.removeFromParentViewController()
             toViewController.didMove(toParentViewController: self)
         })
@@ -95,7 +95,7 @@ class ContainerViewController: UIViewController {
     }
     
     //MARK: - Help-Methods
-
+    
     // little help method, because CGRectMake was removed in Swift 3
     func CGRectMake(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
         return CGRect(x: x, y: y, width: width, height: height)

@@ -44,7 +44,7 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
     // Seperated Arrays for the two Tables
     //var tablePlaces : [Place]?
     var tableTrees : [Tree]?
-        
+    
     /** Bool of Map
      */
     var mapInitialized = true;
@@ -113,9 +113,9 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
         
         //MARK: - TableView init -> load strings from Localization.strings file
         /*for tree in databaseModel.trees {
-            tableCriteria1?.append(tree.treeNumber.description)
-        }
-        */
+         tableCriteria1?.append(tree.treeNumber.description)
+         }
+         */
         
         // MapView
         if CLLocationManager.locationServicesEnabled()
@@ -129,20 +129,20 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             startLocation = nil
             
             mapView.showsUserLocation = true
-        
+            
             
         }
         else
         {
             print("Location service disabled");
         }
-
-    
-    
+        
+        
+        
     }
     
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -169,13 +169,13 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             
             var x = 0
             for (index,tree) in databaseModel.trees.enumerated() {
-               // print(tree.place?.name)
-               // print(databaseModel.places[placeIndex].name)
+                // print(tree.place?.name)
+                // print(databaseModel.places[placeIndex].name)
                 
                 if tree.place == databaseModel.places[placeIndex] {
                     x += 1
                     tableTrees?.append(tree)
-                   // print("found tree")
+                    // print("found tree")
                     
                     //print(tableTrees)
                 }
@@ -199,27 +199,27 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             if (Double((tableTrees?[indexPath.row].xLocation)!) != 0.0) {
                 print(tableTrees?[indexPath.row].xLocation)
                 print(tableTrees?[indexPath.row].yLocation)
-
-            let eventLocation = CLLocationCoordinate2DMake((tableTrees?[indexPath.row].xLocation)!, (tableTrees?[indexPath.row].yLocation)!)
-            // Drop a pin
-            let dropPin = MKPointAnnotation()
-            dropPin.coordinate = eventLocation
+                
+                let eventLocation = CLLocationCoordinate2DMake((tableTrees?[indexPath.row].xLocation)!, (tableTrees?[indexPath.row].yLocation)!)
+                // Drop a pin
+                let dropPin = MKPointAnnotation()
+                dropPin.coordinate = eventLocation
                 if tableTrees?[indexPath.row].info6 != nil {
                     let title = "Nummer: " + (tableTrees?[indexPath.row].info6)!
                     dropPin.title = title
                 }
-            mapView.addAnnotation(dropPin)
-            
-            if indexPath.row == 0 {
-                mapView.setCenter(CLLocationCoordinate2D.init(latitude: (tableTrees?[indexPath.row].xLocation)!, longitude: (tableTrees?[indexPath.row].yLocation)!), animated: true)
-            }
+                mapView.addAnnotation(dropPin)
+                
+                if indexPath.row == 0 {
+                    mapView.setCenter(CLLocationCoordinate2D.init(latitude: (tableTrees?[indexPath.row].xLocation)!, longitude: (tableTrees?[indexPath.row].yLocation)!), animated: true)
+                }
             }
             
             cell1 = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TreeDatabaseTableViewCellTree
             cell1.treeNumberLabel.text = tableTrees?[indexPath.row].info6
             return cell1
         }
-    
+        
         return cell
     }
     
@@ -229,7 +229,7 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
+        
         if tableView == self.tableViewPlaces {
             //detailView.isHidden = true
             self.closeDetailView(self)
@@ -239,52 +239,52 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             self.tableViewTrees.reloadData()
             self.mapView.removeAnnotations(mapView.annotations)
         } else {
-        selectedTree = tableTrees?[indexPath.row]
-        treeNumberLabel.text = tableTrees?[indexPath.row].info6
-        placeLabel.text = tableTrees?[indexPath.row].info4
-        timeLabel.text = tableTrees?[indexPath.row].info1
-        categoryLabel.text = tableTrees?[indexPath.row].info5
-        if tableTrees?[indexPath.row].image != nil {
-            treeImageView.isHidden = false
-            treeImageView.image = UIImage(cgImage: (UIImage.init(data: tableTrees?[indexPath.row].image! as! Data)?.cgImage)!,
-                                          scale: 1.0 ,
-                                          orientation: UIImageOrientation.right)
-        } else {
-            treeImageView.isHidden = true
-        }
+            selectedTree = tableTrees?[indexPath.row]
+            treeNumberLabel.text = tableTrees?[indexPath.row].info6
+            placeLabel.text = tableTrees?[indexPath.row].info4
+            timeLabel.text = tableTrees?[indexPath.row].info1
+            categoryLabel.text = tableTrees?[indexPath.row].info5
+            if tableTrees?[indexPath.row].image != nil {
+                treeImageView.isHidden = false
+                treeImageView.image = UIImage(cgImage: (UIImage.init(data: tableTrees?[indexPath.row].image! as! Data)?.cgImage)!,
+                                              scale: 1.0 ,
+                                              orientation: UIImageOrientation.right)
+            } else {
+                treeImageView.isHidden = true
+            }
             if !showDetailView {
-               self.openDetailView()
+                self.openDetailView()
             }
             
-        //detailView.isHidden = false
-        
+            //detailView.isHidden = false
+            
         }
     }
     
     
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
-            return "Löschen"
-        }
-        
+        return "Löschen"
+    }
+    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         if tableView == tableViewTrees {
-        // action one
-        let editAction = UITableViewRowAction(style: .default, title: "Editieren", handler: { (action, indexPath) in
-            print("Tree edit")
-        })
-        editAction.backgroundColor = UIColor.customColors.customGreen
-        
-        // action two
-        let deleteAction = UITableViewRowAction(style: .default, title: "Löschen", handler: { (action, indexPath) in
-            //self.tableTrees?.remove(at: indexPath.row)
-            databaseModel.deleteTree(objID:self.tableTrees![indexPath.row].objectID)
-            self.tableViewTrees.reloadData()
-            databaseModel.save()
-            print("Tree delete")
-        })
-        deleteAction.backgroundColor = UIColor.customColors.customRed
-        
-        return [deleteAction]
+            // action one
+            let editAction = UITableViewRowAction(style: .default, title: "Editieren", handler: { (action, indexPath) in
+                print("Tree edit")
+            })
+            editAction.backgroundColor = UIColor.customColors.customGreen
+            
+            // action two
+            let deleteAction = UITableViewRowAction(style: .default, title: "Löschen", handler: { (action, indexPath) in
+                //self.tableTrees?.remove(at: indexPath.row)
+                databaseModel.deleteTree(objID:self.tableTrees![indexPath.row].objectID)
+                self.tableViewTrees.reloadData()
+                databaseModel.save()
+                print("Tree delete")
+            })
+            deleteAction.backgroundColor = UIColor.customColors.customRed
+            
+            return [deleteAction]
         } else
         {
             // action two
@@ -303,32 +303,32 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             
             deleteAction.backgroundColor = UIColor.customColors.customRed
             
-        return [deleteAction]
-        
+            return [deleteAction]
+            
         }
         
     }
     
     @IBAction func closeDetailView(_ sender: Any) {
         
-       // self.detailView.isHidden = true
+        // self.detailView.isHidden = true
         if self.showDetailView == true {
-        UIView.animate(withDuration: 0.7) {
-            self.detailView.frame.origin.x = self.detailView.frame.origin.x + 400
-            self.showDetailView = false
-            print("false")
-        }
+            UIView.animate(withDuration: 0.7) {
+                self.detailView.frame.origin.x = self.detailView.frame.origin.x + 400
+                self.showDetailView = false
+                print("false")
+            }
         }
     }
     
     func openDetailView() -> Void {
         if self.showDetailView == false {
-        UIView.animate(withDuration: 0.7) {
-            self.detailView.isHidden = false
-            self.detailView.frame.origin.x = self.detailView.frame.origin.x - 400
-            self.showDetailView = true
-            print("true")
-        }
+            UIView.animate(withDuration: 0.7) {
+                self.detailView.isHidden = false
+                self.detailView.frame.origin.x = self.detailView.frame.origin.x - 400
+                self.showDetailView = true
+                print("true")
+            }
         }
     }
     
@@ -339,7 +339,7 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
         self.closeDetailView(self)
         print("Tree delete")
     }
-
+    
     @IBAction func deleteAction(_ sender: Any) {
         deleteTree()
     }
@@ -359,33 +359,33 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
     
     
     
-        //MARK: - MapView
+    //MARK: - MapView
+    
+    
+    /** Read out the Locationmanager and write the Data to the Labels and set the map
+     */
+    public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let location = locations.last! as CLLocation
+        
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.007, longitudeDelta: 0.007))
         
         
-        /** Read out the Locationmanager and write the Data to the Labels and set the map
+        /** When map is loaded, remove Region Lock
          */
-        public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-            
-            let location = locations.last! as CLLocation
-            
-            let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.007, longitudeDelta: 0.007))
-            
-            
-            /** When map is loaded, remove Region Lock
-             */
-            if (mapInitialized){
-                mapView.setRegion(region, animated: true)
-            }
-            
-            // print("update")
-            
-            let latestLocation: AnyObject = locations[locations.count - 1]
-            
-            if startLocation == nil {
-                startLocation = latestLocation as! CLLocation
-            }
+        if (mapInitialized){
+            mapView.setRegion(region, animated: true)
         }
+        
+        // print("update")
+        
+        let latestLocation: AnyObject = locations[locations.count - 1]
+        
+        if startLocation == nil {
+            startLocation = latestLocation as! CLLocation
+        }
+    }
     
     @IBAction func setMapStyle(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
@@ -400,15 +400,15 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
     
+    
+    
+    /**( When NSError in Locationmanager do nothing
+     */
+    public func locationManager(manager: CLLocationManager,
+                                didFailWithError error: NSError) {
         
-        
-        /**( When NSError in Locationmanager do nothing
-         */
-        public func locationManager(manager: CLLocationManager,
-                                    didFailWithError error: NSError) {
-            
-        }
-
+    }
+    
     
     
     

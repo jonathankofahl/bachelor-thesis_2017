@@ -9,7 +9,7 @@
 import UIKit
 
 class CustomTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var criteria: UILabel!
     var tableViewIdentifier : String!
     var index : Int!
@@ -82,10 +82,10 @@ class CustomTableViewCell: UITableViewCell {
             }
         }
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -103,9 +103,9 @@ class CustomTableViewCell: UITableViewCell {
                 sender.backgroundColor = UIColor.customColors.customRed
             }
             if((sender.superview?.subviews.count)! > 2) {
-            if(sender == sender.superview?.subviews[2]) {
-                sender.backgroundColor = UIColor.customColors.customOrange
-            }
+                if(sender == sender.superview?.subviews[2]) {
+                    sender.backgroundColor = UIColor.customColors.customOrange
+                }
             }
         }
         
@@ -123,5 +123,5 @@ class CustomTableViewCell: UITableViewCell {
             actualTree1?.setValue(sender.titleLabel?.text, forKey: tableViewIdentifier + index.description)
         }
     }
-
+    
 }

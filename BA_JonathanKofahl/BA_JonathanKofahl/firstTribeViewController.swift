@@ -44,7 +44,7 @@ class firstTribeViewController: UIViewController, UITableViewDelegate, UITableVi
             }
             
         }
-
+        
         
     }
     
@@ -101,6 +101,6 @@ class firstTribeViewController: UIViewController, UITableViewDelegate, UITableVi
         
         return true
     }
-
+    
     
 }

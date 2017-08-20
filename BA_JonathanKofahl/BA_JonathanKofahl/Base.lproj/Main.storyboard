@@ -319,7 +319,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="387" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="caS-CC-pJk" id="dcy-5s-g7B">
-                                                            <rect key="frame" x="0.0" y="0.0" width="387" height="43"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="387" height="43.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ortsname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ZV-K9-bS3">
@@ -366,7 +366,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="387" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZqL-vz-hhi" id="QB2-Dt-6na">
-                                                            <rect key="frame" x="0.0" y="0.0" width="387" height="43"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="387" height="43.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nummer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYS-RU-nq4">

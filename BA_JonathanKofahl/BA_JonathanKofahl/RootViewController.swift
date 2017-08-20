@@ -17,11 +17,26 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var textField: UITextField!
     var defaults = UserDefaults.standard
     
+    @IBOutlet weak var tabbarItem: UITabBarItem!
+
+    
     // Seperated Arrays for the two Tables
     var tableCriteria : [String]?
     var tableCriteria1 : [String]?
     
     //MARK: - Methods
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
+        infoController.removeHighlightTabIcon(item: tabbarItem)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
+        infoController.highlightTabIcon(item: tabbarItem)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +68,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             
         }
-
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -104,16 +119,16 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func returnClicked(_ sender: UITextField) {
-       //  print("Returnclicked")
-       _ = textFieldShouldReturn(textField: sender)
-       }
+        //  print("Returnclicked")
+        _ = textFieldShouldReturn(textField: sender)
+    }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         actualTree1?.setValue(textField.text, forKey: "root"+textField.tag.description)
         textField.resignFirstResponder()
-                
+        
         return true
     }
-
+    
     
 }

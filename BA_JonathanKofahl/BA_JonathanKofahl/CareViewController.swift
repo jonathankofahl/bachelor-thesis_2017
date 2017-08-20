@@ -17,14 +17,29 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var firstStackView: UIStackView!
     @IBOutlet weak var secondStackView: UIStackView!
     @IBOutlet weak var thirdStackView: UIStackView!
+    @IBOutlet weak var tabbarItem: UITabBarItem!
+
     var defaults = UserDefaults.standard
+    
     
     // Seperated Arrays for the two Tables
     var tableCriteria : [String]?
     var tableCriteria1 : [String]?
     
     //MARK: - Methods
-
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
+        infoController.removeHighlightTabIcon(item: tabbarItem)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
+        infoController.highlightTabIcon(item: tabbarItem)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -68,10 +83,10 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             
         }
-
-
+        
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -118,7 +133,7 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return cell
     }
-
+    
     //MARK - Save the Tree to the Database and close the Inspections Controllers (Tabbar)
     
     @IBAction func saveTree(_ sender: Any) {
@@ -130,36 +145,36 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
             // AlertController with hint
             alertFunc(parentController: self)
         } else {
-        
-        let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
-
-        var placeUsedBefore = false
-        var placeIndex = 0
-        
-        for (index,place) in databaseModel.places.enumerated() {
-            if place.name?.capitalized ==  actualTree1?.info4?.components(separatedBy: " ")[0].capitalized {
-                placeUsedBefore = true
-                placeIndex = index
+            
+            let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
+            
+            var placeUsedBefore = false
+            var placeIndex = 0
+            
+            for (index,place) in databaseModel.places.enumerated() {
+                if place.name?.capitalized ==  actualTree1?.info4?.components(separatedBy: " ")[0].capitalized {
+                    placeUsedBefore = true
+                    placeIndex = index
+                }
             }
-        }
-        if !placeUsedBefore {
-            databaseModel.createPlace(name: (actualTree1?.info4?.components(separatedBy: " ")[0].capitalized)!)
-            placeIndex = databaseModel.places.count-1
+            if !placeUsedBefore {
+                databaseModel.createPlace(name: (actualTree1?.info4?.components(separatedBy: " ")[0].capitalized)!)
+                placeIndex = databaseModel.places.count-1
+                databaseModel.save()
+            }
+            
+            actualTree1?.place = databaseModel.places[placeIndex]
+            
+            actualTree1?.isNew = false
+            
+            if infoController.locationManager.location?.coordinate.latitude != nil {
+                actualTree1?.xLocation = (infoController.locationManager.location?.coordinate.latitude)!
+                actualTree1?.yLocation = (infoController.locationManager.location?.coordinate.longitude)!
+            }
+            
             databaseModel.save()
-        }
-        
-        actualTree1?.place = databaseModel.places[placeIndex]
             
-        actualTree1?.isNew = false
-            
-        if infoController.locationManager.location?.coordinate.latitude != nil {
-            actualTree1?.xLocation = (infoController.locationManager.location?.coordinate.latitude)!
-            actualTree1?.yLocation = (infoController.locationManager.location?.coordinate.longitude)!
-        }
-            
-        databaseModel.save()
-        
-        databaseModel.logModel()
+            databaseModel.logModel()
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let home = storyboard.instantiateViewController(withIdentifier: "menuNavigationController") as UIViewController
             present(home, animated: true, completion: nil)
@@ -187,7 +202,7 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         alertController.addAction(cancelAction)
     }
-
+    
     
     
 }

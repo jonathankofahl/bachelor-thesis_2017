@@ -13,7 +13,7 @@ import CoreLocation
 class InformationViewController: UIViewController, CLLocationManagerDelegate {
     
     //MARK: - Variables & Outlets
-
+    
     @IBOutlet weak var stackViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var treeImageView: UIImageView!
     @IBOutlet weak var view1: UIView!
@@ -21,9 +21,7 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var bottomStackView: UIStackView!
-    
-    @IBOutlet weak var tabbarItem: UITabBarItem!
-    
+        
     @IBOutlet weak var field1: UITextField!
     @IBOutlet weak var field2: UITextField!
     @IBOutlet weak var field3: UITextField!
@@ -42,6 +40,8 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
     var actualPlace : String!
     var topConstant : CGFloat!
     
+    @IBOutlet weak var tabbarItem: UITabBarItem!
+    
     /** The Location Manager
      */
     var locationManager: CLLocationManager = CLLocationManager()
@@ -52,16 +52,26 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
     //MARK: - Methods
     
     func highlightTabIcon(item: UITabBarItem) -> Void {
-        tabbarItem.imageInsets.bottom = -7
-        tabbarItem.imageInsets.bottom = -7
-        tabbarItem.imageInsets.bottom = -7
-        tabbarItem.imageInsets.bottom = -7
+        item.imageInsets.bottom = -2
+        item.imageInsets.top = -2
+        item.imageInsets.left = -2
+        item.imageInsets.right = -2
+
+        item.image = UIImage(named: "tabIcon1")
+        item.selectedImage = UIImage(named: "tabIcon1")
     }
+    
     func removeHighlightTabIcon(item: UITabBarItem) -> Void {
-        tabbarItem.imageInsets.bottom = 0
-        tabbarItem.imageInsets.bottom = 0
-        tabbarItem.imageInsets.bottom = 0
-        tabbarItem.imageInsets.bottom = 0
+    
+        item.imageInsets.top = 13
+        item.imageInsets.bottom = 13
+        item.imageInsets.left = 13
+        item.imageInsets.right = 13
+        
+        item.image = UIImage(named: "tabIcon")
+        item.selectedImage = UIImage(named: "tabIcon")
+
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -70,15 +80,13 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
         self.highlightTabIcon(item: tabbarItem)
+        super.viewWillAppear(true)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        
         
         topConstant = stackViewTopConstraint.constant
         
@@ -92,7 +100,7 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
             actualTree1?.crown10 = "leicht"
             actualTree1?.environment6 = "Ja"
             
-            // MapView
+            // LocationManager
             if CLLocationManager.locationServicesEnabled()
             {
                 //locationManager = CLLocationManager()
@@ -122,7 +130,7 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
             
             if actualTree1?.info12 == "Jugend" {
                 for button in (self.bottomStackView.subviews[0].subviews[1].subviews) {
-                        button.backgroundColor = UIColor.clear
+                    button.backgroundColor = UIColor.clear
                 }
                 self.bottomStackView.subviews[0].subviews[1].subviews[0].backgroundColor = UIColor.customColors.customGreen
             }
@@ -179,7 +187,7 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
         
         // get the current date and time
         let currentDateTime = Date()
-    
+        
         
         if defaults.value(forKey: "userName") != nil {
             print("Hallo")
@@ -208,17 +216,17 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
             //view2.backgroundColor = color
             //treeImageView.borderColor = color
             //for view in stackView.arrangedSubviews {
-               // view.borderColor = color
+            // view.borderColor = color
             //}
             //for view in bottomStackView.arrangedSubviews {
-                //view.borderColor = color
+            //view.borderColor = color
             //}
             self.tabBarController?.tabBar.barTintColor = color
             self.tabBarController?.tabBar.tintColor = UIColor.white
             self.tabBarController?.tabBar.unselectedItemTintColor = UIColor.white
-           // if defaults.value(forKey: "appColor") as! String == "#4C4C4C" {
+            // if defaults.value(forKey: "appColor") as! String == "#4C4C4C" {
             //self.tabBarController?.tabBar.tintColor = UIColor.white
-           // }
+            // }
         }
         
         //MARK: - Connect the textFields, so the user can tab to the next
@@ -257,7 +265,7 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
         if textField.nextField == field11 {
-             self.stackViewTopConstraint.constant -= 50
+            self.stackViewTopConstraint.constant -= 50
             constrainChanged = true
             print("true")
         }
@@ -275,11 +283,11 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
     // extra method for the last textfield. need to change the position of the textfield, otherwise it would be overlayed by the keyboard
     @IBAction func textEditingBegin(_ sender: UITextField) {
         self.resetFrame = false
-
+        
         if sender == field11 {
             UIView.animate(withDuration: 1) {
                 if self.constrainChanged {
-                   // do nothing, already changed 
+                    // do nothing, already changed
                 } else {
                     self.stackView.frame.origin.y -= 50
                 }
@@ -306,16 +314,16 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
                     print("false")
                 } else {
                     if(self.resetFrame == false){
-                     self.stackView.frame.origin.y += 50
+                        self.stackView.frame.origin.y += 50
                         self.resetFrame = true
                         print("second")
-
+                        
                     }
                 }
                 
             }
         }
- 
+        
     }
     
     
@@ -326,13 +334,13 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-
+    
     @IBAction func clickedButton(_ sender: UIButton) {
         UIView.animate(withDuration: 0.3){
-        for item in (sender.superview?.subviews)! {
-            item.backgroundColor = UIColor.clear
-        }
-        sender.backgroundColor = UIColor.customColors.customGreen
+            for item in (sender.superview?.subviews)! {
+                item.backgroundColor = UIColor.clear
+            }
+            sender.backgroundColor = UIColor.customColors.customGreen
         }
         actualTree1?.setValue(sender.titleLabel?.text, forKey: "info"+sender.tag.description)
     }
@@ -362,7 +370,7 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-
+    
 }
 
 public var actualTree1 : Tree?

@@ -25,11 +25,16 @@ class CameraViewController: UIViewController {
     var previewLayer : AVCaptureVideoPreviewLayer?
     var motherController : InformationViewController!
     var actualDevice : AVCaptureDevice?
+    let defaults = UserDefaults.standard
+    
     
     //MARK: - METHODS
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let color = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
+        buttonView.backgroundColor = color
         
         // Configure the takePhotoButton
         takePhotoButton.imageView?.layer.minificationFilter = kCAFilterTrilinear
@@ -52,28 +57,26 @@ class CameraViewController: UIViewController {
         }
     }
     
+    //https://stackoverflow.com/questions/16685812/how-to-store-an-image-in-core-data
     @IBAction func pressCameraButton(_ sender: Any) {
         if let videoConnection = finalImage.connection(withMediaType: AVMediaTypeVideo) {
-       finalImage.captureStillImageAsynchronously(from: videoConnection, completionHandler: { (CMSampleBuffer, Error) in
-            if let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(CMSampleBuffer) {
-                
-                if let cameraImage = UIImage(data: imageData) {
+            finalImage.captureStillImageAsynchronously(from: videoConnection, completionHandler: { (CMSampleBuffer, Error) in
+                if let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(CMSampleBuffer) {
                     
-                    self.motherController.treeImageView.image = cameraImage
-                    //https://stackoverflow.com/questions/16685812/how-to-store-an-image-in-core-data
-                    actualTree1?.image = UIImagePNGRepresentation(cameraImage)! as NSData
-                    
-                    self.dismiss(animated: true, completion: nil)
+                    if let cameraImage = UIImage(data: imageData) {
+                        self.motherController.treeImageView.image = cameraImage
+                        actualTree1?.image = UIImagePNGRepresentation(cameraImage)! as NSData
+                        self.dismiss(animated: true, completion: nil)
+                    }
                 }
-            }
-        })
-    }
+            })
+        }
     }
     
     func beginSession() {
         do{
             try captureSession.addInput(AVCaptureDeviceInput(device: actualDevice))
-                finalImage.outputSettings = [AVVideoCodecKey:AVVideoCodecJPEG]
+            finalImage.outputSettings = [AVVideoCodecKey:AVVideoCodecJPEG]
             
             if captureSession.canAddOutput(finalImage){
                 captureSession.addOutput(finalImage)
@@ -88,7 +91,7 @@ class CameraViewController: UIViewController {
         }
         
         previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    
+        
         self.view.layer.addSublayer(previewLayer)
         previewLayer.frame = self.cameraScreen.frame
         captureSession.startRunning()
@@ -96,19 +99,19 @@ class CameraViewController: UIViewController {
         self.view.addSubview(cameraScreen)
         self.view.addSubview(buttonView)
         self.buttonView.addSubview(takePhotoButton)
-
+        
     }
-
+    
     @IBAction func changeButtonImage(_ sender: UIButton) {
         if sender.tag == 0 {
             sender.setImage(UIImage(named: "cameraButton_clicked"), for: UIControlState.normal)
             sender.tag = 1
             print("black")
         } else {
-          sender.setImage(UIImage(named: "CameraButton_normal"), for: UIControlState.normal)
+            sender.setImage(UIImage(named: "CameraButton_normal"), for: UIControlState.normal)
             sender.tag = 0
             print("grey")
-
+            
         }
         
     }

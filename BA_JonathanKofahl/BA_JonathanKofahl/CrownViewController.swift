@@ -16,8 +16,22 @@ class CrownViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     var defaults = UserDefaults.standard
     
+    @IBOutlet weak var tabbarItem: UITabBarItem!
+
     
     //MARK: - Methods
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
+        infoController.removeHighlightTabIcon(item: tabbarItem)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        let infoController = self.tabBarController?.viewControllers?[0] as! InformationViewController
+        infoController.highlightTabIcon(item: tabbarItem)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
