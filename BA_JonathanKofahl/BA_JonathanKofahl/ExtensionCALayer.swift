@@ -6,9 +6,11 @@
 //
 // https://stackoverflow.com/questions/14792238/uiviews-border-color-in-interface-builder-doesnt-work
 //
+//  Causes Crashes of the IBDesignables in Storyboard, deactivated
+//
 
 import UIKit
-
+/*
 @IBDesignable extension UIView {
     @IBInspectable var borderColor:UIColor? {
         set {
@@ -41,3 +43,4 @@ import UIKit
         }
     }
 }
+*/

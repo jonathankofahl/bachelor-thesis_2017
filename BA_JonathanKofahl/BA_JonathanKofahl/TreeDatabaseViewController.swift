@@ -39,6 +39,7 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
     var selectedTree : Tree?
     
     var showDetailView = false
+    var color : UIColor?
     
     
     // Seperated Arrays for the two Tables
@@ -62,8 +63,13 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        var color = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
-        var alphaColor = color.withAlphaComponent(0.8)
+        if defaults.value(forKey: "appColor") != nil {
+             color = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
+        } else {
+             color = UIColor.customColors.backgroundColor
+        }
+        
+        var alphaColor = color?.withAlphaComponent(0.8)
         
         // Set Colors
         deleteDetailViewButton.backgroundColor = color
@@ -409,7 +415,14 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
         
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "createPDF" {
+            if let pdfView = segue.destination as? PDFViewController {
+                pdfView.tree = selectedTree }
+            
+            
+        }
+    }
     
     
     

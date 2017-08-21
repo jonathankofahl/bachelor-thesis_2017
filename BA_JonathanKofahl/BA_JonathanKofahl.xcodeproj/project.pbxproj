@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1214220E1F4B4BA100FB055F /* tree.html in Resources */ = {isa = PBXBuildFile; fileRef = 1214220D1F4B4BA100FB055F /* tree.html */; };
+		121422101F4B4C1400FB055F /* PDFComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1214220F1F4B4C1400FB055F /* PDFComposer.swift */; };
+		121422121F4B4C8700FB055F /* CustomPrintPageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121422111F4B4C8700FB055F /* CustomPrintPageRenderer.swift */; };
 		1232D4C61F2F854B005F2B63 /* Tree+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1232D4C41F2F854B005F2B63 /* Tree+CoreDataClass.swift */; };
 		1232D4C91F2F885A005F2B63 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1232D4C81F2F885A005F2B63 /* CoreData.swift */; };
 		124264BC1F31048400CDE7EA /* TreeDatabaseTableviewCellTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124264BB1F31048400CDE7EA /* TreeDatabaseTableviewCellTree.swift */; };
@@ -65,6 +68,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1214220D1F4B4BA100FB055F /* tree.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = tree.html; sourceTree = "<group>"; };
+		1214220F1F4B4C1400FB055F /* PDFComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFComposer.swift; sourceTree = "<group>"; };
+		121422111F4B4C8700FB055F /* CustomPrintPageRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPrintPageRenderer.swift; sourceTree = "<group>"; };
 		1232D4C41F2F854B005F2B63 /* Tree+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tree+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1232D4C81F2F885A005F2B63 /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreData.swift; path = ../CoreData.swift; sourceTree = "<group>"; };
 		124264BB1F31048400CDE7EA /* TreeDatabaseTableviewCellTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeDatabaseTableviewCellTree.swift; sourceTree = "<group>"; };
@@ -225,6 +231,9 @@
 				12F688F71EF568D30057C49A /* CameraViewController.swift */,
 				12A911F31F2627A40021F07B /* TableViewController.swift */,
 				12F218101F3DEF0900B2D9E5 /* PDFViewController.swift */,
+				1214220F1F4B4C1400FB055F /* PDFComposer.swift */,
+				121422111F4B4C8700FB055F /* CustomPrintPageRenderer.swift */,
+				1214220D1F4B4BA100FB055F /* tree.html */,
 				12F688AE1EEE8B250057C49A /* inspect ViewControllers */,
 			);
 			name = ViewController;
@@ -369,6 +378,7 @@
 			files = (
 				12F688781EEE83CC0057C49A /* LaunchScreen.storyboard in Resources */,
 				12F688751EEE83CC0057C49A /* Assets.xcassets in Resources */,
+				1214220E1F4B4BA100FB055F /* tree.html in Resources */,
 				124D1A941EFFEEED005CCD1E /* Localizable.strings in Resources */,
 				12F688701EEE83CC0057C49A /* Main.storyboard in Resources */,
 				1284D5B41F3A5FF300746C60 /* Inspect.storyboard in Resources */,
@@ -397,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12E5C0771F27BBA900844CEC /* secondTribeViewController.swift in Sources */,
+				121422121F4B4C8700FB055F /* CustomPrintPageRenderer.swift in Sources */,
 				12F688A91EEE8A570057C49A /* EnvironmentViewController.swift in Sources */,
 				124264BE1F31049200CDE7EA /* TreeDatabaseTableViewCellPlace.swift in Sources */,
 				12F688AD1EEE8B100057C49A /* InformationViewController.swift in Sources */,
@@ -410,6 +421,7 @@
 				12F688A31EEE89640057C49A /* TribeViewController.swift in Sources */,
 				12B501BB1F26262C007381BC /* CustomTableViewCell.swift in Sources */,
 				1232D4C61F2F854B005F2B63 /* Tree+CoreDataClass.swift in Sources */,
+				121422101F4B4C1400FB055F /* PDFComposer.swift in Sources */,
 				12A911F61F2645750021F07B /* firstCrownViewController.swift in Sources */,
 				12F6886B1EEE83CC0057C49A /* AppDelegate.swift in Sources */,
 				12F218111F3DEF0900B2D9E5 /* PDFViewController.swift in Sources */,
