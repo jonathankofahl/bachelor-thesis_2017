@@ -10,7 +10,7 @@
 //
 
 import UIKit
-/*
+
 @IBDesignable extension UIView {
     @IBInspectable var borderColor:UIColor? {
         set {
@@ -43,4 +43,4 @@ import UIKit
         }
     }
 }
-*/
+

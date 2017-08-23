@@ -290,14 +290,14 @@ class PDFComposer: NSObject {
 
     
     func exportHTMLContentToPDF(HTMLContent: String) {
-        let printPageRenderer = CustomPrintPageRenderer()
+        var printPageRenderer = CustomPrintPageRenderer()
         
         let printFormatter = UIMarkupTextPrintFormatter(markupText: HTMLContent)
         printPageRenderer.addPrintFormatter(printFormatter, startingAtPageAt: 0)
         
         let pdfData = drawPDFUsingPrintPageRenderer(printPageRenderer: printPageRenderer)
         
-        pdfFilename = "\(AppDelegate.getAppDelegate().getDocDir())/Baum\(tree?.info6).pdf"
+        pdfFilename = "\(AppDelegate.getAppDelegate().getDocDir())/Baum\((tree?.info6)!).pdf"
         pdfData?.write(toFile: pdfFilename, atomically: true)
         
         print(pdfFilename)
@@ -309,14 +309,14 @@ class PDFComposer: NSObject {
         
         UIGraphicsBeginPDFContextToData(data, CGRect.zero, nil)
         
-        UIGraphicsBeginPDFPage()
+        let bounds = UIGraphicsGetPDFContextBounds()
         
-        printPageRenderer.drawPage(at: 0, in: UIGraphicsGetPDFContextBounds())
-        let printFormatter = UIMarkupTextPrintFormatter(markupText: renderPage2())
-        printPageRenderer.addPrintFormatter(printFormatter, startingAtPageAt: 1)
-
-        printPageRenderer.drawPage(at: 1, in: UIGraphicsGetPDFContextBounds())
-
+        for i in 0...(printPageRenderer.numberOfPages - 1) {
+            UIGraphicsBeginPDFPage()
+            printPageRenderer.drawPage(at: i, in: bounds)
+        }
+        
+        
         UIGraphicsEndPDFContext()
         
         return data

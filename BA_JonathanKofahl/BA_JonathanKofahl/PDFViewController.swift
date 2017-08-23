@@ -10,7 +10,11 @@
 import UIKit
 import MessageUI
 
-class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
+class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate, UIDocumentPickerDelegate {
+    @available(iOS 8.0, *)
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
+    }
+
     
     @IBOutlet weak var webView: UIWebView!
     var tree: Tree?
@@ -34,20 +38,33 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    var testHTML : String?
+    
+    
      func createInputAsHTML() {
      pdfComposer = PDFComposer()
     pdfComposer.tree = self.tree
         
         if let treeHTML = pdfComposer.renderPage1() {
      
-     webView.loadHTMLString(treeHTML, baseURL: NSURL(string: pdfComposer.pathToHTMLTemplate!)! as URL)
-     HTMLContent = treeHTML
+     webView.loadHTMLString((pdfComposer.renderPage1()+pdfComposer.renderPage2()), baseURL: NSURL(string: pdfComposer.pathToHTMLTemplate!)! as URL)
+     HTMLContent = (pdfComposer.renderPage1()+pdfComposer.renderPage2())
      pdfComposer.exportHTMLContentToPDF(HTMLContent: HTMLContent)
+     testHTML = (pdfComposer.renderPage1()+pdfComposer.renderPage2())
      }
      }
    
     @IBAction func iCloudDriveAction(_ sender: Any) {
-        pdfComposer.exportHTMLContentToPDF(HTMLContent: HTMLContent)
+        var cloudManager = CloudManager()
+        var url : URL? = nil
+        if tree?.info6! != nil {
+            url = cloudManager.moveFileToCloud(number: (tree?.info6!)!)
+        }
+        let documentPicker = UIDocumentPickerViewController(url: url!, in: UIDocumentPickerMode.exportToService)
+        documentPicker.delegate = self
+        documentPicker.modalPresentationStyle = UIModalPresentationStyle.formSheet
+        self.present(documentPicker, animated:true, completion:nil)
+
     }
     @IBAction func emailAction(_ sender: Any) {
         sendEmail()
@@ -66,6 +83,8 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
             present(mailComposeViewController, animated: true, completion: nil)
         }
     }
+    
+   
     
     // help delegate func to dismiss the MailView
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {

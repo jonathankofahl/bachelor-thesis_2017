@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>iCloud.baumKataster</key>
+	<string>Icloud Function</string>
 	<key>CFBundleDisplayName</key>
 	<string>baumKataster</string>
 	<key>CFBundleExecutable</key>

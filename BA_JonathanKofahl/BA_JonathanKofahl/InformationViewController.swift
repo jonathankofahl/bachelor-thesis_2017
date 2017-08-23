@@ -95,6 +95,8 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
             tabBar.actualTree = databaseModel.createTree()
             actualTree1 = tabBar.actualTree
             actualTree1?.isNew = true
+            actualTree1?.info0 = ""
+            actualTree1?.info1 = ""
             actualTree1?.info2 = ""
             actualTree1?.info3 = ""
             actualTree1?.info4 = ""

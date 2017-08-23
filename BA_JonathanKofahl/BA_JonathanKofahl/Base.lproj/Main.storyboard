@@ -49,6 +49,14 @@
                                         <state key="normal" title="Neuer Baum">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="newTreeAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mxg-g8-rw6"/>
                                             <action selector="selectButton:" destination="BYZ-38-t0r" eventType="touchDown" id="gM7-YR-ukS"/>
@@ -57,7 +65,6 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G29-b7-j8u">
                                         <rect key="frame" x="72" y="549" width="200" height="50"/>
-                                        <color key="backgroundColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="8Us-NY-2kK"/>
                                             <constraint firstAttribute="width" constant="200" id="vPS-EJ-Rpf"/>
@@ -66,6 +73,14 @@
                                         <state key="normal" title="Baum Datenbank">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="selectButton:" destination="BYZ-38-t0r" eventType="touchDown" id="2Dv-1v-fCt"/>
                                             <action selector="selectButton:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="INr-JD-hJd"/>
@@ -131,6 +146,11 @@
                                             <constraint firstItem="8L4-zr-f81" firstAttribute="centerX" secondItem="MhR-2F-XPW" secondAttribute="centerX" id="rO3-uo-899"/>
                                             <constraint firstAttribute="trailing" secondItem="8L4-zr-f81" secondAttribute="trailing" constant="50" id="xOK-cR-dsQ"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEd-eb-GTC">
                                         <rect key="frame" x="70" y="131" width="58" height="23"/>
@@ -305,7 +325,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="387" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="caS-CC-pJk" id="dcy-5s-g7B">
-                                                            <rect key="frame" x="0.0" y="0.0" width="387" height="43"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="387" height="43.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ortsname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ZV-K9-bS3">
@@ -327,6 +347,17 @@
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <outlet property="dataSource" destination="3JX-LO-RSg" id="nbY-uK-gmL"/>
                                                     <outlet property="delegate" destination="3JX-LO-RSg" id="69g-p2-bJP"/>
@@ -341,7 +372,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="387" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZqL-vz-hhi" id="QB2-Dt-6na">
-                                                            <rect key="frame" x="0.0" y="0.0" width="387" height="43"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="387" height="43.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nummer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYS-RU-nq4">
@@ -373,6 +404,17 @@
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <outlet property="dataSource" destination="3JX-LO-RSg" id="4pc-KY-fT7"/>
                                                     <outlet property="delegate" destination="3JX-LO-RSg" id="kYP-0a-emK"/>
@@ -590,6 +632,11 @@
                                                 <state key="normal" title="PDF">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="closeDetailView:" destination="3JX-LO-RSg" eventType="touchUpInside" id="rKf-13-op8"/>
                                                     <segue destination="tOc-pI-oBA" kind="show" identifier="createPDF" id="ykX-l5-teV"/>
@@ -605,6 +652,11 @@
                                                 <state key="normal" title="Editieren">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="closeDetailView:" destination="3JX-LO-RSg" eventType="touchUpInside" id="I0O-Cw-Kp7"/>
                                                     <action selector="editTree:" destination="3JX-LO-RSg" eventType="touchUpInside" id="P9U-hC-Dfg"/>
@@ -620,6 +672,11 @@
                                                 <state key="normal" title="Löschen">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="deleteAction:" destination="3JX-LO-RSg" eventType="touchUpInside" id="a8m-E0-hfr"/>
                                                 </connections>
@@ -648,6 +705,11 @@
                                     <constraint firstItem="jW1-NS-ch5" firstAttribute="centerY" secondItem="Hrk-da-laQ" secondAttribute="centerY" id="rZz-3g-JjT"/>
                                     <constraint firstAttribute="width" constant="310" id="vXv-zg-hP9"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="UCl-9e-ZBY" appends="YES" id="oNo-CM-jo2"/>
                                 </connections>

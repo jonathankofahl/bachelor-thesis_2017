@@ -30,7 +30,8 @@ class MenuViewController: UIViewController {
             defaults.set(view1.backgroundColor?.encode(), forKey: "appColor")
         }
         
-        databaseButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+        
+        databaseButton.backgroundColor = view1.backgroundColor
         
         self.saveDate(datePicker)
     }
