@@ -38,7 +38,7 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
      pdfComposer = PDFComposer()
     pdfComposer.tree = self.tree
         
-     if let treeHTML = pdfComposer.renderInvoice(/*tree attributes*/) {
+        if let treeHTML = pdfComposer.renderPage1() {
      
      webView.loadHTMLString(treeHTML, baseURL: NSURL(string: pdfComposer.pathToHTMLTemplate!)! as URL)
      HTMLContent = treeHTML

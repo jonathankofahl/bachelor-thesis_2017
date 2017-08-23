@@ -112,7 +112,7 @@ class CustomTableViewCell: UITableViewCell {
         // Save the Content in relation to the MotherViewController
         
         //actualTree1?.setValue(true, forKey: criteria.text)
-        if sender.titleLabel?.text == "vorhanden" || sender.titleLabel?.text == "Ja" {
+        if sender.titleLabel?.text == "vorhanden" {
             actualTree1?.setValue("vorhanden", forKey: tableViewIdentifier + index.description)
         } else if sender.titleLabel?.text == "Ja" {
             actualTree1?.setValue("Ja", forKey: tableViewIdentifier + index.description)

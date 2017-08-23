@@ -95,6 +95,16 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
             tabBar.actualTree = databaseModel.createTree()
             actualTree1 = tabBar.actualTree
             actualTree1?.isNew = true
+            actualTree1?.info2 = ""
+            actualTree1?.info3 = ""
+            actualTree1?.info4 = ""
+            actualTree1?.info5 = ""
+            actualTree1?.info6 = ""
+            actualTree1?.info7 = ""
+            actualTree1?.info8 = ""
+            actualTree1?.info9 = ""
+            actualTree1?.info10 = ""
+            actualTree1?.info11 = ""
             actualTree1?.crown16 = "Unbedenklich"
             actualTree1?.crown18 = "Unbedenklich"
             actualTree1?.crown10 = "leicht"
@@ -129,11 +139,14 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
             self.field11.text = actualTree1?.info11
             
             if actualTree1?.info12 == "Jugend" {
-                for button in (self.bottomStackView.subviews[0].subviews[1].subviews) {
+                
+                for button in(self.bottomStackView.subviews[0].subviews[1].subviews) {
+                    
                     button.backgroundColor = UIColor.clear
                 }
                 self.bottomStackView.subviews[0].subviews[1].subviews[0].backgroundColor = UIColor.customColors.customGreen
             }
+            
             if actualTree1?.info12 == "Reife" {
                 for button in (self.bottomStackView.subviews[0].subviews[1].subviews) {
                     button.backgroundColor = UIColor.clear
@@ -147,28 +160,35 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
                 self.bottomStackView.subviews[0].subviews[1].subviews[2].backgroundColor = UIColor.customColors.customGreen
             }
             if actualTree1?.info13 == "Gering" {
-                for button in (self.bottomStackView.subviews[1].subviews[1].subviews) {
-                    button.backgroundColor = UIColor.clear
-                }
-                self.bottomStackView.subviews[1].subviews[2].subviews[0].backgroundColor = UIColor.customColors.customGreen
-            }
-            if actualTree1?.info13 == "Hoch" {
-                for button in (self.bottomStackView.subviews[1].subviews[1].subviews) {
-                    button.backgroundColor = UIColor.clear
-                }
-                self.bottomStackView.subviews[1].subviews[1].subviews[1].backgroundColor = UIColor.customColors.customGreen
-            }
-            if actualTree1?.info14 == "Gesund/leicht geschädigt" {
                 for button in (self.bottomStackView.subviews[2].subviews[1].subviews) {
                     button.backgroundColor = UIColor.clear
                 }
-                self.bottomStackView.subviews[2].subviews[1].subviews[0].backgroundColor = UIColor.customColors.customGreen
+                self.bottomStackView.subviews[2].subviews[2].subviews[0].backgroundColor = UIColor.customColors.customGreen
             }
-            if actualTree1?.info14 == "Stärker geschädigt" {
+            if actualTree1?.info13 == "Hoch" {
+                
+                print(self.bottomStackView.subviews.count)
+                
+                print(self.bottomStackView.subviews[0].subviews.count)
+                
+                print(self.bottomStackView.subviews[0].subviews[1].subviews.count)
+                
                 for button in (self.bottomStackView.subviews[2].subviews[1].subviews) {
                     button.backgroundColor = UIColor.clear
                 }
                 self.bottomStackView.subviews[2].subviews[1].subviews[1].backgroundColor = UIColor.customColors.customGreen
+            }
+            if actualTree1?.info14 == "Gesund/leicht geschädigt" {
+                for button in (self.bottomStackView.subviews[4].subviews[1].subviews) {
+                    button.backgroundColor = UIColor.clear
+                }
+                self.bottomStackView.subviews[4].subviews[1].subviews[0].backgroundColor = UIColor.customColors.customGreen
+            }
+            if actualTree1?.info14 == "Stärker geschädigt" {
+                for button in (self.bottomStackView.subviews[4].subviews[1].subviews) {
+                    button.backgroundColor = UIColor.clear
+                }
+                self.bottomStackView.subviews[4].subviews[1].subviews[1].backgroundColor = UIColor.customColors.customGreen
             }
             
             if actualTree1?.image != nil {

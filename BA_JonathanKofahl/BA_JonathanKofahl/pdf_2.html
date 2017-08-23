@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+<title></title>
+<style>
+.document-box {
+	max-width: 800px;
+	margin: auto;
+	padding: 30px;
+	font-size: 12px;
+	line-height: 5px;
+	font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+	color: #555;
+}
+.document-box table {
+	width: 100%;
+	line-height: inherit;
+	text-align: left;
+	border: solid 1px;
+}
+.document-box table td {
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 0px;
+	padding-right: 0px;
+	vertical-align: top;
+}
+.document-box table tr td:nth-child(2) {
+	text-align: right;
+}
+.document-box table tr.top table td {
+	padding-bottom: 5px;
+}
+.document-box table tr.top table td.title {
+	font-size: 45px;
+	line-height: 45px;
+	color: #333;
+}
+.document-box table tr.information table td {
+	padding-bottom: 40px;
+}
+.document-box table tr.heading td {
+	background: #eee;
+	border-bottom: 1px solid #ddd;
+	font-weight: bold;
+}
+.document-box table tr.details td {
+	padding-bottom: 20px;
+}
+.document-box table tr.item td {
+	border-bottom: 1px solid #eee;
+}
+.document-box table tr.item.last td {
+	border-bottom: none;
+}
+
+@media only screen and (max-width: 600px) {
+.document-box table tr.top table td {
+	width: 100%;
+	display: block;
+	text-align: center;
+}
+.document-box table tr.information table td {
+	width: 100%;
+	display: block;
+	text-align: center;
+}
+}
+.headerTable {
+}
+</style>
+</head>
+<body>
+<div class="document-box">
+  <table cellpadding="0" cellspacing="0" style="border: solid 4px;">
+      <tbody>
+    
+    <tr style="border-bottom: medium" class="">
+      <td colspan="2" style="width: 50%;"><table style="border: hidden; padding: 0; margin: 0;">
+          <tbody>
+            <tr>
+              <td style="font-weight: 900; font-size: 15px;">Krone</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Astab-/aausbrüche</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Astungswunden-/fäulen</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Fehlentwicklung Krone</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Höhlungen, Morschungen</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Baumfremder Bewuchs</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Kappungsstellen</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Rindenschäden</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Totholzbildung</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Zwiesel</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Astrisse</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Unglücksbalken</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Ausladende, überlange Äste</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Äste im Lichtraumprofil</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Äste in Oberleitungen</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Baumsicherungen</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px; font-size: 80%; padding-left: 20px;">Haltesicherung</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px; font-size: 80%; padding-left: 20px;">Verstrebung/Verbolzung</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px; font-size: 80%; padding-left: 20px;">Bodenanker/Stütze</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px; font-size: 80%; padding-left: 20px;">dynamische KS</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px; font-size: 80%; padding-left: 20px;">statische KS</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px; font-size: 80%; padding-left: 20px;">statische KS Gewindestange</td>
+            </tr>
+          </tbody>
+        </table></td>
+      <td colspan="2"><table style="border: hidden; padding: 0; margin: 0;">
+          <tbody>
+            <tr style="">
+              <td style="">unbedenklich</td>
+              <td style="">gefährlich</td>
+              <td style="">unklar</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 7px;">#crown0#</td>
+              <td style="padding-top: 7px;">#crown0#</td>
+              <td style="padding-top: 7px;">#crown0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+              <td style="padding-top: 10px;">#crown0#</td>
+            </tr>
+          </tbody>
+        </table></td>
+      <td colspan="2" style="width: 50%;"><table style="border: hidden; padding: 0; margin: 0;">
+          <tbody>
+            <tr>
+              <td style="font-weight: 400; font-size: 15px; width: 12.5%;">Vitalität</td>
+              <td style="width: 12.5%;text-align: center;">0</td>
+              <td style="width: 12.5%;text-align: center;">0,5</td>
+              <td style="width: 12.5%;text-align: center;">1</td>
+              <td style="width: 12.5%;text-align: center;">1,5</td>
+              <td style="width: 12.5%;text-align: center;">2</td>
+              <td style="width: 12.5%;text-align: center;">2,5</td>
+              <td style="width: 12.5%;text-align: center;">3</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 400; font-size: 15px; width: 12.5%;"></td>
+              <td style="width: 12.5%;">crown0</td>
+              <td style="width: 12.5%;">crown0</td>
+              <td style="width: 12.5%;">crown0</td>
+              <td style="width: 12.5%;">crown0</td>
+              <td style="width: 12.5%;">crown0</td>
+              <td style="width: 12.5%;">crown0</td>
+              <td style="width: 12.5%;">crown0</td>
+            </tr>
+            <tr>
+              <td style="width: 12.5%;"></td>
+              <td style="width: 12.5%;">Wipfeldürre</td>
+            </tr>
+            <tr>
+              <td style="width: 12.5%;"></td>
+              <td style="width: 12.5%;padding-bottom: 20px;">crown0</td>
+            </tr>
+          </tbody>
+        </table>
+        <table style="border: solid 1px; height: 100px;  margin: 0;">
+          <tbody>
+            <tr>
+              <td style=" width: 12.5%;">Belaubung (Auffälligkeiten)</td>
+            </tr>
+            <tr>
+              <td style="width: 12.5%;">crown0</td>
+            </tr>
+          </tbody>
+        </table>
+        <table style="border: hidden 1px; padding: 0; margin: 0;">
+          <tbody>
+            <tr>
+              <td style=" width: 40%; text-align: left;padding-top: 20px;">Kroneneignung</td>
+              <td style=" width: 20%; text-align: left;padding-top: 20px;">schwach</td>
+              <td style=" width: 20%;padding-top: 20px;">mittel</td>
+              <td style=" width: 20%;padding-top: 20px;">stark</td>
+            </tr>
+            <tr>
+              <td style=" width: 40%; text-align: left;">crown0</td>
+              <td style=" width: 20%; text-align: left;">crown0</td>
+              <td style=" width: 20%;">crown0</td>
+              <td style=" width: 20%;">crown0</td>
+            </tr>
+            <tr>
+              <td style=" width: 40%; text-align: left;">Krone stark einseitig</td>
+            </tr>
+            <tr>
+              <td style=" width: 40%; text-align: left;padding-bottom: 20px;">crown0</td>
+            </tr>
+          </tbody>
+        </table>
+        <table style="border: solid 1px; height: 100px;; padding: 0; margin: 0;">
+          <tbody>
+            <tr>
+              <td style=" width: 12.5%;">Pilzbefall</td>
+              <td style=" width: 12.5%; text-align: left;">crown0</td>
+            </tr>
+            <tr>
+              <td style=" width: 12.5%;">Pilzart</td>
+              <td style=" width: 12.5%; text-align: left;">crown0</td>
+            </tr>
+          </tbody>
+        </table></td>
+    </tr>
+    <tr class="">
+      <td colspan="2" style="width: 50%;"><table style="border: hidden; padding: 0; margin: 0;">
+          <tbody>
+            <tr>
+              <td style="font-weight: 900; font-size: 15px;">Stamm/Stammkopf</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Anfahrschäden</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Astungen / Verletzungen</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Höhlungen / Morschungen</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Baumfressender Bewuchs</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Fäulungen</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Schrägstand</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Stammaustriebe</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Zwiesel</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Risse</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Zwieselriss/-morschung</td>
+            </tr>
+          </tbody>
+        </table></td>
+      <td colspan="2"><table style="border: hidden; padding: 0; margin: 0;">
+          <tbody>
+            <tr style="">
+              <td style="">unbedenklich</td>
+              <td style="">gefährlich</td>
+              <td style="">unklar</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 7px;">#tribe0#</td>
+              <td style="padding-top: 7px;">#tribe0#</td>
+              <td style="padding-top: 7px;">#tribe0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+            </tr>
+          </tbody>
+        </table></td>
+      <td colspan="2" style="width: 50%;"><table style="border: hidden; padding: 0; margin: 0;">
+          <tbody>
+            <tr>
+              <td style="font-weight: 400; font-size: 15px; width: 50%;text-align: center;">Rindenschäden</td>
+              <td style="width: 12.5%;text-align: center;">tribe0</td>
+              <td style="font-weight: 400; font-size: 15px; width: 50%; text-align: center;">Reaktionsholz</td>
+              <td style="width: 12.5%;text-align: center;">tribe0</td>
+            </tr>
+            <tr>
+              <td style="width: 12.5%;text-align: center;">abplatzende Rinde</td>
+              <td style="width: 12.5%;text-align: center;">tribe0</td>
+              <td style="width: 12.5%;text-align: center;">Zuwachstreifen</td>
+              <td style="width: 12.5%;text-align: center;">tribe0</td>
+            </tr>
+            <tr>
+              <td style="width: 12.5%;text-align: center;">abgestorbene Rinde</td>
+              <td style="width: 12.5%;text-align: center;">tribe0</td>
+              <td style="width: 12.5%;text-align: center;">Reperaturanbauten</td>
+              <td style="width: 12.5%;text-align: center;">tribe0</td>
+            </tr>
+            <tr>
+              <td style="width: 12.5%;text-align: center;">Nekrosen</td>
+              <td style="width: 12.5%;text-align: center;">tribe0</td>
+              <td style="width: 12.5%;text-align: center;">Überwallungswulst</td>
+              <td style="width: 12.5%;text-align: center;">tribe0</td>
+            </tr>
+            <tr>
+              <td style="font-size: 13px; width: 12.5%;text-align: left;">Schadinsekten</td>
+              <td style="width: 12.5%;text-align: left;">tribe0</td>
+              <td style="width: 12.5%;text-align: left;">Unrundigkeit</td>
+              <td style="width: 12.5%;text-align: left;">tribe0</td>
+            </tr>
+            <tr>
+              <td style=" width: 12.5%;text-align: left;">(z.B. Bohrmehl)</td>
+              <td style="width: 12.5%;text-align: left;">tribe0</td>
+              <td style="width: 12.5%;text-align: left;">Säelwuchs</td>
+              <td style="width: 12.5%;text-align: left;">tribe0</td>
+            </tr>
+            <tr>
+              <td style="width: 12.5%;text-align: left;">Wuchsanomalieen</td>
+              <td style="width: 12.5%;text-align: left;">tribe0</td>
+              <td style="width: 12.5%;text-align: left;">Flaschenbauch</td>
+              <td style="width: 12.5%;text-align: left;">tribe0</td>
+            </tr>
+            <tr>
+              <td style="width: 12.5%;text-align: left;">Drehwuchs</td>
+              <td style="width: 12.5%;text-align: left;">tribe0</td>
+              <td style="width: 12.5%;text-align: left;">Beulen</td>
+              <td style="width: 12.5%;text-align: left;">tribe0</td>
+            </tr>
+            <tr>
+              <td style="width: 12.5%;text-align: left;">Rippen/Einbuchtungen</td>
+              <td style="width: 12.5%;text-align: left;">tribe0</td>
+              <td style="width: 12.5%;text-align: left;"></td>
+              <td style="width: 12.5%;text-align: left;"></td>
+            </tr>
+          </tbody>
+        </table>
+        <table style="border: solid 1px; height: 100px;; padding: 0; margin: 0;">
+          <tbody>
+            <tr>
+              <td style=" width: 12.5%;">Pilzbefall</td>
+              <td style=" width: 12.5%;">tribe0</td>
+            </tr>
+            <tr>
+              <td style="width: 12.5%;">tribe0</td>
+            </tr>
+          </tbody>
+        </table>
+        <table style="border: solid 1px; height: 100px;; padding: 0; margin: 0;">
+          <tbody>
+            <tr>
+              <td style="width: 100%;">Baumchirugie (Verbolzung, Gewindestange,Plombe,grfräste Wunden,Entwässerung/Drainage o.ä.)</td>
+            </tr>
+            <tr>
+              <td style=" width: 100%; text-align: left;">tribe0</td>
+            </tr>
+          </tbody>
+        </table></td>
+    </tr>
+    <tr class="">
+      <td colspan="2" style="width: 50%;"><table style="border: hidden; padding: 0; margin: 0;">
+          <tbody>
+            <tr>
+              <td style="font-weight: 900; font-size: 15px;">Wurzel</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Bodenaufwölbungen/ risse</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">-auffüllungen</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Höhlungen</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Risse</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Stammfußverbreiterung</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">statisch wichtige Wurzeln</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">gekappt, Bauschäden</td>
+            </tr>
+          </tbody>
+        </table></td>
+      <td colspan="2"><table style="border: hidden; padding: 0; margin: 0;">
+          <tbody>
+            <tr style="">
+              <td style="">unbedenklich</td>
+              <td style="">gefährlich</td>
+              <td style="">unklar</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#root#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;"></td>
+              <td style="padding-top: 10px;"></td>
+              <td style="padding-top: 10px;"></td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+              <td style="padding-top: 10px;">#tribe0#</td>
+            </tr>
+          </tbody>
+        </table></td>
+        <td colspan="2" style="width: 50%;">
+      <table style="border: hidden; padding: 0; margin: 0;">
+        <tbody>
+          <tr>
+            <td style="width: 12.5%;text-align: left;">Adventivwurzeln</td>
+            <td style="width: 12.5%;text-align: left;">tribe0</td>
+            <td style="width: 12.5%;text-align: left;">Stockaustriebe</td>
+            <td style="width: 12.5%;text-align: left;">tribe0</td>
+          </tr>
+          <tr>
+            <td style="width: 12.5%;text-align: left;">Würgewurzeln</td>
+            <td style="width: 12.5%;text-align: left;">tribe0</td>
+            <td style="width: 12.5%;text-align: left;">Wuchsanomalien</td>
+            <td style="width: 12.5%;text-align: left;">tribe0</td>
+          </tr>
+          <tr>
+            <td style="width: 12.5%;text-align: left;">Rindenschäden</td>
+            <td style="width: 12.5%;text-align: left;">tribe0</td>
+            <left style="width: 12.5%;text-align: left;">
+            Wundbehandlung
+          </td>
+        
+        
+          <td style="width: 12.5%;text-align: left;">tribe0</td>
+        </tr>
+          </tbody>
+        
+      </table>
+      <table style="border: solid 1px; height: 100px;; padding: 0; margin: 0;">
+        <tbody>
+          <tr>
+            <td style=" width: 12.5%;">Pilzbefall</td>
+            <td style=" width: 12.5%;text-align: left;">tribe0</td>
+          </tr>
+          <tr>
+            <td style="width: 12.5%;">tribe0</td>
+          </tr>
+        </tbody>
+      </table>
+        </td>
+    </tr>
+    <tr class="">
+      <table style="border: hidden; padding: 0; margin: 0;width: 100%;">
+        <tbody>
+          <tr>
+            <td style="font-weight: 900; font-size: 15px;">Baumumfeld</td>
+          </tr>
+          <tr>
+            <td style="">Baugruben, -graben</td>
+            <td style="">environment0</td>
+            <td style="">Bodenverdichtung</td>
+            <td style="">environment1</td>
+            <td style="">Freistellung</td>
+            <td style="">environment1</td>
+          </tr>
+            <tr>
+            <td style="">Bodenauf- oder -abtrag</td>
+            <td style="">environment0</td>
+            <td style="">Bodenversiegelung</td>
+            <td style="">environment1</td>
+            <td style="">Grundwassereindrang</td>
+            <td style="">environment1</td>
+          </tr>
+        </tbody>
+      </table>
+		  </tr>
+        </tbody>
+  </table>
+</div>
+</body>
+</html>
