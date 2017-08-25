@@ -25,11 +25,11 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vdf-4G-qJU">
                                 <rect key="frame" x="0.0" y="64" width="834" height="1048"/>
-                                <color key="backgroundColor" red="0.082437284290790558" green="0.39420613646507263" blue="0.75311082601547241" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KhY-ou-EOe">
                                 <rect key="frame" x="136" y="165" width="562" height="641"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="562" id="9FQ-Hr-njY"/>
                                     <constraint firstAttribute="height" constant="641" id="vOl-r7-geK"/>
@@ -56,6 +56,9 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="newTreeAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mxg-g8-rw6"/>
@@ -65,6 +68,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G29-b7-j8u">
                                         <rect key="frame" x="72" y="549" width="200" height="50"/>
+                                        <color key="backgroundColor" red="0.08236405998468399" green="0.39422327280044556" blue="0.74952000379562378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="8Us-NY-2kK"/>
                                             <constraint firstAttribute="width" constant="200" id="vPS-EJ-Rpf"/>
@@ -79,6 +83,9 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -186,6 +193,11 @@
                                     <constraint firstItem="G29-b7-j8u" firstAttribute="top" secondItem="Gv2-8l-y65" secondAttribute="bottom" constant="30.5" id="rPF-eA-C7G"/>
                                     <constraint firstItem="Gv2-8l-y65" firstAttribute="top" secondItem="MhR-2F-XPW" secondAttribute="bottom" constant="48" id="xOb-ZA-Kf3"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="BsQ-5w-kFa">
                                 <rect key="frame" x="40" y="874" width="754" height="180"/>
@@ -217,15 +229,16 @@
                                 <rect key="frame" x="720" y="7" width="94" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Einstellungen">
-                                    <color key="titleColor" red="0.30408036710000003" green="0.49091345069999998" blue="0.70246273280000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="EPs-qj-JhI" kind="showDetail" action="showViewController:sender:" id="AXP-tg-nJ3"/>
                                 </connections>
                             </button>
-                            <color key="tintColor" red="0.30408036710000003" green="0.49091345069999998" blue="0.70246273280000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <connections>
                         <outlet property="databaseButton" destination="G29-b7-j8u" id="ky5-Mh-NHs"/>
                         <outlet property="datePicker" destination="8L4-zr-f81" id="Ukl-5E-Amh"/>
@@ -270,7 +283,9 @@
                                     <rect key="frame" x="768" y="7" width="46" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                    <state key="normal" title="E-Mail"/>
+                                    <state key="normal" title="E-Mail">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
                                     <connections>
                                         <action selector="emailAction:" destination="tOc-pI-oBA" eventType="touchUpInside" id="UF8-AY-GQP"/>
                                     </connections>
@@ -280,7 +295,9 @@
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dkV-oB-p7i">
                                     <rect key="frame" x="666" y="7" width="94" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="iCloud Drive"/>
+                                    <state key="normal" title="iCloud Drive">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
                                     <connections>
                                         <action selector="iCloudDriveAction:" destination="tOc-pI-oBA" eventType="touchUpInside" id="3Cz-sl-jyn"/>
                                     </connections>
@@ -745,6 +762,7 @@
                                     <segment title="Hybrid"/>
                                     <segment title="Karte"/>
                                 </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="setMapStyle:" destination="3JX-LO-RSg" eventType="valueChanged" id="CVT-v3-Mbb"/>
                                 </connections>
@@ -913,7 +931,7 @@ Hinweis: Bäume können auch einzeln aus der Datenbank gelöscht werden.</string
                                 <rect key="frame" x="0.0" y="120" width="834" height="183"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Sok-uQ-JDP">
-                                        <rect key="frame" x="17" y="17" width="800" height="100"/>
+                                        <rect key="frame" x="17" y="0.0" width="800" height="100"/>
                                         <subviews>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EvN-hc-qZ2">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -1093,7 +1111,7 @@ Hinweis: Bäume können auch einzeln aus der Datenbank gelöscht werden.</string
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wählen Sie die Akzentfarbe aus welche dann in der gesamten App verwendet wird." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fP-g8-0wI">
-                                        <rect key="frame" x="67" y="145" width="700" height="20.5"/>
+                                        <rect key="frame" x="67" y="132.5" width="700" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1101,13 +1119,13 @@ Hinweis: Bäume können auch einzeln aus der Datenbank gelöscht werden.</string
                                 </subviews>
                                 <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Sok-uQ-JDP" firstAttribute="top" secondItem="iLf-Bw-U7v" secondAttribute="top" constant="17" id="0bc-Jy-4hW"/>
+                                    <constraint firstItem="Sok-uQ-JDP" firstAttribute="top" secondItem="iLf-Bw-U7v" secondAttribute="top" id="0bc-Jy-4hW"/>
                                     <constraint firstAttribute="height" constant="183" id="5Mi-6q-yH9"/>
                                     <constraint firstItem="Sok-uQ-JDP" firstAttribute="leading" secondItem="iLf-Bw-U7v" secondAttribute="leading" constant="17" id="B1h-rz-IWl"/>
                                     <constraint firstItem="Sok-uQ-JDP" firstAttribute="centerX" secondItem="iLf-Bw-U7v" secondAttribute="centerX" id="ENe-5N-8nC"/>
                                     <constraint firstAttribute="trailing" secondItem="7fP-g8-0wI" secondAttribute="trailing" constant="67" id="XBV-Fd-6ae"/>
                                     <constraint firstAttribute="trailing" secondItem="Sok-uQ-JDP" secondAttribute="trailing" constant="17" id="ckS-xo-VFu"/>
-                                    <constraint firstAttribute="bottom" secondItem="7fP-g8-0wI" secondAttribute="bottom" constant="17.5" id="rFi-EZ-v4t"/>
+                                    <constraint firstAttribute="bottom" secondItem="7fP-g8-0wI" secondAttribute="bottom" constant="30" id="rFi-EZ-v4t"/>
                                     <constraint firstItem="7fP-g8-0wI" firstAttribute="leading" secondItem="iLf-Bw-U7v" secondAttribute="leading" constant="67" id="yr7-Dp-ig1"/>
                                 </constraints>
                             </view>
@@ -1148,13 +1166,14 @@ Hinweis: Bäume können auch einzeln aus der Datenbank gelöscht werden.</string
             <objects>
                 <navigationController storyboardIdentifier="menuNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="h8E-O0-aOY" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pfh-do-gjD">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="Pfh-do-gjD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.30408036710000003" green="0.49091345069999998" blue="0.70246273280000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                            <color key="textColor" red="0.30408036710000003" green="0.49091345069999998" blue="0.70246273280000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -284,7 +284,7 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate, UI
     //MARK: - PlacePickerView
     @IBAction func showPlacePickerView(_ sender: Any) {
         field4.text = ""
-        if placePickerView.isHidden {
+        if placePickerView.isHidden && (databaseModel.places.count > 0) {
             placePickerView.isHidden = false
         } else{
             placePickerView.isHidden = true

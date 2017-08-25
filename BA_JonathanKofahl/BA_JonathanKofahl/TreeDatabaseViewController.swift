@@ -81,7 +81,7 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             } else {
                 for label in view.subviews {
                     label.tintColor = color
-                    mapStyleSwitchControl.tintColor = color
+                    //mapStyleSwitchControl.tintColor = color
                 }
             }
         }
@@ -399,11 +399,28 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             self.mapView.mapType = MKMapType.hybrid
             self.groupTableView.backgroundColor = UIColor.clear
             self.detailView.backgroundColor = UIColor.clear
+            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            blurEffectView.frame = self.groupTableView.bounds
+            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            
+            self.groupTableView.insertSubview(blurEffectView, at: 0)
+            
+            let blurEffectView1 = UIVisualEffectView(effect: blurEffect)
+            blurEffectView1.frame = self.detailView.bounds
+            blurEffectView1.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            
+            self.detailView.insertSubview(blurEffectView1, at: 0)
         }
         if sender.selectedSegmentIndex == 1 {
             self.mapView.mapType = MKMapType.standard
-            detailView.backgroundColor = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
-            self.groupTableView.backgroundColor = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
+           // detailView.backgroundColor = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
+            //self.groupTableView.backgroundColor = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
+            detailView.backgroundColor = UIColor.customColors.backgroundColor
+            self.groupTableView.backgroundColor = UIColor.customColors.backgroundColor
+
+            self.detailView.subviews[0].removeFromSuperview()
+            self.groupTableView.subviews[0].removeFromSuperview()
         }
     }
     

@@ -33,6 +33,20 @@
         <attribute name="care26" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="care27" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="care28" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="care29" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="care30" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="care31" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="care32" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="care33" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="care34" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="care35" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="care36" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="care37" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="care38" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="care39" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="care40" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="care41" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="care42" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="crown0" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="crown1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="crown2" optional="YES" attributeType="String" syncable="YES"/>
@@ -60,6 +74,7 @@
         <attribute name="crown24" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="crown25" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="crown26" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crown28" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="environment0" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="environment1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="environment2" optional="YES" attributeType="String" syncable="YES"/>
@@ -131,6 +146,6 @@
     </entity>
     <elements>
         <element name="Place" positionX="-63" positionY="27" width="128" height="60"/>
-        <element name="Tree" positionX="-63" positionY="-27" width="128" height="1905"/>
+        <element name="Tree" positionX="-63" positionY="-27" width="128" height="2130"/>
     </elements>
 </model>

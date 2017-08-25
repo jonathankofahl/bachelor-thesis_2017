@@ -51,33 +51,49 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func deleteDatabase(_ sender: Any) {
-        for tree in databaseModel.trees {
-            databaseModel.deleteTree(objID: tree.objectID)
+        alertFunc(sender: sender, parentController: self)
+    }
+    
+    // Code inspired by : http://nshipster.com/uialertcontroller/
+    func alertFunc(sender: Any, parentController: UIViewController) -> Void {
+        let alertController = UIAlertController(title: "Achtung", message: "Wirklich alles löschen?", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Abbrechen", style: .cancel) { action in
         }
-        for (index,place) in databaseModel.places.enumerated() {
-            databaseModel.deletePlace(index: index)
+        alertController.addAction(cancelAction)
+        
+        let exitAction = UIAlertAction(title: "Datenbank endgültig löschen", style: .destructive) { action in
+            for tree in databaseModel.trees {
+                databaseModel.deleteTree(objID: tree.objectID)
+            }
+            for (index,_) in databaseModel.places.enumerated() {
+                databaseModel.deletePlace(index: index)
+            }
         }
-    }
-    
-}
-
-extension UIColor {
-    class func color(withData data:Data) -> UIColor {
-        return NSKeyedUnarchiver.unarchiveObject(with: data) as! UIColor
-    }
-    
-    func encode() -> Data {
-        return NSKeyedArchiver.archivedData(withRootObject: self)
-    }
-    
-    struct customColors {
-        static let cancelColor     = UIColor.init(red: 255/255, green: 87/255, blue: 34/255, alpha: 1.0)
-        static let customRed        = UIColor.init(red: 244/255, green: 67/255, blue: 54/255, alpha: 1.0)
-        static let customOrange     = UIColor.init(red: 239/255, green: 108/255, blue: 0/255, alpha: 1.0)
-        static let customGreen      = UIColor.init(red: 67/255, green: 160/255, blue: 71/255, alpha: 1.0)
-        static let backgroundColor = UIColor.init(red: 66/255, green: 66/255, blue: 66/255, alpha: 1.0)
+        alertController.addAction(exitAction)
+        
+        self.present(alertController, animated: true)
         
     }
+}
+    
+    extension UIColor {
+        class func color(withData data:Data) -> UIColor {
+            return NSKeyedUnarchiver.unarchiveObject(with: data) as! UIColor
+        }
+        
+        func encode() -> Data {
+            return NSKeyedArchiver.archivedData(withRootObject: self)
+        }
+        
+        struct customColors {
+            static let cancelColor     = UIColor.init(red: 255/255, green: 87/255, blue: 34/255, alpha: 1.0)
+            static let customRed        = UIColor.init(red: 244/255, green: 67/255, blue: 54/255, alpha: 1.0)
+            static let customOrange     = UIColor.init(red: 239/255, green: 108/255, blue: 0/255, alpha: 1.0)
+            static let customGreen      = UIColor.init(red: 67/255, green: 160/255, blue: 71/255, alpha: 1.0)
+            static let backgroundColor = UIColor.init(red: 66/255, green: 66/255, blue: 66/255, alpha: 1.0)
+            
+        }
 }
 
 

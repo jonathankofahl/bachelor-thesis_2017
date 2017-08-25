@@ -25,7 +25,7 @@ class MenuViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         if defaults.value(forKey: "appColor") != nil {
             view1.backgroundColor = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
-            view2.backgroundColor = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
+           // view2.backgroundColor = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
         } else {
             defaults.set(view1.backgroundColor?.encode(), forKey: "appColor")
         }

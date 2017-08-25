@@ -2,7 +2,7 @@
 //  Tree+CoreDataProperties.swift
 //  BA_JonathanKofahl
 //
-//  Created by Jonathan Kofahl on 14.08.17.
+//  Created by Jonathan Kofahl on 25.08.17.
 //
 //
 
@@ -79,6 +79,7 @@ extension Tree {
     @NSManaged public var environment4: String?
     @NSManaged public var environment5: String?
     @NSManaged public var environment6: String?
+    @NSManaged public var environment7: String?
     @NSManaged public var image: NSData?
     @NSManaged public var info0: String?
     @NSManaged public var info1: String?
@@ -95,6 +96,7 @@ extension Tree {
     @NSManaged public var info12: String?
     @NSManaged public var info13: String?
     @NSManaged public var info14: String?
+    @NSManaged public var isNew: Bool
     @NSManaged public var root0: String?
     @NSManaged public var root1: String?
     @NSManaged public var root2: String?
@@ -135,10 +137,23 @@ extension Tree {
     @NSManaged public var tribe26: String?
     @NSManaged public var tribe27: String?
     @NSManaged public var tribe28: String?
-    @NSManaged public var environment7: String?
-    @NSManaged public var isNew: Bool
     @NSManaged public var xLocation: Double
     @NSManaged public var yLocation: Double
+    @NSManaged public var care29: String?
+    @NSManaged public var care30: String?
+    @NSManaged public var care31: String?
+    @NSManaged public var care32: String?
+    @NSManaged public var care33: String?
+    @NSManaged public var care34: String?
+    @NSManaged public var care35: String?
+    @NSManaged public var care36: String?
+    @NSManaged public var care37: String?
+    @NSManaged public var care38: String?
+    @NSManaged public var care39: String?
+    @NSManaged public var care40: String?
+    @NSManaged public var care41: String?
+    @NSManaged public var care42: String?
+    @NSManaged public var crown28: String?
     @NSManaged public var place: Place?
 
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="ipad10_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,20 +21,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="p5Q-jc-oea">
-                                <rect key="frame" x="104" y="167" width="626" height="778"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AcL-DM-PMz">
+                                <rect key="frame" x="137" y="166" width="560" height="639"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="z3a-uK-Uat">
+                                        <rect key="frame" x="254" y="293" width="52" height="52"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="52" id="O36-LJ-FSm"/>
+                                            <constraint firstAttribute="height" constant="52" id="TuI-jz-aMR"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98203342727664966" green="0.98203342727664966" blue="0.98203342727664966" alpha="0.83912136130136983" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="626" id="jbP-XK-d6m"/>
-                                    <constraint firstAttribute="height" constant="778" id="pfw-bG-NBY"/>
+                                    <constraint firstItem="z3a-uK-Uat" firstAttribute="centerX" secondItem="AcL-DM-PMz" secondAttribute="centerX" id="Lq1-P6-mBh"/>
+                                    <constraint firstItem="z3a-uK-Uat" firstAttribute="centerY" secondItem="AcL-DM-PMz" secondAttribute="centerY" id="QQD-SA-cyx"/>
+                                    <constraint firstItem="z3a-uK-Uat" firstAttribute="centerX" secondItem="AcL-DM-PMz" secondAttribute="centerX" id="TOv-yB-QSU"/>
+                                    <constraint firstItem="z3a-uK-Uat" firstAttribute="centerY" secondItem="AcL-DM-PMz" secondAttribute="centerY" id="jzW-sN-ZFv"/>
+                                    <constraint firstAttribute="height" constant="639" id="lSE-ux-HcU"/>
+                                    <constraint firstAttribute="width" constant="560" id="oF0-bZ-6gJ"/>
                                 </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="HLh-sx-I3H">
+                                <rect key="frame" x="-839.5" y="874" width="2513" height="180"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="p5Q-jc-oea" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="GTz-3w-JPL"/>
-                            <constraint firstItem="p5Q-jc-oea" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="SY4-SX-KU4"/>
-                            <constraint firstItem="p5Q-jc-oea" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="oBE-tv-HgI"/>
-                            <constraint firstItem="p5Q-jc-oea" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="w47-0P-ads"/>
+                            <constraint firstItem="AcL-DM-PMz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="LxK-XB-CXe"/>
+                            <constraint firstItem="AcL-DM-PMz" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="146" id="X6G-la-Z7f"/>
+                            <constraint firstItem="HLh-sx-I3H" firstAttribute="top" secondItem="AcL-DM-PMz" secondAttribute="bottom" constant="69" id="YO7-e6-a47"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="HLh-sx-I3H" secondAttribute="bottom" constant="58" id="bZg-f1-DWC"/>
+                            <constraint firstItem="HLh-sx-I3H" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ds8-Xd-q4J"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -44,6 +62,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="loading" width="240" height="240"/>
         <image name="logo" width="2513" height="1113"/>
     </resources>
 </document>

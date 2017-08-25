@@ -211,6 +211,60 @@ class PDFComposer: NSObject {
             }
 
             
+            //MARK: Care (Weiteres Vorgehen)
+            if(false){//if( tree?.care29 == "Ja" ) {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care29#", with: "☒") } else {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care29#", with: "☐")}
+            if(false){//if( tree?.care30 == "Ja" ) {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care30#", with: "☒") } else {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care30#", with: "☐")}
+            if(false){//if( tree?.care31 == "Ja" ) {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care31#", with: "☒") } else {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care31#", with: "☐")}
+            if(false){//if( tree?.care32 == "Ja" ) {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care32#", with: "☒") } else {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care32#", with: "☐")}
+            if(false){//if( tree?.care33 == "Ja" ) {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care33#", with: "☒") } else {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care33#", with: "☐")}
+            if(false){//if( tree?.care34 == "Ja" ) {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care34#", with: "☒") } else {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care34#", with: "☐")}
+            if(false){//if( tree?.care35 == "Ja" ) {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care35#", with: "☒") } else {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care35#", with: "☐")}
+            if(false){//if( tree?.care36 == "Ja" ) {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care36#", with: "☒") } else {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care36#", with: "☐")}
+            if(false){//if( tree?.care37 == "Ja" ) {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care37#", with: "☒") } else {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care37#", with: "☐")}
+            if(false){//if( tree?.care38 == "Ja" ) {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care38#", with: "☒") } else {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care38#", with: "☐")}
+            
+            if(false){//if tree?.care39 == "Seilklettertechnik" {
+                HTMLContent = replaceFirstOfSeven(parameterName: "care39", HTMLContent: HTMLContent)
+            } else if(false){//if tree?.care39 == "Hubarbeitsbühne" {
+                HTMLContent = replaceSecondOfSeven(parameterName: "care39", HTMLContent: HTMLContent)
+            } else if(false){//else if tree?.care39 == "Hubarbeitsbühne" {
+                HTMLContent = replaceSecondOfSeven(parameterName: "care39", HTMLContent: HTMLContent)
+            }
+            else {
+                HTMLContent = replaceEmptyOfSeven(parameterName: "care39", HTMLContent: HTMLContent)
+            }
+            
+            if(false){//if( tree?.care40 == "Ja" ) {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care40#", with: "☒") } else {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care40#", with: "☐")}
+            if(false){//if( tree?.care41 == "Ja" ) {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care41#", with: "☒") } else {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care41#", with: "☐")}
+            if(false){//if( tree?.care42 == "Ja" ) {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care42#", with: "☒") } else {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care42#", with: "☐")}
+
+            
             return HTMLContent
             
         }
