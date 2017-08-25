@@ -416,8 +416,8 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             self.mapView.mapType = MKMapType.standard
            // detailView.backgroundColor = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
             //self.groupTableView.backgroundColor = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
-            detailView.backgroundColor = UIColor.customColors.backgroundColor
-            self.groupTableView.backgroundColor = UIColor.customColors.backgroundColor
+            detailView.backgroundColor = UIColor.customColors.backgroundColor.withAlphaComponent(0.8)
+            self.groupTableView.backgroundColor = UIColor.customColors.backgroundColor.withAlphaComponent(0.8)
 
             self.detailView.subviews[0].removeFromSuperview()
             self.groupTableView.subviews[0].removeFromSuperview()

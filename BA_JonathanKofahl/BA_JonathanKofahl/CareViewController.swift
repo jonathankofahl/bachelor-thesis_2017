@@ -152,13 +152,13 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
             var placeIndex = 0
             
             for (index,place) in databaseModel.places.enumerated() {
-                if place.name?.capitalized ==  actualTree1?.info4?.components(separatedBy: " ")[0].capitalized {
+                if place.name?.capitalized == actualTree1?.info4/*?.components(separatedBy: " ")[0].capitalized*/ {
                     placeUsedBefore = true
                     placeIndex = index
                 }
             }
             if !placeUsedBefore {
-                databaseModel.createPlace(name: (actualTree1?.info4?.components(separatedBy: " ")[0].capitalized)!)
+                databaseModel.createPlace(name: (actualTree1?.info4)!)/*?.components(separatedBy: " ")[0].capitalized)!)*/
                 placeIndex = databaseModel.places.count-1
                 databaseModel.save()
             }
