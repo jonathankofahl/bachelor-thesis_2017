@@ -28,7 +28,7 @@ class firstTribeViewController: UIViewController, UITableViewDelegate, UITableVi
         tableCriteria1 = []
         
         //MARK: - TableView init -> load strings from Localization.strings file
-        for index in 1...9 {
+        for index in 1...8 {
             let ressourceName = "tribe" + index.description
             tableCriteria?.append( NSLocalizedString(ressourceName, comment: "") )
         }

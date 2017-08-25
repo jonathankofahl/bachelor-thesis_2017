@@ -18,40 +18,39 @@ class PDFComposer: NSObject {
     var pdfFilename: String!
     var tree : Tree?
     
-    
     override init() {
         super.init()
     }
     
+    //MARK: - Functions create HTML with real Data from the tree
+    // Function to replace the placeholders in the pdf_1.html file
+    // This will be the first site of the PDF Document
     func renderPage1() -> String! {
-        // Store the invoice number for future use.
-       // self.invoiceNumber = invoiceNumber
-        
         do {
-            // Load the invoice HTML template code into a String variable.
             var HTMLContent = try String(contentsOfFile: pathToHTMLTemplate!)
             
-            // Replace all the placeholders with real values except for the items.
-            // The logo image.
+            // Check if the tree has a image
             if tree?.image != nil {
                
-            var image = UIImage(cgImage: (UIImage.init(data: tree?.image! as! Data)?.cgImage)!,
+            let image = UIImage(cgImage: (UIImage.init(data: tree?.image! as! Data)?.cgImage)!,
                                 scale: 1.0 ,
-                                orientation: UIImageOrientation.left)
-            // Create a URL in the /tmp directory
-            guard let imageURL = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("TempImage.png") else {
+                                orientation: UIImageOrientation.right)
+                
+            guard let imageURL = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("tempImage.png") else {
                 return nil
             }
             
             // save image to URL
             do {
-                try UIImagePNGRepresentation(image)?.write(to: imageURL)
+                try UIImageJPEGRepresentation(image, 1.0)?.write(to: imageURL)
             } catch { }
+            // put the image into the HTML Code
             HTMLContent = HTMLContent.replacingOccurrences(of: "#IMAGE", with: imageURL.relativePath )
             }
             
             var test = tree
     
+            // Replacing all placeholders in the pdf_1.html file with the Data from the selected tree if there are Values in the tree
             HTMLContent = HTMLContent.replacingOccurrences(of: "info0#", with: (tree?.info0)!)
             HTMLContent = HTMLContent.replacingOccurrences(of: "info1#", with: (tree?.info1)!)
             HTMLContent = HTMLContent.replacingOccurrences(of: "info2#", with: (tree?.info2)!)
@@ -67,67 +66,66 @@ class PDFComposer: NSObject {
             
             
             if tree?.environment6 == "Ja" {
-                HTMLContent = replaceFirstOfThree(parameterName: "environment6#", HTMLContent: HTMLContent)
+                HTMLContent = replaceFirstOfSeven(parameterName: "environment6", HTMLContent: HTMLContent)
             } else if tree?.environment6 == "Nein" {
-                HTMLContent = replaceSecondOfThree(parameterName: "environment6#", HTMLContent: HTMLContent)
+                HTMLContent = replaceSecondOfSeven(parameterName: "environment6", HTMLContent: HTMLContent)
             }
-            else if tree?.environment6 == "Nein" {
-                HTMLContent = replaceThirdOfThree(parameterName: "environment6#", HTMLContent: HTMLContent)
+            else if tree?.environment6 == "Unklar" {
+                HTMLContent = replaceThirdOfSeven(parameterName: "environment6", HTMLContent: HTMLContent)
             } else {
-                HTMLContent = replaceEmptyOfThree(parameterName: "environment6#", HTMLContent: HTMLContent)
+                HTMLContent = replaceEmptyOfSeven(parameterName: "environment6", HTMLContent: HTMLContent)
             }
 
-            
             if tree?.info12 == "Jugend" {
-                HTMLContent = replaceFirstOfThree(parameterName: "info12", HTMLContent: HTMLContent)
+                HTMLContent = replaceFirstOfSeven(parameterName: "info12", HTMLContent: HTMLContent)
             } else if tree?.info12 == "Reife" {
-                HTMLContent = replaceSecondOfThree(parameterName: "info12", HTMLContent: HTMLContent)
+                HTMLContent = replaceSecondOfSeven(parameterName: "info12", HTMLContent: HTMLContent)
             }
             else if tree?.info12 == "Alterung" {
-                HTMLContent = replaceThirdOfThree(parameterName: "info12", HTMLContent: HTMLContent)
+                HTMLContent = replaceThirdOfSeven(parameterName: "info12", HTMLContent: HTMLContent)
             } else {
-                HTMLContent = replaceEmptyOfThree(parameterName: "info12", HTMLContent: HTMLContent)
+                HTMLContent = replaceEmptyOfSeven(parameterName: "info12", HTMLContent: HTMLContent)
             }
             if tree?.info13 == "Gering" {
-                HTMLContent = replaceFirstOfThree(parameterName: "info13", HTMLContent: HTMLContent)
+                HTMLContent = replaceFirstOfSeven(parameterName: "info13", HTMLContent: HTMLContent)
             } else if tree?.info13 == "Hoch" {
-                HTMLContent = replaceSecondOfThree(parameterName: "info13", HTMLContent: HTMLContent)
+                HTMLContent = replaceSecondOfSeven(parameterName: "info13", HTMLContent: HTMLContent)
             } else {
-                HTMLContent = replaceEmptyOfThree(parameterName: "info13", HTMLContent: HTMLContent)
+                HTMLContent = replaceEmptyOfSeven(parameterName: "info13", HTMLContent: HTMLContent)
             }
             if tree?.info14 == "Gesund/leicht geschädigt" {
-                HTMLContent = replaceFirstOfThree(parameterName: "info14", HTMLContent: HTMLContent)
+                HTMLContent = replaceFirstOfSeven(parameterName: "info14", HTMLContent: HTMLContent)
             } else if tree?.info14 == "Stärker geschädigt" {
-                HTMLContent = replaceSecondOfThree(parameterName: "info14", HTMLContent: HTMLContent)
+                HTMLContent = replaceSecondOfSeven(parameterName: "info14", HTMLContent: HTMLContent)
             }
             else {
-                HTMLContent = replaceEmptyOfThree(parameterName: "info14", HTMLContent: HTMLContent)
+                HTMLContent = replaceEmptyOfSeven(parameterName: "info14", HTMLContent: HTMLContent)
             }
             
             if tree?.care0 == "sofort" {
-                HTMLContent = replaceFirstOfThree(parameterName: "care0", HTMLContent: HTMLContent)
+                HTMLContent = replaceFirstOfSeven(parameterName: "care0", HTMLContent: HTMLContent)
             } else if tree?.care0 == "dieses Jahr" {
-                HTMLContent = replaceSecondOfThree(parameterName: "care0", HTMLContent: HTMLContent)
+                HTMLContent = replaceSecondOfSeven(parameterName: "care0", HTMLContent: HTMLContent)
             }
             else if tree?.care0 == "bis zur näcsht. Kontrolle" {
-                HTMLContent = replaceThirdOfThree(parameterName: "care0", HTMLContent: HTMLContent)
+                HTMLContent = replaceThirdOfSeven(parameterName: "care0", HTMLContent: HTMLContent)
             }else if tree?.care0 == "langfristig" {
-                HTMLContent = replaceFourthOfThree(parameterName: "care0", HTMLContent: HTMLContent)
+                HTMLContent = replaceFourthOfSeven(parameterName: "care0", HTMLContent: HTMLContent)
             } else {
-                HTMLContent = replaceEmptyOfThree(parameterName: "care0", HTMLContent: HTMLContent)
+                HTMLContent = replaceEmptyOfSeven(parameterName: "care0", HTMLContent: HTMLContent)
             }
             
             if tree?.care14 == "sofort" {
-                HTMLContent = replaceFirstOfThree(parameterName: "care14", HTMLContent: HTMLContent)
+                HTMLContent = replaceFirstOfSeven(parameterName: "care14", HTMLContent: HTMLContent)
             } else if tree?.care14 == "dieses Jahr" {
-                HTMLContent = replaceSecondOfThree(parameterName: "care14", HTMLContent: HTMLContent)
+                HTMLContent = replaceSecondOfSeven(parameterName: "care14", HTMLContent: HTMLContent)
             }
             else if tree?.care14 == "bis zur näcsht. Kontrolle" {
-                HTMLContent = replaceThirdOfThree(parameterName: "care14", HTMLContent: HTMLContent)
+                HTMLContent = replaceThirdOfSeven(parameterName: "care14", HTMLContent: HTMLContent)
             }else if tree?.care14 == "langfristig" {
-                HTMLContent = replaceFourthOfThree(parameterName: "care14", HTMLContent: HTMLContent)
+                HTMLContent = replaceFourthOfSeven(parameterName: "care14", HTMLContent: HTMLContent)
             } else {
-                HTMLContent = replaceEmptyOfThree(parameterName: "care14", HTMLContent: HTMLContent)
+                HTMLContent = replaceEmptyOfSeven(parameterName: "care14", HTMLContent: HTMLContent)
             }
             
             
@@ -204,67 +202,26 @@ class PDFComposer: NSObject {
             
             
             if tree?.care28 == "Seilklettertechnik" {
-                HTMLContent = replaceFirstOfThree(parameterName: "care28", HTMLContent: HTMLContent)
+                HTMLContent = replaceFirstOfSeven(parameterName: "care28", HTMLContent: HTMLContent)
             } else if tree?.care28 == "Hubarbeitsbühne" {
-                HTMLContent = replaceSecondOfThree(parameterName: "care28", HTMLContent: HTMLContent)
+                HTMLContent = replaceSecondOfSeven(parameterName: "care28", HTMLContent: HTMLContent)
             }
             else {
-                HTMLContent = replaceEmptyOfThree(parameterName: "care28", HTMLContent: HTMLContent)
+                HTMLContent = replaceEmptyOfSeven(parameterName: "care28", HTMLContent: HTMLContent)
             }
 
             
-            
-            // The HTML code is ready.
             return HTMLContent
             
         }
         catch {
-            print("Unable to open and use HTML template files.")
+            print("Cant replace placeholders in pdf_1.html File")
         }
         
         return nil
     }
     
-    func replaceFirstOfThree(parameterName: String, HTMLContent: String) -> String {
-        var HTMLContent = HTMLContent
-        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_0", with: "☒")
-        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_1", with: "☐")
-        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_2", with: "☐")
-        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_3", with: "☐")
-        return HTMLContent
-    }
-    func replaceSecondOfThree(parameterName: String, HTMLContent: String) -> String {
-        var HTMLContent = HTMLContent
-        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_0", with: "☐")
-        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_1", with: "☒")
-        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_2", with: "☐")
-        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_3", with: "☐")
-        return HTMLContent
-    }
-    func replaceThirdOfThree(parameterName: String, HTMLContent: String) -> String {
-        var HTMLContent = HTMLContent
-        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_0", with: "☐")
-        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_1", with: "☐")
-        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_2", with: "☒")
-        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_2", with: "☐")
-        return HTMLContent
-    }
-    func replaceFourthOfThree(parameterName: String, HTMLContent: String) -> String {
-        var HTMLContent = HTMLContent
-        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_0", with: "☐")
-        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_1", with: "☐")
-        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_2", with: "☐")
-        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_3", with: "☒")
-        return HTMLContent
-    }
-    func replaceEmptyOfThree(parameterName: String, HTMLContent: String) -> String {
-        var HTMLContent = HTMLContent
-        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_0", with: "☐")
-        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_1", with: "☐")
-        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_2", with: "☐")
-        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_3", with: "☐")
-        return HTMLContent
-    }
+  
     
     func renderPage2() -> String! {
         // Store the invoice number for future use.
@@ -274,8 +231,170 @@ class PDFComposer: NSObject {
             // Load the invoice HTML template code into a String variable.
             var HTMLContent = try String(contentsOfFile: pathToHTMLTemplate1!)
             
+            //MARK: Crown
+            for i in 0..<15 {
+            let str = "crown" + i.description
+                print(str)
+                if i == 15 {
+                } else {
+                    if tree?.value(forKey: str) != nil {
+                        print(tree?.value(forKey: str))
+                        HTMLContent = self.replaceMultipleValues(attribute: str, content: HTMLContent)
+                    } else {
+                        HTMLContent = HTMLContent.replacingOccurrences(of: str+"_0", with: "☐")
+                        HTMLContent = HTMLContent.replacingOccurrences(of: str+"_1", with: "☐")
+                        HTMLContent = HTMLContent.replacingOccurrences(of: str+"_2", with: "☐")
+                    }
+                }
+            }
             
-            HTMLContent = HTMLContent.replacingOccurrences(of: "#info0", with: (tree?.info0)!)
+            for i in 21..<27 {
+                let str = "crown" + i.description
+                print(str)
+                if i == 15 {
+                } else {
+                    if tree?.value(forKey: str) != nil {
+                        print(tree?.value(forKey: str))
+                        HTMLContent = self.replaceMultipleValues(attribute: str, content: HTMLContent)
+                    } else {
+                        HTMLContent = HTMLContent.replacingOccurrences(of: str+"_0", with: "☐")
+                        HTMLContent = HTMLContent.replacingOccurrences(of: str+"_1", with: "☐")
+                        HTMLContent = HTMLContent.replacingOccurrences(of: str+"_2", with: "☐")
+                    }
+                }
+            }
+            
+            HTMLContent = HTMLContent.replacingOccurrences(of: "crown17#", with: (tree?.crown17)!)
+            HTMLContent = HTMLContent.replacingOccurrences(of: "crown19#", with: (tree?.crown19)!)
+
+            if tree?.crown20 == "leicht" {
+                
+                HTMLContent = replaceFirstOfSeven(parameterName: "crown20", HTMLContent: HTMLContent)
+            } else if tree?.crown20 == "mittel" {
+                HTMLContent = replaceSecondOfSeven(parameterName: "crown20", HTMLContent: HTMLContent)
+            } else if tree?.crown20 == "schwach" {
+                HTMLContent = replaceThirdOfSeven(parameterName: "crown20", HTMLContent: HTMLContent)
+            }
+            else {
+                
+                HTMLContent = replaceEmptyOfSeven(parameterName: "crown20", HTMLContent: HTMLContent)
+            }
+            
+            if( tree?.crown16 == "Gefährlich" ) {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "crown16#", with: "☒") } else {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "crown16#", with: "☐")}
+            
+            if( tree?.crown18 == "Gefährlich" ) {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "crown18#", with: "☒") } else {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "crown18#", with: "☐")}
+            
+            if tree?.crown15 == 0.0 {
+                HTMLContent = replaceFirstOfSeven(parameterName: "crown15", HTMLContent: HTMLContent)
+            } else if tree?.crown15 == 0.5 {
+                HTMLContent = replaceSecondOfSeven(parameterName: "crown15", HTMLContent: HTMLContent)
+            }
+            else if tree?.crown15 == 1.0 {
+                HTMLContent = replaceThirdOfSeven(parameterName: "crown15", HTMLContent: HTMLContent)
+            }else if tree?.crown15 == 1.5 {
+                HTMLContent = replaceFourthOfSeven(parameterName: "crown15", HTMLContent: HTMLContent)
+            }else if tree?.crown15 == 2.0 {
+                HTMLContent = replaceFiveOfSeven(parameterName: "crown15", HTMLContent: HTMLContent)
+            }else if tree?.crown15 == 2.5 {
+                HTMLContent = replaceSixOfSeven(parameterName: "crown15", HTMLContent: HTMLContent)
+            }else if tree?.crown15 == 3.0 {
+                HTMLContent = replaceSevenOfSeven(parameterName: "crown15", HTMLContent: HTMLContent)
+            } else {
+                HTMLContent = replaceEmptyOfSeven(parameterName: "crown15", HTMLContent: HTMLContent)
+            }
+            
+            //MARK: Tribe
+            for i in 0..<8 {
+                let str = "tribe" + i.description
+                if i == 8 {
+                    
+                    print("Jo")
+                    
+                }
+                print(str)
+                    if tree?.value(forKey: str) != nil {
+                        print(tree?.value(forKey: str))
+                        HTMLContent = self.replaceMultipleValues(attribute: str, content: HTMLContent)
+                    } else {
+                        HTMLContent = HTMLContent.replacingOccurrences(of: str+"_0", with: "☐")
+                        HTMLContent = HTMLContent.replacingOccurrences(of: str+"_1", with: "☐")
+                        HTMLContent = HTMLContent.replacingOccurrences(of: str+"_2", with: "☐")
+                }
+                
+            }
+            
+            
+            HTMLContent = HTMLContent.replacingOccurrences(of: "tribe9#", with: (tree?.tribe9)!)
+            
+            for i in 10..<12 {
+                let str = "tribe" + i.description
+                print(str)
+                if tree?.value(forKey: str) != nil {
+                    print(tree?.value(forKey: str))
+                    HTMLContent = self.replaceMultipleValues(attribute: str, content: HTMLContent)
+                } else {
+                    HTMLContent = HTMLContent.replacingOccurrences(of: str+"_0", with: "☐")
+                    HTMLContent = HTMLContent.replacingOccurrences(of: str+"_1", with: "☐")
+                    HTMLContent = HTMLContent.replacingOccurrences(of: str+"_2", with: "☐")
+                }
+            }
+            
+            for i in 13..<21 {
+                let str = "tribe" + i.description + "#"
+                print(str)
+                if( tree?.care21 == "vorhanden" ) {
+                    HTMLContent = HTMLContent.replacingOccurrences(of: str, with: "☒") } else {
+                    HTMLContent = HTMLContent.replacingOccurrences(of: str, with: "☐")}
+            }
+            
+            HTMLContent = HTMLContent.replacingOccurrences(of: "tribe21#", with: (tree?.tribe21)!)
+
+            for i in 22..<29 {
+                let str = "tribe" + i.description + "#"
+                print(str)
+                if( tree?.care21 == "vorhanden" ) {
+                    HTMLContent = HTMLContent.replacingOccurrences(of: str, with: "☒") } else {
+                    HTMLContent = HTMLContent.replacingOccurrences(of: str, with: "☐")}
+            }
+            
+            //MARK: Root
+            
+            for i in 0..<5 {
+                let str = "root" + i.description
+                print(str)
+                if tree?.value(forKey: str) != nil {
+                    print(tree?.value(forKey: str))
+                    HTMLContent = self.replaceMultipleValues(attribute: str, content: HTMLContent)
+                } else {
+                    HTMLContent = HTMLContent.replacingOccurrences(of: str+"_0", with: "☐")
+                    HTMLContent = HTMLContent.replacingOccurrences(of: str+"_1", with: "☐")
+                    HTMLContent = HTMLContent.replacingOccurrences(of: str+"_2", with: "☐")
+                }
+            }
+
+            HTMLContent = HTMLContent.replacingOccurrences(of: "root5#", with: (tree?.root5)!)
+
+            for i in 6..<14 {
+                let str = "root" + i.description + "#"
+                print(str)
+                if( tree?.care21 == "vorhanden" ) {
+                    HTMLContent = HTMLContent.replacingOccurrences(of: str, with: "☒") } else {
+                    HTMLContent = HTMLContent.replacingOccurrences(of: str, with: "☐")}
+            }
+            
+            //MARK: Environment
+            for i in 2..<9{
+                let str = "environment" + i.description + "#"
+                print(str)
+                if( tree?.care21 == "vorhanden" ) {
+                    HTMLContent = HTMLContent.replacingOccurrences(of: str, with: "☒") } else {
+                    HTMLContent = HTMLContent.replacingOccurrences(of: str, with: "☐")}
+            }
+            
             
             // The HTML code is ready.
             return HTMLContent
@@ -287,8 +406,121 @@ class PDFComposer: NSObject {
         
         return nil
     }
+    
+    //MARK: - Helping methods to replace values in the html more efficiently
+    
+    func replaceMultipleValues(attribute:String, content: String) -> String {
+        var HTMLContent = content
+        if tree?.value(forKey: attribute) as! String == "Unbedenklich" {
+            HTMLContent = replaceFirstOfSeven(parameterName: attribute, HTMLContent: HTMLContent)
+        } else if tree?.value(forKey: attribute) as! String == "Gefährlich" {
+            HTMLContent = replaceSecondOfSeven(parameterName: attribute, HTMLContent: HTMLContent)
+        }
+        else if tree?.value(forKey: attribute) as! String == "Unklar" {
+            HTMLContent = replaceThirdOfSeven(parameterName: attribute, HTMLContent: HTMLContent)
+        } else {
+            HTMLContent = replaceEmptyOfSeven(parameterName: attribute, HTMLContent: HTMLContent)
+        }
+        
+        return HTMLContent
+
+    }
+    
+    func replaceFirstOfSeven(parameterName: String, HTMLContent: String) -> String {
+        var HTMLContent = HTMLContent
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_0", with: "☒")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_1", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_2", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_3", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_4", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_5", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_6", with: "☐")
+
+        return HTMLContent
+    }
+    func replaceSecondOfSeven(parameterName: String, HTMLContent: String) -> String {
+        var HTMLContent = HTMLContent
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_0", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_1", with: "☒")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_2", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_3", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_4", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_5", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_6", with: "☐")
+
+        return HTMLContent
+    }
+    func replaceThirdOfSeven(parameterName: String, HTMLContent: String) -> String {
+        var HTMLContent = HTMLContent
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_0", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_1", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_2", with: "☒")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_3", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_4", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_5", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_6", with: "☐")
+
+        return HTMLContent
+    }
+    func replaceFourthOfSeven(parameterName: String, HTMLContent: String) -> String {
+        var HTMLContent = HTMLContent
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_0", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_1", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_2", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_3", with: "☒")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_4", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_5", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_6", with: "☐")
+
+        return HTMLContent
+    }
+    func replaceFiveOfSeven(parameterName: String, HTMLContent: String) -> String {
+        var HTMLContent = HTMLContent
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_0", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_1", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_2", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_3", with: "☒")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_4", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_5", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_6", with: "☐")
+        return HTMLContent
+    }
+    func replaceSixOfSeven(parameterName: String, HTMLContent: String) -> String {
+        var HTMLContent = HTMLContent
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_0", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_1", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_2", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_3", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_4", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_5", with: "☒")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_6", with: "☐")
+        return HTMLContent
+    }
+    func replaceSevenOfSeven(parameterName: String, HTMLContent: String) -> String {
+        var HTMLContent = HTMLContent
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_0", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_1", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_2", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_3", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_4", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_5", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_6", with: "☒")
+        return HTMLContent
+    }
+    func replaceEmptyOfSeven(parameterName: String, HTMLContent: String) -> String {
+        var HTMLContent = HTMLContent
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_0", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_1", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_2", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_3", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_4", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_5", with: "☐")
+        HTMLContent = HTMLContent.replacingOccurrences(of: parameterName + "_6", with: "☐")
+        return HTMLContent
+    }
 
     
+    //MARK: - Save the PDF File in a local directory (not iCloud)
     func exportHTMLContentToPDF(HTMLContent: String) {
         var printPageRenderer = CustomPrintPageRenderer()
         
@@ -303,7 +535,7 @@ class PDFComposer: NSObject {
         print(pdfFilename)
     }
     
-    
+    //MARK: - render th HTML into data: we have 2 pages (pdf_1.html & pdf_2.html)
     func drawPDFUsingPrintPageRenderer(printPageRenderer: UIPrintPageRenderer) -> NSData! {
         let data = NSMutableData()
         
@@ -315,7 +547,6 @@ class PDFComposer: NSObject {
             UIGraphicsBeginPDFPage()
             printPageRenderer.drawPage(at: i, in: bounds)
         }
-        
         
         UIGraphicsEndPDFContext()
         

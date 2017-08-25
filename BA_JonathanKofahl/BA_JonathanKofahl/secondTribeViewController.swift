@@ -28,7 +28,7 @@ class secondTribeViewController: UIViewController, UITableViewDelegate, UITableV
         tableCriteria1 = []
         
         //MARK: - TableView init -> load strings from Localization.strings file
-        for index in 12...20 {
+        for index in 13...20 {
             let ressourceName = "tribe" + index.description
             tableCriteria?.append( NSLocalizedString(ressourceName, comment: "") )
         }
@@ -79,7 +79,7 @@ class secondTribeViewController: UIViewController, UITableViewDelegate, UITableV
         if tableView == self.tableView {
             cell.criteria.text = tableCriteria?[indexPath.row]
             cell.tableViewIdentifier = "tribe"
-            cell.index = indexPath.row + 12
+            cell.index = indexPath.row + 13
         } else {
             cell.criteria.text = tableCriteria1?[indexPath.row]
             cell.tableViewIdentifier = "tribe"

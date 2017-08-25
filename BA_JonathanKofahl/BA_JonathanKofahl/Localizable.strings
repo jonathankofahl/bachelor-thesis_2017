@@ -26,12 +26,12 @@
     "crown14" = "Äste in Oberleitungen";
     "crown15" = "Äste im Lochtraumprofil";
 
-    "crown16" = "Haltesicherung";
-    "crown17" = "Verstrebung/Verbolzung";
-    "crown18" = "Bodenanker, Stütze";
-    "crown19" = "dynamische KS";
-    "crown20" = "statische KS";
-    "crown21" = "statische KS Gewindestange";
+    "crown21" = "Haltesicherung";
+    "crown22" = "Verstrebung/Verbolzung";
+    "crown23" = "Bodenanker, Stütze";
+    "crown24" = "dynamische KS";
+    "crown25" = "statische KS";
+    "crown26" = "statische KS Gewindestange";
 
 
 // MARK: - TribeViewController
@@ -44,12 +44,12 @@
     "tribe6" = "Schrägstand";
     "tribe7" = "Stammaustriebe";
     "tribe8" = "Zwiesel";
-    "tribe9" = "Reaktionsholz";
+    "tribe9" = "Reaktionsholz(RAUSNEHMEN)";
 
     "tribe10" = "Risse";
     "tribe11" = "Zwiselriss /-morschung";
 
-    "tribe12" = "Rindenschäden";
+    "tribe12" = "Rindenschäden(RAUSNEHMEN)";
     "tribe13" = "abplatzende Rinde";
     "tribe14" = "abgestorbene Rinde";
     "tribe15" = "Nekrosen";

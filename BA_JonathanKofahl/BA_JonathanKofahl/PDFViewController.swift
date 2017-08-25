@@ -15,7 +15,6 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate, 
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
     }
 
-    
     @IBOutlet weak var webView: UIWebView!
     var tree: Tree?
     var pdfComposer: PDFComposer!
@@ -43,9 +42,9 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate, 
     
      func createInputAsHTML() {
      pdfComposer = PDFComposer()
-    pdfComposer.tree = self.tree
+     pdfComposer.tree = self.tree
         
-        if let treeHTML = pdfComposer.renderPage1() {
+     if let treeHTML = pdfComposer.renderPage1() {
      
      webView.loadHTMLString((pdfComposer.renderPage1()+pdfComposer.renderPage2()), baseURL: NSURL(string: pdfComposer.pathToHTMLTemplate!)! as URL)
      HTMLContent = (pdfComposer.renderPage1()+pdfComposer.renderPage2())
@@ -55,7 +54,7 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate, 
      }
    
     @IBAction func iCloudDriveAction(_ sender: Any) {
-        var cloudManager = CloudManager()
+        let cloudManager = CloudManager()
         var url : URL? = nil
         if tree?.info6! != nil {
             url = cloudManager.moveFileToCloud(number: (tree?.info6!)!)

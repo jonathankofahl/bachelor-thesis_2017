@@ -30,7 +30,7 @@ class secondCrownViewController: UIViewController, UITableViewDelegate, UITableV
         tableCriteria = []
         
         //MARK: - TableView init -> load strings from Localization.strings file
-        for index in 16...21 {
+        for index in 21...26 {
             let ressourceName = "crown" + index.description
             tableCriteria?.append( NSLocalizedString(ressourceName, comment: "") )
         }
@@ -103,7 +103,7 @@ class secondCrownViewController: UIViewController, UITableViewDelegate, UITableV
         
         cell.criteria.text = tableCriteria?[indexPath.row]
         cell.tableViewIdentifier = "crown"
-        cell.index = indexPath.row + 20
+        cell.index = indexPath.row + 21
         return cell
     }
     @IBAction func returnClicked(_ sender: UITextField) {

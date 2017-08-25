@@ -274,18 +274,19 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         if tableView == tableViewTrees {
-            // action one
+           /* // action one
             let editAction = UITableViewRowAction(style: .default, title: "Editieren", handler: { (action, indexPath) in
                 print("Tree edit")
             })
             editAction.backgroundColor = UIColor.customColors.customGreen
-            
+            */
             // action two
             let deleteAction = UITableViewRowAction(style: .default, title: "Löschen", handler: { (action, indexPath) in
                 //self.tableTrees?.remove(at: indexPath.row)
                 databaseModel.deleteTree(objID:self.tableTrees![indexPath.row].objectID)
-                self.tableViewTrees.reloadData()
                 databaseModel.save()
+                self.tableViewTrees.reloadData()
+
                 print("Tree delete")
             })
             deleteAction.backgroundColor = UIColor.customColors.customRed

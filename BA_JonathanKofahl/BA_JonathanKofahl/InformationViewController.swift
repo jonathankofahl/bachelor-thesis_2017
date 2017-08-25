@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import CoreLocation
 
-class InformationViewController: UIViewController, CLLocationManagerDelegate {
+class InformationViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewDelegate,UIPickerViewDataSource {
     
     //MARK: - Variables & Outlets
     
@@ -21,6 +21,7 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var bottomStackView: UIStackView!
+    @IBOutlet weak var placePickerView: UIPickerView!
         
     @IBOutlet weak var field1: UITextField!
     @IBOutlet weak var field2: UITextField!
@@ -90,6 +91,8 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
         
         topConstant = stackViewTopConstraint.constant
         
+        placePickerView.isHidden = true
+        
         var tabBar = self.tabBarController as! TabbarController
         if tabBar.actualTree == nil {
             tabBar.actualTree = databaseModel.createTree()
@@ -108,8 +111,14 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
             actualTree1?.info10 = ""
             actualTree1?.info11 = ""
             actualTree1?.crown16 = "Unbedenklich"
+            actualTree1?.crown17 = ""
+            actualTree1?.crown19 = ""
             actualTree1?.crown18 = "Unbedenklich"
             actualTree1?.crown10 = "leicht"
+            actualTree1?.tribe9 = ""
+            actualTree1?.tribe21 = ""
+            actualTree1?.root5 = ""
+            actualTree1?.environment0 = ""
             actualTree1?.environment6 = "Ja"
             
             // LocationManager
@@ -271,6 +280,35 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func takePhoto(_ sender: Any) {
     }
+    
+    //MARK: - PlacePickerView
+    @IBAction func showPlacePickerView(_ sender: Any) {
+        field4.text = ""
+        if placePickerView.isHidden {
+            placePickerView.isHidden = false
+        } else{
+            placePickerView.isHidden = true
+        }
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return databaseModel.places.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return databaseModel.places[row].name
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        field4.text = databaseModel.places[row].name
+        placePickerView.isHidden = true
+    }
+    
+    //MARK: - PrepareForSegue
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "cameraSeg" {

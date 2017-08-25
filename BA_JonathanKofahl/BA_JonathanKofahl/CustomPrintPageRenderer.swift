@@ -5,7 +5,7 @@
 //  This Class use a part of the Code from a Tutorial by Appcoda.
 //  https://github.com/appcoda/Print2PDF
 //
-//
+//  In this class we create a custom UIPrintPageRenderer with the size of a A4 standard Document
 //
 
 import UIKit
@@ -28,7 +28,6 @@ class CustomPrintPageRenderer: UIPrintPageRenderer {
         // Set the horizontal and vertical insets (that's optional).
         // self.setValue(NSValue(CGRect: pageFrame), forKey: "printableRect")
         self.setValue(NSValue(cgRect: pageFrame.insetBy(dx: 10.0, dy: 10.0)), forKey: "printableRect")
-        
         
         self.headerHeight = 0.0
         self.footerHeight = 0.0

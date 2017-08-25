@@ -237,11 +237,11 @@
 				12F688F71EF568D30057C49A /* CameraViewController.swift */,
 				12A911F31F2627A40021F07B /* TableViewController.swift */,
 				12F218101F3DEF0900B2D9E5 /* PDFViewController.swift */,
-				1214220F1F4B4C1400FB055F /* PDFComposer.swift */,
 				121422111F4B4C8700FB055F /* CustomPrintPageRenderer.swift */,
-				12557EB91F4DB85B0083E0FC /* CloudManager.swift */,
+				1214220F1F4B4C1400FB055F /* PDFComposer.swift */,
 				12645EB71F4C58360070C7C2 /* pdf_2.html */,
 				1214220D1F4B4BA100FB055F /* pdf_1.html */,
+				12557EB91F4DB85B0083E0FC /* CloudManager.swift */,
 				12F688AE1EEE8B250057C49A /* inspect ViewControllers */,
 			);
 			name = ViewController;
