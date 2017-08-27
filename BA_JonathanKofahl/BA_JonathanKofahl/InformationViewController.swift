@@ -93,7 +93,7 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate, UI
         
         placePickerView.isHidden = true
         
-        var tabBar = self.tabBarController as! TabbarController
+        let tabBar = self.tabBarController as! TabbarController
         if tabBar.actualTree == nil {
             tabBar.actualTree = databaseModel.createTree()
             actualTree1 = tabBar.actualTree
@@ -102,7 +102,6 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate, UI
             actualTree1?.info1 = ""
             actualTree1?.info2 = ""
             actualTree1?.info3 = ""
-            actualTree1?.info4 = ""
             actualTree1?.info5 = ""
             actualTree1?.info6 = ""
             actualTree1?.info7 = ""
@@ -305,6 +304,7 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate, UI
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         field4.text = databaseModel.places[row].name
+        actualTree1?.info4 = databaseModel.places[row].name
         placePickerView.isHidden = true
     }
     

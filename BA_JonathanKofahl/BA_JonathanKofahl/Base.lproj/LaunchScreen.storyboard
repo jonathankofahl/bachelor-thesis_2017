@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -32,7 +33,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.98203342727664966" green="0.98203342727664966" blue="0.98203342727664966" alpha="0.83912136130136983" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.1014435279" green="0.1014435279" blue="0.1014435279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="z3a-uK-Uat" firstAttribute="centerX" secondItem="AcL-DM-PMz" secondAttribute="centerX" id="Lq1-P6-mBh"/>
                                     <constraint firstItem="z3a-uK-Uat" firstAttribute="centerY" secondItem="AcL-DM-PMz" secondAttribute="centerY" id="QQD-SA-cyx"/>
@@ -49,8 +50,10 @@
                         <color key="backgroundColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="AcL-DM-PMz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="LxK-XB-CXe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AcL-DM-PMz" secondAttribute="trailing" constant="117" id="PFJ-jq-zmm"/>
                             <constraint firstItem="AcL-DM-PMz" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="146" id="X6G-la-Z7f"/>
                             <constraint firstItem="HLh-sx-I3H" firstAttribute="top" secondItem="AcL-DM-PMz" secondAttribute="bottom" constant="69" id="YO7-e6-a47"/>
+                            <constraint firstItem="AcL-DM-PMz" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="117" id="Ya5-1J-VfU"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="HLh-sx-I3H" secondAttribute="bottom" constant="58" id="bZg-f1-DWC"/>
                             <constraint firstItem="HLh-sx-I3H" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ds8-Xd-q4J"/>
                         </constraints>

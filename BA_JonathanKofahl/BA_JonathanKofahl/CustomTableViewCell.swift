@@ -25,7 +25,7 @@ class CustomTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        var test = actualTree1?.value(forKey: tableViewIdentifier + index.description)
+        _ = actualTree1?.value(forKey: tableViewIdentifier + index.description)
         
         if actualTree1?.value(forKey: tableViewIdentifier + index.description) != nil {
             

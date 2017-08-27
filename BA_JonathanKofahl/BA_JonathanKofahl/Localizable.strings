@@ -116,3 +116,20 @@
     "care21" = "Nachschnitt/Behandl. Wurzeln";
     "care22" = "Wurzelvorhang";
     "care23" = "Standortverbesserung";
+
+    "care30" = "Krone";
+    "care31" = "Stammkopf";
+    "care32" = "Stamm";
+    "care33" = "Stammfuß";
+    "care34" = "Wurzel";
+    "care35" = "Baumumfeld";
+
+    "care36" = "Aufgraben/Untersuchung Wurzel";
+    "care37" = "Stammkopf/Starkäste";
+    "care38" = "Baumbeurteilung für U-Aufwand";
+    "care39" = "Bohrwiederstandsmessung";
+    "care40" = "Zugversuche";
+    "care41" = "Analyse Substrat";
+
+
+

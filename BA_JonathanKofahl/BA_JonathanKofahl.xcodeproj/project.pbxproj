@@ -17,6 +17,8 @@
 		124D1A941EFFEEED005CCD1E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 124D1A931EFFEEED005CCD1E /* Localizable.strings */; };
 		12557EBA1F4DB85B0083E0FC /* CloudManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12557EB91F4DB85B0083E0FC /* CloudManager.swift */; };
 		12645EB81F4C58360070C7C2 /* pdf_2.html in Resources */ = {isa = PBXBuildFile; fileRef = 12645EB71F4C58360070C7C2 /* pdf_2.html */; };
+		128428951F51F8CD00807D3B /* firstCareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128428941F51F8CD00807D3B /* firstCareViewController.swift */; };
+		128428971F51F8EC00807D3B /* secondCareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128428961F51F8EC00807D3B /* secondCareViewController.swift */; };
 		1284D5B41F3A5FF300746C60 /* Inspect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1284D5B31F3A5FF300746C60 /* Inspect.storyboard */; };
 		12A911F41F2627A40021F07B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A911F31F2627A40021F07B /* TableViewController.swift */; };
 		12A911F61F2645750021F07B /* firstCrownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A911F51F2645750021F07B /* firstCrownViewController.swift */; };
@@ -81,6 +83,8 @@
 		12557EB81F4DB63C0083E0FC /* BA_JonathanKofahl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BA_JonathanKofahl.entitlements; sourceTree = "<group>"; };
 		12557EB91F4DB85B0083E0FC /* CloudManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudManager.swift; sourceTree = "<group>"; };
 		12645EB71F4C58360070C7C2 /* pdf_2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = pdf_2.html; sourceTree = "<group>"; };
+		128428941F51F8CD00807D3B /* firstCareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = firstCareViewController.swift; sourceTree = "<group>"; };
+		128428961F51F8EC00807D3B /* secondCareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = secondCareViewController.swift; sourceTree = "<group>"; };
 		1284D5B31F3A5FF300746C60 /* Inspect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Inspect.storyboard; path = ../Inspect.storyboard; sourceTree = "<group>"; };
 		12A911F31F2627A40021F07B /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		12A911F51F2645750021F07B /* firstCrownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = firstCrownViewController.swift; sourceTree = "<group>"; };
@@ -261,6 +265,8 @@
 				12F688A41EEE89760057C49A /* RootViewController.swift */,
 				12F688A81EEE8A570057C49A /* EnvironmentViewController.swift */,
 				12F688AA1EEE8ACC0057C49A /* CareViewController.swift */,
+				128428941F51F8CD00807D3B /* firstCareViewController.swift */,
+				128428961F51F8EC00807D3B /* secondCareViewController.swift */,
 				12F688B11EF017CE0057C49A /* SplitContainerViewControllers */,
 			);
 			name = "inspect ViewControllers";
@@ -435,6 +441,7 @@
 				12F218131F409BF100B2D9E5 /* TabbarController.swift in Sources */,
 				12F688A31EEE89640057C49A /* TribeViewController.swift in Sources */,
 				12B501BB1F26262C007381BC /* CustomTableViewCell.swift in Sources */,
+				128428971F51F8EC00807D3B /* secondCareViewController.swift in Sources */,
 				1232D4C61F2F854B005F2B63 /* Tree+CoreDataClass.swift in Sources */,
 				121422101F4B4C1400FB055F /* PDFComposer.swift in Sources */,
 				12A911F61F2645750021F07B /* firstCrownViewController.swift in Sources */,
@@ -451,6 +458,7 @@
 				12F688A71EEE8A0E0057C49A /* TreeDatabaseViewController.swift in Sources */,
 				12F27C281F30B83A00268505 /* Place+CoreDataProperties.swift in Sources */,
 				12F688F81EF568D30057C49A /* CameraViewController.swift in Sources */,
+				128428951F51F8CD00807D3B /* firstCareViewController.swift in Sources */,
 				12F6889D1EEE888B0057C49A /* MenuViewController.swift in Sources */,
 				12F688B01EEE9F490057C49A /* ExtensionCALayer.swift in Sources */,
 				12F27C241F30A27400268505 /* Tree+CoreDataProperties.swift in Sources */,

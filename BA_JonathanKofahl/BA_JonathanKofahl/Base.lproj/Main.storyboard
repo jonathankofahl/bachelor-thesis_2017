@@ -27,9 +27,6 @@
                                 <rect key="frame" x="0.0" y="64" width="834" height="1048"/>
                                 <color key="backgroundColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_0097_2" translatesAutoresizingMaskIntoConstraints="NO" id="l5k-SV-2DS">
-                                <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KhY-ou-EOe">
                                 <rect key="frame" x="136" y="165" width="562" height="641"/>
                                 <color key="backgroundColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -207,19 +204,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Oh-1N-GFg">
-                                <rect key="frame" x="136" y="874" width="562" height="180"/>
-                                <color key="backgroundColor" red="0.96698524746192893" green="0.96698524746192893" blue="0.96698524746192893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="XKJ-J3-Ed9"/>
-                                    <constraint firstAttribute="width" constant="562" id="hpL-Ng-H70"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="BsQ-5w-kFa">
                                 <rect key="frame" x="267" y="874" width="300" height="180"/>
                                 <constraints>
@@ -236,25 +220,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="vdf-4G-qJU" secondAttribute="trailing" id="3q8-R0-llQ"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7Oh-1N-GFg" secondAttribute="bottom" constant="58" id="4Pe-Hd-ars"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="BsQ-5w-kFa" secondAttribute="bottom" constant="58" id="64e-d2-nZW"/>
                             <constraint firstItem="YUT-a0-gOo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="117" id="8Nv-CJ-SWI"/>
                             <constraint firstItem="BsQ-5w-kFa" firstAttribute="top" secondItem="YUT-a0-gOo" secondAttribute="bottom" constant="69" id="ACV-bs-Yxm"/>
-                            <constraint firstItem="7Oh-1N-GFg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="116" id="BzD-Yh-ztO"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vdf-4G-qJU" secondAttribute="bottom" id="ECO-os-Ned"/>
-                            <constraint firstItem="l5k-SV-2DS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Ecy-0P-OJ8"/>
                             <constraint firstItem="YUT-a0-gOo" firstAttribute="centerX" secondItem="KhY-ou-EOe" secondAttribute="centerX" id="MJF-Yx-bI1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BsQ-5w-kFa" secondAttribute="trailing" constant="247" id="MlN-TD-gyT"/>
-                            <constraint firstItem="l5k-SV-2DS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="N0J-zX-jUA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7Oh-1N-GFg" secondAttribute="trailing" constant="116" id="SDY-AW-vc1"/>
                             <constraint firstItem="YUT-a0-gOo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="102" id="URG-JV-ibb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KhY-ou-EOe" secondAttribute="trailing" constant="116" id="Udw-bA-3H9"/>
-                            <constraint firstAttribute="trailing" secondItem="l5k-SV-2DS" secondAttribute="trailing" id="ag3-R5-Lhu"/>
                             <constraint firstItem="vdf-4G-qJU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eUz-Ms-QPm"/>
                             <constraint firstItem="BsQ-5w-kFa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="247" id="ea6-dy-kdX"/>
                             <constraint firstItem="YUT-a0-gOo" firstAttribute="centerY" secondItem="KhY-ou-EOe" secondAttribute="centerY" id="hzd-EO-R07"/>
-                            <constraint firstItem="7Oh-1N-GFg" firstAttribute="top" secondItem="KhY-ou-EOe" secondAttribute="bottom" constant="68" id="ipa-Ye-Pai"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="l5k-SV-2DS" secondAttribute="bottom" id="ngg-Go-tM0"/>
                             <constraint firstItem="KhY-ou-EOe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="116" id="pzJ-nK-Lgt"/>
                             <constraint firstItem="vdf-4G-qJU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="rkX-ud-jhj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YUT-a0-gOo" secondAttribute="trailing" constant="117" id="ucf-fN-3U4"/>
@@ -847,7 +823,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T6f-oP-dRs">
-                                <rect key="frame" x="0.0" y="20" width="834" height="100"/>
+                                <rect key="frame" x="0.0" y="64" width="834" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Farbschema der App anpassen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnW-mf-fCT">
                                         <rect key="frame" x="192" y="48" width="450" height="30"/>
@@ -875,33 +851,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wd-Pt-wWH">
-                                <rect key="frame" x="0.0" y="403" width="834" height="709"/>
+                                <rect key="frame" x="0.0" y="447" width="834" height="665"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Nt-qJ-Cce">
-                                        <rect key="frame" x="67" y="70" width="530" height="110"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="530" id="mAE-VA-jry"/>
-                                            <constraint firstAttribute="height" constant="110" id="yB9-N0-YTY"/>
-                                        </constraints>
-                                        <string key="text">Kontrollierte Bäume werden nach dem Speichern direkt in ihr iCloud Drive als PDF Dokument geladen wenn eine Internetverbindung besteht. Alternativ können die Bäume auch einzeln aus der Baum-Datenbank als PDF-exportiert werden.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cR5-G5-vBu">
-                                        <rect key="frame" x="67" y="280" width="740" height="41"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="740" id="DCV-IY-KeO"/>
-                                            <constraint firstAttribute="height" constant="41" id="lIa-WP-9rP"/>
-                                        </constraints>
-                                        <string key="text">Baum-Datenbank löschen. Dieser Vorgang ist nicht wiederrufbar.
-Hinweis: Bäume können auch einzeln aus der Datenbank gelöscht werden.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBL-Hs-hPz">
-                                        <rect key="frame" x="237" y="383" width="360" height="50"/>
+                                        <rect key="frame" x="237" y="192" width="360" height="50"/>
                                         <color key="backgroundColor" red="1" green="0.3411764706" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="7Sg-7m-ryF"/>
@@ -914,31 +867,33 @@ Hinweis: Bäume können auch einzeln aus der Datenbank gelöscht werden.</string
                                             <action selector="deleteDatabase:" destination="EPs-qj-JhI" eventType="touchUpInside" id="u5U-MP-rdp"/>
                                         </connections>
                                     </button>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X31-rc-uof">
-                                        <rect key="frame" x="693" y="110" width="51" height="31"/>
-                                        <color key="onTintColor" red="0.2274509804" green="0.71372549019999998" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="thumbTintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cR5-G5-vBu">
+                                        <rect key="frame" x="67" y="89" width="740" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="740" id="DCV-IY-KeO"/>
+                                            <constraint firstAttribute="height" constant="41" id="lIa-WP-9rP"/>
+                                        </constraints>
+                                        <string key="text">Baum-Datenbank löschen. Dieser Vorgang ist nicht wiederrufbar.
+Hinweis: Bäume können auch einzeln aus der Datenbank gelöscht werden.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="uBL-Hs-hPz" firstAttribute="leading" secondItem="6wd-Pt-wWH" secondAttribute="leading" constant="237" id="6Ct-w1-33Y"/>
-                                    <constraint firstItem="X31-rc-uof" firstAttribute="leading" secondItem="9Nt-qJ-Cce" secondAttribute="trailing" constant="96" id="6ZS-Un-eSq"/>
                                     <constraint firstAttribute="trailing" secondItem="uBL-Hs-hPz" secondAttribute="trailing" constant="237" id="KOz-nt-tnf"/>
                                     <constraint firstItem="cR5-G5-vBu" firstAttribute="leading" secondItem="6wd-Pt-wWH" secondAttribute="leading" constant="67" id="PZr-5s-BOo"/>
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="uBL-Hs-hPz" secondAttribute="bottom" constant="20" id="W5K-jg-z3H"/>
+                                    <constraint firstItem="cR5-G5-vBu" firstAttribute="top" secondItem="6wd-Pt-wWH" secondAttribute="top" constant="89" id="XBQ-SZ-na1"/>
                                     <constraint firstItem="uBL-Hs-hPz" firstAttribute="centerX" secondItem="6wd-Pt-wWH" secondAttribute="centerX" id="gMD-Lk-2W0"/>
-                                    <constraint firstAttribute="trailing" secondItem="X31-rc-uof" secondAttribute="trailing" constant="92" id="hFh-DY-EsJ"/>
-                                    <constraint firstItem="cR5-G5-vBu" firstAttribute="top" secondItem="9Nt-qJ-Cce" secondAttribute="bottom" constant="100" id="iHF-3J-WtX"/>
-                                    <constraint firstItem="X31-rc-uof" firstAttribute="top" secondItem="6wd-Pt-wWH" secondAttribute="top" constant="110" id="jDw-pj-Rhn"/>
-                                    <constraint firstItem="9Nt-qJ-Cce" firstAttribute="top" secondItem="6wd-Pt-wWH" secondAttribute="top" constant="70" id="lrh-IN-SIA"/>
                                     <constraint firstAttribute="trailing" secondItem="cR5-G5-vBu" secondAttribute="trailing" constant="27" id="nan-g1-xdW"/>
                                     <constraint firstItem="uBL-Hs-hPz" firstAttribute="top" secondItem="cR5-G5-vBu" secondAttribute="bottom" constant="62" id="ptg-zw-mfu"/>
-                                    <constraint firstItem="9Nt-qJ-Cce" firstAttribute="leading" secondItem="6wd-Pt-wWH" secondAttribute="leading" constant="67" id="uAa-nR-3Wc"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9n-JK-gRx">
-                                <rect key="frame" x="0.0" y="303" width="834" height="100"/>
+                                <rect key="frame" x="0.0" y="347" width="834" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weitere Einstellungen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Lu-wi-3GS">
                                         <rect key="frame" x="192" y="48" width="450" height="30"/>
@@ -966,7 +921,7 @@ Hinweis: Bäume können auch einzeln aus der Datenbank gelöscht werden.</string
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iLf-Bw-U7v">
-                                <rect key="frame" x="0.0" y="120" width="834" height="183"/>
+                                <rect key="frame" x="0.0" y="164" width="834" height="183"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Sok-uQ-JDP">
                                         <rect key="frame" x="17" y="0.0" width="800" height="100"/>
@@ -1173,6 +1128,7 @@ Hinweis: Bäume können auch einzeln aus der Datenbank gelöscht werden.</string
                             <constraint firstItem="iLf-Bw-U7v" firstAttribute="leading" secondItem="I8G-vt-OiK" secondAttribute="leadingMargin" constant="-20" id="Exs-7d-mzX"/>
                             <constraint firstItem="6wd-Pt-wWH" firstAttribute="top" secondItem="X9n-JK-gRx" secondAttribute="bottom" id="FPS-Og-4d4"/>
                             <constraint firstAttribute="trailing" secondItem="T6f-oP-dRs" secondAttribute="trailing" id="JQT-pv-l9N"/>
+                            <constraint firstItem="cR5-G5-vBu" firstAttribute="leading" secondItem="7fP-g8-0wI" secondAttribute="leading" id="NuW-Rs-cHC"/>
                             <constraint firstItem="6wd-Pt-wWH" firstAttribute="trailing" secondItem="I8G-vt-OiK" secondAttribute="trailingMargin" constant="20" id="PnU-Yr-fbN"/>
                             <constraint firstItem="Ir7-IV-YXu" firstAttribute="top" secondItem="6wd-Pt-wWH" secondAttribute="bottom" id="TZO-ou-sq2"/>
                             <constraint firstItem="6wd-Pt-wWH" firstAttribute="leading" secondItem="I8G-vt-OiK" secondAttribute="leadingMargin" constant="-20" id="W6k-6C-Ecn"/>
@@ -1185,6 +1141,7 @@ Hinweis: Bäume können auch einzeln aus der Datenbank gelöscht werden.</string
                             <constraint firstItem="iLf-Bw-U7v" firstAttribute="trailing" secondItem="I8G-vt-OiK" secondAttribute="trailingMargin" constant="20" id="xqt-kK-acg"/>
                         </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <connections>
                         <outlet property="colorOption1" destination="EvN-hc-qZ2" id="498-TP-Ea7"/>
                         <outlet property="colorOption2" destination="Ssb-ug-vxR" id="P7E-fO-SJl"/>
@@ -1205,7 +1162,7 @@ Hinweis: Bäume können auch einzeln aus der Datenbank gelöscht werden.</string
                 <navigationController storyboardIdentifier="menuNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="h8E-O0-aOY" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="Pfh-do-gjD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="Pfh-do-gjD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1225,7 +1182,6 @@ Hinweis: Bäume können auch einzeln aus der Datenbank gelöscht werden.</string
         </scene>
     </scenes>
     <resources>
-        <image name="IMG_0097_2" width="1668" height="2224"/>
         <image name="logo" width="2513" height="1113"/>
     </resources>
 </document>

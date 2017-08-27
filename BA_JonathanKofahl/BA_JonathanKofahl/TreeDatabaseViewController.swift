@@ -174,7 +174,7 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             }
             
             var x = 0
-            for (index,tree) in databaseModel.trees.enumerated() {
+            for (_,tree) in databaseModel.trees.enumerated() {
                 // print(tree.place?.name)
                 // print(databaseModel.places[placeIndex].name)
                 
@@ -285,7 +285,16 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
                 //self.tableTrees?.remove(at: indexPath.row)
                 databaseModel.deleteTree(objID:self.tableTrees![indexPath.row].objectID)
                 databaseModel.save()
-                self.tableViewTrees.reloadData()
+               // self.tableViewPlaces.reloadData()
+                var path = IndexPath(row:self.placeIndex, section: 0)
+                
+                var test = self.placeIndex
+                print(self.placeIndex)
+                
+                
+                
+                self.tableView(self.tableViewPlaces, didSelectRowAt: path)
+               // self.tableViewTrees.reloadData()
 
                 print("Tree delete")
             })
@@ -341,9 +350,13 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
     
     func deleteTree() -> Void {
         databaseModel.deleteTree(objID: (selectedTree?.objectID)!)
-        self.tableViewTrees.reloadData()
         databaseModel.save()
         self.closeDetailView(self)
+        self.tableViewPlaces.reloadData()
+        var path = IndexPath(index:placeIndex)
+        path.row = placeIndex
+        self.tableView(tableViewPlaces, didSelectRowAt: path)
+       // self.tableViewTrees.reloadData()
         print("Tree delete")
     }
     

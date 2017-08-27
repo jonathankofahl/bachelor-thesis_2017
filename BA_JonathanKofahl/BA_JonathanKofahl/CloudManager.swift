@@ -45,7 +45,7 @@ class CloudManager{
         if isCloudEnabled() {
            // deleteFilesInDirectory(url: DocumentsDirectory.iCloudDocumentsURL!) // Clear destination
             let fileManager = FileManager.default
-            let enumerator = fileManager.enumerator(atPath: DocumentsDirectory.localDocumentsURL!.path!)
+            //let enumerator = fileManager.enumerator(atPath: DocumentsDirectory.localDocumentsURL!.path!)
             let file = "Baum\(number).pdf"
                do {
                 try fileManager.setUbiquitous(true,itemAt: DocumentsDirectory.localDocumentsURL!.appendingPathComponent(file)!,destinationURL: DocumentsDirectory.iCloudDocumentsURL!.appendingPathComponent(file)!)
@@ -61,7 +61,7 @@ class CloudManager{
             return DocumentsDirectory.localDocumentsURL!.appendingPathComponent(file)!
         }
         
-        var url = URL(fileURLWithPath: "")
+        let url = URL(fileURLWithPath: "")
         return url
 
     }

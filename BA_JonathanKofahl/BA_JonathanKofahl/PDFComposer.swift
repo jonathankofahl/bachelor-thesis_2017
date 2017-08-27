@@ -48,7 +48,7 @@ class PDFComposer: NSObject {
             HTMLContent = HTMLContent.replacingOccurrences(of: "#IMAGE", with: imageURL.relativePath )
             }
             
-            var test = tree
+            _ = tree
     
             // Replacing all placeholders in the pdf_1.html file with the Data from the selected tree if there are Values in the tree
             HTMLContent = HTMLContent.replacingOccurrences(of: "info0#", with: (tree?.info0)!)
@@ -212,57 +212,57 @@ class PDFComposer: NSObject {
 
             
             //MARK: Care (Weiteres Vorgehen)
-            if(false){//if( tree?.care29 == "Ja" ) {
+            if( tree?.care29 == "Ja" ) {
                 HTMLContent = HTMLContent.replacingOccurrences(of: "care29#", with: "☒") } else {
                 HTMLContent = HTMLContent.replacingOccurrences(of: "care29#", with: "☐")}
-            if(false){//if( tree?.care30 == "Ja" ) {
+            if( tree?.care30 == "Ja" ) {
                 HTMLContent = HTMLContent.replacingOccurrences(of: "care30#", with: "☒") } else {
                 HTMLContent = HTMLContent.replacingOccurrences(of: "care30#", with: "☐")}
-            if(false){//if( tree?.care31 == "Ja" ) {
+            if( tree?.care31 == "Ja" ) {
                 HTMLContent = HTMLContent.replacingOccurrences(of: "care31#", with: "☒") } else {
                 HTMLContent = HTMLContent.replacingOccurrences(of: "care31#", with: "☐")}
-            if(false){//if( tree?.care32 == "Ja" ) {
+            if( tree?.care32 == "Ja" ) {
                 HTMLContent = HTMLContent.replacingOccurrences(of: "care32#", with: "☒") } else {
                 HTMLContent = HTMLContent.replacingOccurrences(of: "care32#", with: "☐")}
-            if(false){//if( tree?.care33 == "Ja" ) {
+            if( tree?.care33 == "Ja" ) {
                 HTMLContent = HTMLContent.replacingOccurrences(of: "care33#", with: "☒") } else {
                 HTMLContent = HTMLContent.replacingOccurrences(of: "care33#", with: "☐")}
-            if(false){//if( tree?.care34 == "Ja" ) {
+            if( tree?.care34 == "Ja" ) {
                 HTMLContent = HTMLContent.replacingOccurrences(of: "care34#", with: "☒") } else {
                 HTMLContent = HTMLContent.replacingOccurrences(of: "care34#", with: "☐")}
-            if(false){//if( tree?.care35 == "Ja" ) {
+            if( tree?.care35 == "Ja" ) {
                 HTMLContent = HTMLContent.replacingOccurrences(of: "care35#", with: "☒") } else {
                 HTMLContent = HTMLContent.replacingOccurrences(of: "care35#", with: "☐")}
-            if(false){//if( tree?.care36 == "Ja" ) {
+            if( tree?.care36 == "Ja" ) {
                 HTMLContent = HTMLContent.replacingOccurrences(of: "care36#", with: "☒") } else {
                 HTMLContent = HTMLContent.replacingOccurrences(of: "care36#", with: "☐")}
-            if(false){//if( tree?.care37 == "Ja" ) {
+            if( tree?.care37 == "Ja" ) {
                 HTMLContent = HTMLContent.replacingOccurrences(of: "care37#", with: "☒") } else {
                 HTMLContent = HTMLContent.replacingOccurrences(of: "care37#", with: "☐")}
-            if(false){//if( tree?.care38 == "Ja" ) {
+            if( tree?.care38 == "Ja" ) {
                 HTMLContent = HTMLContent.replacingOccurrences(of: "care38#", with: "☒") } else {
                 HTMLContent = HTMLContent.replacingOccurrences(of: "care38#", with: "☐")}
             
-            if(false){//if tree?.care39 == "Seilklettertechnik" {
-                HTMLContent = replaceFirstOfSeven(parameterName: "care39", HTMLContent: HTMLContent)
-            } else if(false){//if tree?.care39 == "Hubarbeitsbühne" {
-                HTMLContent = replaceSecondOfSeven(parameterName: "care39", HTMLContent: HTMLContent)
-            } else if(false){//else if tree?.care39 == "Hubarbeitsbühne" {
-                HTMLContent = replaceSecondOfSeven(parameterName: "care39", HTMLContent: HTMLContent)
+            if tree?.care42 == "Schalluntersuchung (0-2m)" {
+                HTMLContent = replaceFirstOfSeven(parameterName: "care42", HTMLContent: HTMLContent) }
+            else if tree?.care42 == "Schalluntersuchung (2-4m)" {
+                HTMLContent = replaceSecondOfSeven(parameterName: "care42", HTMLContent: HTMLContent)
+            }else if tree?.care42 == "Schalluntersuchung (>4m)" {
+                HTMLContent = replaceSecondOfSeven(parameterName: "care42", HTMLContent: HTMLContent)
             }
             else {
-                HTMLContent = replaceEmptyOfSeven(parameterName: "care39", HTMLContent: HTMLContent)
+                HTMLContent = replaceEmptyOfSeven(parameterName: "care42", HTMLContent: HTMLContent)
             }
             
-            if(false){//if( tree?.care40 == "Ja" ) {
+            if( tree?.care39 == "Ja" ) {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care39#", with: "☒") } else {
+                HTMLContent = HTMLContent.replacingOccurrences(of: "care39#", with: "☐")}
+            if( tree?.care40 == "Ja" ) {
                 HTMLContent = HTMLContent.replacingOccurrences(of: "care40#", with: "☒") } else {
                 HTMLContent = HTMLContent.replacingOccurrences(of: "care40#", with: "☐")}
-            if(false){//if( tree?.care41 == "Ja" ) {
+            if( tree?.care41 == "Ja" ) {
                 HTMLContent = HTMLContent.replacingOccurrences(of: "care41#", with: "☒") } else {
                 HTMLContent = HTMLContent.replacingOccurrences(of: "care41#", with: "☐")}
-            if(false){//if( tree?.care42 == "Ja" ) {
-                HTMLContent = HTMLContent.replacingOccurrences(of: "care42#", with: "☒") } else {
-                HTMLContent = HTMLContent.replacingOccurrences(of: "care42#", with: "☐")}
 
             
             return HTMLContent
@@ -576,7 +576,7 @@ class PDFComposer: NSObject {
     
     //MARK: - Save the PDF File in a local directory (not iCloud)
     func exportHTMLContentToPDF(HTMLContent: String) {
-        var printPageRenderer = CustomPrintPageRenderer()
+        let printPageRenderer = CustomPrintPageRenderer()
         
         let printFormatter = UIMarkupTextPrintFormatter(markupText: HTMLContent)
         printPageRenderer.addPrintFormatter(printFormatter, startingAtPageAt: 0)

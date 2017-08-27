@@ -8,23 +8,15 @@
 
 import UIKit
 
-class CareViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CareViewController: UIViewController {
     
     //MARK: - Variables & Outlets
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var tableView1: UITableView!
+    var containerView: ContainerViewController!
     @IBOutlet weak var topView: UIView!
-    @IBOutlet weak var firstStackView: UIStackView!
-    @IBOutlet weak var secondStackView: UIStackView!
-    @IBOutlet weak var thirdStackView: UIStackView!
     @IBOutlet weak var tabbarItem: UITabBarItem!
+    @IBOutlet weak var stackView: UIStackView!
 
     var defaults = UserDefaults.standard
-    
-    
-    // Seperated Arrays for the two Tables
-    var tableCriteria : [String]?
-    var tableCriteria1 : [String]?
     
     //MARK: - Methods
     
@@ -44,48 +36,62 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        self.containerView.initialize()
+
         //MARK: - Color load from UserDefaults
         if defaults.value(forKey: "appColor") != nil {
             let color = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
             topView.backgroundColor = color
         }
         
-        tableCriteria = []
-        tableCriteria1 = []
         
-        //MARK: - TableView init -> load strings from Localization.strings file
-        for index in 1...13 {
-            let ressourceName = "care" + index.description
-            tableCriteria?.append( NSLocalizedString(ressourceName, comment: "") )
-        }
-        for index in 14...23 {
-            let ressourceName = "care" + index.description
-            tableCriteria1?.append( NSLocalizedString(ressourceName, comment: "") )
-        }
-        //MARK: Load values if tree is not new
-        if actualTree1?.isNew == false {
-            for button in firstStackView.subviews as! [UIButton] {
-                button.backgroundColor = UIColor.clear
-                if actualTree1?.care0 == button.titleLabel?.text {
-                    button.backgroundColor = UIColor.customColors.customGreen
-                }
-            }
-            for button in secondStackView.subviews as! [UIButton] {
-                button.backgroundColor = UIColor.clear
-                if actualTree1?.care14 == button.titleLabel?.text {
-                    button.backgroundColor = UIColor.customColors.customGreen
-                }            }
-            for button in thirdStackView.subviews as! [UIButton] {
-                button.backgroundColor = UIColor.clear
-                if actualTree1?.care28 == button.titleLabel?.text {
-                    button.backgroundColor = UIColor.customColors.customGreen
-                }
-            }
-            
-        }
         
+        //MARK: - Color load from UserDefaults
+        if defaults.value(forKey: "appColor") != nil {
+            let color = UIColor.color(withData: (defaults.value(forKey: "appColor") as! Data))
+            topView.backgroundColor = color
+            stackView.subviews[0].backgroundColor = UIColor.customColors.backgroundColor
+            stackView.subviews[1].backgroundColor = color
+        }
+
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "embedContainer" {
+            self.containerView = segue.destination as! ContainerViewController
+        }
+    }
+    
+    var option = 0
+    
+    @IBAction func swapButton2Pressed(_ sender: Any) {
+        if option == 0 {
+            option = 1
+            self.containerView.currentSegueIdentifier = "embedSecond"
+            self.containerView.swapViewControllers()
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                self.option = 2
+            })
+            stackView.subviews[0].backgroundColor = self.stackView.subviews[1].backgroundColor
+            self.stackView.subviews[1].backgroundColor = UIColor.customColors.backgroundColor
+            
+        }
+    }
+    
+    @IBAction func swapButtonPressed(_ sender: Any) {
+        if option == 2 {
+            option = 3
+            self.containerView.currentSegueIdentifier = "embedFirst"
+            self.containerView.swapViewControllers()
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                self.option = 0
+            })
+            stackView.subviews[1].backgroundColor = self.stackView.subviews[0].backgroundColor
+            self.stackView.subviews[0].backgroundColor = UIColor.customColors.backgroundColor
+        }
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -97,42 +103,6 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
         infoController.alertFunc(sender: sender, parentController: self)
     }
     
-    // MARK: - TableView Configuration
-    // MARK: - Table view data source
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        
-        if tableView == self.tableView {
-            return tableCriteria!.count
-        } else {
-            return tableCriteria1!.count
-        }
-        
-    }
-    
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
-        
-        if tableView == self.tableView {
-            cell.criteria.text = tableCriteria?[indexPath.row]
-            cell.tableViewIdentifier = "care"
-            cell.index = indexPath.row + 1
-        } else {
-            cell.criteria.text = tableCriteria1?[indexPath.row]
-            cell.tableViewIdentifier = "care"
-            cell.index = indexPath.row + 15
-        }
-        
-        return cell
-    }
     
     //MARK - Save the Tree to the Database and close the Inspections Controllers (Tabbar)
     
@@ -180,16 +150,6 @@ class CareViewController: UIViewController, UITableViewDelegate, UITableViewData
             present(home, animated: true, completion: nil)
         }
         
-    }
-    
-    @IBAction func buttonClicked(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.3){
-            for item in (sender.superview?.subviews)! {
-                item.backgroundColor = UIColor.clear
-            }
-            sender.backgroundColor = UIColor.customColors.customGreen
-        }
-        actualTree1?.setValue(sender.titleLabel?.text, forKey: "care"+sender.tag.description)
     }
     
     // Source: http://nshipster.com/uialertcontroller/
