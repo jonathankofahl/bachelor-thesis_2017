@@ -37,28 +37,28 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate, 
         // Dispose of any resources that can be recreated.
     }
     
-    var testHTML : String?
+    //var testHTML : String?
     
     
      func createInputAsHTML() {
      pdfComposer = PDFComposer()
      pdfComposer.tree = self.tree
         
-     if let treeHTML = pdfComposer.renderPage1() {
+     if (pdfComposer.renderPage1()) != nil {
      
      webView.loadHTMLString((pdfComposer.renderPage1()+pdfComposer.renderPage2()), baseURL: NSURL(string: pdfComposer.pathToHTMLTemplate!)! as URL)
+        
      HTMLContent = (pdfComposer.renderPage1()+pdfComposer.renderPage2())
+        
      pdfComposer.exportHTMLContentToPDF(HTMLContent: HTMLContent)
-     testHTML = (pdfComposer.renderPage1()+pdfComposer.renderPage2())
+        
+    // testHTML = (pdfComposer.renderPage1()+pdfComposer.renderPage2())
      }
      }
    
     @IBAction func iCloudDriveAction(_ sender: Any) {
-        let cloudManager = CloudManager()
         var url : URL? = nil
-        if tree?.info6! != nil {
-            url = cloudManager.moveFileToCloud(number: (tree?.info6!)!)
-        }
+        url = NSURL.init(string: "file://\(AppDelegate.getAppDelegate().getDocDir())/Baum\((tree?.info6)!).pdf") as! URL
         let documentPicker = UIDocumentPickerViewController(url: url!, in: UIDocumentPickerMode.exportToService)
         documentPicker.delegate = self
         documentPicker.modalPresentationStyle = UIModalPresentationStyle.formSheet
@@ -82,8 +82,6 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate, 
             present(mailComposeViewController, animated: true, completion: nil)
         }
     }
-    
-   
     
     // help delegate func to dismiss the MailView
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {

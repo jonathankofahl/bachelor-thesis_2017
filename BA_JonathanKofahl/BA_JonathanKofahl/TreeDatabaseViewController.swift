@@ -177,11 +177,15 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             for (_,tree) in databaseModel.trees.enumerated() {
                 // print(tree.place?.name)
                 // print(databaseModel.places[placeIndex].name)
-                
-                if tree.place == databaseModel.places[placeIndex] {
+                print("tree.place:")
+                print(tree.info4)
+                print("datamodel.places:" + databaseModel.places[placeIndex].name!)
+                print("found tree")
+
+                if tree.info4 == databaseModel.places[placeIndex].name {
                     x += 1
                     tableTrees?.append(tree)
-                    // print("found tree")
+                    
                     
                     //print(tableTrees)
                 }

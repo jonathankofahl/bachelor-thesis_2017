@@ -130,6 +130,7 @@ class CareViewController: UIViewController {
             if !placeUsedBefore {
                 databaseModel.createPlace(name: (actualTree1?.info4)!)/*?.components(separatedBy: " ")[0].capitalized)!)*/
                 placeIndex = databaseModel.places.count-1
+                print("PlaceIndex:" + placeIndex.description)
                 databaseModel.save()
             }
             

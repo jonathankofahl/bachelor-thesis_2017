@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+/*
 class CloudManager{
     
     //MARK: - Variables and Structs
@@ -43,20 +43,19 @@ class CloudManager{
     
     func moveFileToCloud(number: String) -> URL {
         if isCloudEnabled() {
-           // deleteFilesInDirectory(url: DocumentsDirectory.iCloudDocumentsURL!) // Clear destination
             let fileManager = FileManager.default
-            //let enumerator = fileManager.enumerator(atPath: DocumentsDirectory.localDocumentsURL!.path!)
+            let enumerator = fileManager.enumerator(atPath: DocumentsDirectory.localDocumentsURL!.path!)
             let file = "Baum\(number).pdf"
                do {
                 try fileManager.setUbiquitous(true,itemAt: DocumentsDirectory.localDocumentsURL!.appendingPathComponent(file)!,destinationURL: DocumentsDirectory.iCloudDocumentsURL!.appendingPathComponent(file)!)
                 print(DocumentsDirectory.iCloudDocumentsURL!)
                 print("Moved to iCloud")
-                localLocation = DocumentsDirectory.localDocumentsURL!.appendingPathComponent(file)!
+               // localLocation = DocumentsDirectory.localDocumentsURL!.appendingPathComponent(file)!
                 
                 
                 } catch let error as NSError {
                 print(DocumentsDirectory.iCloudDocumentsURL!)
-                print("fehler")
+                print(error.description)
             }
             return DocumentsDirectory.localDocumentsURL!.appendingPathComponent(file)!
         }
@@ -67,3 +66,4 @@ class CloudManager{
     }
     
 }
+ */

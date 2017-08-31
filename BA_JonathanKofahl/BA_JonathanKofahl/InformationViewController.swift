@@ -41,6 +41,8 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate, UI
     var actualPlace : String!
     var topConstant : CGFloat!
     
+    var motherTabController = UITabBarController()
+
     @IBOutlet weak var tabbarItem: UITabBarItem!
     
     /** The Location Manager
@@ -88,6 +90,8 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        motherTabController = self.tabBarController!
         
         topConstant = stackViewTopConstraint.constant
         
@@ -305,6 +309,9 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate, UI
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         field4.text = databaseModel.places[row].name
         actualTree1?.info4 = databaseModel.places[row].name
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        print(actualTree1?.info4)
+
         placePickerView.isHidden = true
     }
     
@@ -390,6 +397,7 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate, UI
     //MARK: - Save Entries do database tree Object
     @IBAction func endEditing(_ sender: UITextField) {
         actualTree1?.setValue(sender.text, forKey: "info"+sender.tag.description)
+        print("!!!" + (actualTree1?.info4)!)
         print("saved!!!")
         
     }

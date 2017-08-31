@@ -1343,7 +1343,7 @@ abbrechen</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6i-mD-tlY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2401.4388489208636" y="40.467625899280577"/>
+            <point key="canvasLocation" x="2694" y="1941"/>
         </scene>
         <!--TribeViewController-->
         <scene sceneID="uW0-QH-M7A">
@@ -2450,7 +2450,7 @@ abschließen</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l3k-qF-FXQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2186.3309352517986" y="1385.341726618705"/>
+            <point key="canvasLocation" x="3085" y="2571"/>
         </scene>
         <!--Second Crown View Controller-->
         <scene sceneID="gVd-ul-9YJ">
@@ -2962,7 +2962,7 @@ abschließen</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s5g-Fq-2w2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2887.7697841726622" y="1330.8453237410072"/>
+            <point key="canvasLocation" x="3835" y="2571"/>
         </scene>
         <!--First Tribe View Controller-->
         <scene sceneID="mFd-Pg-8GS">
@@ -3446,7 +3446,7 @@ Plombe,gefräste Wunden,Entwässerung/Drainage o.ä.)														</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eIc-T1-Wxj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2401" y="692"/>
+            <point key="canvasLocation" x="3458" y="1941"/>
         </scene>
         <!--Container View Controller-->
         <scene sceneID="Pcq-NC-MFj">
