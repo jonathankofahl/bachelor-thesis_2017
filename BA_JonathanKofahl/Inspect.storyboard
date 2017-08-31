@@ -630,12 +630,10 @@ abbrechen</string>
                                     <constraint firstAttribute="height" constant="410" id="Yuf-ed-zLt"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
                                         <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hX9-JL-KDq">
@@ -653,12 +651,10 @@ abbrechen</string>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
                                         <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="resetConstraint:" destination="CfQ-bn-AtS" eventType="touchUpInside" id="5Nn-OW-XY2"/>
@@ -1552,7 +1548,7 @@ abbrechen</string>
                                                 <rect key="frame" x="0.0" y="28" width="834" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JKr-Pn-A79" id="GvK-JF-rxj">
-                                                    <rect key="frame" x="0.0" y="0.0" width="834" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="834" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zRT-k1-dbC">
@@ -1654,7 +1650,7 @@ abbrechen</string>
                                                 <rect key="frame" x="0.0" y="28" width="834" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="APV-ZI-VQp" id="ue2-aw-Kyv">
-                                                    <rect key="frame" x="0.0" y="0.0" width="834" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="834" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9cZ-uT-FO2">
@@ -1810,7 +1806,7 @@ abbrechen</string>
                                                 <rect key="frame" x="0.0" y="28" width="834" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZvB-CL-toN" id="bYJ-Au-br8">
-                                                    <rect key="frame" x="0.0" y="0.0" width="834" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="834" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="m4F-tw-deL">
@@ -2253,7 +2249,7 @@ abschließen</string>
                                         <rect key="frame" x="0.0" y="28" width="834" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IBG-Dg-kNa" id="hcu-rG-byf">
-                                            <rect key="frame" x="0.0" y="0.0" width="834" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="834" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kriterium" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1u-dG-XOE">
@@ -2475,7 +2471,7 @@ abschließen</string>
                                         <rect key="frame" x="0.0" y="28" width="834" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G7l-po-746" id="2wp-Qg-C4s">
-                                            <rect key="frame" x="0.0" y="0.0" width="834" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="834" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kriterium" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uj0-XB-OVg">
@@ -2988,7 +2984,7 @@ abschließen</string>
                                         <rect key="frame" x="0.0" y="28" width="834" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EMD-dF-G4S" id="NZg-iW-r4h">
-                                            <rect key="frame" x="0.0" y="0.0" width="834" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="834" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hIX-Jm-Rsd">
@@ -3086,7 +3082,7 @@ Plombe,gefräste Wunden,Entwässerung/Drainage o.ä.)														</string>
                                         <rect key="frame" x="0.0" y="28" width="834" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uhJ-ax-Nry" id="CkT-Qy-abT">
-                                            <rect key="frame" x="0.0" y="0.0" width="834" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="834" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZfB-mF-hFK">
@@ -3228,7 +3224,7 @@ Plombe,gefräste Wunden,Entwässerung/Drainage o.ä.)														</string>
                                         <rect key="frame" x="0.0" y="28" width="834" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ah5-pb-bSe" id="233-uc-8i6">
-                                            <rect key="frame" x="0.0" y="0.0" width="834" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="834" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pOn-bD-hKk">
@@ -3305,7 +3301,7 @@ Plombe,gefräste Wunden,Entwässerung/Drainage o.ä.)														</string>
                                         <rect key="frame" x="0.0" y="28" width="834" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xFr-GD-OUd" id="bxJ-Vk-i95">
-                                            <rect key="frame" x="0.0" y="0.0" width="834" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="834" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="yBm-RG-3oq">
@@ -3511,7 +3507,7 @@ Plombe,gefräste Wunden,Entwässerung/Drainage o.ä.)														</string>
                                                 <rect key="frame" x="0.0" y="28" width="834" height="35"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KtV-zl-toD" id="VMA-ed-ewM">
-                                                    <rect key="frame" x="0.0" y="0.0" width="834" height="34.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="834" height="35"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="I55-9c-LM2">
@@ -3691,7 +3687,7 @@ Plombe,gefräste Wunden,Entwässerung/Drainage o.ä.)														</string>
                                                 <rect key="frame" x="0.0" y="28" width="834" height="35"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rZL-DI-xO5" id="MT1-gJ-Ayg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="834" height="34.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="834" height="34"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="r1d-0N-dvG">
@@ -3870,7 +3866,7 @@ Plombe,gefräste Wunden,Entwässerung/Drainage o.ä.)														</string>
                                         <rect key="frame" x="0.0" y="28" width="834" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pfe-oT-F9K" id="ea4-zR-alx">
-                                            <rect key="frame" x="0.0" y="0.0" width="834" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="834" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4VA-L2-Avd">
@@ -3947,7 +3943,7 @@ Plombe,gefräste Wunden,Entwässerung/Drainage o.ä.)														</string>
                                         <rect key="frame" x="0.0" y="28" width="834" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P5Y-wa-Wt5" id="Pgz-0Q-eKb">
-                                            <rect key="frame" x="0.0" y="0.0" width="834" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="834" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rpM-1l-lzX">
