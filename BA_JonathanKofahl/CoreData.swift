@@ -1,4 +1,4 @@
-// Source: Ralf Ebert
+// Source of this class: Ralf Ebert, iOS:  iOS 10-Apps Entwicklen mit Swift & Xcode 8: Tutorial CoreData
 
 import Foundation
 import CoreData

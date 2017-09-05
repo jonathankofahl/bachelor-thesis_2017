@@ -207,9 +207,6 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             cell.placeLabel.text = databaseModel.places[indexPath.row].name?.description
         } else {
             if (Double((tableTrees?[indexPath.row].xLocation)!) != 0.0) {
-                print(tableTrees?[indexPath.row].xLocation)
-                print(tableTrees?[indexPath.row].yLocation)
-                
                 let eventLocation = CLLocationCoordinate2DMake((tableTrees?[indexPath.row].xLocation)!, (tableTrees?[indexPath.row].yLocation)!)
                 // Drop a pin
                 let dropPin = MKPointAnnotation()
@@ -353,15 +350,17 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func deleteTree() -> Void {
-        databaseModel.deleteTree(objID: (selectedTree?.objectID)!)
-        databaseModel.save()
         self.closeDetailView(self)
-        self.tableViewPlaces.reloadData()
-        var path = IndexPath(index:placeIndex)
-        path.row = placeIndex
-        self.tableView(tableViewPlaces, didSelectRowAt: path)
-       // self.tableViewTrees.reloadData()
-        print("Tree delete")
+        
+        // self.tableViewPlaces.reloadData()
+        var path = IndexPath(row:self.placeIndex, section: 0)
+        var test = self.placeIndex
+        databaseModel.deleteTree(objID:self.tableTrees![path.row].objectID)
+        databaseModel.save()
+        print(self.placeIndex)
+        self.tableView(self.tableViewPlaces, didSelectRowAt: path)
+
+        
     }
     
     @IBAction func deleteAction(_ sender: Any) {

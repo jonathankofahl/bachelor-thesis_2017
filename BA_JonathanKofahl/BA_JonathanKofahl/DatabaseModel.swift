@@ -4,7 +4,7 @@
 //
 //  Created by Jonathan Kofahl on 01.08.17.
 //
-// Based on Ralf Eberts Tutorial on Core Data -> iOS Book
+// This class is based on Ralf Eberts Core Data Tutorial on Core Data -> iOS Book
 //
 
 import UIKit
