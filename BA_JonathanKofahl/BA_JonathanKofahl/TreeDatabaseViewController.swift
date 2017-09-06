@@ -238,7 +238,6 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if tableView == self.tableViewPlaces {
-            //detailView.isHidden = true
             self.closeDetailView(self)
             tableTrees = []
             placeSelected = true

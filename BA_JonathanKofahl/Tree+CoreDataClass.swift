@@ -14,5 +14,4 @@ public class Tree: NSManagedObject {
     
     static let entityName = "Tree"
     
-    
 }

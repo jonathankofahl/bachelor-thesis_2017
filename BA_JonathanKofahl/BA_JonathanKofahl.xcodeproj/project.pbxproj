@@ -19,7 +19,6 @@
 		128428951F51F8CD00807D3B /* firstCareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128428941F51F8CD00807D3B /* firstCareViewController.swift */; };
 		128428971F51F8EC00807D3B /* secondCareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128428961F51F8EC00807D3B /* secondCareViewController.swift */; };
 		1284D5B41F3A5FF300746C60 /* Inspect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1284D5B31F3A5FF300746C60 /* Inspect.storyboard */; };
-		12A911F41F2627A40021F07B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A911F31F2627A40021F07B /* TableViewController.swift */; };
 		12A911F61F2645750021F07B /* firstCrownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A911F51F2645750021F07B /* firstCrownViewController.swift */; };
 		12B4E86A1F2789610087249F /* secondCrownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4E8691F2789610087249F /* secondCrownViewController.swift */; };
 		12B501BB1F26262C007381BC /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B501BA1F26262C007381BC /* CustomTableViewCell.swift */; };
@@ -84,7 +83,6 @@
 		128428941F51F8CD00807D3B /* firstCareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = firstCareViewController.swift; sourceTree = "<group>"; };
 		128428961F51F8EC00807D3B /* secondCareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = secondCareViewController.swift; sourceTree = "<group>"; };
 		1284D5B31F3A5FF300746C60 /* Inspect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Inspect.storyboard; path = ../Inspect.storyboard; sourceTree = "<group>"; };
-		12A911F31F2627A40021F07B /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		12A911F51F2645750021F07B /* firstCrownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = firstCrownViewController.swift; sourceTree = "<group>"; };
 		12B4E8691F2789610087249F /* secondCrownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = secondCrownViewController.swift; sourceTree = "<group>"; };
 		12B501BA1F26262C007381BC /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -237,7 +235,6 @@
 				12F6889E1EEE88BD0057C49A /* SettingsViewController.swift */,
 				12F688A61EEE8A0E0057C49A /* TreeDatabaseViewController.swift */,
 				12F688F71EF568D30057C49A /* CameraViewController.swift */,
-				12A911F31F2627A40021F07B /* TableViewController.swift */,
 				12F218101F3DEF0900B2D9E5 /* PDFViewController.swift */,
 				121422111F4B4C8700FB055F /* CustomPrintPageRenderer.swift */,
 				1214220F1F4B4C1400FB055F /* PDFComposer.swift */,
@@ -428,7 +425,6 @@
 				12F688A91EEE8A570057C49A /* EnvironmentViewController.swift in Sources */,
 				124264BE1F31049200CDE7EA /* TreeDatabaseTableViewCellPlace.swift in Sources */,
 				12F688AD1EEE8B100057C49A /* InformationViewController.swift in Sources */,
-				12A911F41F2627A40021F07B /* TableViewController.swift in Sources */,
 				1232D4C91F2F885A005F2B63 /* CoreData.swift in Sources */,
 				12F688B31EF017EC0057C49A /* ContainerViewController.swift in Sources */,
 				124264BC1F31048400CDE7EA /* TreeDatabaseTableviewCellTree.swift in Sources */,

@@ -43,19 +43,14 @@
                                     <constraint firstAttribute="width" constant="560" id="oF0-bZ-6gJ"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="HLh-sx-I3H">
-                                <rect key="frame" x="-839.5" y="874" width="2513" height="180"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="AcL-DM-PMz" secondAttribute="bottom" constant="307" id="6Ah-RR-ZWi"/>
                             <constraint firstItem="AcL-DM-PMz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="LxK-XB-CXe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="AcL-DM-PMz" secondAttribute="trailing" constant="117" id="PFJ-jq-zmm"/>
                             <constraint firstItem="AcL-DM-PMz" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="146" id="X6G-la-Z7f"/>
-                            <constraint firstItem="HLh-sx-I3H" firstAttribute="top" secondItem="AcL-DM-PMz" secondAttribute="bottom" constant="69" id="YO7-e6-a47"/>
                             <constraint firstItem="AcL-DM-PMz" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="117" id="Ya5-1J-VfU"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="HLh-sx-I3H" secondAttribute="bottom" constant="58" id="bZg-f1-DWC"/>
-                            <constraint firstItem="HLh-sx-I3H" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ds8-Xd-q4J"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -66,6 +61,5 @@
     </scenes>
     <resources>
         <image name="loading" width="240" height="240"/>
-        <image name="logo" width="2513" height="1113"/>
     </resources>
 </document>
