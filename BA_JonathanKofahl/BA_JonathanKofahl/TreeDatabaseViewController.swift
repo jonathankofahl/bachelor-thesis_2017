@@ -250,14 +250,20 @@ class TreeDatabaseViewController: UIViewController, UITableViewDelegate, UITable
             placeLabel.text = tableTrees?[indexPath.row].info4
             timeLabel.text = tableTrees?[indexPath.row].info1
             categoryLabel.text = tableTrees?[indexPath.row].info5
-            if tableTrees?[indexPath.row].image != nil {
+            if selectedTree?.xLocation != nil {
+                self.mapView.setCenter(CLLocationCoordinate2D(latitude: (selectedTree?.xLocation)!, longitude:(selectedTree?.yLocation)!), animated: true)
+                let center = CLLocationCoordinate2D(latitude: (selectedTree?.xLocation)!, longitude: (selectedTree?.yLocation)!)
+                let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.007, longitudeDelta: 0.007))
+                    mapView.setRegion(region, animated: true)
+            }
+                if tableTrees?[indexPath.row].image != nil {
                 treeImageView.isHidden = false
                 treeImageView.image = UIImage(cgImage: (UIImage.init(data: tableTrees?[indexPath.row].image! as! Data)?.cgImage)!,
                                               scale: 1.0 ,
                                               orientation: UIImageOrientation.right)
-            } else {
+                } else {
                 treeImageView.isHidden = true
-            }
+                }
             if !showDetailView {
                 self.openDetailView()
             }
