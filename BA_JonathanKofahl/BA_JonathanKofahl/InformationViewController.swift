@@ -397,7 +397,7 @@ class InformationViewController: UIViewController, CLLocationManagerDelegate, UI
     //MARK: - Save Entries do database tree Object
     @IBAction func endEditing(_ sender: UITextField) {
         actualTree1?.setValue(sender.text, forKey: "info"+sender.tag.description)
-        print("!!!" + (actualTree1?.info4)!)
+        print("!!!" + (actualTree1?.info0)!)
         print("saved!!!")
         
     }
